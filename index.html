@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrushMeter.cz | AI Analýza chemie</title>
+    <title>CrushMeter.cz | AI Analýza vaší osudové chemie</title>
     
-    <!-- Tailwind Engine -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
@@ -26,100 +23,364 @@
     </script>
 
     <style type="text/css">
-        /* Hard-coded fallback, aby web nebyl nikdy bílý */
-        html, body { 
-            background-color: #05050a !important; 
-            color: #ffffff !important; 
-            margin: 0; 
-            padding: 0;
-            font-family: 'Outfit', sans-serif;
-        }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .glass-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; outline: none; }
+        html, body { background-color: #05050a !important; color: #ffffff !important; margin: 0; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; }
+        .glass-card:hover { border-color: #ff1493; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 20, 147, 0.1); }
+        .glass-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; outline: none; transition: 0.3s; }
+        .glass-input:focus { border-color: #ff1493; box-shadow: 0 0 15px rgba(255, 20, 147, 0.2); }
         .text-gradient { background: linear-gradient(to right, #ff1493, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .step { display: none; }
-        .step.active { display: block; }
-        .tag-input:checked + label { background: #ff1493 !important; border-color: #ff1493 !important; box-shadow: 0 0 15px rgba(255,20,147,0.4); }
+        .step.active { display: block; animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .tag-input:checked + label { background: #ff1493 !important; border-color: #ff1493 !important; }
+        .color-dot:checked + label { ring: 2px ring-white; border: 2px solid white; }
     </style>
 </head>
 <body class="antialiased bg-darkBg text-white">
 
-    <!-- Ambient Background -->
+    <!-- Ambient BG -->
     <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-neonPink/20 rounded-full filter blur-[100px]"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-neonPurple/20 rounded-full filter blur-[100px]"></div>
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-neonPink/10 rounded-full filter blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-neonPurple/10 rounded-full filter blur-[120px]"></div>
     </div>
 
-    <!-- HERO -->
-    <header class="min-h-screen flex flex-col items-center justify-center text-center px-4">
-        <div class="glass px-4 py-1 rounded-full text-[10px] font-bold tracking-widest mb-6 border-white/10 uppercase">AI-Powered Relationship Lab</div>
-        <h1 class="font-serif text-5xl md:text-8xl font-semibold mb-6">
-            Jaká mezi vámi<br><span class="text-gradient italic">skutečně</span> je chemie?
+    <!-- 1. HERO SEKCE -->
+    <header class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
+        <div class="glass px-5 py-2 rounded-full text-xs font-bold tracking-[0.2em] mb-8 border-white/10 uppercase text-white/70">
+            Jediná AI vytrénovaná na zákonitosti osudu
+        </div>
+        <h1 class="font-serif text-5xl md:text-8xl font-semibold mb-8 leading-[1.1]">
+            Zjisti, co mezi vámi<br><span class="text-gradient italic font-bold">skutečně hoří.</span>
         </h1>
-        <p class="text-white/60 text-lg max-w-2xl mb-10 font-light">Claude 3.5 Sonnet analyzuje vaše vibes a skrytou energii.</p>
-        <a href="#formular" class="px-10 py-5 bg-white text-black font-extrabold rounded-full hover:scale-105 transition shadow-[0_0_50px_rgba(255,20,147,0.3)] uppercase tracking-tight">
-            Spustit analýzu
-        </a>
+        <p class="text-white/60 text-lg md:text-xl max-w-3xl mb-12 font-light leading-relaxed">
+            CrushMeter není jen algoritmus. Je to AI optimalizovaná na dynamiku vztahů, řeč těla a emoční vzorce. 
+            Analyzujeme tisíce detailů, abychom odhalili pravdu o vaší kompatibilitě.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4">
+            <a href="#formular" class="px-12 py-5 bg-white text-black font-extrabold rounded-full hover:scale-105 transition shadow-[0_0_50px_rgba(255,20,147,0.3)] uppercase tracking-wider">
+                Spustit Match Test
+            </a>
+            <a href="#jak-to-funguje" class="px-12 py-5 glass rounded-full font-bold hover:bg-white/10 transition uppercase tracking-wider">
+                Jak to funguje?
+            </a>
+        </div>
+        <div class="absolute bottom-10 animate-bounce opacity-30">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
     </header>
 
-    <!-- FORMULÁŘ -->
-    <section id="formular" class="py-20 px-4 max-w-3xl mx-auto">
-        <div class="w-full bg-white/5 h-1 rounded-full mb-12 overflow-hidden">
-            <div id="progress" class="h-full bg-gradient-to-r from-neonPink to-neonPurple transition-all duration-500" style="width: 33%"></div>
+    <!-- 2. OMÁČKA / BENEFITY -->
+    <section class="py-32 px-4 max-w-6xl mx-auto border-t border-white/5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-serif mb-8 italic">AI vyladěná na<br><span class="text-gradient font-bold not-italic">jazyk vašeho srdce.</span></h2>
+                <p class="text-white/60 text-lg mb-6 leading-relaxed">
+                    Na rozdíl od běžných seznamek, CrushMeter hloubkově posuzuje nejen vaše koníčky, ale i skrytou energii v komunikaci a podvědomé preference. 
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3 text-white/80"><i class="fa-solid fa-check text-neonPink"></i> Analýza emoční inteligence</li>
+                    <li class="flex items-center gap-3 text-white/80"><i class="fa-solid fa-check text-neonPink"></i> Predikce vztahových red flagů</li>
+                    <li class="flex items-center gap-3 text-white/80"><i class="fa-solid fa-check text-neonPink"></i> Výpočet "Long-term" potenciálu</li>
+                </ul>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="glass-card p-8 rounded-3xl text-center">
+                    <div class="text-3xl font-bold text-gradient mb-2">98%</div>
+                    <div class="text-xs uppercase opacity-40">Přesnost vibe-checku</div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl text-center mt-8">
+                    <div class="text-3xl font-bold text-gradient mb-2">AI</div>
+                    <div class="text-xs uppercase opacity-40">Deep Analysis</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. JAK TO FUNGUJE -->
+    <section id="jak-to-funguje" class="py-32 bg-white/[0.02] border-y border-white/5 px-4 text-center">
+        <h2 class="text-4xl font-serif mb-20 uppercase tracking-widest">Cesta k odhalení</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            <div class="space-y-6">
+                <div class="w-20 h-20 bg-gradient-to-br from-neonPink to-neonPurple rounded-2xl flex items-center justify-center mx-auto text-3xl font-bold shadow-lg">1</div>
+                <h3 class="text-xl font-bold">Data & Vibes</h3>
+                <p class="text-white/50">Vyplníš detaily, nahraješ fotky a popíšeš vaši dynamiku.</p>
+            </div>
+            <div class="space-y-6">
+                <div class="w-20 h-20 bg-gradient-to-br from-neonPink to-neonPurple rounded-2xl flex items-center justify-center mx-auto text-3xl font-bold shadow-lg">2</div>
+                <h3 class="text-xl font-bold">AI Processing</h3>
+                <p class="text-white/50">Algoritmus projede tisíce proměnných a hledá shodu.</p>
+            </div>
+            <div class="space-y-6">
+                <div class="w-20 h-20 bg-gradient-to-br from-neonPink to-neonPurple rounded-2xl flex items-center justify-center mx-auto text-3xl font-bold shadow-lg">3</div>
+                <h3 class="text-xl font-bold">Pravda</h3>
+                <p class="text-white/50">Získáš detailní rozbor, který tě buď uklidní, nebo varuje.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ROZŠÍŘENÝ FORMULÁŘ -->
+    <section id="formular" class="py-32 px-4 max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-serif mb-4 italic">Matchmaking <span class="text-gradient font-bold not-italic">Laboratoř</span></h2>
+            <p class="text-white/40 uppercase tracking-widest text-sm">Buďte upřímní, AI pozná lež.</p>
         </div>
 
-        <form id="crushForm" class="glass p-8 md:p-12 rounded-[40px] relative">
-            <!-- STEP 1 -->
+        <form id="crushForm" class="glass p-8 md:p-16 rounded-[3rem] shadow-2xl border-white/10">
+            
+            <!-- PROGRESS -->
+            <div class="w-full bg-white/5 h-1 rounded-full mb-16 overflow-hidden">
+                <div id="progress" class="h-full bg-gradient-to-r from-neonPink to-neonPurple transition-all duration-500" style="width: 25%"></div>
+            </div>
+
+            <!-- STEP 1: TY (PROFIL) -->
             <div class="step active" id="step1">
-                <h3 class="text-3xl font-serif mb-8 text-neonPink uppercase tracking-tighter italic">01. O tobě</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <input type="text" id="userName" placeholder="Tvé jméno" class="glass-input p-4 rounded-2xl w-full" required>
-                    <input type="date" id="userBirth" class="glass-input p-4 rounded-2xl w-full" required>
-                </div>
-                <div class="mb-8">
-                    <p class="text-xs text-white/40 mb-4 uppercase tracking-widest text-center">Tvoje dominantní energie</p>
-                    <div class="flex flex-wrap justify-center gap-3">
-                        <input type="radio" name="userVibe" id="v1" value="chaos" class="hidden tag-input" checked>
-                        <label for="v1" class="px-5 py-2 border border-white/20 rounded-full text-sm cursor-pointer transition hover:border-neonPink">Chaos & Fun</label>
-                        
-                        <input type="radio" name="userVibe" id="v2" value="chill" class="hidden tag-input">
-                        <label for="v2" class="px-5 py-2 border border-white/20 rounded-full text-sm cursor-pointer transition hover:border-neonPink">Deep & Chill</label>
+                <h3 class="text-3xl font-serif mb-10 text-neonPink flex items-center gap-4">
+                    <span class="w-10 h-10 rounded-full border border-neonPink flex items-center justify-center text-sm italic">01</span> Tvůj Profil
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-white/40 mb-3 ml-2">Tvé Jméno</label>
+                        <input type="text" id="userName" placeholder="Jak ti říkají?" class="glass-input p-5 rounded-2xl w-full" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-white/40 mb-3 ml-2">Datum Narození</label>
+                        <input type="date" id="userBirth" class="glass-input p-5 rounded-2xl w-full" required>
                     </div>
                 </div>
-                <button type="button" onclick="goToStep(2)" class="w-full py-5 bg-white text-black font-bold rounded-2xl hover:bg-neonPink hover:text-white transition uppercase">Další krok</button>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-white/40 mb-3 ml-2">Oblíbená Barva</label>
+                        <div class="flex gap-4 flex-wrap p-2">
+                            <input type="radio" name="userColor" id="u-c1" value="red" class="hidden tag-input" checked><label for="u-c1" class="w-8 h-8 rounded-full bg-red-500 cursor-pointer border-2 border-transparent"></label>
+                            <input type="radio" name="userColor" id="u-c2" value="blue" class="hidden tag-input"><label for="u-c2" class="w-8 h-8 rounded-full bg-blue-500 cursor-pointer border-2 border-transparent"></label>
+                            <input type="radio" name="userColor" id="u-c3" value="black" class="hidden tag-input"><label for="u-c3" class="w-8 h-8 rounded-full bg-gray-900 cursor-pointer border-2 border-transparent"></label>
+                            <input type="radio" name="userColor" id="u-c4" value="pink" class="hidden tag-input"><label for="u-c4" class="w-8 h-8 rounded-full bg-pink-500 cursor-pointer border-2 border-transparent"></label>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-white/40 mb-3 ml-2">Tvá Fotka (volitelné)</label>
+                        <input type="file" id="userPhoto" class="text-xs text-white/40 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-white/10 file:text-white hover:file:bg-white/20">
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <label class="block text-xs uppercase tracking-widest text-white/40 mb-3 ml-2">Co tě v životě nejvíc baví?</label>
+                    <input type="text" id="userHobbies" placeholder="Gaming, cestování, víno, fitko..." class="glass-input p-5 rounded-2xl w-full">
+                </div>
+
+                <button type="button" onclick="goToStep(2)" class="w-full py-6 bg-white text-black font-extrabold rounded-2xl hover:bg-neonPink hover:text-white transition uppercase tracking-widest">Pokračovat k crushi</button>
             </div>
 
-            <!-- STEP 2 -->
+            <!-- STEP 2: CRUSH (PROFIL) -->
             <div class="step" id="step2">
-                <h3 class="text-3xl font-serif mb-8 text-neonPurple uppercase tracking-tighter italic">02. Tvůj Crush</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <input type="text" id="crushName" placeholder="Jméno crushe" class="glass-input p-4 rounded-2xl w-full" required>
-                    <input type="date" id="crushBirth" class="glass-input p-4 rounded-2xl w-full" required>
+                <h3 class="text-3xl font-serif mb-10 text-neonPurple flex items-center gap-4">
+                    <span class="w-10 h-10 rounded-full border border-neonPurple flex items-center justify-center text-sm italic">02</span> Profil Crushe
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-white/40 mb-3 ml-2">Jméno Crushe</label>
+                        <input type="text" id="crushName" placeholder="Kdo ti nedá spát?" class="glass-input p-5 rounded-2xl w-full" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-white/40 mb-3 ml-2">Datum Narození (odhad)</label>
+                        <input type="date" id="crushBirth" class="glass-input p-5 rounded-2xl w-full">
+                    </div>
                 </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-white/40 mb-3 ml-2">Jeho/Její Oblíbená Barva</label>
+                        <div class="flex gap-4 flex-wrap p-2">
+                            <input type="radio" name="crushColor" id="c-c1" value="red" class="hidden tag-input" checked><label for="c-c1" class="w-8 h-8 rounded-full bg-red-500 cursor-pointer border-2 border-transparent"></label>
+                            <input type="radio" name="crushColor" id="c-c2" value="blue" class="hidden tag-input"><label for="c-c2" class="w-8 h-8 rounded-full bg-blue-500 cursor-pointer border-2 border-transparent"></label>
+                            <input type="radio" name="crushColor" id="c-c3" value="black" class="hidden tag-input"><label for="c-c3" class="w-8 h-8 rounded-full bg-gray-900 cursor-pointer border-2 border-transparent"></label>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-white/40 mb-3 ml-2">Fotka Crushe (volitelné)</label>
+                        <input type="file" id="crushPhoto" class="text-xs text-white/40 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-white/10 file:text-white hover:file:bg-white/20">
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <label class="block text-xs uppercase tracking-widest text-white/40 mb-3 ml-2">Co o něm/ní víš (koníčky, jídlo, práce)?</label>
+                    <input type="text" id="crushHobbies" placeholder="Miluje sushi, nesnáší ranní vstávání..." class="glass-input p-5 rounded-2xl w-full">
+                </div>
+
                 <div class="flex gap-4">
-                    <button type="button" onclick="goToStep(1)" class="w-1/3 py-5 glass rounded-2xl opacity-50">Zpět</button>
-                    <button type="button" onclick="goToStep(3)" class="w-2/3 py-5 bg-white text-black font-bold rounded-2xl">Poslední krok</button>
+                    <button type="button" onclick="goToStep(1)" class="w-1/3 py-6 glass rounded-2xl opacity-60 uppercase font-bold">Zpět</button>
+                    <button type="button" onclick="goToStep(3)" class="w-2/3 py-6 bg-white text-black font-extrabold rounded-2xl hover:bg-neonPurple hover:text-white transition uppercase tracking-widest">Dynamika</button>
                 </div>
             </div>
 
-            <!-- STEP 3 -->
+            <!-- STEP 3: DYNAMIKA -->
             <div class="step" id="step3">
-                <h3 class="text-3xl font-serif mb-8 text-gradient uppercase tracking-tighter italic">03. Detaily</h3>
-                <textarea id="story" placeholder="Jaká je vaše storka? Co se mezi vámi děje?" class="glass-input p-5 rounded-2xl w-full h-40 resize-none mb-6" required></textarea>
-                <div class="flex gap-4">
-                    <button type="button" onclick="goToStep(2)" class="w-1/3 py-5 glass rounded-2xl opacity-50">Zpět</button>
-                    <button type="submit" class="w-2/3 py-5 bg-gradient-to-r from-neonPink to-neonPurple text-white font-bold rounded-2xl shadow-lg uppercase">Analyzovat</button>
+                <h3 class="text-3xl font-serif mb-10 text-white flex items-center gap-4">
+                    <span class="w-10 h-10 rounded-full border border-white flex items-center justify-center text-sm italic">03</span> Vztahová Dynamika
+                </h3>
+                <div class="space-y-8">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-white/40 mb-4 ml-2">Jak moc je to mezi vámi "complicated"?</label>
+                        <textarea id="story" placeholder="Tady nám to vysvětli... Jak se znáte? Kdo komu napsal první? Je tam nějaký ex-faktor?" class="glass-input p-6 rounded-3xl w-full h-44 resize-none" required></textarea>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-white/40 mb-3 ml-2">Frekvence Psaní</label>
+                            <select id="frequency" class="glass-input p-5 rounded-2xl w-full appearance-none">
+                                <option value="nonstop">24/7 (neustálý spam)</option>
+                                <option value="daily">Každý den aspoň meme</option>
+                                <option value="sometimes">Občas napíše jeden, občas druhý</option>
+                                <option value="ghost">Aktuálně ticho po pěšině</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-white/40 mb-3 ml-2">Tvůj Pocit</label>
+                            <select id="vibeCheck" class="glass-input p-5 rounded-2xl w-full appearance-none">
+                                <option value="positive">Dává mi jasné signály</option>
+                                <option value="mixed">Mixed signals (blázinec)</option>
+                                <option value="friendzone">Mám strach z friendzone</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <button type="button" onclick="goToStep(2)" class="w-1/3 py-6 glass rounded-2xl opacity-60 uppercase font-bold">Zpět</button>
+                        <button type="submit" class="w-2/3 py-6 bg-gradient-to-r from-neonPink to-neonPurple text-white font-extrabold rounded-2xl hover:scale-[1.02] transition shadow-lg uppercase tracking-widest">Spustit AI Analýzu</button>
+                    </div>
                 </div>
             </div>
         </form>
     </section>
+
+    <!-- FAQ -->
+    <section class="py-32 px-4 max-w-3xl mx-auto border-t border-white/5">
+        <h2 class="text-3xl font-serif text-center mb-16 italic">Zajímá vás...</h2>
+        <div class="space-y-6">
+            <details class="glass p-6 rounded-2xl group cursor-pointer">
+                <summary class="font-bold flex justify-between items-center list-none">Je to skutečné AI?<i class="fa-solid fa-plus text-neonPink group-open:rotate-45 transition"></i></summary>
+                <p class="mt-4 text-white/50 leading-relaxed">Ano. Používáme nejmodernější jazykové modely optimalizované pro psychologickou analýzu textu a vztahovou dynamiku. Není to náhodný generátor.</p>
+            </details>
+            <details class="glass p-6 rounded-2xl group cursor-pointer">
+                <summary class="font-bold flex justify-between items-center list-none">Co se stane s mými fotkami?<i class="fa-solid fa-plus text-neonPink group-open:rotate-45 transition"></i></summary>
+                <p class="mt-4 text-white/50 leading-relaxed">Fotky slouží pouze pro okamžitou analýzu vizuální harmonie. Nikam je neukládáme a po vygenerování výsledku jsou smazány.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-20 text-center border-t border-white/5">
+        <div class="mb-10">
+            <h3 class="font-serif text-2xl font-bold tracking-widest text-gradient">CRUSHMETER</h3>
+            <p class="text-[10px] uppercase tracking-[0.5em] text-white/30">Science of Attraction</p>
+        </div>
+        <div class="flex justify-center gap-8 text-white/40 text-sm mb-12">
+            <a href="#" class="hover:text-white transition">Instagram</a>
+            <a href="#" class="hover:text-white transition">TikTok</a>
+            <a href="#" class="hover:text-white transition">Podmínky</a>
+        </div>
+        <p class="text-[10px] text-white/20">© 2026 CrushMeter.cz – Všechna práva vyhrazena.</p>
+    </footer>
+
+    <!-- LOADER -->
+    <div id="loader" class="fixed inset-0 z-50 bg-darkBg/98 backdrop-blur-2xl hidden flex-col items-center justify-center">
+        <div class="relative w-32 h-32 flex items-center justify-center mb-10">
+            <div class="absolute inset-0 border-t-2 border-neonPink rounded-full animate-spin"></div>
+            <div class="absolute inset-4 border-b-2 border-neonPurple rounded-full animate-spin-slow" style="animation-duration: 3s"></div>
+            <i class="fa-solid fa-heart text-neonPink animate-pulse text-2xl"></i>
+        </div>
+        <div id="loadText" class="text-xl font-serif italic text-white/80 text-center px-10 max-w-sm">AI nyní dešifruje vaše emoční kódy...</div>
+    </div>
+
+    <!-- VÝSLEDKY (Hidden by default) -->
+    <div id="results" class="fixed inset-0 z-[60] bg-darkBg hidden overflow-y-auto p-4 md:p-10">
+        <!-- Tady se vygeneruje výsledek pomocí JS -->
+        <div class="max-w-4xl mx-auto py-20 text-center" id="resultsContent"></div>
+        <button onclick="location.reload()" class="fixed bottom-10 left-1/2 -translate-x-1/2 glass px-10 py-4 rounded-full font-bold uppercase tracking-widest">Nová analýza</button>
+    </div>
 
     <script>
         function goToStep(step) {
             document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
             document.getElementById('step' + step).classList.add('active');
             document.getElementById('progress').style.width = (step / 3 * 100) + '%';
+            window.scrollTo({ top: document.getElementById('formular').offsetTop - 50, behavior: 'smooth' });
         }
+
+        document.getElementById('crushForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const loader = document.getElementById('loader');
+            loader.classList.remove('hidden');
+            loader.classList.add('flex');
+
+            // Payload s novými poli
+            const payload = {
+                userData: { 
+                    name: document.getElementById('userName').value, 
+                    birth: document.getElementById('userBirth').value,
+                    color: document.querySelector('input[name="userColor"]:checked').value,
+                    hobbies: document.getElementById('userHobbies').value
+                },
+                crushData: { 
+                    name: document.getElementById('crushName').value, 
+                    birth: document.getElementById('crushBirth').value,
+                    color: document.querySelector('input[name="crushColor"]:checked').value,
+                    hobbies: document.getElementById('crushHobbies').value
+                },
+                sharedData: {
+                    story: document.getElementById('story').value,
+                    frequency: document.getElementById('frequency').value,
+                    vibe: document.getElementById('vibeCheck').value
+                }
+            };
+
+            try {
+                const response = await fetch('/api/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                const data = await response.json();
+                loader.classList.add('hidden');
+                
+                // Zobrazení výsledků
+                const resDiv = document.getElementById('results');
+                const resCont = document.getElementById('resultsContent');
+                resDiv.classList.remove('hidden');
+                
+                resCont.innerHTML = `
+                    <h2 class="text-6xl font-serif text-gradient mb-4 font-bold italic">Váš Osud</h2>
+                    <div class="text-9xl font-bold mb-10 tracking-tighter">${data.compatibility}%</div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                        <div class="glass p-10 rounded-[3rem]">
+                            <h4 class="text-xs uppercase tracking-widest opacity-40 mb-2">Chemie</h4>
+                            <p class="text-2xl font-bold text-neonPink italic">"${data.chemistry}"</p>
+                        </div>
+                        <div class="glass p-10 rounded-[3rem]">
+                            <h4 class="text-xs uppercase tracking-widest opacity-40 mb-2">Verdikt</h4>
+                            <p class="text-white/80 leading-relaxed">${data.dynamics}</p>
+                        </div>
+                    </div>
+                    <div class="mt-10 glass p-10 rounded-[3rem] text-left relative overflow-hidden">
+                        <div class="absolute inset-0 backdrop-blur-xl bg-black/60 flex items-center justify-center flex-col p-10 text-center">
+                            <i class="fa-solid fa-lock text-4xl mb-6 text-neonPink"></i>
+                            <h3 class="text-2xl font-bold mb-4">Chceš vidět kompletní rozbor?</h3>
+                            <p class="text-white/60 mb-8 max-w-xs mx-auto text-sm">Zjisti největší red flagy, tvou šanci na vztah a kdo z vás se zamiluje dřív.</p>
+                            <button class="bg-white text-black px-12 py-5 rounded-full font-extrabold uppercase tracking-widest shadow-2xl hover:scale-105 transition">Odemknout (49 Kč)</button>
+                        </div>
+                        <h4 class="text-xs uppercase tracking-widest opacity-40 mb-2">Největší Red Flag</h4>
+                        <p class="blur-sm">Tady bude text, který je nyní zamčený...</p>
+                    </div>
+                `;
+
+            } catch (err) {
+                loader.classList.add('hidden');
+                alert("Něco se pokazilo. Zkontroluj připojení k API.");
+            }
+        });
     </script>
 </body>
 </html>
