@@ -27,6 +27,10 @@
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
         .glass-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; outline: none; transition: 0.3s; }
         .glass-input:focus { border-color: #ff1493; box-shadow: 0 0 20px rgba(255, 20, 147, 0.15); }
+        
+        /* FIX PRO NEČITELNÉ MOŽNOSTI V SELECTU */
+        option { background-color: #05050a; color: #ffffff; padding: 10px; }
+        
         .text-gradient { background: linear-gradient(to right, #ff1493, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .step { display: none; }
         .step.active { display: block; animation: slideUp 0.6s ease-out; }
@@ -79,11 +83,11 @@
         </div>
     </header>
 
-    <!-- CO ODHALÍME (NEW SECTION) -->
+    <!-- CO ODHALÍME -->
     <section id="co-odhalime" class="py-32 px-4 max-w-7xl mx-auto border-t border-white/5">
         <div class="text-center mb-20">
             <h2 class="text-4xl md:text-5xl font-serif mb-6 italic">Co vám <span class="text-gradient font-bold not-italic">rozbor prozradí?</span></h2>
-            <p class="text-white/40 max-w-2xl mx-auto">Náš AI model nehodnotí jen povrchové shody, ale jde do hloubky vaší psychologie a vzorců chování.</p>
+            <p class="text-white/40 max-w-2xl mx-auto">Náš AI model nehodnotí jen povrchové shody, ale jde do hloubky vaší psychologie, komunikace a astrologických vzorců.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -116,7 +120,7 @@
             <div class="relative">
                 <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight">Proč věřit<br><span class="italic text-gradient">CrushMeteru?</span></h2>
                 <p class="text-white/60 text-lg mb-8 leading-relaxed">
-                    Vztahy nejsou jen o společných koníčcích. Jsou o energetických vzorcích, komunikaci a tom, jak na sebe reagujete, když se nikdo nedívá. Naše AI analyzuje jazyky lásky i vaše skryté touhy.
+                    Vztahy nejsou jen o společných koníčcích. Jsou o energetických vzorcích, komunikaci a tom, jak na sebe reagujete, když se nikdo nedívá. Naše AI analyzuje jazyky lásky, astrologii i vaše skryté touhy.
                 </p>
                 <div class="space-y-6">
                     <div class="flex gap-4 items-start">
@@ -142,7 +146,7 @@
         </div>
     </section>
 
-    <!-- FORMULÁŘ (Rozšířený) -->
+    <!-- FORMULÁŘ -->
     <section id="formular" class="py-32 px-4 bg-white/[0.01] border-y border-white/5">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16">
@@ -174,9 +178,29 @@
                         </div>
                     </div>
 
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Tvoje Znamení</label>
+                            <select id="userZodiac" class="glass-input p-5 rounded-2xl w-full appearance-none">
+                                <option value="beran">Beran</option><option value="byk">Býk</option><option value="blizenci">Blíženci</option><option value="rak">Rak</option>
+                                <option value="lev">Lev</option><option value="panna">Panna</option><option value="vahy">Váhy</option><option value="stir">Štír</option>
+                                <option value="strelec">Střelec</option><option value="kozoroh">Kozoroh</option><option value="vodnar">Vodnář</option><option value="ryby">Ryby</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Tvůj komunikační styl</label>
+                            <select id="userComm" class="glass-input p-5 rounded-2xl w-full appearance-none">
+                                <option value="text_heavy">Píšu dlouhé zprávy/slohovky</option>
+                                <option value="memes">Posílám hlavně memes a reels</option>
+                                <option value="short">Odpovídám stručně / jednoslovně</option>
+                                <option value="calls">Radši volám / voice notes</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                         <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Tvůj Love Language (Jak projevuješ lásku)</label>
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Tvůj Love Language</label>
                             <select id="userLoveLang" class="glass-input p-5 rounded-2xl w-full appearance-none">
                                 <option value="words">Slova ujištění</option>
                                 <option value="time">Kvalitně strávený čas</option>
@@ -198,14 +222,15 @@
                     <div class="mb-12">
                         <label class="block text-[10px] uppercase tracking-widest text-white/40 mb-4 text-center">Tvoje oblíbená barva</label>
                         <div class="flex flex-wrap justify-center gap-4">
-                            <!-- Základní barvy -->
+                            <!-- Rozšířená paleta o fialovou -->
                             <input type="radio" name="userColor" id="u-c1" value="red" class="hidden color-checkbox" checked><label for="u-c1" class="w-10 h-10 rounded-full bg-red-500 cursor-pointer border-2 border-transparent transition"></label>
                             <input type="radio" name="userColor" id="u-c2" value="blue" class="hidden color-checkbox"><label for="u-c2" class="w-10 h-10 rounded-full bg-blue-500 cursor-pointer border-2 border-transparent transition"></label>
                             <input type="radio" name="userColor" id="u-c3" value="green" class="hidden color-checkbox"><label for="u-c3" class="w-10 h-10 rounded-full bg-green-500 cursor-pointer border-2 border-transparent transition"></label>
                             <input type="radio" name="userColor" id="u-c4" value="yellow" class="hidden color-checkbox"><label for="u-c4" class="w-10 h-10 rounded-full bg-yellow-400 cursor-pointer border-2 border-transparent transition"></label>
+                            <input type="radio" name="userColor" id="u-c8" value="purple" class="hidden color-checkbox"><label for="u-c8" class="w-10 h-10 rounded-full bg-purple-500 cursor-pointer border-2 border-transparent transition"></label>
+                            <input type="radio" name="userColor" id="u-c7" value="pink" class="hidden color-checkbox"><label for="u-c7" class="w-10 h-10 rounded-full bg-pink-500 cursor-pointer border-2 border-transparent transition"></label>
                             <input type="radio" name="userColor" id="u-c5" value="black" class="hidden color-checkbox"><label for="u-c5" class="w-10 h-10 rounded-full bg-black cursor-pointer border-2 border-transparent transition"></label>
                             <input type="radio" name="userColor" id="u-c6" value="white" class="hidden color-checkbox"><label for="u-c6" class="w-10 h-10 rounded-full bg-white cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="userColor" id="u-c7" value="pink" class="hidden color-checkbox"><label for="u-c7" class="w-10 h-10 rounded-full bg-pink-500 cursor-pointer border-2 border-transparent transition"></label>
                         </div>
                     </div>
 
@@ -222,8 +247,13 @@
                             <input type="text" id="crushName" class="glass-input p-5 rounded-2xl w-full" required>
                         </div>
                         <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Datum Narození (odhad)</label>
-                            <input type="date" id="crushBirth" class="glass-input p-5 rounded-2xl w-full">
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Jejich Znamení (I odhad)</label>
+                            <select id="crushZodiac" class="glass-input p-5 rounded-2xl w-full appearance-none">
+                                <option value="nevim">Nevím přesně</option>
+                                <option value="beran">Beran</option><option value="byk">Býk</option><option value="blizenci">Blíženci</option><option value="rak">Rak</option>
+                                <option value="lev">Lev</option><option value="panna">Panna</option><option value="vahy">Váhy</option><option value="stir">Štír</option>
+                                <option value="strelec">Střelec</option><option value="kozoroh">Kozoroh</option><option value="vodnar">Vodnář</option><option value="ryby">Ryby</option>
+                            </select>
                         </div>
                     </div>
 
@@ -244,6 +274,7 @@
                                 <option value="communication">Špatně komunikuje / Ghostuje</option>
                                 <option value="jealousy">Žárlivost / Majetnictví</option>
                                 <option value="workaholic">Práce/Kamarádi jsou přednější</option>
+                                <option value="ex_issues">Často mluví o ex / Nedokáže být sám</option>
                             </select>
                         </div>
                     </div>
@@ -254,6 +285,7 @@
                             <input type="radio" name="crushColor" id="c-c1" value="red" class="hidden color-checkbox" checked><label for="c-c1" class="w-10 h-10 rounded-full bg-red-500 cursor-pointer border-2 border-transparent transition"></label>
                             <input type="radio" name="crushColor" id="c-c2" value="blue" class="hidden color-checkbox"><label for="c-c2" class="w-10 h-10 rounded-full bg-blue-500 cursor-pointer border-2 border-transparent transition"></label>
                             <input type="radio" name="crushColor" id="c-c3" value="green" class="hidden color-checkbox"><label for="c-c3" class="w-10 h-10 rounded-full bg-green-500 cursor-pointer border-2 border-transparent transition"></label>
+                            <input type="radio" name="crushColor" id="c-c8" value="purple" class="hidden color-checkbox"><label for="c-c8" class="w-10 h-10 rounded-full bg-purple-500 cursor-pointer border-2 border-transparent transition"></label>
                             <input type="radio" name="crushColor" id="c-c5" value="black" class="hidden color-checkbox"><label for="c-c5" class="w-10 h-10 rounded-full bg-black cursor-pointer border-2 border-transparent transition"></label>
                             <input type="radio" name="crushColor" id="c-c6" value="white" class="hidden color-checkbox"><label for="c-c6" class="w-10 h-10 rounded-full bg-white cursor-pointer border-2 border-transparent transition"></label>
                         </div>
@@ -279,18 +311,27 @@
                         </div>
                     </div>
 
-                    <div class="mb-8">
-                        <label class="block text-[10px] uppercase tracking-widest text-white/40 mb-4 ml-2">Jak často se vídáte/píšete si?</label>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                            <input type="radio" name="frequency" id="f1" value="daily" class="hidden tag-input" checked><label for="f1" class="p-3 border border-white/10 rounded-xl text-xs text-center cursor-pointer transition glass-input block">Každý den</label>
-                            <input type="radio" name="frequency" id="f2" value="weekly" class="hidden tag-input"><label for="f2" class="p-3 border border-white/10 rounded-xl text-xs text-center cursor-pointer transition glass-input block">O víkendech</label>
-                            <input type="radio" name="frequency" id="f3" value="rarely" class="hidden tag-input"><label for="f3" class="p-3 border border-white/10 rounded-xl text-xs text-center cursor-pointer transition glass-input block">Zřídka</label>
-                            <input type="radio" name="frequency" id="f4" value="none" class="hidden tag-input"><label for="f4" class="p-3 border border-white/10 rounded-xl text-xs text-center cursor-pointer transition glass-input block">Ticho / Blok</label>
+                    <div class="mb-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-white/40 mb-4 ml-2">Kdo se víc snaží (iniciuje kontakt)?</label>
+                            <div class="grid grid-cols-1 gap-2">
+                                <input type="radio" name="effort" id="e1" value="me" class="hidden tag-input" checked><label for="e1" class="p-3 border border-white/10 rounded-xl text-xs text-center cursor-pointer transition glass-input block">Rozhodně já</label>
+                                <input type="radio" name="effort" id="e2" value="them" class="hidden tag-input"><label for="e2" class="p-3 border border-white/10 rounded-xl text-xs text-center cursor-pointer transition glass-input block">Spíše on/ona</label>
+                                <input type="radio" name="effort" id="e3" value="balanced" class="hidden tag-input"><label for="e3" class="p-3 border border-white/10 rounded-xl text-xs text-center cursor-pointer transition glass-input block">Je to vyrovnané</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-white/40 mb-4 ml-2">Jak často jste v kontaktu?</label>
+                            <div class="grid grid-cols-1 gap-2">
+                                <input type="radio" name="frequency" id="f1" value="daily" class="hidden tag-input" checked><label for="f1" class="p-3 border border-white/10 rounded-xl text-xs text-center cursor-pointer transition glass-input block">Každý den (nonstop chat)</label>
+                                <input type="radio" name="frequency" id="f2" value="weekly" class="hidden tag-input"><label for="f2" class="p-3 border border-white/10 rounded-xl text-xs text-center cursor-pointer transition glass-input block">Párkrát do týdne</label>
+                                <input type="radio" name="frequency" id="f3" value="rarely" class="hidden tag-input"><label for="f3" class="p-3 border border-white/10 rounded-xl text-xs text-center cursor-pointer transition glass-input block">Občas / Skoro vůbec</label>
+                            </div>
                         </div>
                     </div>
 
                     <div class="mb-10">
-                        <label class="block text-[10px] uppercase tracking-widest text-white/40 mb-3 ml-2">Popiš situaci (AI z textu vyčte emoce)</label>
+                        <label class="block text-[10px] uppercase tracking-widest text-white/40 mb-3 ml-2">Popiš situaci (AI z textu vyčte vibe a emoce)</label>
                         <textarea id="story" placeholder="Známe se z práce. Včera mi koupil kafe, ale pak se bavil s kolegyní. Nevím, na čem jsem... (Nebo: Jsme manželé 8 let, chybí nám jiskra...)" class="glass-input p-6 rounded-3xl w-full h-32 resize-none" required></textarea>
                     </div>
 
@@ -303,7 +344,7 @@
         </div>
     </section>
 
-    <!-- FAQ (NEW SECTION) -->
+    <!-- FAQ -->
     <section id="faq" class="py-32 px-4 max-w-3xl mx-auto border-t border-white/5">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-serif italic">Máte otázky?</h2>
@@ -311,7 +352,7 @@
         <div class="space-y-4">
             <details class="glass p-6 rounded-2xl group cursor-pointer">
                 <summary class="font-bold flex justify-between items-center list-none text-lg">Je to jen náhodný generátor, nebo opravdová AI?<i class="fa-solid fa-chevron-down text-neonPink group-open:rotate-180 transition"></i></summary>
-                <p class="mt-4 text-white/50 leading-relaxed text-sm">Na pozadí běží pokročilý model Claude 3.5 Sonnet od společnosti Anthropic. Není to náhoda. Systém v reálném čase porovnává zadané proměnné (jazyky lásky, frekvenci kontaktu, barvy jako psychologické archetypy a analyzuje váš volný text) pro výpočet reálné kompatibility.</p>
+                <p class="mt-4 text-white/50 leading-relaxed text-sm">Na pozadí běží pokročilý model umělé inteligence. Není to náhoda. Systém v reálném čase porovnává zadané proměnné (jazyky lásky, astrologii, power dynamics z komunikace a analyzuje váš volný text) pro výpočet reálné kompatibility.</p>
             </details>
             <details class="glass p-6 rounded-2xl group cursor-pointer">
                 <summary class="font-bold flex justify-between items-center list-none text-lg">Co se stane s mými daty?<i class="fa-solid fa-chevron-down text-neonPink group-open:rotate-180 transition"></i></summary>
@@ -346,7 +387,7 @@
                 <i class="fa-solid fa-brain text-white/20 text-4xl"></i>
             </div>
         </div>
-        <div id="loadText" class="text-2xl font-serif italic text-white/80 text-center px-10 max-w-sm">Analyzuji vaši vztahovou DNA...</div>
+        <div id="loadText" class="text-2xl font-serif italic text-white/80 text-center px-10 max-w-sm">Kalkuluji Power Dynamics...</div>
     </div>
 
     <!-- RESULT MODAL -->
@@ -376,30 +417,33 @@
             loader.classList.remove('hidden');
             loader.classList.add('flex');
 
-            const phases = ["Zkoumám jazyky lásky...", "Hledám psychologické třecí plochy...", "Vyhodnocuji komunikaci...", "Kalkuluji pravděpodobnost úspěchu..."];
+            const phases = ["Porovnávám astrologické profily...", "Analyzuji váš komunikační styl...", "Vyhodnocuji skrytá rizika...", "Kalkuluji finální verdikt..."];
             let i = 0;
             const phaseInterval = setInterval(() => {
                 if(i < phases.length) loadText.innerText = phases[i++];
             }, 1500);
 
-            // Sběr dat
+            // Sběr rozšířených dat
             const payload = {
                 userData: { 
                     name: document.getElementById('userName').value, 
                     birth: document.getElementById('userBirth').value,
+                    zodiac: document.getElementById('userZodiac').value,
+                    comm: document.getElementById('userComm').value,
                     color: document.querySelector('input[name="userColor"]:checked').value,
                     loveLang: document.getElementById('userLoveLang').value,
                     trait: document.getElementById('userTrait').value
                 },
                 crushData: { 
                     name: document.getElementById('crushName').value, 
-                    birth: document.getElementById('crushBirth').value,
+                    zodiac: document.getElementById('crushZodiac').value,
                     color: document.querySelector('input[name="crushColor"]:checked').value,
                     trait: document.getElementById('crushTrait').value,
                     flaw: document.getElementById('crushFlaw').value
                 },
                 sharedData: {
                     status: document.querySelector('input[name="status"]:checked').value,
+                    effort: document.querySelector('input[name="effort"]:checked').value,
                     frequency: document.querySelector('input[name="frequency"]:checked').value,
                     story: document.getElementById('story').value
                 }
@@ -449,7 +493,7 @@
                                 </div>
                                 <h3 class="text-3xl font-serif italic mb-4">Skrytá část rozboru</h3>
                                 <p class="text-sm text-white/60 mb-8 max-w-md mx-auto leading-relaxed">
-                                    V databázi máme připravený zbytek vaší analýzy: Odhalený Red Flag, budoucí vývoj vztahu a kdo má nad kým aktuálně moc.
+                                    V databázi máme připravený zbytek vaší analýzy: Odhalený Red Flag na základě vaší komunikace, predikce budoucnosti a astrologický vliv.
                                 </p>
                                 <button class="px-12 py-5 bg-white text-black font-black rounded-full uppercase tracking-widest text-sm hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition">Odemknout ihned (49 Kč)</button>
                                 <p class="text-[10px] text-white/30 mt-4 uppercase tracking-widest"><i class="fa-solid fa-shield-halved mr-1"></i> Bezpečná platba přes SimpleShop</p>
@@ -458,9 +502,9 @@
                             <!-- Fake rozmazaný obsah pod paywallem -->
                             <div class="opacity-30 pointer-events-none text-left filter blur-sm">
                                 <h4 class="text-red-500 font-bold mb-2">Největší Red Flag</h4>
-                                <p class="mb-6">Tady bude detailní popis toho, co je na vztahu špatně a na co si dát pozor...</p>
-                                <h4 class="text-neonPurple font-bold mb-2">Budoucnost</h4>
-                                <p>Tady bude predikce toho, jestli to vydrží, nebo to skončí slzami...</p>
+                                <p class="mb-6">Z vaší dynamiky (snaha vs. ignorace) jasně vyplývá, že...</p>
+                                <h4 class="text-neonPurple font-bold mb-2">Astrologické varování</h4>
+                                <p>Kombinace vašeho znamení a jeho/její povahy znamená...</p>
                             </div>
                         </div>
                     </div>
