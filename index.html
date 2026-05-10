@@ -389,96 +389,80 @@
         </div>
     </section>
 
-    <script>
-        // Funkce pro přepínání kroků (Zpět/Dopředu)
-        function goToStep(stepNumber) {
-            // Skryjeme všechny kroky
-            document.querySelectorAll('.step').forEach(function(step) {
-                step.classList.remove('active');
-            });
-            
-            // Zobrazíme požadovaný krok
-            document.getElementById('step' + stepNumber).classList.add('active');
-            
-            // Aktualizace ukazatele postupu
-            document.getElementById('stepNum').innerText = stepNumber;
-            document.getElementById('progress').style.width = (stepNumber * 33.33) + '%';
-        }
-
-        // Funkce pro validaci aktuálního kroku před puštěním dál
-        function validateAndGo(currentStep, nextStep) {
-            const currentDiv = document.getElementById('step' + currentStep);
-            const requiredInputs = currentDiv.querySelectorAll('input[required], select[required]');
-            let allValid = true;
-
-            requiredInputs.forEach(input => {
-                if (!input.value) {
-                    allValid = false;
-                    input.style.borderColor = 'rgba(255,0,0,0.5)'; // Zvýraznění nevyplněného
-                } else {
-                    input.style.borderColor = ''; // Reset
-                }
-            });
-
-            if (allValid) {
-                goToStep(nextStep);
-            } else {
-                alert('Zadrž, potřebujeme doplnit všechny chybějící údaje v tomto kroku.');
-            }
-        }
-
-        // HLAVNÍ LOGIKA PRO ODESLÁNÍ
-        document.getElementById('submitBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-
-            // Rychlá validace posledního kroku
-            const currentDiv = document.getElementById('step3');
-            const requiredInputs = currentDiv.querySelectorAll('select[required]');
-            let allValid = true;
-            requiredInputs.forEach(input => { if (!input.value) allValid = false; });
-
-            if (!allValid) {
-                alert('Doplň prosím poslední údaje, ať je analýza přesná.');
-                return;
-            }
-
-            // Vizuální efekt tlačítka - načítání
-            this.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Připravuji data...';
-            this.classList.add('opacity-70', 'pointer-events-none');
-
-            // 1. Získání dat z formuláře
-            const formData = {
-                // Krok 1
-                userName: document.getElementById('userName').value,
-                userBirth: document.getElementById('userBirth').value,
-                userZodiac: document.getElementById('userZodiac').value,
-                userComm: document.getElementById('userComm').value,
-                userLoveLang: document.getElementById('userLoveLang').value,
-                userTrait: document.getElementById('userTrait').value,
-                userColor: document.querySelector('input[name="userColor"]:checked')?.value,
-                
-                // Krok 2
-                crushName: document.getElementById('crushName').value,
-                crushZodiac: document.getElementById('crushZodiac').value,
-                crushTrait: document.getElementById('crushTrait').value,
-                crushFlaw: document.getElementById('crushFlaw').value,
-                crushColor: document.querySelector('input[name="crushColor"]:checked')?.value,
-                
-                // Krok 3
-                status: document.querySelector('input[name="status"]:checked')?.value,
-                whoReachesOut: document.getElementById('whoReachesOut').value,
-                whoArgues: document.getElementById('whoArgues').value
-            };
-
-            // 2. Uložení dat do paměti prohlížeče (aby na nás počkala po návratu z platební brány)
-            localStorage.setItem('crushData', JSON.stringify(formData));
-
-            // 3. Přesměrování na SimpleShop (s lehkým zpožděním pro dramatický efekt a uložení dat)
-            setTimeout(() => {
-                window.location.href = "https://form.simpleshop.cz/zQ0bQ/buy/";
-            }, 800);
+   <script>
+    // Funkce pro přepínání kroků (Zpět/Dopředu)
+    function goToStep(stepNumber) {
+        document.querySelectorAll('.step').forEach(function(step) {
+            step.classList.remove('active');
         });
-    </script>
+        document.getElementById('step' + stepNumber).classList.add('active');
+        document.getElementById('stepNum').innerText = stepNumber;
+        document.getElementById('progress').style.width = (stepNumber * 33.33) + '%';
+    }
+
+    // Funkce pro validaci aktuálního kroku
+    function validateAndGo(currentStep, nextStep) {
+        const currentDiv = document.getElementById('step' + currentStep);
+        const requiredInputs = currentDiv.querySelectorAll('input[required], select[required]');
+        let allValid = true;
+
+        requiredInputs.forEach(input => {
+            if (!input.value) {
+                allValid = false;
+                input.style.borderColor = 'rgba(255,0,0,0.5)';
+            } else {
+                input.style.borderColor = '';
+            }
+        });
+
+        if (allValid) {
+            goToStep(nextStep);
+        } else {
+            alert('Zadrž, potřebujeme doplnit všechny chybějící údaje v tomto kroku.');
+        }
+    }
+
+    // HLAVNÍ LOGIKA PRO ODESLÁNÍ DO SIMPLESHOPU
+    document.getElementById('crushForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Připravuji analýzu...';
+        submitBtn.classList.add('opacity-70', 'pointer-events-none');
+
+        // 1. Posbírání VŠECH dat z formuláře
+        const formData = {
+            on1: document.getElementById('userName').value,
+            birth1: document.getElementById('userBirth').value,
+            zodiac1: document.getElementById('userZodiac').value,
+            comm1: document.getElementById('userComm').value,
+            love1: document.getElementById('userLoveLang').value,
+            trait1: document.getElementById('userTrait').value,
+            color1: document.querySelector('input[name="userColor"]:checked')?.value,
+            
+            on2: document.getElementById('crushName').value,
+            zodiac2: document.getElementById('crushZodiac').value,
+            trait2: document.getElementById('crushTrait').value,
+            flaw2: document.getElementById('crushFlaw').value,
+            color2: document.querySelector('input[name="crushColor"]:checked')?.value,
+            
+            status: document.querySelector('input[name="status"]:checked')?.value,
+            reaches: document.getElementById('whoReachesOut').value,
+            argues: document.getElementById('whoArgues').value
+        };
+
+        // 2. Uložení do localStorage pro zobrazení na stránce vysledek.html
+        localStorage.setItem('crushData', JSON.stringify(formData));
+
+        // 3. Zakódování do JSON pro SimpleShop (všechna data půjdou v poli "note")
+        const metadata = JSON.stringify(formData);
+        
+        // 4. Přesměrování na prodejní formulář s daty v poznámce
+        // Použijeme URL tvého prodejního formuláře, který jsi poslal
+        const baseUrl = "https://form.simpleshop.cz/zQ0bQ/buy/";
+        window.location.href = baseUrl + "?note=" + encodeURIComponent(metadata);
+    });
+</script>
     <script>
 function zaplatitAI() {
     // 1. Získání jmen z tvého formuláře
