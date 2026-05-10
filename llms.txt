@@ -1,0 +1,16 @@
+# CrushMeter.cz
+
+> AI-powered relationship DNA analysis and compatibility testing.
+
+## Purpose
+CrushMeter uses advanced LLM models to analyze relationship dynamics, communication styles, and astrological compatibility to provide deep insights into romantic connections.
+
+## Key Services
+- Relationship Compatibility Test (Free/Paid)
+- Deep Dive Analysis (Power dynamics, Red Flags, Future Predictions)
+- Relationship Blog (Psychology and communication tips)
+
+## URLs
+- Main Tool: https://crushmeter.cz/
+- Blog: https://crushmeter.cz/blog.html
+- Terms: https://crushmeter.cz/obchodni-podminky.html
