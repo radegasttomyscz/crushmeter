@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ochrana soukromí | CrushMeter.cz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #05050a; color: white; font-family: 'Outfit', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    </style>
+</head>
+<body class="py-20 px-6">
+    <div class="max-w-3xl mx-auto">
+        <a href="index.html" class="text-pink-500 text-sm mb-10 inline-block font-bold uppercase tracking-widest">← Zpět</a>
+        <h1 class="text-5xl font-serif italic mb-10">Ochrana <span class="text-pink-500 not-italic font-bold">soukromí</span></h1>
+        
+        <div class="glass p-8 md:p-12 rounded-[2rem] text-white/70 leading-relaxed">
+            <h3 class="text-white font-bold text-xl mb-4">Jaká data sbíráme?</h3>
+            <p class="mb-6">Zpracováváme údaje, které vložíte do formuláře (jména, data narození, popis situace) a váš e-mail pro doručení výsledku. Tyto údaje jsou nezbytné pro vygenerování analýzy pomocí AI.</p>
+            
+            <h3 class="text-white font-bold text-xl mb-4">Proč data sbíráme?</h3>
+            <p class="mb-6">Jediným účelem je vytvoření personalizovaného vztahového rozboru. Data nejsou využívána k dalšímu marketingu bez vašeho souhlasu.</p>
+            
+            <h3 class="text-white font-bold text-xl mb-4">Předávání dat třetím stranám</h3>
+            <p class="mb-6">Data jsou bezpečně předávána:
+                <ul class="list-disc ml-6 mb-6">
+                    <li>SimpleShop (zpracování platby a fakturace)</li>
+                    <li>Anthropic/OpenAI (API pro zpracování analýzy – anonymizovaně v rámci promptu)</li>
+                </ul>
+            </p>
+
+            <h3 class="text-white font-bold text-xl mb-4">Uchovávání dat</h3>
+            <p>Vaše osobní popisy vztahů nejsou trvale ukládány v databázi pro budoucí profilování. Jsou použity pouze pro jednorázovou analýzu.</p>
+        </div>
+    </div>
+</body>
+</html>
