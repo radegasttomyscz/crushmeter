@@ -1,123 +1,745 @@
 <!DOCTYPE html>
+
 <html lang="cs" class="scroll-smooth">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>CrushMeter.cz | AI Analýza vztahové DNA</title>
-    <meta name="description" content="Odhalte pravdu o svém vztahu pomocí pokročilé AI analýzy. Testujeme kompatibilitu, red flags a dynamiku komunikace.">
+
     
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     
+
     <script>
+
         tailwind.config = {
+
             theme: {
+
                 extend: {
+
                     fontFamily: { sans: ['Outfit', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+
                     colors: { darkBg: '#05050a', neonPink: '#ff1493', neonPurple: '#8a2be2', brownColor: '#8B4513' }
+
                 }
+
             }
+
         }
+
     </script>
 
+
+
     <style type="text/css">
+
         html, body { background-color: #05050a !important; color: #ffffff !important; margin: 0; font-family: 'Outfit', sans-serif; }
+
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
+
         .glass-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; outline: none; transition: 0.3s; }
+
         .glass-input:focus { border-color: #ff1493; box-shadow: 0 0 20px rgba(255, 20, 147, 0.15); }
+
+        .glass-input:invalid:not(:focus):not(:placeholder-shown) { border-color: rgba(255,0,0,0.5); }
+
+        
+
+        option { background-color: #05050a; color: #ffffff; padding: 10px; }
+
+        option:disabled { color: rgba(255,255,255,0.3); }
+
+        
+
         .text-gradient { background: linear-gradient(to right, #ff1493, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
         .step { display: none; }
+
         .step.active { display: block; animation: slideUp 0.6s ease-out; }
+
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
         .tag-input:checked + label { background: white !important; color: black !important; border-color: white !important; transform: scale(1.05); }
+
         .color-checkbox:checked + label { ring: 3px ring-offset-2 ring-white; border: 2px solid white; transform: scale(1.15); box-shadow: 0 0 15px rgba(255,255,255,0.5); }
+
     </style>
+
 </head>
+
 <body class="antialiased bg-darkBg text-white">
 
+
+
     <nav class="fixed top-0 w-full z-[100] glass border-b border-white/5 py-4 px-6">
+
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition active:scale-95">
+
+            <div class="flex items-center gap-2">
+
                 <div class="w-8 h-8 bg-gradient-to-br from-neonPink to-neonPurple rounded-lg flex items-center justify-center">
+
                     <i class="fa-solid fa-bolt-lightning text-white text-sm"></i>
+
                 </div>
-                <span class="font-serif text-xl font-bold tracking-tighter text-white">CrushMeter<span class="text-neonPink">.cz</span></span>
-            </a>
-            <div class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
-                <a href="#co-odhalime" class="hover:text-neonPink transition text-white/70">Co zjistíte</a>
-                <a href="#ukazka" class="hover:text-neonPink transition text-white/70">Ukázka</a>
-                <a href="#o-projektu" class="hover:text-neonPink transition text-white/70">O nás</a>
-                <a href="#formular" class="text-neonPink font-bold">Analyzovat</a>
+
+                <span class="font-serif text-xl font-bold tracking-tighter">CrushMeter<span class="text-neonPink">.cz</span></span>
+
             </div>
+
+            <div class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
+
+                <a href="#co-odhalime" class="hover:text-neonPink transition">Co zjistíte</a>
+
+                <a href="#ukazka" class="hover:text-neonPink transition">Ukázka</a>
+
+                <a href="#o-projektu" class="hover:text-neonPink transition">O nás</a>
+
+                <a href="#faq" class="hover:text-neonPink transition">FAQ</a>
+
+                <a href="#formular" class="text-neonPink font-bold">Analyzovat</a>
+
+            </div>
+
             <a href="#formular" class="md:hidden text-neonPink text-xl"><i class="fa-solid fa-heart-pulse"></i></a>
+
         </div>
+
     </nav>
 
+
+
     <header class="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 relative overflow-hidden">
+
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-neonPink/10 rounded-full filter blur-[150px] z-[-1]"></div>
+
+        
+
         <div class="glass px-6 py-2 rounded-full text-[10px] font-bold tracking-[0.3em] mb-8 border-white/10 uppercase text-white/60">
+
             Nová generace vztahové analýzy
+
         </div>
+
         <h1 class="font-serif text-6xl md:text-[90px] font-semibold mb-8 leading-[1] tracking-tighter">
+
             Odhalíme pravdu,<br><span class="text-gradient italic font-bold">kterou už podvědomě cítíte.</span>
+
         </h1>
+
         <p class="text-white/50 text-lg md:text-xl max-w-2xl mb-12 font-light leading-relaxed">
-            Ať už je to týdenní pobláznění nebo 15 let manželství. Naše AI dešifruje vaši společnou dynamiku.
+
+            Ať už je to týdenní pobláznění nebo 15 let manželství. Naše AI dešifruje vaši společnou dynamiku a řekne vám, na čem doopravdy jste.
+
         </p>
+
         <div class="flex flex-col sm:flex-row gap-6">
+
             <a href="#formular" class="px-12 py-5 bg-white text-black font-black rounded-full hover:scale-105 transition shadow-[0_20px_50px_rgba(255,20,147,0.3)] uppercase tracking-widest text-sm">
+
                 Spustit Test Vztahu
+
             </a>
+
+            <a href="#ukazka" class="px-12 py-5 glass rounded-full font-bold hover:bg-white/10 transition uppercase tracking-widest text-sm border-white/20">
+
+                Ukázka výsledku
+
+            </a>
+
         </div>
+
     </header>
 
+
+
     <section id="co-odhalime" class="py-32 px-4 max-w-7xl mx-auto border-t border-white/5">
+
         <div class="text-center mb-20">
-            <h2 class="text-4xl md:text-5xl font-serif mb-6 italic text-white">Co vám <span class="text-gradient font-bold not-italic">rozbor prozradí?</span></h2>
+
+            <h2 class="text-4xl md:text-5xl font-serif mb-6 italic">Co vám <span class="text-gradient font-bold not-italic">rozbor prozradí?</span></h2>
+
+            <p class="text-white/40 max-w-2xl mx-auto">Náš AI model nehodnotí jen povrchové shody, ale jde do hloubky vaší psychologie, komunikace a astrologických vzorců.</p>
+
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-white">
-            <div class="glass p-8 rounded-3xl">
+
+        
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition duration-300">
+
                 <i class="fa-solid fa-flag text-3xl text-red-500 mb-6"></i>
+
                 <h3 class="text-xl font-bold mb-3">Skryté Red Flagy</h3>
-                <p class="text-white/50 text-sm">Odhalíme toxické vzorce dřív, než vám zlomí srdce.</p>
+
+                <p class="text-white/50 text-sm leading-relaxed">Odhalíme toxické vzorce nebo varovné signály dřív, než vám zlomí srdce.</p>
+
             </div>
+
+            <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition duration-300">
+
+                <i class="fa-solid fa-chess-king text-3xl text-neonPurple mb-6"></i>
+
+                <h3 class="text-xl font-bold mb-3">Power Dynamics</h3>
+
+                <p class="text-white/50 text-sm leading-relaxed">Kdo z vás tahá za kratší konec? Kdo miluje víc a kdo má vztah pod kontrolou?</p>
+
             </div>
+
+            <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition duration-300">
+
+                <i class="fa-solid fa-wand-magic-sparkles text-3xl text-blue-400 mb-6"></i>
+
+                <h3 class="text-xl font-bold mb-3">Predikce budoucnosti</h3>
+
+                <p class="text-white/50 text-sm leading-relaxed">Svatba, rozchod, nebo věčný friendzone? AI vypočítá pravděpodobnost dalšího vývoje.</p>
+
+            </div>
+
+            <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition duration-300">
+
+                <i class="fa-solid fa-fire text-3xl text-orange-500 mb-6"></i>
+
+                <h3 class="text-xl font-bold mb-3">Úroveň vášně</h3>
+
+                <p class="text-white/50 text-sm leading-relaxed">Je to jen platonické přátelství, nebo mezi vámi hoří chemie, která se nedá ignorovat?</p>
+
+            </div>
+
+        </div>
+
     </section>
+
+
+
+    <section id="ukazka" class="py-32 px-4 max-w-5xl mx-auto border-t border-white/5">
+
+        <div class="text-center mb-16">
+
+            <h2 class="text-4xl md:text-5xl font-serif mb-6 italic">Jak vypadá <span class="text-gradient font-bold not-italic">výsledek?</span></h2>
+
+            <p class="text-white/40 max-w-2xl mx-auto text-sm uppercase tracking-widest">Ukázka z reálného reportu</p>
+
+        </div>
+
+
+
+        <div class="glass p-8 md:p-12 rounded-[3rem] border-white/10 relative overflow-hidden">
+
+            <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-neonPurple/20 rounded-full filter blur-[100px] z-[-1]"></div>
+
+            
+
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+
+                <div class="text-center md:text-left md:w-1/3">
+
+                    <h2 class="text-[80px] md:text-[100px] font-bold tracking-tighter leading-none mb-2 text-gradient">82%</h2>
+
+                    <p class="text-xs uppercase tracking-[0.3em] text-white/50 font-bold mb-6">Základní shoda</p>
+
+                    <p class="text-sm text-white/60 italic">"Máte silnou chemii, ale narážíte na rozdílné styly komunikace. Ty potřebuješ neustálý kontakt, on potřebuje prostor."</p>
+
+                </div>
+
+                
+
+                <div class="md:w-2/3 w-full space-y-4">
+
+                    <div class="relative p-8 rounded-3xl overflow-hidden border border-white/10">
+
+                        <div class="absolute inset-0 bg-black/60 backdrop-blur-md z-10 flex flex-col items-center justify-center text-center p-6">
+
+                            <i class="fa-solid fa-lock text-3xl text-neonPink mb-4"></i>
+
+                            <h4 class="font-serif text-2xl italic mb-2">Odemkněte hlubokou analýzu</h4>
+
+                            <p class="text-xs text-white/50 max-w-xs mb-4">Pro odhalení Red Flagu, power dynamiky a predikce budoucnosti pokračujte k platbě.</p>
+
+                            <span class="px-6 py-2 bg-white text-black text-xs font-bold rounded-full uppercase">Ukázkové tlačítko</span>
+
+                        </div>
+
+                        
+
+                        <div class="opacity-40 filter blur-[4px]">
+
+                            <h4 class="text-red-500 font-bold mb-2">Vaše největší hrozba (Red Flag)</h4>
+
+                            <p class="mb-4 text-sm">Z vaší dynamiky jasně vyplývá, že jeden z vás dává do vztahu mnohem více energie...</p>
+
+                            <h4 class="text-neonPurple font-bold mb-2">Kdo drží otěže?</h4>
+
+                            <p class="text-sm">Aktuálně má nad situací kontrolu on, protože...</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="o-projektu" class="py-32 px-4 max-w-6xl mx-auto border-t border-white/5">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+
+            <div class="relative">
+
+                <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight">Proč věřit<br><span class="italic text-gradient">CrushMeteru?</span></h2>
+
+                <p class="text-white/60 text-lg mb-8 leading-relaxed">
+
+                    Vztahy nejsou jen o společných koníčcích. Jsou o energetických vzorcích, komunikaci a tom, jak na sebe reagujete, když se nikdo nedívá.
+
+                </p>
+
+                <div class="space-y-6">
+
+                    <div class="flex gap-4 items-start">
+
+                        <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-neonPink shrink-0 mt-1"><i class="fa-solid fa-microchip"></i></div>
+
+                        <div>
+
+                            <h4 class="font-bold mb-1">Objektivní pohled bez růžových brýlí</h4>
+
+                            <p class="text-sm text-white/40">Algoritmus není zaslepený láskou ani zvykem. Vidí čistá fakta.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="glass p-12 rounded-[40px] border-white/10 relative">
+
+                <div class="absolute top-0 right-0 p-8 opacity-10 text-6xl"><i class="fa-solid fa-quote-right"></i></div>
+
+                <p class="text-xl font-serif italic mb-8 leading-relaxed">"Chtěli jsme vědět, jestli po 10 letech manželství pořád 'vibrujeme'. Výsledek nás šokoval. Přesně to trefilo naše slabá místa v komunikaci, o kterých jsme věděli, ale báli se o nich mluvit."</p>
+
+                <div class="flex items-center gap-4">
+
+                    <div class="w-12 h-12 bg-gray-600 rounded-full overflow-hidden">
+
+                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=100&auto=format&fit=crop" alt="Mirek a Jana" class="w-full h-full object-cover">
+
+                    </div>
+
+                    <div>
+
+                        <div class="font-bold">Mirek & Jana</div>
+
+                        <div class="text-xs text-white/30 uppercase tracking-widest">10 let manželé</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
 
     <section id="formular" class="py-32 px-4 bg-white/[0.01] border-y border-white/5">
+
         <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-16">
+
+                <h2 class="text-5xl md:text-7xl font-serif mb-6 tracking-tighter italic">Vstupte do <span class="text-gradient font-bold not-italic">Laboratoře</span></h2>
+
+                <p class="text-white/40 uppercase tracking-[0.2em] text-sm">Pro přesný výsledek buďte 100% upřímní.</p>
+
+            </div>
+
+
+
             <form id="crushForm" class="glass p-8 md:p-16 rounded-[4rem] shadow-2xl border-white/10">
-                <p class="text-center text-white/40">Zde pokračuje tvůj formulář...</p>
-            </form>
-        </div>
-    </section>
 
-    <footer class="py-20 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-                <div class="flex items-center gap-2 mb-6">
-                    <div class="w-6 h-6 bg-white rounded flex items-center justify-center text-black text-[10px] font-bold">CM</div>
-                    <span class="font-serif font-bold tracking-tighter">CrushMeter.cz</span>
+                <div class="flex justify-between mb-12 px-2">
+
+                    <div class="text-[10px] uppercase tracking-widest font-bold text-neonPink">Krok <span id="stepNum">1</span>/3</div>
+
+                    <div class="w-48 h-1 bg-white/5 rounded-full overflow-hidden self-center">
+
+                        <div id="progress" class="h-full bg-gradient-to-r from-neonPink to-neonPurple transition-all duration-700" style="width: 33%"></div>
+
+                    </div>
+
                 </div>
-                <p class="text-white/30 text-xs leading-relaxed">První AI laboratoř pro analýzu lidských vztahů. Dešifrujeme emoce, predikujeme budoucnost.</p>
-            </div>
-            <div>
-                <h4 class="text-[10px] uppercase tracking-widest font-bold mb-6 text-white/50">Vztahový magazín</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="blog/situationship-proc-se-nikam-neposouvate.html" class="text-white/40 hover:text-neonPink transition">Co je to Situationship?</a></li>
-                    <li><a href="blog/red-flags-ve-vztahu.html" class="text-white/40 hover:text-neonPink transition">5 nejčastějších Red Flags</a></li>
-                    <li><a href="blog/shoda-znameni-pravda.html" class="text-white/40 hover:text-neonPink transition">Pravda o shodi znamení</a></li>
-                </ul>
-            </div>
-            <div class="text-right">
-                <p class="text-[10px] text-white/20 uppercase tracking-[0.3em]">© 2026 CrushMeter.cz</p>
-                <p class="text-[10px] text-white/10 mt-2 italic">Powered by AI Intelligence</p>
-            </div>
-        </div>
-    </footer>
 
-</body>
-</html>
+
+
+                <div class="step active" id="step1">
+
+                    <h3 class="text-4xl font-serif mb-10 italic">01. O tobě</h3>
+
+                    
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+
+                        <div class="space-y-2">
+
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Tvé Jméno / Přezdívka</label>
+
+                            <input type="text" id="userName" class="glass-input p-5 rounded-2xl w-full" required>
+
+                        </div>
+
+                        <div class="space-y-2">
+
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Datum Narození</label>
+
+                            <input type="date" id="userBirth" class="glass-input p-5 rounded-2xl w-full" required>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+
+                        <div class="space-y-2">
+
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Tvoje Znamení</label>
+
+                            <select id="userZodiac" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
+
+                                <option value="" disabled selected>Vyberte...</option>
+
+                                <option value="beran">Beran</option><option value="byk">Býk</option><option value="blizenci">Blíženci</option><option value="rak">Rak</option>
+
+                                <option value="lev">Lev</option><option value="panna">Panna</option><option value="vahy">Váhy</option><option value="stir">Štír</option>
+
+                                <option value="strelec">Střelec</option><option value="kozoroh">Kozoroh</option><option value="vodnar">Vodnář</option><option value="ryby">Ryby</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="space-y-2">
+
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Tvůj komunikační styl</label>
+
+                            <select id="userComm" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
+
+                                <option value="" disabled selected>Vyberte...</option>
+
+                                <option value="text_heavy">Píšu dlouhé zprávy/slohovky</option>
+
+                                <option value="memes">Posílám hlavně memes a reels</option>
+
+                                <option value="short">Odpovídám stručně / jednoslovně</option>
+
+                                <option value="calls">Radši volám / voice notes</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+
+                        <div class="space-y-2">
+
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Co tě ve vztahu nejvíc potěší?</label>
+
+                            <select id="userLoveLang" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
+
+                                <option value="" disabled selected>Vyberte...</option>
+
+                                <option value="words">Když slyším, že mě má rád/a (slova)</option>
+
+                                <option value="time">Když mi naplno věnuje svůj čas</option>
+
+                                <option value="touch">Když mě obejme / fyzický kontakt</option>
+
+                                <option value="acts">Když mi s něčím praktickým pomůže</option>
+
+                                <option value="gifts">Když si na mě vzpomene malým dárkem</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="space-y-2">
+
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Tvoje povaha</label>
+
+                            <select id="userTrait" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
+
+                                <option value="" disabled selected>Vyberte...</option>
+
+                                <option value="introvert">Introvert (Klidný, spíš přemýšlím)</option>
+
+                                <option value="extrovert">Extrovert (Společenský, akční)</option>
+
+                                <option value="ambivert">Ambivert (Zlatá střední cesta)</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="mb-12">
+
+                        <label class="block text-[10px] uppercase tracking-widest text-white/40 mb-4 text-center">Tvoje oblíbená barva</label>
+
+                        <div class="flex flex-wrap justify-center gap-3">
+
+                            <input type="radio" name="userColor" id="u-c1" value="red" class="hidden color-checkbox" checked><label for="u-c1" class="w-10 h-10 rounded-full bg-red-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="userColor" id="u-c2" value="blue" class="hidden color-checkbox"><label for="u-c2" class="w-10 h-10 rounded-full bg-blue-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="userColor" id="u-c3" value="green" class="hidden color-checkbox"><label for="u-c3" class="w-10 h-10 rounded-full bg-green-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="userColor" id="u-c4" value="yellow" class="hidden color-checkbox"><label for="u-c4" class="w-10 h-10 rounded-full bg-yellow-400 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="userColor" id="u-c5" value="orange" class="hidden color-checkbox"><label for="u-c5" class="w-10 h-10 rounded-full bg-orange-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="userColor" id="u-c6" value="purple" class="hidden color-checkbox"><label for="u-c6" class="w-10 h-10 rounded-full bg-purple-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="userColor" id="u-c7" value="pink" class="hidden color-checkbox"><label for="u-c7" class="w-10 h-10 rounded-full bg-pink-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="userColor" id="u-c8" value="black" class="hidden color-checkbox"><label for="u-c8" class="w-10 h-10 rounded-full bg-black cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="userColor" id="u-c9" value="white" class="hidden color-checkbox"><label for="u-c9" class="w-10 h-10 rounded-full bg-white cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="userColor" id="u-c10" value="gray" class="hidden color-checkbox"><label for="u-c10" class="w-10 h-10 rounded-full bg-gray-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="userColor" id="u-c11" value="brown" class="hidden color-checkbox"><label for="u-c11" class="w-10 h-10 rounded-full bg-brownColor cursor-pointer border-2 border-transparent transition"></label>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <button type="button" onclick="validateAndGo(1, 2)" class="w-full py-6 bg-white text-black font-black rounded-3xl hover:bg-neonPink hover:text-white transition uppercase tracking-widest shadow-xl">Krok 2: Protějšek</button>
+
+                </div>
+
+
+
+                <div class="step" id="step2">
+
+                    <h3 class="text-4xl font-serif mb-10 italic text-neonPurple">02. Tvůj protějšek</h3>
+
+                    
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+
+                        <div class="space-y-2">
+
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Jméno protějšku</label>
+
+                            <input type="text" id="crushName" class="glass-input p-5 rounded-2xl w-full" required>
+
+                        </div>
+
+                        <div class="space-y-2">
+
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Jejich Znamení (I odhad)</label>
+
+                            <select id="crushZodiac" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
+
+                                <option value="" disabled selected>Vyberte...</option>
+
+                                <option value="nevim">Nevím přesně</option>
+
+                                <option value="beran">Beran</option><option value="byk">Býk</option><option value="blizenci">Blíženci</option><option value="rak">Rak</option>
+
+                                <option value="lev">Lev</option><option value="panna">Panna</option><option value="vahy">Váhy</option><option value="stir">Štír</option>
+
+                                <option value="strelec">Střelec</option><option value="kozoroh">Kozoroh</option><option value="vodnar">Vodnář</option><option value="ryby">Ryby</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+
+                        <div class="space-y-2">
+
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Co tě na něm/ní nejvíc přitahuje?</label>
+
+                            <select id="crushTrait" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
+
+                                <option value="" disabled selected>Vyberte...</option>
+
+                                <option value="looks">Vzhled a charisma</option>
+
+                                <option value="intellect">Inteligence a humor</option>
+
+                                <option value="stability">Zázemí a spolehlivost</option>
+
+                                <option value="mystery">Tajemnost (nedostupnost)</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="space-y-2">
+
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Jeho/její nešvar (Red Flag)</label>
+
+                            <select id="crushFlaw" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
+
+                                <option value="" disabled selected>Vyberte...</option>
+
+                                <option value="none">Zatím se zdá dokonalý/á</option>
+
+                                <option value="communication">Špatně komunikuje / Ignoruje</option>
+
+                                <option value="jealousy">Žárlivost / Toxicita</option>
+
+                                <option value="workaholic">Něco jiného je vždy přednější</option>
+
+                                <option value="ex_issues">Problémy s Ex / Nedokáže být sám</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="mb-12">
+
+                        <label class="block text-[10px] uppercase tracking-widest text-white/40 mb-4 text-center">Jejich oblíbená barva (nebo co nosí)</label>
+
+                        <div class="flex flex-wrap justify-center gap-3">
+
+                            <input type="radio" name="crushColor" id="c-c1" value="red" class="hidden color-checkbox" checked><label for="c-c1" class="w-10 h-10 rounded-full bg-red-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="crushColor" id="c-c2" value="blue" class="hidden color-checkbox"><label for="c-c2" class="w-10 h-10 rounded-full bg-blue-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="crushColor" id="c-c3" value="green" class="hidden color-checkbox"><label for="c-c3" class="w-10 h-10 rounded-full bg-green-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="crushColor" id="c-c4" value="yellow" class="hidden color-checkbox"><label for="c-c4" class="w-10 h-10 rounded-full bg-yellow-400 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="crushColor" id="c-c5" value="orange" class="hidden color-checkbox"><label for="c-c5" class="w-10 h-10 rounded-full bg-orange-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="crushColor" id="c-c6" value="purple" class="hidden color-checkbox"><label for="c-c6" class="w-10 h-10 rounded-full bg-purple-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="crushColor" id="c-c7" value="pink" class="hidden color-checkbox"><label for="c-c7" class="w-10 h-10 rounded-full bg-pink-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="crushColor" id="c-c8" value="black" class="hidden color-checkbox"><label for="c-c8" class="w-10 h-10 rounded-full bg-black cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="crushColor" id="c-c9" value="white" class="hidden color-checkbox"><label for="c-c9" class="w-10 h-10 rounded-full bg-white cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="crushColor" id="c-c10" value="gray" class="hidden color-checkbox"><label for="c-c10" class="w-10 h-10 rounded-full bg-gray-500 cursor-pointer border-2 border-transparent transition"></label>
+
+                            <input type="radio" name="crushColor" id="c-c11" value="brown" class="hidden color-checkbox"><label for="c-c11" class="w-10 h-10 rounded-full bg-brownColor cursor-pointer border-2 border-transparent transition"></label>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="flex gap-4">
+
+                        <button type="button" onclick="goToStep(1)" class="w-1/3 py-6 glass rounded-3xl opacity-60 font-bold uppercase tracking-widest text-xs">Zpět</button>
+
+                        <button type="button" onclick="validateAndGo(2, 3)" class="w-2/3 py-6 bg-white text-black font-black rounded-3xl hover:bg-neonPurple hover:text-white transition uppercase tracking-widest shadow-xl">Krok 3: Dynamika</button>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="step" id="step3">
+
+                    <h3 class="text-4xl font-serif mb-10 italic">03. Vaše spojení</h3>
+
+                    
+
+                    <div class="mb-8">
+
+                        <label class="block text-[10px] uppercase tracking-widest text-white/40 mb-4 ml-2">V jaké jste fázi?</label>
+
+                        <div class="grid grid-cols-2 gap-3">
+
+                            <input type="radio" name="status" id="s1" value="crush" class="hidden tag-input" checked><label for="s1" class="p-4 border border-white/10 rounded-2xl text-sm text-center cursor-pointer transition glass-input block font-bold">Čerstvý objev</label>
+
+                            <input type="radio" name="status" id="s2" value="situationship" class="hidden tag-input"><label for="s2" class="p-4 border border-white/10 rounded-2xl text-sm text-center cursor-pointer transition glass-input block font-bold">Situationship (Něco mezi)</label>
+
+                            <input type="radio" name="status" id="s3" value="marriage" class="hidden tag-input"><label for="s3" class="p-4 border border-white/10 rounded-2xl text-sm text-center cursor-pointer transition glass-input block font-bold">Dlouholetý vztah</label>
+
+                            <input type="radio" name="status" id="s4" value="ex" class="hidden tag-input"><label for="s4" class="p-4 border border-white/10 rounded-2xl text-sm text-center cursor-pointer transition glass-input block font-bold">EX / Rozchod</label>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+
+                        <div class="space-y-2">
+
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Kdo se ozývá první (začíná konverzaci)?</label>
+
+                            <select id="whoReachesOut" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
+
+                                <option value="" disabled selected>Vyberte...</option>
+
+                                <option value="me">Většinou vždycky já</option>
+
+                                <option value="them">Většinou on/ona</option>
+
+                                <option value="balanced">Je to tak půl na půl</option>
+
+                                <option value="none">Nejsme teď v kontaktu</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="space-y-2">
+
+                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Kdo většinou začíná rýpání / konflikt?</label>
+
+                            <select id="whoArgues" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
