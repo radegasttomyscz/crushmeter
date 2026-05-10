@@ -68,68 +68,45 @@
             </div>
 
             <form id="crushForm" class="glass p-8 md:p-16 rounded-[4rem] border-white/10">
-                <div id="step1" class="step active">
-                    <h3 class="text-3xl font-serif mb-8 italic text-center">Nejdřív nám řekni něco <span class="text-neonPink">o sobě</span></h3>
-                    <div class="space-y-6">
-                        <div>
-                            <label class="block text-xs uppercase tracking-widest mb-2 text-white/40">Tvé Jméno</label>
-                            <input type="text" id="userName" required class="glass-input" placeholder="Jak ti máme říkat?">
-                        </div>
-                        <div>
-                            <label class="block text-xs uppercase tracking-widest mb-2 text-white/40">Tvé znamení</label>
-                            <select id="userZodiac" required class="glass-input">
-                                <option value="" disabled selected>Vyber znamení</option>
-                                <option value="Beran">Beran</option><option value="Býk">Býk</option><option value="Blíženci">Blíženci</option>
-                                <option value="Rak">Rak</option><option value="Lev">Lev</option><option value="Panna">Panna</option>
-                                <option value="Váhy">Váhy</option><option value="Štír">Štír</option><option value="Střelec">Střelec</option>
-                                <option value="Kozoroh">Kozoroh</option><option value="Vodnář">Vodnář</option><option value="Ryby">Ryby</option>
-                            </select>
-                        </div>
-                        <button type="button" onclick="validateAndGo(1, 2)" class="w-full py-5 bg-white/10 rounded-2xl font-bold uppercase tracking-widest hover:bg-white/20 transition">Pokračovat</button>
-                    </div>
-                </div>
+               <div id="step1" class="step active">
+    <h3 class="text-3xl font-serif mb-8 italic text-center">Nejdřív něco <span class="text-neonPink">o sobě</span></h3>
+    <input type="text" id="userName" required class="glass-input mb-4" placeholder="Tvé Jméno">
+    <select id="userZodiac" required class="glass-input mb-6">
+        <option value="" disabled selected>Tvé znamení</option>
+        <option>Beran</option><option>Býk</option><option>Blíženci</option><option>Rak</option>
+        <option>Lev</option><option>Panna</option><option>Váhy</option><option>Štír</option>
+        <option>Střelec</option><option>Kozoroh</option><option>Vodnář</option><option>Ryby</option>
+    </select>
+    <button type="button" onclick="validateAndGo(1, 2)" class="w-full py-5 bg-white/10 rounded-2xl font-bold uppercase tracking-widest">Pokračovat</button>
+</div>
 
-                <div id="step2" class="step">
-                    <h3 class="text-3xl font-serif mb-8 italic text-center">A teď tvoje <span class="text-neonPurple">druhá polovička</span></h3>
-                    <div class="space-y-6">
-                        <div>
-                            <label class="block text-xs uppercase tracking-widest mb-2 text-white/40">Jméno tvého Crushe</label>
-                            <input type="text" id="crushName" required class="glass-input" placeholder="Kdo ti nedá spát?">
-                        </div>
-                        <div>
-                            <label class="block text-xs uppercase tracking-widest mb-2 text-white/40">Jeho/Její znamení</label>
-                            <select id="crushZodiac" required class="glass-input">
-                                <option value="" disabled selected>Vyber znamení</option>
-                                <option value="Beran">Beran</option><option value="Býk">Býk</option><option value="Blíženci">Blíženci</option>
-                                <option value="Rak">Rak</option><option value="Lev">Lev</option><option value="Panna">Panna</option>
-                                <option value="Váhy">Váhy</option><option value="Štír">Štír</option><option value="Střelec">Střelec</option>
-                                <option value="Kozoroh">Kozoroh</option><option value="Vodnář">Vodnář</option><option value="Ryby">Ryby</option>
-                            </select>
-                        </div>
-                        <div class="flex gap-4">
-                            <button type="button" onclick="goToStep(1)" class="w-1/3 py-5 glass rounded-2xl font-bold uppercase tracking-widest">Zpět</button>
-                            <button type="button" onclick="validateAndGo(2, 3)" class="w-2/3 py-5 bg-white/10 rounded-2xl font-bold uppercase tracking-widest hover:bg-white/20 transition">Poslední krok</button>
-                        </div>
-                    </div>
-                </div>
+<div id="step2" class="step">
+    <h3 class="text-3xl font-serif mb-8 italic text-center">A teď tvůj <span class="text-neonPurple">Crush</span></h3>
+    <input type="text" id="crushName" required class="glass-input mb-4" placeholder="Jméno tvého Crushe">
+    <select id="crushZodiac" required class="glass-input mb-6">
+        <option value="" disabled selected>Jeho/Její znamení</option>
+        <option>Beran</option><option>Býk</option><option>Blíženci</option><option>Rak</option>
+        <option>Lev</option><option>Panna</option><option>Váhy</option><option>Štír</option>
+        <option>Střelec</option><option>Kozoroh</option><option>Vodnář</option><option>Ryby</option>
+    </select>
+    <div class="flex gap-4">
+        <button type="button" onclick="goToStep(1)" class="w-1/3 py-5 glass rounded-2xl font-bold uppercase">Zpět</button>
+        <button type="button" onclick="validateAndGo(2, 3)" class="w-2/3 py-5 bg-white/10 rounded-2xl font-bold uppercase tracking-widest">Poslední krok</button>
+    </div>
+</div>
 
-                <div id="step3" class="step">
-                    <h3 class="text-3xl font-serif mb-8 italic text-center">Jak to mezi vámi <span class="text-gradient">vypadá?</span></h3>
-                    <div class="space-y-6">
-                        <div>
-                            <label class="block text-xs uppercase tracking-widest mb-2 text-white/40">Aktuální status</label>
-                            <div class="grid grid-cols-2 gap-4">
-                                <input type="radio" name="status" id="s1" value="pratelstvi" class="hidden tag-input" checked>
-                                <label for="s1" class="glass p-4 rounded-xl text-center cursor-pointer text-sm">Jen přátelství</label>
-                                <input type="radio" name="status" id="s2" value="vztah" class="hidden tag-input">
-                                <label for="s2" class="glass p-4 rounded-xl text-center cursor-pointer text-sm">Ve vztahu</label>
-                            </div>
-                        </div>
-                        <button type="submit" id="submitBtn" class="w-full py-6 bg-gradient-to-r from-neonPink to-neonPurple rounded-2xl font-black uppercase tracking-widest shadow-lg hover:scale-[1.02] transition">
-                            Analyzovat vztah (49 Kč)
-                        </button>
-                    </div>
-                </div>
+<div id="step3" class="step">
+    <h3 class="text-3xl font-serif mb-8 italic text-center">Váš <span class="text-gradient">vztah?</span></h3>
+    <div class="grid grid-cols-2 gap-4 mb-8">
+        <input type="radio" name="status" id="s1" value="pratelstvi" class="hidden tag-input" checked>
+        <label for="s1" class="glass p-4 rounded-xl text-center cursor-pointer text-sm font-bold">Přátelství</label>
+        <input type="radio" name="status" id="s2" value="vztah" class="hidden tag-input">
+        <label for="s2" class="glass p-4 rounded-xl text-center cursor-pointer text-sm font-bold">Vztah</label>
+    </div>
+    <button type="submit" id="submitBtn" class="w-full py-6 bg-gradient-to-r from-neonPink to-neonPurple rounded-2xl font-black uppercase tracking-widest shadow-lg">
+        Spustit AI analýzu (49 Kč)
+    </button>
+</div>
             </form>
         </div>
     </section>
