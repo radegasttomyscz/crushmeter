@@ -479,5 +479,27 @@
             }, 800);
         });
     </script>
+    <script>
+function zaplatitAI() {
+    // 1. Získání jmen z tvého formuláře
+    const jmeno1 = document.getElementById('name1').value; // Změň 'name1' pokud máš v HTML jiné ID
+    const jmeno2 = document.getElementById('name2').value; // Změň 'name2' pokud máš v HTML jiné ID
+
+    if(!jmeno1 || !jmeno2) {
+        alert("Prosím vyplň obě jména, ať vím, koho mám analyzovat!");
+        return;
+    }
+
+    // 2. Příprava dat (zakódujeme je do JSONu)
+    const data = { "on1": jmeno1, "on2": jmeno2 };
+    const metadata = JSON.stringify(data);
+    
+    // 3. Přesměrování na SimpleShop s poznámkou
+    // ID produktu 147797
+    const url = "https://app.simpleshop.cz/prodej/polozka/147797/?note=" + encodeURIComponent(metadata);
+    
+    window.location.href = url;
+}
+</script>
 </body>
 </html>
