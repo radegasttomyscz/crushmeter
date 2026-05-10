@@ -101,7 +101,7 @@
                 <p class="text-white/50 text-sm leading-relaxed">Kdo z vás tahá za kratší konec? Kdo miluje víc a kdo má vztah pod kontrolou?</p>
             </div>
             <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition duration-300">
-                <i class="fa-solid fa-crystal-ball text-3xl text-blue-400 mb-6"></i>
+                <i class="fa-solid fa-wand-magic-sparkles text-3xl text-blue-400 mb-6"></i>
                 <h3 class="text-xl font-bold mb-3">Predikce budoucnosti</h3>
                 <p class="text-white/50 text-sm leading-relaxed">Svatba, rozchod, nebo věčný friendzone? AI vypočítá pravděpodobnost dalšího vývoje.</p>
             </div>
@@ -171,10 +171,12 @@
                 <div class="absolute top-0 right-0 p-8 opacity-10 text-6xl"><i class="fa-solid fa-quote-right"></i></div>
                 <p class="text-xl font-serif italic mb-8 leading-relaxed">"Chtěli jsme vědět, jestli po 10 letech manželství pořád 'vibrujeme'. Výsledek nás šokoval. Přesně to trefilo naše slabá místa v komunikaci, o kterých jsme věděli, ale báli se o nich mluvit."</p>
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-gray-600 rounded-full"></div>
+                    <div class="w-12 h-12 bg-gray-600 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=100&auto=format&fit=crop" alt="Mirek a Jana" class="w-full h-full object-cover">
+                    </div>
                     <div>
                         <div class="font-bold">Mirek & Jana</div>
-                        <div class="text-xs text-white/30 uppercase tracking-widest">Uživatelé, 10 let manželé</div>
+                        <div class="text-xs text-white/30 uppercase tracking-widest">10 let manželé</div>
                     </div>
                 </div>
             </div>
@@ -399,15 +401,15 @@
         <div class="space-y-4">
             <details class="glass p-6 rounded-2xl group cursor-pointer">
                 <summary class="font-bold flex justify-between items-center list-none text-lg">Je to jen náhodný generátor, nebo opravdová AI?<i class="fa-solid fa-chevron-down text-neonPink group-open:rotate-180 transition"></i></summary>
-                <p class="mt-4 text-white/50 leading-relaxed text-sm">Na pozadí běží pokročilý model umělé inteligence. Není to náhoda. Systém v reálném čase porovnává zadané proměnné a analyzuje váš volný text pro výpočet reálné kompatibility.</p>
+                <p class="mt-4 text-white/50 leading-relaxed text-sm">Na pozadí poběží pokročilý model umělé inteligence. Není to náhoda. Systém v reálném čase porovnává zadané proměnné a analyzuje váš volný text pro výpočet reálné kompatibility.</p>
             </details>
             <details class="glass p-6 rounded-2xl group cursor-pointer">
                 <summary class="font-bold flex justify-between items-center list-none text-lg">Co se stane s mými daty?<i class="fa-solid fa-chevron-down text-neonPink group-open:rotate-180 transition"></i></summary>
-                <p class="mt-4 text-white/50 leading-relaxed text-sm">Nic. Jakmile se vygeneruje váš výsledek, data jsou okamžitě smazána z paměti. Neukládáme žádná jména ani příběhy.</p>
+                <p class="mt-4 text-white/50 leading-relaxed text-sm">Nic. Jakmile se vygeneruje váš výsledek, data jsou okamžitě smazána. Neukládáme žádná jména ani osobní příběhy k dalšímu prodeji.</p>
             </details>
             <details class="glass p-6 rounded-2xl group cursor-pointer">
                 <summary class="font-bold flex justify-between items-center list-none text-lg">Můžu to zkusit i na dlouholetý vztah?<i class="fa-solid fa-chevron-down text-neonPink group-open:rotate-180 transition"></i></summary>
-                <p class="mt-4 text-white/50 leading-relaxed text-sm">Rozhodně. CrushMeter je navržen jak pro nové objevy, tak pro revizi manželství.</p>
+                <p class="mt-4 text-white/50 leading-relaxed text-sm">Rozhodně. CrushMeter je navržen jak pro nové objevy, tak pro revizi manželství nebo situationships.</p>
             </details>
         </div>
     </section>
@@ -415,6 +417,15 @@
     <footer class="py-16 px-6 border-t border-white/5 bg-black">
         <div class="max-w-7xl mx-auto text-center">
             <div class="font-serif text-3xl font-bold tracking-tighter mb-6 text-white/80">CrushMeter<span class="text-neonPink">.cz</span></div>
+            <div class="flex flex-wrap justify-center gap-6 text-white/40 text-sm mb-8">
+                <a href="#" class="hover:text-neonPink transition">Obchodní podmínky</a>
+                <a href="#" class="hover:text-neonPink transition">Ochrana soukromí (GDPR)</a>
+                <a href="#" class="hover:text-neonPink transition">Nastavení Cookies</a>
+                <a href="#" class="hover:text-neonPink transition">Kontakt</a>
+            </div>
+            <p class="text-[10px] text-white/20 uppercase tracking-[0.2em] max-w-3xl mx-auto mt-6 leading-relaxed mb-6">
+                Upozornění: CrushMeter.cz má pouze informativní a zábavní charakter. Výsledky generované umělou inteligencí neslouží jako odborná psychologická či vztahová poradna a neměly by být brány jako absolutní pravda. Projekt nenabádá k žádným životním rozhodnutím.
+            </p>
             <p class="text-[10px] text-white/20 uppercase tracking-[0.3em]">© 2026 CrushMeter.cz — Designed for Souls, Powered by AI.</p>
         </div>
     </footer>
@@ -447,7 +458,6 @@
             window.scrollTo({ top: document.getElementById('formular').offsetTop - 50, behavior: 'smooth' });
         }
 
-        // Vlastní validace před posunem na další krok
         function validateAndGo(currentStep, nextStep) {
             const currentDiv = document.getElementById('step' + currentStep);
             const inputs = currentDiv.querySelectorAll('input[required], select[required], textarea[required]');
@@ -464,9 +474,8 @@
         }
 
         document.getElementById('crushForm').addEventListener('submit', async function(e) {
-            e.preventDefault(); // Zabrání standardnímu odeslání
+            e.preventDefault(); 
             
-            // Zkontroluje celý formulář (krok 3)
             if (!this.checkValidity()) {
                 this.reportValidity();
                 return;
@@ -483,16 +492,14 @@
                 if(i < phases.length) loadText.innerText = phases[i++];
             }, 1500);
 
-            // MOCK API - Nasimulování odpovědi od serveru (pro testovací účely na frontendu)
             setTimeout(() => {
                 clearInterval(phaseInterval);
                 loader.classList.add('hidden');
                 
-                // Ukázková data, která by jinak přišla z backendu od Claude AI
                 const data = {
-                    compatibility: Math.floor(Math.random() * (95 - 40 + 1)) + 40, // Náhodné číslo pro demo
+                    compatibility: Math.floor(Math.random() * (95 - 40 + 1)) + 40, 
                     chemistry: "Mezi vámi je silné napětí, ale pod povrchem bublají nevyslovená očekávání.",
-                    dynamics: "Z odpovědí je cítit, že aktuálně do vztahu investuješ více energie ty. Druhá strana si udržuje bezpečný odstup, což v tobě vyvolává pocit nejistoty."
+                    dynamics: "Z odpovědí je cítit, že aktuálně do vztahu investuješ více energie ty. Druhá strana si udržuje bezpečný odstup."
                 };
                 
                 const resDiv = document.getElementById('results');
@@ -538,7 +545,7 @@
                         </div>
                     </div>
                 `;
-            }, 6000); // Simulace trvá 6 sekund
+            }, 6000); 
         });
     </script>
 </body>
