@@ -16,304 +16,156 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Outfit', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
-                    colors: { darkBg: '#05050a', neonPink: '#ff1493', neonPurple: '#8a2be2', brownColor: '#8B4513' }
+                    colors: { darkBg: '#05050a', neonPink: '#ff1493', neonPurple: '#8a2be2' }
                 }
             }
         }
     </script>
 
     <style type="text/css">
-        html, body { background-color: #05050a !important; color: #ffffff !important; margin: 0; font-family: 'Outfit', sans-serif; }
+        html, body { background-color: #05050a; color: #ffffff; margin: 0; font-family: 'Outfit', sans-serif; }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .glass-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; outline: none; transition: 0.3s; }
-        .glass-input:focus { border-color: #ff1493; box-shadow: 0 0 20px rgba(255, 20, 147, 0.15); }
-        .glass-input:invalid:not(:focus):not(:placeholder-shown) { border-color: rgba(255,0,0,0.5); }
-        
-        option { background-color: #05050a; color: #ffffff; padding: 10px; }
-        option:disabled { color: rgba(255,255,255,0.3); }
-        
+        .glass-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; outline: none; padding: 1rem; border-radius: 1rem; width: 100%; }
+        .glass-input:focus { border-color: #ff1493; }
         .text-gradient { background: linear-gradient(to right, #ff1493, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .step { display: none; }
         .step.active { display: block; animation: slideUp 0.6s ease-out; }
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .tag-input:checked + label { background: white !important; color: black !important; border-color: white !important; transform: scale(1.05); }
-        .color-checkbox:checked + label { ring: 3px ring-offset-2 ring-white; border: 2px solid white; transform: scale(1.15); box-shadow: 0 0 15px rgba(255,255,255,0.5); }
+        .tag-input:checked + label { background: white !important; color: black !important; border-color: white !important; }
     </style>
 </head>
-<body class="antialiased bg-darkBg text-white">
+<body class="antialiased">
 
     <nav class="fixed top-0 w-full z-[100] glass border-b border-white/5 py-4 px-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="flex items-center gap-2 hover:opacity-80 transition cursor-pointer">
+            <a href="#" class="flex items-center gap-2">
                 <div class="w-8 h-8 bg-gradient-to-br from-neonPink to-neonPurple rounded-lg flex items-center justify-center">
                     <i class="fa-solid fa-bolt-lightning text-white text-sm"></i>
                 </div>
                 <span class="font-serif text-xl font-bold tracking-tighter">CrushMeter<span class="text-neonPink">.cz</span></span>
             </a>
-            <div class="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest">
-                <a href="#co-odhalime" class="hover:text-neonPink transition">Co zjistíte</a>
-                <a href="#ukazka" class="hover:text-neonPink transition">Ukázka</a>
-                <a href="#o-projektu" class="hover:text-neonPink transition">O nás</a>
-                <a href="#faq" class="hover:text-neonPink transition">FAQ</a>
-                <a href="#formular" class="text-neonPink font-bold">Analyzovat</a>
-            </div>
-            <a href="#formular" class="md:hidden text-neonPink text-xl"><i class="fa-solid fa-heart-pulse"></i></a>
         </div>
     </nav>
 
-    <header class="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 relative overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-neonPink/10 rounded-full filter blur-[150px] z-[-1]"></div>
-        
-        <div class="glass px-6 py-2 rounded-full text-[10px] font-bold tracking-[0.3em] mb-8 border-white/10 uppercase text-white/60">
-            Nová generace vztahové analýzy
-        </div>
-        <h1 class="font-serif text-6xl md:text-[90px] font-semibold mb-8 leading-[1] tracking-tighter">
-            Odhalíme pravdu,<br><span class="text-gradient italic font-bold">kterou už podvědomě cítíte.</span>
+    <header class="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20">
+        <h1 class="font-serif text-5xl md:text-7xl font-semibold mb-8 leading-tight">
+            Odhalíme pravdu,<br><span class="text-gradient italic font-bold">kterou už cítíte.</span>
         </h1>
-        <p class="text-white/50 text-lg md:text-xl max-w-2xl mb-12 font-light leading-relaxed">
-            Ať už je to týdenní pobláznění nebo 15 let manželství. Naše AI dešifruje vaši společnou dynamiku a řekne vám, na čem doopravdy jste.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-6">
-            <a href="#formular" class="px-12 py-5 bg-white text-black font-black rounded-full hover:scale-105 transition shadow-[0_20px_50px_rgba(255,20,147,0.3)] uppercase tracking-widest text-sm">
-                Spustit Test Vztahu
-            </a>
-            <a href="#ukazka" class="px-12 py-5 glass rounded-full font-bold hover:bg-white/10 transition uppercase tracking-widest text-sm border-white/20">
-                Ukázka výsledku
-            </a>
-        </div>
+        <a href="#formular" class="px-12 py-5 bg-white text-black font-black rounded-full uppercase tracking-widest text-sm hover:scale-105 transition">
+            Spustit Test Vztahu
+        </a>
     </header>
 
-    <section id="co-odhalime" class="py-32 px-4 max-w-7xl mx-auto border-t border-white/5">
-        <div class="text-center mb-20">
-            <h2 class="text-4xl md:text-5xl font-serif mb-6 italic">Co vám <span class="text-gradient font-bold not-italic">rozbor prozradí?</span></h2>
-            <p class="text-white/40 max-w-2xl mx-auto">Náš AI model nehodnotí jen povrchové shody, ale jde do hloubky vaší psychologie, komunikace a astrologických vzorců.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition duration-300">
-                <i class="fa-solid fa-flag text-3xl text-red-500 mb-6"></i>
-                <h3 class="text-xl font-bold mb-3">Skryté Red Flagy</h3>
-                <p class="text-white/50 text-sm leading-relaxed">Odhalíme toxické vzorce nebo varovné signály dřív, než vám zlomí srdce.</p>
-            </div>
-            <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition duration-300">
-                <i class="fa-solid fa-chess-king text-3xl text-neonPurple mb-6"></i>
-                <h3 class="text-xl font-bold mb-3">Power Dynamics</h3>
-                <p class="text-white/50 text-sm leading-relaxed">Kdo z vás tahá za kratší konec? Kdo miluje víc a kdo má vztah pod kontrolou?</p>
-            </div>
-            <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition duration-300">
-                <i class="fa-solid fa-wand-magic-sparkles text-3xl text-blue-400 mb-6"></i>
-                <h3 class="text-xl font-bold mb-3">Predikce budoucnosti</h3>
-                <p class="text-white/50 text-sm leading-relaxed">Svatba, rozchod, nebo věčný friendzone? AI vypočítá pravděpodobnost dalšího vývoje.</p>
-            </div>
-            <div class="glass p-8 rounded-3xl hover:-translate-y-2 transition duration-300">
-                <i class="fa-solid fa-fire text-3xl text-orange-500 mb-6"></i>
-                <h3 class="text-xl font-bold mb-3">Úroveň vášně</h3>
-                <p class="text-white/50 text-sm leading-relaxed">Je to jen platonické přátelství, nebo mezi vámi hoří chemie, která se nedá ignorovat?</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="ukazka" class="py-32 px-4 max-w-5xl mx-auto border-t border-white/5">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-serif mb-6 italic">Jak vypadá <span class="text-gradient font-bold not-italic">výsledek?</span></h2>
-            <p class="text-white/40 max-w-2xl mx-auto text-sm uppercase tracking-widest">Ukázka z reálného reportu</p>
-        </div>
-
-        <div class="glass p-8 md:p-12 rounded-[3rem] border-white/10 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-neonPurple/20 rounded-full filter blur-[100px] z-[-1]"></div>
-            
-            <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="text-center md:text-left md:w-1/3">
-                    <h2 class="text-[80px] md:text-[100px] font-bold tracking-tighter leading-none mb-2 text-gradient">82%</h2>
-                    <p class="text-xs uppercase tracking-[0.3em] text-white/50 font-bold mb-6">Základní shoda</p>
-                    <p class="text-sm text-white/60 italic">"Máte silnou chemii, ale narážíte na rozdílné styly komunikace. Ty potřebuješ neustálý kontakt, on potřebuje prostor."</p>
+    <section id="formular" class="py-32 px-4 bg-white/[0.01]">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="inline-block px-4 py-1 glass rounded-full text-[10px] font-bold tracking-widest uppercase mb-4 text-white/40">
+                    Krok <span id="stepNum">1</span> z 3
                 </div>
-                
-                <div class="md:w-2/3 w-full space-y-4">
-                    <div class="relative p-8 rounded-3xl overflow-hidden border border-white/10">
-                        <div class="absolute inset-0 bg-black/60 backdrop-blur-md z-10 flex flex-col items-center justify-center text-center p-6">
-                            <i class="fa-solid fa-lock text-3xl text-neonPink mb-4"></i>
-                            <h4 class="font-serif text-2xl italic mb-2">Odemkněte hlubokou analýzu</h4>
-                            <p class="text-xs text-white/50 max-w-xs mb-4">Pro odhalení Red Flagu, power dynamiky a predikce budoucnosti pokračujte k platbě.</p>
-                            <span class="px-6 py-2 bg-white text-black text-xs font-bold rounded-full uppercase">Ukázkové tlačítko</span>
-                        </div>
-                        
-                        <div class="opacity-40 filter blur-[4px]">
-                            <h4 class="text-red-500 font-bold mb-2">Vaše největší hrozba (Red Flag)</h4>
-                            <p class="mb-4 text-sm">Z vaší dynamiky jasně vyplývá, že jeden z vás dává do vztahu mnohem více energie...</p>
-                            <h4 class="text-neonPurple font-bold mb-2">Kdo drží otěže?</h4>
-                            <p class="text-sm">Aktuálně má nad situací kontrolu on, protože...</p>
-                        </div>
-                    </div>
+                <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden mb-8">
+                    <div id="progress" class="bg-gradient-to-right from-neonPink to-neonPurple h-full transition-all duration-500" style="width: 33.33%"></div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="o-projektu" class="py-32 px-4 max-w-6xl mx-auto border-t border-white/5">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-            <div class="relative">
-                <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight">Proč věřit<br><span class="italic text-gradient">CrushMeteru?</span></h2>
-                <p class="text-white/60 text-lg mb-8 leading-relaxed">
-                    Vztahy nejsou jen o společných koníčcích. Jsou o energetických vzorcích, komunikaci a tom, jak na sebe reagujete, když se nikdo nedívá.
-                </p>
-                <div class="space-y-6">
-                    <div class="flex gap-4 items-start">
-                        <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-neonPink shrink-0 mt-1"><i class="fa-solid fa-microchip"></i></div>
+            <form id="crushForm" class="glass p-8 md:p-16 rounded-[4rem] border-white/10">
+                <div id="step1" class="step active">
+                    <h3 class="text-3xl font-serif mb-8 italic text-center">Nejdřív nám řekni něco <span class="text-neonPink">o sobě</span></h3>
+                    <div class="space-y-6">
                         <div>
-                            <h4 class="font-bold mb-1">Objektivní pohled bez růžových brýlí</h4>
-                            <p class="text-sm text-white/40">Algoritmus není zaslepený láskou ani zvykem. Vidí čistá fakta.</p>
+                            <label class="block text-xs uppercase tracking-widest mb-2 text-white/40">Tvé Jméno</label>
+                            <input type="text" id="userName" required class="glass-input" placeholder="Jak ti máme říkat?">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest mb-2 text-white/40">Tvé znamení</label>
+                            <select id="userZodiac" required class="glass-input">
+                                <option value="" disabled selected>Vyber znamení</option>
+                                <option value="Beran">Beran</option><option value="Býk">Býk</option><option value="Blíženci">Blíženci</option>
+                                <option value="Rak">Rak</option><option value="Lev">Lev</option><option value="Panna">Panna</option>
+                                <option value="Váhy">Váhy</option><option value="Štír">Štír</option><option value="Střelec">Střelec</option>
+                                <option value="Kozoroh">Kozoroh</option><option value="Vodnář">Vodnář</option><option value="Ryby">Ryby</option>
+                            </select>
+                        </div>
+                        <button type="button" onclick="validateAndGo(1, 2)" class="w-full py-5 bg-white/10 rounded-2xl font-bold uppercase tracking-widest hover:bg-white/20 transition">Pokračovat</button>
+                    </div>
+                </div>
+
+                <div id="step2" class="step">
+                    <h3 class="text-3xl font-serif mb-8 italic text-center">A teď tvoje <span class="text-neonPurple">druhá polovička</span></h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest mb-2 text-white/40">Jméno tvého Crushe</label>
+                            <input type="text" id="crushName" required class="glass-input" placeholder="Kdo ti nedá spát?">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest mb-2 text-white/40">Jeho/Její znamení</label>
+                            <select id="crushZodiac" required class="glass-input">
+                                <option value="" disabled selected>Vyber znamení</option>
+                                <option value="Beran">Beran</option><option value="Býk">Býk</option><option value="Blíženci">Blíženci</option>
+                                <option value="Rak">Rak</option><option value="Lev">Lev</option><option value="Panna">Panna</option>
+                                <option value="Váhy">Váhy</option><option value="Štír">Štír</option><option value="Střelec">Střelec</option>
+                                <option value="Kozoroh">Kozoroh</option><option value="Vodnář">Vodnář</option><option value="Ryby">Ryby</option>
+                            </select>
+                        </div>
+                        <div class="flex gap-4">
+                            <button type="button" onclick="goToStep(1)" class="w-1/3 py-5 glass rounded-2xl font-bold uppercase tracking-widest">Zpět</button>
+                            <button type="button" onclick="validateAndGo(2, 3)" class="w-2/3 py-5 bg-white/10 rounded-2xl font-bold uppercase tracking-widest hover:bg-white/20 transition">Poslední krok</button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="glass p-12 rounded-[40px] border-white/10 relative">
-                <div class="absolute top-0 right-0 p-8 opacity-10 text-6xl"><i class="fa-solid fa-quote-right"></i></div>
-                <p class="text-xl font-serif italic mb-8 leading-relaxed">"Chtěli jsme vědět, jestli po 10 letech manželství pořád 'vibrujeme'. Výsledek nás šokoval. Přesně to trefilo naše slabá místa v komunikaci, o kterých jsme věděli, ale báli se o nich mluvit."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-gray-600 rounded-full overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=100&auto=format&fit=crop" alt="Mirek a Jana" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <div class="font-bold">Mirek & Jana</div>
-                        <div class="text-xs text-white/30 uppercase tracking-widest">10 let manželé</div>
+
+                <div id="step3" class="step">
+                    <h3 class="text-3xl font-serif mb-8 italic text-center">Jak to mezi vámi <span class="text-gradient">vypadá?</span></h3>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest mb-2 text-white/40">Aktuální status</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="radio" name="status" id="s1" value="pratelstvi" class="hidden tag-input" checked>
+                                <label for="s1" class="glass p-4 rounded-xl text-center cursor-pointer text-sm">Jen přátelství</label>
+                                <input type="radio" name="status" id="s2" value="vztah" class="hidden tag-input">
+                                <label for="s2" class="glass p-4 rounded-xl text-center cursor-pointer text-sm">Ve vztahu</label>
+                            </div>
+                        </div>
+                        <button type="submit" id="submitBtn" class="w-full py-6 bg-gradient-to-r from-neonPink to-neonPurple rounded-2xl font-black uppercase tracking-widest shadow-lg hover:scale-[1.02] transition">
+                            Analyzovat vztah (49 Kč)
+                        </button>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </section>
 
-<section id="formular" class="py-32 px-4 bg-white/[0.01] border-y border-white/5">
-    <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-5xl md:text-7xl font-serif mb-6 tracking-tighter italic">Vstupte do <span class="text-gradient font-bold not-italic">Laboratoře</span></h2>
-            <p id="form-subtext" class="text-white/40 uppercase tracking-[0.2em] text-sm">Pro přesný výsledek buďte 100% upřímní.</p>
-        </div>
-
-        <form id="crushForm" class="glass p-8 md:p-16 rounded-[4rem] shadow-2xl border-white/10">
-            </form>
-
-        <div id="payment-section" class="hidden glass p-8 md:p-16 rounded-[4rem] shadow-2xl border-white/10 text-center">
-            <h3 class="text-3xl font-serif mb-6 italic">Data jsou v bezpečí. Teď už jen dokončete analýzu...</h3>
-            <div data-SimpleShopForm="zQ0bQ">
-                <div class="text-white/20">Načítám platební bránu...</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-// Tady je ta upravená odesílací logika pro embed formulář
-document.getElementById('crushForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    // 1. Posbírání dat
-    const formData = {
-        on1: document.getElementById('userName').value,
-        zodiac1: document.getElementById('userZodiac').value,
-        on2: document.getElementById('crushName').value,
-        zodiac2: document.getElementById('crushZodiac').value,
-        status: document.querySelector('input[name="status"]:checked')?.value
-        // ... (můžeš přidat další pole)
-    };
-
-    // 2. Příprava JSONu pro poznámku
-    const metadata = JSON.stringify(formData);
-
-    // 3. PŘEPNUTÍ NA PLATBU
-    document.getElementById('crushForm').classList.add('hidden');
-    document.getElementById('form-subtext').innerText = "Analýza připravena, čekáme na potvrzení platby.";
-    document.getElementById('payment-section').classList.remove('hidden');
-
-    // 4. Předání dat do SimpleShop scriptu
-    // SimpleShop JS API umožňuje vložit poznámku před vytvořením formuláře
-    if (window.sss) {
-        sss("setNote", metadata);
-        sss("createForm", "zQ0bQ");
-    }
-});
-
-// Tvůj původní SimpleShop script (upravený pro dynamické volání)
-(function(i, s, o, g, r, a, m){
-  i[r] = i[r] || function(){ (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date();
-  a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g;
-  m.parentNode.insertBefore(a, m)
-})(window, document, "script", "https://form.simpleshop.cz/prj/js/SimpleShopService.js", "sss");
-</script>
-
-   <script>
-    // Funkce pro přepínání kroků (Zpět/Dopředu)
-    function goToStep(stepNumber) {
-        document.querySelectorAll('.step').forEach(function(step) {
-            step.classList.remove('active');
-        });
-        document.getElementById('step' + stepNumber).classList.add('active');
-        document.getElementById('stepNum').innerText = stepNumber;
-        document.getElementById('progress').style.width = (stepNumber * 33.33) + '%';
-    }
-
-    // Funkce pro validaci aktuálního kroku
-    function validateAndGo(currentStep, nextStep) {
-        const currentDiv = document.getElementById('step' + currentStep);
-        const requiredInputs = currentDiv.querySelectorAll('input[required], select[required]');
-        let allValid = true;
-
-        requiredInputs.forEach(input => {
-            if (!input.value) {
-                allValid = false;
-                input.style.borderColor = 'rgba(255,0,0,0.5)';
-            } else {
-                input.style.borderColor = '';
-            }
-        });
-
-        if (allValid) {
-            goToStep(nextStep);
-        } else {
-            alert('Zadrž, potřebujeme doplnit všechny chybějící údaje v tomto kroku.');
+    <script>
+        function goToStep(stepNumber) {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.getElementById('step' + stepNumber).classList.add('active');
+            document.getElementById('stepNum').innerText = stepNumber;
+            document.getElementById('progress').style.width = (stepNumber * 33.33) + '%';
         }
-    }
 
-    // HLAVNÍ LOGIKA PRO ODESLÁNÍ DO SIMPLESHOPU
-    document.getElementById('crushForm').addEventListener('submit', function(e) {
-        e.preventDefault();
+        function validateAndGo(curr, next) {
+            const inputs = document.getElementById('step' + curr).querySelectorAll('input[required], select[required]');
+            let valid = true;
+            inputs.forEach(i => { if(!i.value) { valid = false; i.style.borderColor = 'red'; } else { i.style.borderColor = ''; } });
+            if(valid) goToStep(next);
+        }
 
-        const submitBtn = document.getElementById('submitBtn');
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Připravuji analýzu...';
-        submitBtn.classList.add('opacity-70', 'pointer-events-none');
-
-        // 1. Posbírání VŠECH dat z formuláře
-        const formData = {
-            on1: document.getElementById('userName').value,
-            birth1: document.getElementById('userBirth').value,
-            zodiac1: document.getElementById('userZodiac').value,
-            comm1: document.getElementById('userComm').value,
-            love1: document.getElementById('userLoveLang').value,
-            trait1: document.getElementById('userTrait').value,
-            color1: document.querySelector('input[name="userColor"]:checked')?.value,
+        document.getElementById('crushForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Připravuji...';
             
-            on2: document.getElementById('crushName').value,
-            zodiac2: document.getElementById('crushZodiac').value,
-            trait2: document.getElementById('crushTrait').value,
-            flaw2: document.getElementById('crushFlaw').value,
-            color2: document.querySelector('input[name="crushColor"]:checked')?.value,
-            
-            status: document.querySelector('input[name="status"]:checked')?.value,
-            reaches: document.getElementById('whoReachesOut').value,
-            argues: document.getElementById('whoArgues').value
-        };
+            const data = {
+                on1: document.getElementById('userName').value,
+                zodiac1: document.getElementById('userZodiac').value,
+                on2: document.getElementById('crushName').value,
+                zodiac2: document.getElementById('crushZodiac').value,
+                status: document.querySelector('input[name="status"]:checked').value
+            };
 
-        // 2. Uložení do localStorage pro zobrazení na stránce vysledek.html
-        localStorage.setItem('crushData', JSON.stringify(formData));
-
-        // 3. Zakódování do JSON pro SimpleShop (všechna data půjdou v poli "note")
-        const metadata = JSON.stringify(formData);
-        
-        // 4. Přesměrování na prodejní formulář s daty v poznámce
-        // Použijeme URL tvého prodejního formuláře, který jsi poslal
-        const baseUrl = "https://form.simpleshop.cz/zQ0bQ/buy/";
-        window.location.href = baseUrl + "?note=" + encodeURIComponent(metadata);
-    });
-</script>
+            const metadata = JSON.stringify(data);
+            const baseUrl = "https://form.simpleshop.cz/zQ0bQ/buy/";
+            window.location.href = baseUrl + "?note=" + encodeURIComponent(metadata);
+        });
+    </script>
 </body>
 </html>
