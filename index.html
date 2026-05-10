@@ -183,211 +183,63 @@
         </div>
     </section>
 
-    <section id="formular" class="py-32 px-4 bg-white/[0.01] border-y border-white/5">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-7xl font-serif mb-6 tracking-tighter italic">Vstupte do <span class="text-gradient font-bold not-italic">Laboratoře</span></h2>
-                <p class="text-white/40 uppercase tracking-[0.2em] text-sm">Pro přesný výsledek buďte 100% upřímní.</p>
-            </div>
-
-            <form id="crushForm" class="glass p-8 md:p-16 rounded-[4rem] shadow-2xl border-white/10">
-                <div class="flex justify-between mb-12 px-2">
-                    <div class="text-[10px] uppercase tracking-widest font-bold text-neonPink">Krok <span id="stepNum">1</span>/3</div>
-                    <div class="w-48 h-1 bg-white/5 rounded-full overflow-hidden self-center">
-                        <div id="progress" class="h-full bg-gradient-to-r from-neonPink to-neonPurple transition-all duration-700" style="width: 33.33%"></div>
-                    </div>
-                </div>
-
-                <div class="step active" id="step1">
-                    <h3 class="text-4xl font-serif mb-10 italic">01. O tobě</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Tvé Jméno / Přezdívka</label>
-                            <input type="text" id="userName" class="glass-input p-5 rounded-2xl w-full" required>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Datum Narození</label>
-                            <input type="date" id="userBirth" class="glass-input p-5 rounded-2xl w-full" required>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Tvoje Znamení</label>
-                            <select id="userZodiac" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
-                                <option value="" disabled selected>Vyberte...</option>
-                                <option value="beran">Beran</option><option value="byk">Býk</option><option value="blizenci">Blíženci</option><option value="rak">Rak</option>
-                                <option value="lev">Lev</option><option value="panna">Panna</option><option value="vahy">Váhy</option><option value="stir">Štír</option>
-                                <option value="strelec">Střelec</option><option value="kozoroh">Kozoroh</option><option value="vodnar">Vodnář</option><option value="ryby">Ryby</option>
-                            </select>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Tvůj komunikační styl</label>
-                            <select id="userComm" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
-                                <option value="" disabled selected>Vyberte...</option>
-                                <option value="text_heavy">Píšu dlouhé zprávy/slohovky</option>
-                                <option value="memes">Posílám hlavně memes a reels</option>
-                                <option value="short">Odpovídám stručně / jednoslovně</option>
-                                <option value="calls">Radši volám / voice notes</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Co tě ve vztahu nejvíc potěší?</label>
-                            <select id="userLoveLang" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
-                                <option value="" disabled selected>Vyberte...</option>
-                                <option value="words">Když slyším, že mě má rád/a (slova)</option>
-                                <option value="time">Když mi naplno věnuje svůj čas</option>
-                                <option value="touch">Když mě obejme / fyzický kontakt</option>
-                                <option value="acts">Když mi s něčím praktickým pomůže</option>
-                                <option value="gifts">Když si na mě vzpomene malým dárkem</option>
-                            </select>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Tvoje povaha</label>
-                            <select id="userTrait" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
-                                <option value="" disabled selected>Vyberte...</option>
-                                <option value="introvert">Introvert (Klidný, spíš přemýšlím)</option>
-                                <option value="extrovert">Extrovert (Společenský, akční)</option>
-                                <option value="ambivert">Ambivert (Zlatá střední cesta)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="mb-12">
-                        <label class="block text-[10px] uppercase tracking-widest text-white/40 mb-4 text-center">Tvoje oblíbená barva</label>
-                        <div class="flex flex-wrap justify-center gap-3">
-                            <input type="radio" name="userColor" id="u-c1" value="red" class="hidden color-checkbox" checked><label for="u-c1" class="w-10 h-10 rounded-full bg-red-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="userColor" id="u-c2" value="blue" class="hidden color-checkbox"><label for="u-c2" class="w-10 h-10 rounded-full bg-blue-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="userColor" id="u-c3" value="green" class="hidden color-checkbox"><label for="u-c3" class="w-10 h-10 rounded-full bg-green-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="userColor" id="u-c4" value="yellow" class="hidden color-checkbox"><label for="u-c4" class="w-10 h-10 rounded-full bg-yellow-400 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="userColor" id="u-c5" value="orange" class="hidden color-checkbox"><label for="u-c5" class="w-10 h-10 rounded-full bg-orange-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="userColor" id="u-c6" value="purple" class="hidden color-checkbox"><label for="u-c6" class="w-10 h-10 rounded-full bg-purple-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="userColor" id="u-c7" value="pink" class="hidden color-checkbox"><label for="u-c7" class="w-10 h-10 rounded-full bg-pink-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="userColor" id="u-c8" value="black" class="hidden color-checkbox"><label for="u-c8" class="w-10 h-10 rounded-full bg-black cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="userColor" id="u-c9" value="white" class="hidden color-checkbox"><label for="u-c9" class="w-10 h-10 rounded-full bg-white cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="userColor" id="u-c10" value="gray" class="hidden color-checkbox"><label for="u-c10" class="w-10 h-10 rounded-full bg-gray-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="userColor" id="u-c11" value="brown" class="hidden color-checkbox"><label for="u-c11" class="w-10 h-10 rounded-full bg-brownColor cursor-pointer border-2 border-transparent transition"></label>
-                        </div>
-                    </div>
-
-                    <button type="button" onclick="validateAndGo(1, 2)" class="w-full py-6 bg-white text-black font-black rounded-3xl hover:bg-neonPink hover:text-white transition uppercase tracking-widest shadow-xl">Krok 2: Protějšek</button>
-                </div>
-
-                <div class="step" id="step2">
-                    <h3 class="text-4xl font-serif mb-10 italic text-neonPurple">02. Tvůj protějšek</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Jméno protějšku</label>
-                            <input type="text" id="crushName" class="glass-input p-5 rounded-2xl w-full" required>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Jejich Znamení (I odhad)</label>
-                            <select id="crushZodiac" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
-                                <option value="" disabled selected>Vyberte...</option>
-                                <option value="nevim">Nevím přesně</option>
-                                <option value="beran">Beran</option><option value="byk">Býk</option><option value="blizenci">Blíženci</option><option value="rak">Rak</option>
-                                <option value="lev">Lev</option><option value="panna">Panna</option><option value="vahy">Váhy</option><option value="stir">Štír</option>
-                                <option value="strelec">Střelec</option><option value="kozoroh">Kozoroh</option><option value="vodnar">Vodnář</option><option value="ryby">Ryby</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Co tě na něm/ní nejvíc přitahuje?</label>
-                            <select id="crushTrait" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
-                                <option value="" disabled selected>Vyberte...</option>
-                                <option value="looks">Vzhled a charisma</option>
-                                <option value="intellect">Inteligence a humor</option>
-                                <option value="stability">Zázemí a spolehlivost</option>
-                                <option value="mystery">Tajemnost (nedostupnost)</option>
-                            </select>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Jeho/její nešvar (Red Flag)</label>
-                            <select id="crushFlaw" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
-                                <option value="" disabled selected>Vyberte...</option>
-                                <option value="none">Zatím se zdá dokonalý/á</option>
-                                <option value="communication">Špatně komunikuje / Ignoruje</option>
-                                <option value="jealousy">Žárlivost / Toxicita</option>
-                                <option value="workaholic">Něco jiného je vždy přednější</option>
-                                <option value="ex_issues">Problémy s Ex / Nedokáže být sám</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="mb-12">
-                        <label class="block text-[10px] uppercase tracking-widest text-white/40 mb-4 text-center">Jejich oblíbená barva (nebo co nosí)</label>
-                        <div class="flex flex-wrap justify-center gap-3">
-                            <input type="radio" name="crushColor" id="c-c1" value="red" class="hidden color-checkbox" checked><label for="c-c1" class="w-10 h-10 rounded-full bg-red-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="crushColor" id="c-c2" value="blue" class="hidden color-checkbox"><label for="c-c2" class="w-10 h-10 rounded-full bg-blue-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="crushColor" id="c-c3" value="green" class="hidden color-checkbox"><label for="c-c3" class="w-10 h-10 rounded-full bg-green-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="crushColor" id="c-c4" value="yellow" class="hidden color-checkbox"><label for="c-c4" class="w-10 h-10 rounded-full bg-yellow-400 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="crushColor" id="c-c5" value="orange" class="hidden color-checkbox"><label for="c-c5" class="w-10 h-10 rounded-full bg-orange-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="crushColor" id="c-c6" value="purple" class="hidden color-checkbox"><label for="c-c6" class="w-10 h-10 rounded-full bg-purple-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="crushColor" id="c-c7" value="pink" class="hidden color-checkbox"><label for="c-c7" class="w-10 h-10 rounded-full bg-pink-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="crushColor" id="c-c8" value="black" class="hidden color-checkbox"><label for="c-c8" class="w-10 h-10 rounded-full bg-black cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="crushColor" id="c-c9" value="white" class="hidden color-checkbox"><label for="c-c9" class="w-10 h-10 rounded-full bg-white cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="crushColor" id="c-c10" value="gray" class="hidden color-checkbox"><label for="c-c10" class="w-10 h-10 rounded-full bg-gray-500 cursor-pointer border-2 border-transparent transition"></label>
-                            <input type="radio" name="crushColor" id="c-c11" value="brown" class="hidden color-checkbox"><label for="c-c11" class="w-10 h-10 rounded-full bg-brownColor cursor-pointer border-2 border-transparent transition"></label>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-4">
-                        <button type="button" onclick="goToStep(1)" class="w-1/3 py-6 glass rounded-3xl opacity-60 font-bold uppercase tracking-widest text-xs hover:bg-white/10 transition">Zpět</button>
-                        <button type="button" onclick="validateAndGo(2, 3)" class="w-2/3 py-6 bg-white text-black font-black rounded-3xl hover:bg-neonPurple hover:text-white transition uppercase tracking-widest shadow-xl">Krok 3: Dynamika</button>
-                    </div>
-                </div>
-
-                <div class="step" id="step3">
-                    <h3 class="text-4xl font-serif mb-10 italic">03. Vaše spojení</h3>
-                    
-                    <div class="mb-8">
-                        <label class="block text-[10px] uppercase tracking-widest text-white/40 mb-4 ml-2">V jaké jste fázi?</label>
-                        <div class="grid grid-cols-2 gap-3">
-                            <input type="radio" name="status" id="s1" value="crush" class="hidden tag-input" checked><label for="s1" class="p-4 border border-white/10 rounded-2xl text-sm text-center cursor-pointer transition glass-input block font-bold">Čerstvý objev</label>
-                            <input type="radio" name="status" id="s2" value="situationship" class="hidden tag-input"><label for="s2" class="p-4 border border-white/10 rounded-2xl text-sm text-center cursor-pointer transition glass-input block font-bold">Situationship</label>
-                            <input type="radio" name="status" id="s3" value="marriage" class="hidden tag-input"><label for="s3" class="p-4 border border-white/10 rounded-2xl text-sm text-center cursor-pointer transition glass-input block font-bold">Dlouholetý vztah</label>
-                            <input type="radio" name="status" id="s4" value="ex" class="hidden tag-input"><label for="s4" class="p-4 border border-white/10 rounded-2xl text-sm text-center cursor-pointer transition glass-input block font-bold">EX / Rozchod</label>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Kdo se ozývá první (začíná konverzaci)?</label>
-                            <select id="whoReachesOut" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
-                                <option value="" disabled selected>Vyberte...</option>
-                                <option value="me">Většinou vždycky já</option>
-                                <option value="them">Většinou on/ona</option>
-                                <option value="balanced">Je to tak půl na půl</option>
-                                <option value="none">Nejsme teď v kontaktu</option>
-                            </select>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] uppercase tracking-widest text-white/40 ml-2">Kdo většinou začíná rýpání / konflikt?</label>
-                            <select id="whoArgues" class="glass-input p-5 rounded-2xl w-full appearance-none" required>
-                                <option value="" disabled selected>Vyberte...</option>
-                                <option value="me">Většinou já, cítím se nedoceněně</option>
-                                <option value="them">On/Ona, kvůli drobnostem</option>
-                                <option value="both">Oba stejně, máme italskou domácnost</option>
-                                <option value="none">Nehádáme se (nebo to dusíme v sobě)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-4 mt-12">
-                        <button type="button" onclick="goToStep(2)" class="w-1/3 py-6 glass rounded-3xl opacity-60 font-bold uppercase tracking-widest text-xs hover:bg-white/10 transition">Zpět</button>
-                        <button type="submit" id="submitBtn" class="w-2/3 py-6 bg-gradient-to-r from-neonPink to-neonPurple text-white font-black rounded-3xl hover:scale-105 transition uppercase tracking-widest shadow-[0_10px_30px_rgba(255,20,147,0.3)]">Analyzovat a zaplatit</button>
-                    </div>
-                </div>
-            </form>
+<section id="formular" class="py-32 px-4 bg-white/[0.01] border-y border-white/5">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-7xl font-serif mb-6 tracking-tighter italic">Vstupte do <span class="text-gradient font-bold not-italic">Laboratoře</span></h2>
+            <p id="form-subtext" class="text-white/40 uppercase tracking-[0.2em] text-sm">Pro přesný výsledek buďte 100% upřímní.</p>
         </div>
-    </section>
+
+        <form id="crushForm" class="glass p-8 md:p-16 rounded-[4rem] shadow-2xl border-white/10">
+            </form>
+
+        <div id="payment-section" class="hidden glass p-8 md:p-16 rounded-[4rem] shadow-2xl border-white/10 text-center">
+            <h3 class="text-3xl font-serif mb-6 italic">Data jsou v bezpečí. Teď už jen dokončete analýzu...</h3>
+            <div data-SimpleShopForm="zQ0bQ">
+                <div class="text-white/20">Načítám platební bránu...</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Tady je ta upravená odesílací logika pro embed formulář
+document.getElementById('crushForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // 1. Posbírání dat
+    const formData = {
+        on1: document.getElementById('userName').value,
+        zodiac1: document.getElementById('userZodiac').value,
+        on2: document.getElementById('crushName').value,
+        zodiac2: document.getElementById('crushZodiac').value,
+        status: document.querySelector('input[name="status"]:checked')?.value
+        // ... (můžeš přidat další pole)
+    };
+
+    // 2. Příprava JSONu pro poznámku
+    const metadata = JSON.stringify(formData);
+
+    // 3. PŘEPNUTÍ NA PLATBU
+    document.getElementById('crushForm').classList.add('hidden');
+    document.getElementById('form-subtext').innerText = "Analýza připravena, čekáme na potvrzení platby.";
+    document.getElementById('payment-section').classList.remove('hidden');
+
+    // 4. Předání dat do SimpleShop scriptu
+    // SimpleShop JS API umožňuje vložit poznámku před vytvořením formuláře
+    if (window.sss) {
+        sss("setNote", metadata);
+        sss("createForm", "zQ0bQ");
+    }
+});
+
+// Tvůj původní SimpleShop script (upravený pro dynamické volání)
+(function(i, s, o, g, r, a, m){
+  i[r] = i[r] || function(){ (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date();
+  a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, "script", "https://form.simpleshop.cz/prj/js/SimpleShopService.js", "sss");
+</script>
 
    <script>
     // Funkce pro přepínání kroků (Zpět/Dopředu)
