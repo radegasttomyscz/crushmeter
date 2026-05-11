@@ -318,6 +318,7 @@
       </a>
       <div class="hidden md:flex items-center gap-7 text-sm text-white/62 font-semibold">
         <a href="#jak" class="hover:text-white transition">Jak to funguje</a>
+        <a href="#pro-koho" class="hover:text-white transition">Pro koho</a>
         <a href="#formular" class="hover:text-white transition">Analýza</a>
         <a href="#ukazka" class="hover:text-white transition">Ukázka</a>
         <a href="#faq" class="hover:text-white transition">FAQ</a>
@@ -349,6 +350,9 @@
             </a>
           </div>
           <p class="mt-6 text-sm text-white/42">Jednotná cena: <strong class="text-white">99 Kč</strong> · orientační AI odhad podle zadaných dat, ne psychologická diagnóza.</p>
+          <div class="mt-5 glass-soft rounded-2xl p-4 max-w-2xl mx-auto lg:mx-0 text-left">
+            <p class="text-sm text-white/62 leading-relaxed"><strong class="text-white">Co znamená crush?</strong> Jednoduše člověk, který tě přitahuje nebo nad kterým přemýšlíš. <strong class="text-white">CrushMeter</strong> je AI porovnání dvou lidí: vyhodnotí zadané údaje, rozdíly, komunikaci a odhadne, na kolik procent k sobě podle dat sedíte.</p>
+          </div>
         </div>
 
         <div class="relative reveal" style="transition-delay:.12s">
@@ -428,6 +432,39 @@
       </div>
     </section>
 
+    <section id="pro-koho" class="px-4 py-20 md:py-28">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+          <p class="text-hot font-black uppercase tracking-[.24em] text-xs mb-4">Pro koho je analýza</p>
+          <h2 class="font-serif text-4xl md:text-6xl font-bold mb-5">Nejen pro teenagery. Pro každého, kdo chce srovnání dvou lidí.</h2>
+          <p class="text-white/60 text-lg leading-relaxed">CrushMeter není seznamka ani terapie. Je to AI odhad kompatibility podle dat, který může použít kdokoliv, kdo chce zjistit, jak mezi dvěma lidmi vychází komunikace, rozdíly a vztahový potenciál.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <article class="glass rounded-[2rem] p-7 reveal">
+            <div class="w-14 h-14 rounded-2xl bg-white/10 grid place-items-center text-2xl mb-6">💘</div>
+            <h3 class="text-2xl font-black mb-3">Zamilovaní</h3>
+            <p class="text-white/58 leading-relaxed">Když chceš vědět, jestli to, co cítíš, dává smysl i podle chování, komunikace a vzájemných rozdílů.</p>
+          </article>
+          <article class="glass rounded-[2rem] p-7 reveal" style="transition-delay:.06s">
+            <div class="w-14 h-14 rounded-2xl bg-white/10 grid place-items-center text-2xl mb-6">🧭</div>
+            <h3 class="text-2xl font-black mb-3">V tápajícím vztahu</h3>
+            <p class="text-white/58 leading-relaxed">Když se něco děje, ale není jasné co. Analýza pomůže pojmenovat rozdíly, napětí a možné zdroje nepochopení.</p>
+          </article>
+          <article class="glass rounded-[2rem] p-7 reveal" style="transition-delay:.12s">
+            <div class="w-14 h-14 rounded-2xl bg-white/10 grid place-items-center text-2xl mb-6">💍</div>
+            <h3 class="text-2xl font-black mb-3">Páry a manželé</h3>
+            <p class="text-white/58 leading-relaxed">Pro zvědavost, kontrolu reality nebo jiný pohled na vztah. Ne jako verdikt, ale jako zajímavé zrcadlo zadaných odpovědí.</p>
+          </article>
+          <article class="glass rounded-[2rem] p-7 reveal" style="transition-delay:.18s">
+            <div class="w-14 h-14 rounded-2xl bg-white/10 grid place-items-center text-2xl mb-6">🕵️</div>
+            <h3 class="text-2xl font-black mb-3">„Nevodí mě za nos?“</h3>
+            <p class="text-white/58 leading-relaxed">Když dostáváš smíšené signály a chceš nezaujatý odhad, jestli mezi vámi data ukazují zájem, nejistotu, nebo spíš chaos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="formular" class="px-4 py-20 md:py-28">
       <div class="max-w-6xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-10 reveal">
@@ -464,6 +501,7 @@
           </aside>
 
           <form id="crushForm" class="glass rounded-[2.5rem] p-5 sm:p-8 md:p-10 reveal" novalidate>
+            <div id="formError" class="hidden rounded-2xl border border-red-400/30 bg-red-500/10 p-4 text-red-100 text-sm mb-6"></div>
             <div class="step-panel active" data-step="1">
               <div class="mb-8">
                 <p class="text-xs uppercase tracking-[.24em] text-hot font-black mb-3">Karta 1 — Ty</p>
@@ -476,8 +514,8 @@
                   <input id="userName" name="userName" class="field" required maxlength="40" placeholder="Např. Tereza" />
                 </div>
                 <div class="input-wrap">
-                  <label for="userBirth">Datum narození</label>
-                  <input id="userBirth" name="userBirth" class="field" type="date" required />
+                  <label for="userBirth">Datum narození <span class="text-white/35">(volitelné)</span></label>
+                  <input id="userBirth" name="userBirth" class="field" type="date" />
                 </div>
                 <div class="input-wrap">
                   <label for="userNature">Jaká je tvoje povaha?</label>
@@ -507,12 +545,12 @@
               </div>
 
               <div class="mt-6 input-wrap">
-                <label>Co vlastně hledáš?</label>
+                <label>Co chceš v analýze hlavně zjistit?</label>
                 <div class="grid sm:grid-cols-2 gap-3">
-                  <label class="choice"><input type="radio" name="lookingFor" value="Vztah" required><span>Vztah</span></label>
-                  <label class="choice"><input type="radio" name="lookingFor" value="Flirt"><span>Flirt</span></label>
-                  <label class="choice"><input type="radio" name="lookingFor" value="Chci vědět, jestli má cenu to zkusit"><span>Jestli to má cenu</span></label>
-                  <label class="choice"><input type="radio" name="lookingFor" value="Jen mě zajímá pravda"><span>Jen mě zajímá pravda</span></label>
+                  <label class="choice"><input type="radio" name="analysisGoal" value="Jestli se k sobě hodíme" required><span>Jestli se k sobě hodíme</span></label>
+                  <label class="choice"><input type="radio" name="analysisGoal" value="Co nás nejvíc rozlišuje"><span>Co nás rozlišuje</span></label>
+                  <label class="choice"><input type="radio" name="analysisGoal" value="Kde vzniká nedorozumění"><span>Kde vzniká nedorozumění</span></label>
+                  <label class="choice"><input type="radio" name="analysisGoal" value="Jaký má vztah potenciál"><span>Jaký má vztah potenciál</span></label>
                 </div>
               </div>
 
@@ -533,8 +571,8 @@
                   <input id="crushName" name="crushName" class="field" required maxlength="40" placeholder="Např. Adam" />
                 </div>
                 <div class="input-wrap">
-                  <label for="crushBirth">Datum narození crushe</label>
-                  <input id="crushBirth" name="crushBirth" class="field" type="date" required />
+                  <label for="crushBirth">Datum narození druhé osoby <span class="text-white/35">(volitelné)</span></label>
+                  <input id="crushBirth" name="crushBirth" class="field" type="date" />
                 </div>
                 <div class="input-wrap">
                   <label for="crushNature">Jak na tebe působí?</label>
@@ -695,13 +733,15 @@
                 <span class="text-sm text-white/62 leading-relaxed">Beru na vědomí, že jde o orientační AI analýzu podle zadaných dat. Výsledek nemusí být přesný a nenahrazuje odborné psychologické, terapeutické ani vztahové poradenství.</span>
               </label>
 
-              <div id="formError" class="hidden rounded-2xl border border-red-400/30 bg-red-500/10 p-4 text-red-100 text-sm mb-5"></div>
 
               <div class="flex gap-3 justify-between">
                 <button type="button" class="prevBtn rounded-full px-6 py-4 glass-soft font-black uppercase tracking-[.12em] text-sm" data-prev="3">Zpět</button>
-                <button type="submit" class="btn-glow rounded-full px-8 py-4 bg-gradient-to-r from-hot to-violet font-black uppercase tracking-[.12em] text-sm">
-                  Zaplatit a spustit analýzu
-                </button>
+                <div class="text-right">
+                  <button type="submit" class="btn-glow rounded-full px-8 py-4 bg-gradient-to-r from-hot to-violet font-black uppercase tracking-[.12em] text-sm">
+                    Zaplatit a spustit analýzu
+                  </button>
+                  <p class="mt-3 text-xs text-white/42 max-w-xs ml-auto">Kliknutím tě přesměrujeme na bezpečnou platbu přes SimpleShop.</p>
+                </div>
               </div>
             </div>
           </form>
@@ -750,7 +790,9 @@
                 <div class="grid sm:grid-cols-2 gap-3">
                   <div class="glass-soft rounded-2xl p-4"><p class="text-xs text-white/38">Silná stránka</p><strong>Podobný styl humoru a kontaktu</strong></div>
                   <div class="glass-soft rounded-2xl p-4"><p class="text-xs text-white/38">Hlavní rozdíl</p><strong>Jeden tlačí na jistotu, druhý nechává věci plynout</strong></div>
+                  <div class="glass-soft rounded-2xl p-4"><p class="text-xs text-white/38">Komunikační shoda</p><strong>78 % · rychlost odpovědí je podobná</strong></div>
                   <div class="glass-soft rounded-2xl p-4"><p class="text-xs text-white/38">Riziko nedorozumění</p><strong>Střední</strong></div>
+                  <div class="glass-soft rounded-2xl p-4"><p class="text-xs text-white/38">Odhad iniciativy</p><strong>Spíš čekání na potvrzení z druhé strany</strong></div>
                   <div class="glass-soft rounded-2xl p-4"><p class="text-xs text-white/38">Potenciál vztahu</p><strong>Vysoký, pokud bude jasnější komunikace</strong></div>
                 </div>
                 <div class="glass-soft rounded-2xl p-5">
@@ -761,6 +803,10 @@
 
               <div class="rounded-2xl border border-white/10 bg-white/[.04] p-4 mb-6">
                 <p class="text-xs text-white/44 leading-relaxed">Ukázka je zkrácená. Plná analýza bude obsahovat procento shody, rozbor povah, komunikace, rozdílů, rizik, doporučení a webovou kartu ke sdílení.</p>
+              </div>
+
+              <div class="rounded-2xl border border-hot/20 bg-hot/10 p-4 mb-6">
+                <p class="text-sm text-white/70 leading-relaxed"><strong class="text-white">Sdílej svůj výsledek:</strong> ve webové analýze bude karta vhodná pro screenshot do stories. Označ nás nebo použij hashtag <span class="text-hot font-black">#crushmeter</span>.</p>
               </div>
 
               <div class="flex flex-col sm:flex-row gap-3 justify-center">
@@ -777,7 +823,8 @@
       <div class="max-w-7xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-12 reveal">
           <p class="text-hot font-black uppercase tracking-[.24em] text-xs mb-4">Reakce</p>
-          <h2 class="font-serif text-4xl md:text-6xl font-bold">Přesně ten typ věci, co se posílá dál.</h2>
+          <h2 class="font-serif text-4xl md:text-6xl font-bold mb-5">Přesně ten typ věci, co se posílá dál.</h2>
+          <p class="text-white/60 text-lg leading-relaxed">Výsledek bude mít sdílitelnou webovou kartu. Hoď ji do stories, pošli ji druhé osobě nebo použij hashtag <strong class="text-hot">#crushmeter</strong>.</p>
         </div>
         <div class="grid md:grid-cols-3 gap-5">
           <div class="glass rounded-[2rem] p-7 reveal"><p class="text-2xl mb-5">😭</p><p class="text-xl font-bold mb-4">„Tohle je až podezřele přesné.“</p><p class="text-white/42 text-sm">— anonymní test</p></div>
@@ -956,7 +1003,7 @@
           birth: value('userBirth'),
           nature: value('userNature'),
           status: value('userStatus'),
-          lookingFor: radioValue('lookingFor')
+          analysisGoal: radioValue('analysisGoal')
         },
         crush: {
           name: value('crushName'),
@@ -974,7 +1021,7 @@
           biggestProblem: value('biggestProblem'),
           secretWish: value('secretWish')
         },
-        legalNote: 'User acknowledged this is an entertainment AI interpretation, not therapy, diagnosis or professional relationship advice.'
+        legalNote: 'User acknowledged this is an orientational AI compatibility analysis based only on submitted data, not therapy, diagnosis or professional relationship advice.'
       };
     }
 
@@ -1003,7 +1050,10 @@
         btn.addEventListener('click', () => {
           hideError();
           const panel = currentStepEl();
-          if (!validateStep(panel)) return;
+          if (!validateStep(panel)) {
+            showError('Doplň prosím označená pole. Datum narození je volitelné, ostatní položky v tomto kroku potřebujeme pro smysluplnou analýzu.');
+            return;
+          }
           setStep(btn.dataset.next);
         });
       });
