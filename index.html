@@ -728,11 +728,12 @@
                 </div>
               </div>
 
-              <label class="flex items-start gap-3 glass-soft rounded-2xl p-4 mb-6 cursor-pointer">
+              <label class="flex items-start gap-3 glass-soft rounded-2xl p-4 mb-3 cursor-pointer">
                 <input id="consent" type="checkbox" required class="mt-1 accent-pink-500" />
                 <span class="text-sm text-white/62 leading-relaxed">Beru na vědomí, že jde o orientační AI analýzu podle zadaných dat. Výsledek nemusí být přesný a nenahrazuje odborné psychologické, terapeutické ani vztahové poradenství.</span>
               </label>
 
+              <div id="finalError" class="hidden rounded-2xl border border-red-400/30 bg-red-500/10 p-4 text-red-100 text-sm mb-5"></div>
 
               <div class="flex gap-3 justify-between">
                 <button type="button" class="prevBtn rounded-full px-6 py-4 glass-soft font-black uppercase tracking-[.12em] text-sm" data-prev="3">Zpět</button>
@@ -947,6 +948,21 @@
       error.textContent = '';
     }
 
+    function showFinalError(message) {
+      const error = document.getElementById('finalError');
+      if (!error) return;
+      error.textContent = message;
+      error.classList.remove('hidden');
+      error.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function hideFinalError() {
+      const error = document.getElementById('finalError');
+      if (!error) return;
+      error.classList.add('hidden');
+      error.textContent = '';
+    }
+
     function validateStep(panel) {
       const required = panel.querySelectorAll('[required]');
       let valid = true;
@@ -1049,6 +1065,7 @@
       document.querySelectorAll('.nextBtn').forEach(btn => {
         btn.addEventListener('click', () => {
           hideError();
+          hideFinalError();
           const panel = currentStepEl();
           if (!validateStep(panel)) {
             showError('Doplň prosím označená pole. Datum narození je volitelné, ostatní položky v tomto kroku potřebujeme pro smysluplnou analýzu.');
@@ -1061,6 +1078,7 @@
       document.querySelectorAll('.prevBtn').forEach(btn => {
         btn.addEventListener('click', () => {
           hideError();
+          hideFinalError();
           setStep(btn.dataset.prev);
         });
       });
@@ -1070,13 +1088,17 @@
         field.addEventListener('change', () => { field.style.borderColor = ''; });
       });
 
+      document.getElementById('consent')?.addEventListener('change', hideFinalError);
+
       document.getElementById('crushForm').addEventListener('submit', (event) => {
         event.preventDefault();
         hideError();
+        hideFinalError();
 
-        const panel = currentStepEl();
-        if (!validateStep(panel)) {
-          showError('Ještě potvrď poslední checkbox. Bez něj analýzu nespustíme.');
+        const consent = document.getElementById('consent');
+        if (!consent?.checked) {
+          showFinalError('Ještě potvrď poslední checkbox. Bez něj analýzu nespustíme.');
+          consent?.focus({ preventScroll: true });
           return;
         }
 
