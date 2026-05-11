@@ -1,5 +1,6 @@
 (() => {
   const rootPath = location.pathname.includes('/blog/') ? '../' : '';
+  const currentYear = new Date().getFullYear();
 
   const header = `
     <header class="site-header">
@@ -10,7 +11,7 @@
             <span>CrushMeter<span style="color:#ff5ab8">.cz</span></span>
           </a>
           <div class="nav-links">
-            <a href="${rootPath}index.html#jak-to-funguje">Jak to funguje</a>
+            <a href="${rootPath}index.html#jak">Jak to funguje</a>
             <a href="${rootPath}index.html#pro-koho">Pro koho</a>
             <a href="${rootPath}index.html#formular" class="nav-cta">Spustit analýzu</a>
           </div>
@@ -25,6 +26,7 @@
           <a class="footer-brand" href="${rootPath}index.html">CrushMeter<span>.cz</span></a>
           <p class="footer-text">AI kompatibilitní analýza dvou lidí podle zadaných údajů. Orientační výstup, ne psychologická diagnóza, terapie ani odborné vztahové poradenství.</p>
           <p class="footer-hashtag">Sdílíš výsledek? Přidej <strong>#crushmeter</strong></p>
+          <p class="footer-copy">© ${currentYear} CrushMeter.cz</p>
         </div>
         <div class="footer-links" aria-label="Odkazy v patičce">
           <a href="${rootPath}obchodni-podminky.html">Obchodní podmínky</a>
@@ -34,6 +36,6 @@
       </div>
     </footer>`;
 
-  document.querySelectorAll('[data-site-header]').forEach(el => el.outerHTML = header);
-  document.querySelectorAll('[data-site-footer]').forEach(el => el.outerHTML = footer);
+  document.querySelectorAll('[data-site-header]').forEach(el => { el.outerHTML = header; });
+  document.querySelectorAll('[data-site-footer]').forEach(el => { el.outerHTML = footer; });
 })();
