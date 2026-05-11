@@ -11,3 +11,12 @@ BLOG AUTOMATIZACE
 - Bez backendu nejde bezpečně, aby AI sama commitovala články do GitHubu.
 - Jednoduchá varianta: jednou měsíčně ti připravím HTML článek a ty ho nahraješ.
 - Poloautomatická varianta: Make scénář vygeneruje článek, založí GitHub commit přes GitHub API a přidá URL do sitemap.xml. To uděláme později, až bude hotový platební tok.
+
+DOPLNĚNÍ PRO MAKE / SIMPLESHP VARIANTA A
+----------------------------------------
+1) V Make vytvoř druhý Custom webhook s názvem: CrushMeter - prijem formulare.
+2) Jeho URL vlož v souboru index.html do konstanty:
+   const MAKE_FORM_WEBHOOK_URL = '...';
+3) Web odešle formulář do Make ještě před přesměrováním na SimpleShop.
+4) V SimpleShopu musí zákazník zadat stejný e-mail jako ve formuláři.
+5) SimpleShop webhook po zaplacení posílá e-mail do Make; podle něj se spáruje uložený formulář.
