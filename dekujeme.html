@@ -32,69 +32,16 @@
   </script>
 
   <style>
-    html, body {
-      background:#05050a;
-      color:#fff;
-      margin:0;
-      font-family:'Outfit',sans-serif;
-    }
-
-    body::before {
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,20,147,.22), transparent 34%),
-        radial-gradient(circle at 80% 10%, rgba(138,43,226,.22), transparent 32%),
-        radial-gradient(circle at 50% 90%, rgba(255,20,147,.10), transparent 38%);
-      filter: blur(2px);
-      z-index:0;
-    }
-
-    .glass {
-      background:rgba(255,255,255,.045);
-      backdrop-filter:blur(22px);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:0 24px 80px rgba(0,0,0,.35);
-    }
-
-    .text-gradient {
-      background:linear-gradient(90deg,#ff1493,#8a2be2,#ff7ac8);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .pulse-ring {
-      position:absolute;
-      inset:-14px;
-      border-radius:999px;
-      border:1px solid rgba(255,20,147,.28);
-      animation:pulseRing 2.4s ease-out infinite;
-    }
-
-    @keyframes pulseRing {
-      0% { transform:scale(.86); opacity:.85; }
-      100% { transform:scale(1.35); opacity:0; }
-    }
-
-    .orb {
-      position:absolute;
-      width:8px;
-      height:8px;
-      border-radius:999px;
-      background:rgba(255,255,255,.55);
-      box-shadow:0 0 20px rgba(255,20,147,.8);
-      animation:float 8s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%,100% { transform:translateY(0); opacity:.25; }
-      50% { transform:translateY(-24px); opacity:.75; }
-    }
+    html, body { background:#05050a; color:#fff; margin:0; font-family:'Outfit',sans-serif; }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; background: radial-gradient(circle at 20% 20%, rgba(255,20,147,.22), transparent 34%), radial-gradient(circle at 80% 10%, rgba(138,43,226,.22), transparent 32%), radial-gradient(circle at 50% 90%, rgba(255,20,147,.10), transparent 38%); filter: blur(2px); z-index:0; }
+    .glass { background:rgba(255,255,255,.045); backdrop-filter:blur(22px); border:1px solid rgba(255,255,255,.10); box-shadow:0 24px 80px rgba(0,0,0,.35); }
+    .text-gradient { background:linear-gradient(90deg,#ff1493,#8a2be2,#ff7ac8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .pulse-ring { position:absolute; inset:-14px; border-radius:999px; border:1px solid rgba(255,20,147,.28); animation:pulseRing 2.4s ease-out infinite; }
+    @keyframes pulseRing { 0% { transform:scale(.86); opacity:.85; } 100% { transform:scale(1.35); opacity:0; } }
+    .orb { position:absolute; width:8px; height:8px; border-radius:999px; background:rgba(255,255,255,.55); box-shadow:0 0 20px rgba(255,20,147,.8); animation:float 8s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform:translateY(0); opacity:.25; } 50% { transform:translateY(-24px); opacity:.75; } }
   </style>
 </head>
-
 <body class="antialiased min-h-screen overflow-x-hidden">
   <main class="relative z-10 min-h-screen flex items-center justify-center px-5 py-12">
     <div class="orb left-[12%] top-[18%]"></div>
@@ -111,7 +58,6 @@
 
       <div class="glass rounded-[2.2rem] md:rounded-[3rem] p-7 md:p-12 relative overflow-hidden">
         <div class="absolute inset-0 opacity-40 pointer-events-none" style="background:linear-gradient(135deg,rgba(255,20,147,.14),rgba(138,43,226,.10),transparent);"></div>
-
         <div class="relative z-10">
           <div class="relative w-20 h-20 mx-auto mb-7 rounded-full bg-gradient-to-br from-neonPink to-neonPurple flex items-center justify-center shadow-[0_0_60px_rgba(255,20,147,.45)]">
             <span class="pulse-ring"></span>
@@ -119,73 +65,41 @@
             <i class="fa-solid fa-check text-white text-3xl"></i>
           </div>
 
-          <p class="text-neonPink uppercase tracking-[0.25em] text-[11px] font-black mb-4">
-            Platba proběhla úspěšně
-          </p>
-
-          <h1 class="font-serif text-4xl md:text-6xl leading-tight mb-5">
-            Děkujeme.<br>
-            <span class="text-gradient italic font-bold">AI už pracuje.</span>
-          </h1>
-
-          <p class="text-white/68 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-            Tvoje CrushMeter analýza se právě připravuje. Výsledek dorazí na e-mailovou adresu, kterou jsi zadal/a při objednávce v SimpleShopu.
-          </p>
+          <p class="text-neonPink uppercase tracking-[0.25em] text-[11px] font-black mb-4">Platba proběhla úspěšně</p>
+          <h1 class="font-serif text-4xl md:text-6xl leading-tight mb-5">Děkujeme.<br><span class="text-gradient italic font-bold">AI už pracuje.</span></h1>
+          <p class="text-white/68 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">Tvoje CrushMeter analýza se právě připravuje. Výsledek dorazí na e-mailovou adresu, kterou jsi zadal/a při objednávce v SimpleShopu.</p>
 
           <div class="grid md:grid-cols-3 gap-4 text-left mb-9">
             <div class="rounded-3xl bg-white/[0.045] border border-white/10 p-5">
-              <div class="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center mb-4 text-neonPink">
-                <i class="fa-solid fa-brain"></i>
-              </div>
+              <div class="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center mb-4 text-neonPink"><i class="fa-solid fa-brain"></i></div>
               <h2 class="font-bold text-white mb-2">1. AI zpracovává data</h2>
-              <p class="text-white/48 text-sm leading-relaxed">Systém porovnává zadané odpovědi a hledá vztahové vzorce.</p>
+              <p class="text-white/48 text-sm leading-relaxed">Systém porovnává zadané odpovědi a vytváří kompatibilitní vyhodnocení.</p>
             </div>
-
             <div class="rounded-3xl bg-white/[0.045] border border-white/10 p-5">
-              <div class="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center mb-4 text-neonPink">
-                <i class="fa-solid fa-envelope-open-text"></i>
-              </div>
+              <div class="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center mb-4 text-neonPink"><i class="fa-solid fa-envelope-open-text"></i></div>
               <h2 class="font-bold text-white mb-2">2. Výsledek přijde e-mailem</h2>
               <p class="text-white/48 text-sm leading-relaxed">Obvykle dorazí během několika minut. Zkontroluj i spam nebo hromadné zprávy.</p>
             </div>
-
-            <div class="rounded-3xl bg-white/[0.045] border border-white/10 p-5">
-              <div class="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center mb-4 text-neonPink">
-                <i class="fa-solid fa-share-nodes"></i>
-              </div>
+            <div class="rounded-3xl bg-gradient-to-br from-neonPink/20 to-neonPurple/20 border border-neonPink/25 p-5 shadow-[0_0_45px_rgba(255,20,147,.12)]">
+              <div class="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center mb-4 text-neonPink"><i class="fa-solid fa-share-nodes"></i></div>
               <h2 class="font-bold text-white mb-2">3. Sdílej výsledek</h2>
-              <p class="text-white/48 text-sm leading-relaxed">Když budeš chtít, sdílej část výsledku a označ nás hashtagem <strong class="text-white">#crushmeter</strong>.</p>
+              <p class="text-white/60 text-sm leading-relaxed">Když budeš chtít, sdílej část výsledku ve stories a přidej hashtag <strong class="text-white">#crushmeter</strong>.</p>
             </div>
           </div>
 
           <div class="rounded-[1.7rem] bg-black/25 border border-white/10 p-5 md:p-6 text-left mb-8">
-            <h2 class="text-white font-bold text-lg mb-3 flex items-center gap-2">
-              <i class="fa-solid fa-circle-info text-neonPink"></i>
-              E-mail nedorazil?
-            </h2>
-            <p class="text-white/58 text-sm md:text-base leading-relaxed mb-4">
-              Pokud analýza nedorazí ani po několika minutách, zkontroluj složky Spam, Hromadné nebo Promo akce. Pokud ji nenajdeš, napiš nám a prověříme objednávku ručně.
-            </p>
-            <a href="mailto:info@tomys.cz?subject=CrushMeter%20-%20nedostal%20jsem%20anal%C3%BDzu" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-black font-extrabold text-sm hover:scale-[1.02] transition">
-              <i class="fa-solid fa-envelope"></i>
-              Napsat podporu
-            </a>
+            <h2 class="text-white font-bold text-lg mb-3 flex items-center gap-2"><i class="fa-solid fa-circle-info text-neonPink"></i>E-mail nedorazil?</h2>
+            <p class="text-white/58 text-sm md:text-base leading-relaxed mb-4">Pokud analýza nedorazí ani po několika minutách, zkontroluj složky Spam, Hromadné nebo Promo akce. Pokud ji nenajdeš, napiš nám a prověříme objednávku ručně.</p>
+            <a href="mailto:info@tomys.cz?subject=CrushMeter%20-%20nedostal%20jsem%20anal%C3%BDzu" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-black font-extrabold text-sm hover:scale-[1.02] transition"><i class="fa-solid fa-envelope"></i>Napsat podporu</a>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="/" class="px-6 py-4 rounded-full bg-gradient-to-r from-neonPink to-neonPurple font-black text-white hover:scale-[1.02] transition">
-              Zpět na CrushMeter
-            </a>
-            <a href="/blog.html" class="px-6 py-4 rounded-full glass text-white/75 hover:text-white transition">
-              Přečíst magazín
-            </a>
+          <div class="flex justify-center">
+            <a href="/" class="px-6 py-4 rounded-full bg-gradient-to-r from-neonPink to-neonPurple font-black text-white hover:scale-[1.02] transition">Zpět na CrushMeter</a>
           </div>
         </div>
       </div>
 
-      <p class="mt-7 text-white/28 text-xs leading-relaxed">
-        CrushMeter.cz vytváří orientační AI kompatibilitní analýzu podle zadaných údajů. Nejde o psychologickou diagnózu, terapii ani odborné vztahové poradenství.
-      </p>
+      <p class="mt-7 text-white/28 text-xs leading-relaxed">CrushMeter.cz vytváří orientační AI kompatibilitní analýzu podle zadaných údajů. Nejde o psychologickou diagnózu, terapii ani odborné vztahové poradenství.</p>
     </section>
   </main>
 </body>
