@@ -290,12 +290,12 @@
       .reveal { opacity: 1; transform: none; }
     }
   </style>
-  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="/assets/site.css" />
 
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 <body class="antialiased selection:bg-hot selection:text-white">
   <div class="noise"></div>
@@ -401,7 +401,7 @@
         <div class="text-center max-w-3xl mx-auto mb-12 reveal">
           <p class="text-hot font-black uppercase tracking-[.24em] text-xs mb-4">Jak to funguje</p>
           <h2 class="font-serif text-4xl md:text-6xl font-bold mb-5">Tři kroky. Jeden datový odhad.</h2>
-          <p class="text-white/60 text-lg">Bez registrace a zatím bez fotek. Výsledek vychází z odpovědí, které zadáš do formuláře.</p>
+          <p class="text-white/60 text-lg">Bez registrace. Výsledek vychází z odpovědí, které zadáš do formuláře a z toho, jak mezi dvěma lidmi popíšeš komunikaci, rozdíly a aktuální dynamiku.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-5">
@@ -825,7 +825,7 @@
         <div class="text-center max-w-3xl mx-auto mb-12 reveal">
           <p class="text-hot font-black uppercase tracking-[.24em] text-xs mb-4">Reakce</p>
           <h2 class="font-serif text-4xl md:text-6xl font-bold mb-5">Přesně ten typ věci, co se posílá dál.</h2>
-          <p class="text-white/60 text-lg leading-relaxed">Výsledek můžeš sdílet jako screenshot, poslat dál nebo přidat do stories s hashtagem <strong class="text-hot">#crushmeter</strong>.</p>
+          <p class="text-white/60 text-lg leading-relaxed">Výsledek si můžeš uložit jako screenshot, poslat dál nebo sdílet ve stories s hashtagem <strong class="text-hot">#crushmeter</strong>.</p>
         </div>
         <div class="grid md:grid-cols-3 gap-5">
           <div class="glass rounded-[2rem] p-7 reveal"><p class="text-2xl mb-5">😭</p><p class="text-xl font-bold mb-4">„Tohle je až podezřele přesné.“</p><p class="text-white/42 text-sm">— anonymní test</p></div>
@@ -863,6 +863,15 @@
             <p class="text-white/58 leading-relaxed mt-3">Ano. Každá analýza je samostatná a vychází z konkrétní dvojice.</p>
           </details>
         </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-20 md:py-28">
+      <div class="max-w-5xl mx-auto glass rounded-[2.5rem] p-8 md:p-12 text-center reveal border-hot/20">
+        <p class="text-hot font-black uppercase tracking-[.24em] text-xs mb-4">Připraven/a?</p>
+        <h2 class="font-serif text-4xl md:text-6xl font-bold mb-5">Zjisti, jak mezi vámi vychází shoda.</h2>
+        <p class="text-white/60 text-lg leading-relaxed max-w-3xl mx-auto mb-8">Vyplň údaje o vás dvou, nech AI porovnat vaši dynamiku a získej přehledný rozbor kompatibility, rozdílů i možných třecích míst.</p>
+        <a href="#formular" class="inline-flex items-center justify-center rounded-full px-8 py-4 bg-gradient-to-r from-hot to-violet text-white font-black uppercase tracking-[.12em] text-sm shadow-glow hover:scale-[1.02] transition">Spustit analýzu</a>
       </div>
     </section>
   </main>
@@ -1175,6 +1184,6 @@
       });
     });
   </script>
-  <script src="assets/site.js"></script>
+  <script src="/assets/site.js"></script>
 </body>
 </html>
