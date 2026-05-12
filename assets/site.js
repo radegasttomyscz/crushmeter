@@ -24,7 +24,7 @@
       <div class="site-footer-inner">
         <div>
           <a class="footer-brand" href="${rootPath}index.html">CrushMeter<span>.cz</span></a>
-          <p class="footer-text">AI kompatibilitní analýza dvou lidí podle zadaných údajů. Orientační výstup, ne psychologická diagnóza, terapie ani odborné vztahové poradenství.</p>
+          <p class="footer-text">Kompatibilitní analýza dvou lidí podle zadaných údajů. Výstup vzniká automaticky pomocí jazykového modelu; nejde o psychologickou diagnózu, terapii ani odborné poradenství.</p>
           <p class="footer-hashtag">Sdílíš výsledek? Přidej <strong>#crushmeter</strong></p>
           <p class="footer-copy">© ${currentYear} CrushMeter.cz</p>
         </div>
