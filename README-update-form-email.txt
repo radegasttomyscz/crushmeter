@@ -15,3 +15,9 @@ Důležité před nahráním:
 - Po nahrání otestuj celý flow, protože formulář má nová pole a Claude prompt musí odpovídat novému payloadu.
 - V Make v Claude modulu nahraď prompt obsahem souboru claude-prompt-v2.txt.
 - V Gmail modulu nastav Body type = rawHtml a použij HTML šablonu z email-sablona-crushmeter.html.
+
+
+Aktualizace formuláře v2:
+- první krok, frekvence komunikace a konkrétní matoucí situace jsou volitelné;
+- přidáno pole pro typ vztahové situace;
+- Claude prompt dává vyšší váhu psaným odpovědím a volitelné prázdné odpovědi nepovažuje automaticky za negativní signál.

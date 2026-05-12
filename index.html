@@ -341,7 +341,6 @@
               Ukázka výsledku
             </a>
           </div>
-          <p class="mt-6 text-sm text-white/42">Jednotná cena: <strong class="text-white">99 Kč</strong> · orientační odhad podle zadaných dat, ne psychologická diagnóza.</p>
           <div class="mt-5 glass-soft rounded-2xl p-4 max-w-2xl mx-auto lg:mx-0 text-left">
             <p class="text-sm text-white/62 leading-relaxed"><strong class="text-white">Co znamená crush?</strong> Jednoduše člověk, který tě přitahuje nebo nad kterým přemýšlíš. <strong class="text-white">CrushMeter</strong> je porovnání dvou lidí: vyhodnotí zadané údaje, rozdíly, komunikaci a odhadne, na kolik procent k sobě podle dat sedíte. V pozadí pracuje pokročilý jazykový model, nejde ale o psychologa ani terapii.</p>
           </div>
@@ -483,7 +482,7 @@
               </div>
               <div class="step-indicator flex items-center gap-3 text-white/40" data-step-indicator="4">
                 <span class="w-9 h-9 rounded-full bg-white/8 grid place-items-center font-black">4</span>
-                <div><strong>Platba</strong><p class="text-xs text-white/42">99 Kč přes SimpleShop</p></div>
+                <div><strong>Platba</strong><p class="text-xs text-white/42">přes SimpleShop</p></div>
               </div>
             </div>
             <div class="mt-7 h-2 rounded-full bg-white/10 overflow-hidden">
@@ -520,6 +519,19 @@
                     <option>Jsme manželé / dlouhodobý pár</option>
                     <option>Jsme po rozchodu nebo v pauze</option>
                     <option>Je to komplikované</option>
+                  </select>
+                </div>
+                <div class="input-wrap md:col-span-2">
+                  <label for="analysisContext">Pro jaký typ vztahu analýzu řešíš?</label>
+                  <select id="analysisContext" name="analysisContext" class="field" required>
+                    <option value="" selected disabled>Vyber nejbližší situaci</option>
+                    <option>Crush / někdo mě přitahuje</option>
+                    <option>Flirt nebo začínající poznávání</option>
+                    <option>Nejasná situace bez názvu</option>
+                    <option>Fungující vztah, který si chci ověřit</option>
+                    <option>Vztah, kde něco drhne</option>
+                    <option>Manželství nebo dlouhodobý pár</option>
+                    <option>Po rozchodu / pauza / návrat k sobě</option>
                   </select>
                 </div>
               </div>
@@ -581,7 +593,8 @@
             <div class="step-panel" data-step="3">
               <div class="mb-8">
                 <p class="text-xs uppercase tracking-[.24em] text-hot font-black mb-3">Karta 3 — Mezi vámi</p>
-                <h3 class="font-serif text-3xl md:text-5xl italic">Tady vzniká skutečná chemie.</h3>
+                <h3 class="font-serif text-3xl md:text-5xl italic">Tady vzniká skutečná dynamika.</h3>
+                <p class="mt-4 text-white/55 leading-relaxed">Některé otázky nemusí sedět na každou situaci. Pokud řešíš dlouhodobý vztah, manželství nebo něco, kde „první krok“ nedává smysl, klidně volitelné položky přeskoč.</p>
               </div>
 
               <div class="grid md:grid-cols-2 gap-5">
@@ -597,24 +610,27 @@
                   </select>
                 </div>
                 <div class="input-wrap">
-                  <label for="firstMove">Kdo udělal první krok?</label>
-                  <select id="firstMove" name="firstMove" class="field" required>
-                    <option value="" selected disabled>Vyber možnost</option>
+                  <label for="firstMove">Kdo udělal první krok? <span class="text-white/35">(volitelné)</span></label>
+                  <select id="firstMove" name="firstMove" class="field">
+                    <option value="" selected>Vyber, pokud to dává smysl</option>
                     <option>Já</option>
                     <option>On/Ona</option>
                     <option>Oba trochu</option>
                     <option>Nikdo, jen se to děje</option>
+                    <option>Není relevantní / žádný první krok nebyl</option>
                     <option>Nevím, bylo to divné</option>
                   </select>
                 </div>
                 <div class="input-wrap">
-                  <label for="writeFrequency">Jak často si píšete?</label>
-                  <select id="writeFrequency" name="writeFrequency" class="field" required>
-                    <option value="" selected disabled>Vyber frekvenci</option>
+                  <label for="writeFrequency">Jak spolu nejčastěji komunikujete? <span class="text-white/35">(volitelné)</span></label>
+                  <select id="writeFrequency" name="writeFrequency" class="field">
+                    <option value="" selected>Vyber, pokud je to důležité</option>
                     <option>Skoro pořád</option>
                     <option>Každý den</option>
                     <option>Párkrát týdně</option>
                     <option>Občas, ale intenzivně</option>
+                    <option>Spíš osobně než přes zprávy</option>
+                    <option>Řešíme hlavně praktické věci</option>
                     <option>Málo, až mě to štve</option>
                     <option>Nepíšeme si</option>
                   </select>
@@ -656,11 +672,11 @@
                 </div>
                 <div class="input-wrap">
                   <label for="biggestProblem">Největší problém nebo nejistota</label>
-                  <textarea id="biggestProblem" name="biggestProblem" class="field" required maxlength="620" placeholder="Např. bojím se, že to bere jen jako flirt, nebo že každý čekáme něco jiného..."></textarea>
+                  <textarea id="biggestProblem" name="biggestProblem" class="field" required maxlength="620" placeholder="Např. bojím se, že to bere jen jako flirt, nebo že každý čekáme něco jiného. Pokud žádný velký problém není, napiš co si chceš ověřit..."></textarea>
                 </div>
                 <div class="input-wrap">
-                  <label for="lastSituation">Konkrétní situace, která tě mate</label>
-                  <textarea id="lastSituation" name="lastSituation" class="field" required maxlength="620" placeholder="Např. naposledy se choval/a mile, ale pak dva dny neodpověděl/a..."></textarea>
+                  <label for="lastSituation">Konkrétní situace, která tě mate <span class="text-white/35">(volitelné)</span></label>
+                  <textarea id="lastSituation" name="lastSituation" class="field" maxlength="620" placeholder="Např. naposledy se choval/a mile, ale pak dva dny neodpověděl/a... Pokud žádná konkrétní situace není, nech prázdné."></textarea>
                 </div>
               </div>
 
@@ -818,27 +834,57 @@
         <div class="text-center mb-12 reveal">
           <p class="text-hot font-black uppercase tracking-[.24em] text-xs mb-4">FAQ</p>
           <h2 class="font-serif text-4xl md:text-6xl font-bold">Než spustíš analýzu.</h2>
+          <p class="mt-5 text-white/60 text-lg leading-relaxed max-w-3xl mx-auto">Krátce a bez technických řečí. Tady jsou věci, které lidi nejčastěji řeší před objednáním.</p>
         </div>
         <div class="space-y-4">
           <details class="glass rounded-2xl p-5 reveal" open>
-            <summary class="cursor-pointer font-black text-lg">Jak analýza vzniká?</summary>
-            <p class="text-white/58 leading-relaxed mt-3">Výsledek vzniká automaticky pomocí pokročilého jazykového modelu podle odpovědí ve formuláři. Nejde o odbornou psychologickou službu. Systém pracuje pouze s tím, co zadáš, a proto může být výsledek nepřesný nebo zjednodušený.</p>
+            <summary class="cursor-pointer font-black text-lg">Co přesně dostanu?</summary>
+            <p class="text-white/58 leading-relaxed mt-3">Dostaneš přehlednou kompatibilitní analýzu dvou lidí: procento shody, stručné shrnutí, co vás spojuje, kde se můžete míjet, jak působí vaše komunikace a co by mohlo pomoct. Výsledek přijde e-mailem po zaplacení.</p>
           </details>
+
           <details class="glass rounded-2xl p-5 reveal">
-            <summary class="cursor-pointer font-black text-lg">Jsou výsledky unikátní?</summary>
-            <p class="text-white/58 leading-relaxed mt-3">Cílem je, aby výstup vycházel z konkrétní kombinace vašich odpovědí. Čím konkrétnější vstupy, tím osobitější výsledek.</p>
+            <summary class="cursor-pointer font-black text-lg">Je to psychologická služba?</summary>
+            <p class="text-white/58 leading-relaxed mt-3">Ne. CrushMeter není terapie, diagnóza ani odborné vztahové poradenství. V pozadí pracuje pokročilý jazykový model, který vyhodnocuje pouze údaje, které zadáš. Výsledek ber jako orientační pohled z odstupu, ne jako definitivní pravdu.</p>
           </details>
+
           <details class="glass rounded-2xl p-5 reveal">
-            <summary class="cursor-pointer font-black text-lg">Musím nahrávat fotky?</summary>
-            <p class="text-white/58 leading-relaxed mt-3">Ne. První verze funguje bez fotek. Fotky mohou přijít později jako rozšíření.</p>
+            <summary class="cursor-pointer font-black text-lg">Pozná analýza, co ke mně druhý člověk opravdu cítí?</summary>
+            <p class="text-white/58 leading-relaxed mt-3">Neumí číst myšlenky ani jistě určit city druhé osoby. Umí ale vyhodnotit popsané signály, chování, komunikaci a rozdíly mezi vámi. Čím konkrétněji situaci popíšeš, tím užitečnější výstup dostaneš.</p>
           </details>
+
+          <details class="glass rounded-2xl p-5 reveal">
+            <summary class="cursor-pointer font-black text-lg">Pro koho se analýza hodí?</summary>
+            <p class="text-white/58 leading-relaxed mt-3">Pro crush, flirt, tápající vztah, dlouhodobý pár i manžele, kteří si chtějí zkusit pohled zvenčí. Hodí se hlavně tehdy, když chceš pochopit dynamiku mezi dvěma lidmi, ne jen vyplnit klasický test s náhodným výsledkem.</p>
+          </details>
+
+          <details class="glass rounded-2xl p-5 reveal">
+            <summary class="cursor-pointer font-black text-lg">Musím znát všechny odpovědi?</summary>
+            <p class="text-white/58 leading-relaxed mt-3">Nemusíš. Některé otázky jsou volitelné, protože u manželů, dlouhodobého vztahu nebo nejasné situace nemusí dávat smysl například „kdo napsal první“. Důležitější jsou vlastní textové odpovědi: co se mezi vámi děje, co tě mate a co chceš zjistit.</p>
+          </details>
+
+          <details class="glass rounded-2xl p-5 reveal">
+            <summary class="cursor-pointer font-black text-lg">Jsou moje údaje v bezpečí?</summary>
+            <p class="text-white/58 leading-relaxed mt-3">Údaje z formuláře používáme k vytvoření a doručení analýzy. Neprodáváme je a nepoužíváme je k profilování. Do formuláře nedávej citlivé údaje, které nejsou pro analýzu potřeba. Více najdeš v zásadách ochrany osobních údajů.</p>
+          </details>
+
+          <details class="glass rounded-2xl p-5 reveal">
+            <summary class="cursor-pointer font-black text-lg">Jak funguje platba?</summary>
+            <p class="text-white/58 leading-relaxed mt-3">Platba probíhá přes SimpleShop. Aktuálně je dostupná QR platba nebo bankovní převod. Nezadáváš platební kartu, takže ti nemůže být strženo nic navíc. Uhradíš pouze částku uvedenou v objednávce.</p>
+          </details>
+
+          <details class="glass rounded-2xl p-5 reveal">
+            <summary class="cursor-pointer font-black text-lg">Proč mám zadat stejný e-mail ve formuláři i při platbě?</summary>
+            <p class="text-white/58 leading-relaxed mt-3">Podle e-mailu spárujeme vyplněný formulář s uhrazenou objednávkou. Pokud zadáš jiný e-mail, analýza se nemusí automaticky odeslat a budeme ji muset dohledat ručně.</p>
+          </details>
+
           <details class="glass rounded-2xl p-5 reveal">
             <summary class="cursor-pointer font-black text-lg">Kdy dostanu výsledek?</summary>
-            <p class="text-white/58 leading-relaxed mt-3">Po zaplacení ti analýza dorazí e-mailem. Obvykle během několika minut. Pokud nepřijde, zkontroluj spam, hromadné zprávy a e-mail zadaný při platbě.</p>
+            <p class="text-white/58 leading-relaxed mt-3">Po připsání platby ti výsledek dorazí e-mailem. U QR platby to bývá rychlé, u bankovního převodu záleží na zpracování platby. Pokud e-mail nepřijde, zkontroluj spam, hromadné zprávy a správnost e-mailové adresy.</p>
           </details>
+
           <details class="glass rounded-2xl p-5 reveal">
-            <summary class="cursor-pointer font-black text-lg">Můžu zkusit více lidí?</summary>
-            <p class="text-white/58 leading-relaxed mt-3">Ano. Každá analýza je samostatná a vychází z konkrétní dvojice.</p>
+            <summary class="cursor-pointer font-black text-lg">Můžu udělat více analýz?</summary>
+            <p class="text-white/58 leading-relaxed mt-3">Ano. Každá analýza je samostatná a vychází z konkrétní dvojice a konkrétních odpovědí. Můžeš tedy porovnat crush, partnera, manželství nebo úplně jinou vztahovou situaci.</p>
           </details>
         </div>
       </div>
@@ -862,7 +908,7 @@
     const PRODUCT_PRICE = 99;
     // Sem vlož URL druhého Make webhooku: "CrushMeter - prijem formulare".
     // Web na něj pošle data formuláře ještě před přesměrováním na SimpleShop.
-    const MAKE_FORM_WEBHOOK_URL = 'https://hook.eu1.make.com/ekvz7t6cc5gjgkmcvkyasc5xln4s3tft';
+    const MAKE_FORM_WEBHOOK_URL = 'VLOZ_SEM_MAKE_WEBHOOK_PRO_FORMULAR';
 
     const loadingMessages = [
       'Zamykáme odpovědi a přesměrováváme tě na bezpečnou platbu.',
@@ -1003,6 +1049,7 @@
           name: value('userName'),
           birth: value('userBirth'),
           status: value('userStatus'),
+          analysisContext: value('analysisContext'),
           selfDescription: value('selfDescription'),
           analysisQuestion: value('analysisQuestion')
         },
