@@ -348,50 +348,97 @@
 
         <div class="relative reveal" style="transition-delay:.12s">
           <div class="absolute -inset-6 bg-gradient-to-br from-hot/20 to-violet/20 blur-3xl rounded-[4rem]"></div>
-          <div class="relative glass rounded-[2.5rem] p-5 sm:p-7 rotate-0 lg:rotate-2 hover:rotate-0 transition duration-500">
-            <div class="rounded-[2rem] border border-white/10 bg-black/30 p-5 sm:p-7">
-              <div class="flex items-center justify-between mb-8">
+          <div class="relative glass rounded-[2.5rem] p-4 sm:p-6 rotate-0 lg:rotate-2 hover:rotate-0 transition duration-500">
+            <div class="rounded-[2rem] border border-white/10 bg-black/30 p-5 sm:p-7 overflow-hidden relative">
+              <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(255,47,166,.20),transparent_42%),radial-gradient(circle_at_90%_20%,rgba(143,61,255,.18),transparent_36%)]"></div>
+
+              <div class="relative flex items-center justify-between gap-4 mb-7">
                 <div>
-                  <p class="text-xs uppercase tracking-[.2em] text-white/38 font-black">Live preview</p>
-                  <h2 class="font-serif text-2xl italic">Compatibility scan</h2>
+                  <p class="text-xs uppercase tracking-[.22em] text-hot/80 font-black">Ukázka výstupu</p>
+                  <h2 class="font-serif text-2xl sm:text-3xl italic">Orientační analýza</h2>
                 </div>
-                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-hot to-violet grid place-items-center shadow-glow">✨</div>
-              </div>
-
-              <div class="grid grid-cols-[1fr_auto_1fr] gap-3 items-center mb-8">
-                <div class="glass-soft rounded-3xl p-4 text-center">
-                  <div class="w-14 h-14 rounded-full bg-white/10 mx-auto mb-3 grid place-items-center text-2xl">🫶</div>
-                  <p class="font-black">Ty</p>
-                  <p class="text-xs text-white/45">vstupní profil</p>
-                </div>
-                <div class="text-2xl text-hot animate-pulse">⚡</div>
-                <div class="glass-soft rounded-3xl p-4 text-center">
-                  <div class="w-14 h-14 rounded-full bg-white/10 mx-auto mb-3 grid place-items-center text-2xl">💘</div>
-                  <p class="font-black">Crush</p>
-                  <p class="text-xs text-white/45">druhý profil</p>
+                <div class="hidden sm:flex items-center gap-2 rounded-full bg-white/7 border border-white/10 px-3 py-2 text-xs text-white/62 font-bold">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,.8)]"></span>
+                  dorazí e-mailem
                 </div>
               </div>
 
-              <div class="meter-ring w-44 h-44 rounded-full mx-auto p-3 mb-8 shadow-glow">
-                <div class="w-full h-full rounded-full bg-[#09040f] grid place-items-center text-center">
-                  <div>
-                    <p class="text-5xl font-black tracking-tight">87%</p>
-                    <p class="text-xs uppercase tracking-[.2em] text-white/45 font-black">match</p>
+              <div class="relative grid grid-cols-[1fr_auto_1fr] gap-3 items-center mb-6">
+                <div class="glass-soft rounded-3xl p-4">
+                  <div class="flex items-center gap-3">
+                    <span class="w-11 h-11 rounded-2xl bg-gradient-to-br from-hot to-rose grid place-items-center font-black">T</span>
+                    <div>
+                      <p class="font-black leading-tight">TomyS</p>
+                      <p class="text-xs text-white/42">tvoje strana</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-8 h-8 rounded-full border border-white/12 bg-white/5 grid place-items-center text-hot font-black">×</div>
+                <div class="glass-soft rounded-3xl p-4">
+                  <div class="flex items-center gap-3">
+                    <span class="w-11 h-11 rounded-2xl bg-gradient-to-br from-violet to-hot grid place-items-center font-black">K</span>
+                    <div>
+                      <p class="font-black leading-tight">Kačenka</p>
+                      <p class="text-xs text-white/42">druhá osoba</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="space-y-3">
-                <div class="glass-soft rounded-2xl p-4 flex items-start gap-3">
-                  <span>🔥</span><p class="text-sm text-white/72"><strong class="text-white">Chemie:</strong> vysoká, ale zatím nerovnoměrně projevená.</p>
-                </div>
-                <div class="glass-soft rounded-2xl p-4 flex items-start gap-3">
-                  <span>🫣</span><p class="text-sm text-white/72"><strong class="text-white">Rozdíl:</strong> jeden z vás působí otevřeněji, druhý více vyčkává.</p>
+              <div class="relative rounded-[2rem] border border-white/10 bg-white/[.045] p-5 sm:p-6 mb-4">
+                <div class="flex items-center justify-between gap-5">
+                  <div>
+                    <p class="text-xs uppercase tracking-[.22em] text-white/40 font-black mb-2">Celková shoda</p>
+                    <div class="text-6xl sm:text-7xl font-black tracking-tighter leading-none text-gradient">68 %</div>
+                    <p class="mt-3 text-sm text-white/58 leading-relaxed">Dobrá kompatibilita, ale výsledek stojí na jasnější komunikaci.</p>
+                  </div>
+                  <div class="hidden sm:block w-28 h-28 rounded-full p-3 shadow-glow" style="background:conic-gradient(from 160deg,#ff2fa6 0 68%,rgba(255,255,255,.10) 68% 100%);">
+                    <div class="w-full h-full rounded-full bg-[#09040f]"></div>
+                  </div>
                 </div>
               </div>
+
+              <div class="relative space-y-3">
+                <div class="glass-soft rounded-2xl p-4 flex items-start gap-3">
+                  <span class="w-9 h-9 shrink-0 rounded-xl bg-emerald-400/12 text-emerald-300 grid place-items-center">✓</span>
+                  <div>
+                    <p class="font-black">Co funguje</p>
+                    <p class="text-sm text-white/56 leading-relaxed">Humor, přitažlivost a pocit, že si rozumíte i bez dlouhého vysvětlování.</p>
+                  </div>
+                </div>
+
+                <div class="glass-soft rounded-2xl p-4 flex items-start gap-3">
+                  <span class="w-9 h-9 shrink-0 rounded-xl bg-amber-400/12 text-amber-300 grid place-items-center">≈</span>
+                  <div>
+                    <p class="font-black">Kde vzniká tření</p>
+                    <p class="text-sm text-white/56 leading-relaxed">Jeden čeká na jasnější signál, druhý nechává věci víc plynout.</p>
+                  </div>
+                </div>
+
+                <div class="glass-soft rounded-2xl p-4 flex items-start gap-3">
+                  <span class="w-9 h-9 shrink-0 rounded-xl bg-violet/15 text-soft grid place-items-center">↗</span>
+                  <div>
+                    <p class="font-black">Co by mohlo pomoct</p>
+                    <p class="text-sm text-white/56 leading-relaxed">Pojmenovat očekávání, nehrát si na nezájem a ověřit, jestli situaci čtete stejně.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relative mt-5 rounded-2xl border border-hot/20 bg-hot/10 p-4 flex items-center gap-4">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-hot to-violet grid place-items-center shadow-glow">✉️</div>
+                <div>
+                  <p class="font-black">Kompletní report</p>
+                  <p class="text-sm text-white/54 leading-relaxed">Plná analýza s rozborem odpovědí dorazí po zaplacení na e-mail.</p>
+                </div>
+              </div>
+
+              <p class="relative mt-5 text-xs text-white/36 leading-relaxed flex items-center gap-2">
+                <span>🔒</span> Ukázka je ilustrační. Výsledek vychází jen z údajů, které zadáš ve formuláři.
+              </p>
             </div>
           </div>
         </div>
+
       </div>
     </header>
 
