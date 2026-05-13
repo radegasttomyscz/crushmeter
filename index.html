@@ -588,14 +588,10 @@
                 </div>
               </div>
 
-              <div class="mt-6 grid md:grid-cols-2 gap-5">
+              <div class="mt-6">
                 <div class="input-wrap">
-                  <label for="selfDescription">Jak bys popsal/a sebe v téhle situaci?</label>
-                  <textarea id="selfDescription" name="selfDescription" class="field" required maxlength="520" placeholder="Např. hodně nad tím přemýšlím, nechci tlačit, ale nejistota mě štve..."></textarea>
-                </div>
-                <div class="input-wrap">
-                  <label for="analysisQuestion">Co chceš hlavně zjistit?</label>
-                  <textarea id="analysisQuestion" name="analysisQuestion" class="field" required maxlength="520" placeholder="Např. jestli to má reálný potenciál, proč se to zaseklo, nebo jestli si něco jen namlouvám..."></textarea>
+                  <label for="analysisQuestion">Co chceš touhle analýzou hlavně zjistit?</label>
+                  <textarea id="analysisQuestion" name="analysisQuestion" class="field" required maxlength="650" placeholder="Např. jestli to má reálný potenciál, proč se to zaseklo, jestli si něco nenamlouvám, nebo kde mezi námi vzniká největší tření..."></textarea>
                 </div>
               </div>
 
@@ -622,17 +618,13 @@
               </div>
 
               <div class="mt-6 grid md:grid-cols-2 gap-5">
-                <div class="input-wrap">
-                  <label for="crushDescription">Jak na tebe působí?</label>
-                  <textarea id="crushDescription" name="crushDescription" class="field" required maxlength="520" placeholder="Např. je hodně společenský/á, někdy milý/á, jindy odtažitý/á, neumím ho/ji přečíst..."></textarea>
-                </div>
-                <div class="input-wrap">
-                  <label for="signalsDescription">Jaké signály ti dává?</label>
-                  <textarea id="signalsDescription" name="signalsDescription" class="field" required maxlength="520" placeholder="Např. píše první, ale pak zmizí; flirtuje, ale před ostatními se tváří normálně..."></textarea>
+                <div class="input-wrap md:col-span-2">
+                  <label for="crushSignals">Jak se k tobě chová a jaké signály ti dává?</label>
+                  <textarea id="crushSignals" name="crushSignals" class="field" required maxlength="780" placeholder="Např. píše první, flirtuje, pak se stáhne, osobně je milý/á, ale ve zprávách chladnější... Napiš klidně i drobnosti, které ti přijdou důležité."></textarea>
                 </div>
                 <div class="input-wrap md:col-span-2">
                   <label for="uncertaintyQuestion">Co ti na jeho/jejím chování nejvíc vrtá hlavou?</label>
-                  <textarea id="uncertaintyQuestion" name="uncertaintyQuestion" class="field" required maxlength="520" placeholder="Např. nevím, jestli je to zájem, zvyk, hra, nebo jen moje přehnané očekávání..."></textarea>
+                  <textarea id="uncertaintyQuestion" name="uncertaintyQuestion" class="field" required maxlength="620" placeholder="Např. nevím, jestli je to zájem, zvyk, hra, opatrnost, nebo jen moje přehnané očekávání..."></textarea>
                 </div>
               </div>
 
@@ -647,7 +639,7 @@
                 <p class="text-xs uppercase tracking-[.24em] text-hot font-black mb-3">Karta 3 — Mezi vámi</p>
                 <h3 class="font-serif text-3xl md:text-5xl italic">Tady vzniká skutečná dynamika.</h3>
                 <p class="mt-4 text-white/55 leading-relaxed">Některé otázky nemusí sedět na každou situaci. Pokud řešíš dlouhodobý vztah, manželství nebo něco, kde „první krok“ nedává smysl, klidně volitelné položky přeskoč.</p>
-                <p class="mt-3 text-white/55 leading-relaxed">U psaných odpovědí se neboj být konkrétní. Stačí pár normálních vět: co se stalo, jak to na tebe působí, co tě mate a co považuješ za důležité. Právě tyhle vlastní odpovědi mají na výslednou analýzu největší vliv.</p>
+                <p class="mt-3 text-white/55 leading-relaxed">U psaných odpovědí se neboj být konkrétní. Stačí pár normálních vět: co se stalo, jak to na tebe působí, co tě mate a co je pro tebe nejdůležitější. Nemusíš odpovídat dvakrát na totéž — stačí konkrétní příběh a jeden hlavní problém.</p>
               </div>
 
               <div class="grid md:grid-cols-2 gap-5">
@@ -715,21 +707,13 @@
               </div>
 
               <div class="mt-6 grid md:grid-cols-2 gap-5">
-                <div class="input-wrap">
+                <div class="input-wrap md:col-span-2">
                   <label for="relationStory">Popiš vlastními slovy, co se mezi vámi děje</label>
-                  <textarea id="relationStory" name="relationStory" class="field" required maxlength="720" placeholder="Např. známe se z práce, často si píšeme, někdy je to hodně blízké a pak najednou odstup..."></textarea>
+                  <textarea id="relationStory" name="relationStory" class="field" required maxlength="950" placeholder="Napiš to normálně jako kamarádovi. Co se stalo, jak spolu fungujete, co tě mate, co je mezi vámi hezké i co drhne. Nemusí to být dokonalý text."></textarea>
                 </div>
-                <div class="input-wrap">
-                  <label for="goodThingsText">Co podle tebe mezi vámi funguje?</label>
-                  <textarea id="goodThingsText" name="goodThingsText" class="field" required maxlength="520" placeholder="Např. dokážeme se smát, chápe moje narážky, je mi s ním/ní klidně..."></textarea>
-                </div>
-                <div class="input-wrap">
-                  <label for="biggestProblem">Největší problém nebo nejistota</label>
-                  <textarea id="biggestProblem" name="biggestProblem" class="field" required maxlength="620" placeholder="Např. bojím se, že to bere jen jako flirt, nebo že každý čekáme něco jiného. Pokud žádný velký problém není, napiš co si chceš ověřit..."></textarea>
-                </div>
-                <div class="input-wrap">
-                  <label for="lastSituation">Konkrétní situace, která tě mate <span class="text-white/35">(volitelné)</span></label>
-                  <textarea id="lastSituation" name="lastSituation" class="field" maxlength="620" placeholder="Např. naposledy se choval/a mile, ale pak dva dny neodpověděl/a... Pokud žádná konkrétní situace není, nech prázdné."></textarea>
+                <div class="input-wrap md:col-span-2">
+                  <label for="mainIssue">Jaká jedna konkrétní situace nebo problém je teď nejdůležitější?</label>
+                  <textarea id="mainIssue" name="mainIssue" class="field" required maxlength="780" placeholder="Např. přestal/a psát, nevíš na čem jsi, pořád se vrací stejná hádka, bojíš se odmítnutí, nebo si chceš ověřit, jestli to má smysl."></textarea>
                 </div>
               </div>
 
@@ -917,7 +901,7 @@
 
           <details class="glass rounded-2xl p-5 reveal">
             <summary class="cursor-pointer font-black text-lg">Musím znát všechny odpovědi?</summary>
-            <p class="text-white/58 leading-relaxed mt-3">Nemusíš. Některé otázky jsou volitelné, protože u manželů, dlouhodobého vztahu nebo nejasné situace nemusí dávat smysl například „kdo napsal první“. Důležitější jsou vlastní textové odpovědi: co se mezi vámi děje, co tě mate a co chceš zjistit.</p>
+            <p class="text-white/58 leading-relaxed mt-3">Nemusíš. Některé otázky jsou volitelné, protože u manželů, dlouhodobého vztahu nebo nejasné situace nemusí dávat smysl například „kdo napsal první“. Důležitější jsou vlastní textové odpovědi: co chceš zjistit, jaké signály vnímáš, co se mezi vámi děje a jaký jeden problém je teď nejdůležitější.</p>
           </details>
 
           <details class="glass rounded-2xl p-5 reveal">
@@ -1108,14 +1092,13 @@
           birth: value('userBirth'),
           status: value('userStatus'),
           analysisContext: value('analysisContext'),
-          selfDescription: value('selfDescription'),
           analysisQuestion: value('analysisQuestion')
         },
         crush: {
           name: value('crushName'),
           birth: value('crushBirth'),
-          description: value('crushDescription'),
-          signals: value('signalsDescription'),
+          description: value('crushSignals'),
+          signals: value('crushSignals'),
           uncertainty: value('uncertaintyQuestion')
         },
         dynamic: {
@@ -1125,9 +1108,8 @@
           lastVibe: value('lastVibe'),
           whatWorks: valuesByName('vibeTags'),
           relationStory: value('relationStory'),
-          goodThingsText: value('goodThingsText'),
-          biggestProblem: value('biggestProblem'),
-          lastSituation: value('lastSituation')
+          mainIssue: value('mainIssue'),
+          biggestProblem: value('mainIssue')
         },
         legalNote: 'User acknowledged this is an orientational compatibility analysis based only on submitted data and generated by an AI model; not therapy, diagnosis or professional relationship advice.'
       };
