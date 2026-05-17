@@ -24,13 +24,16 @@
       <div class="site-footer-inner">
         <div>
           <a class="footer-brand" href="${rootPath}index.html">CrushMeter<span>.cz</span></a>
-          <p class="footer-text">Kompatibilitní analýza dvou lidí podle zadaných údajů. Výstup vzniká automaticky pomocí jazykového modelu; nejde o psychologickou diagnózu, terapii ani odborné poradenství.</p>
+          <p class="footer-text">Orientační kompatibilitní analýza dvou lidí podle zadaných údajů. Výstup není psychologická diagnóza, terapie ani odborné vztahové poradenství.</p>
           <p class="footer-hashtag">Sdílíš výsledek? Přidej <strong>#crushmeter</strong></p>
+          <p class="footer-copy">Kontakt: <a href="mailto:info@tomys.cz" style="color:rgba(255,255,255,.62);text-decoration:none;">info@tomys.cz</a></p>
           <p class="footer-copy">© ${currentYear} CrushMeter.cz</p>
         </div>
         <div class="footer-links" aria-label="Odkazy v patičce">
           <a href="${rootPath}obchodni-podminky.html">Obchodní podmínky</a>
           <a href="${rootPath}ochrana-soukromi.html">Ochrana soukromí</a>
+          <a href="${rootPath}cookies.html">Cookies</a>
+          <a href="${rootPath}kontakt.html">Kontakt</a>
           <a href="${rootPath}blog.html">Blog</a>
         </div>
       </div>
