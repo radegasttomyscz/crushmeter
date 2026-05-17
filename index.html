@@ -6,10 +6,18 @@
   <title>CrushMeter.cz | Analýza kompatibility dvou lidí</title>
   <meta name="description" content="Zjisti, na kolik procent se k sobě hodíte. Analýza porovná vaše odpovědi, vztahové signály, komunikaci a rozdíly mezi vámi." />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="CrushMeter.cz | Jaká mezi vámi skutečně je chemie?" />
+  <meta property="og:title" content="CrushMeter.cz | Analýza kompatibility dvou lidí" />
   <meta property="og:description" content="Porovnání dvou lidí podle odpovědí, vztahových signálů a komunikační dynamiky. Výsledek dorazí e-mailem po zaplacení." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crushmeter.cz/" />
+  <meta property="og:image" content="https://crushmeter.cz/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="CrushMeter.cz — ukázka kompatibilitní analýzy" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CrushMeter.cz | Analýza kompatibility dvou lidí" />
+  <meta name="twitter:description" content="Porovnání dvou lidí podle odpovědí, vztahových signálů a komunikační dynamiky." />
+  <meta name="twitter:image" content="https://crushmeter.cz/og-image.png" />
   <meta name="theme-color" content="#09040f" />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -866,6 +874,48 @@
       </div>
     </section>
 
+
+    <section id="sdilej" class="px-4 py-20 md:py-28">
+      <div class="max-w-6xl mx-auto grid lg:grid-cols-[.9fr_1.1fr] gap-6 items-center">
+        <div class="reveal">
+          <p class="text-hot font-black uppercase tracking-[.24em] text-xs mb-4">Sdílej CrushMeter</p>
+          <h2 class="font-serif text-4xl md:text-6xl font-bold mb-5">Znáš někoho, kdo tohle potřebuje vidět?</h2>
+          <p class="text-white/60 text-lg leading-relaxed mb-6">
+            Pošli odkaz kamarádce, kámošovi nebo někomu, kdo právě řeší crush, vztah bez názvu, návrat k ex nebo věčnou otázku „co mezi námi vlastně je?“
+          </p>
+          <p class="text-white/52 leading-relaxed">
+            Nejde o žádný veřejný výsledek ani sdílení tvých odpovědí. Sdílíš jen odkaz na web. Svoje výsledky si necháš pro sebe — nebo je pošleš dál jen tehdy, když budeš chtít.
+          </p>
+        </div>
+
+        <div class="glass rounded-[2.5rem] p-6 sm:p-8 reveal">
+          <div class="rounded-[2rem] bg-gradient-to-br from-[#180615] via-[#11051d] to-[#08030d] border border-white/10 p-6 sm:p-8">
+            <p class="text-xs uppercase tracking-[.24em] text-white/42 font-black mb-3">Tip na zprávu</p>
+            <div class="glass-soft rounded-2xl p-5 mb-5">
+              <p id="shareText" class="text-white/72 leading-relaxed">
+                „Hele, zkus si CrushMeter. Vyplníš pár věcí o vás dvou a dostaneš rozbor, jak mezi vámi vychází shoda. Jsem zvědavý/á, co ti vyjde 😄“
+              </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              <button type="button" id="shareWebBtn" class="rounded-full px-5 py-4 bg-gradient-to-r from-hot to-violet text-white font-black text-sm uppercase tracking-[.12em] hover:scale-[1.02] transition">
+                Sdílet odkaz
+              </button>
+              <button type="button" id="copyShareBtn" class="rounded-full px-5 py-4 glass-soft text-white/78 font-black text-sm uppercase tracking-[.12em] hover:text-white transition">
+                Zkopírovat text
+              </button>
+            </div>
+
+            <div class="mt-5 rounded-2xl border border-hot/20 bg-hot/10 p-4">
+              <p class="text-sm text-white/66 leading-relaxed">
+                Na stories nebo do postu můžeš přidat hashtag <strong class="text-hot">#crushmeter</strong>. Pomůže nám to dostat projekt mezi lidi, kteří právě řeší podobnou vztahovou situaci.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="faq" class="px-4 py-20 md:py-28">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 reveal">
@@ -1158,6 +1208,42 @@
       const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = new Date().getFullYear();
       createParticles();
       revealOnScroll();
+
+      const shareWebBtn = document.getElementById('shareWebBtn');
+      const copyShareBtn = document.getElementById('copyShareBtn');
+      const shareTextEl = document.getElementById('shareText');
+      const shareUrl = 'https://crushmeter.cz/';
+      const shareMessage = shareTextEl ? `${shareTextEl.textContent.trim()} ${shareUrl}` : shareUrl;
+
+      if (shareWebBtn) {
+        shareWebBtn.addEventListener('click', async () => {
+          if (navigator.share) {
+            try {
+              await navigator.share({
+                title: 'CrushMeter.cz',
+                text: 'Zkus si orientační analýzu kompatibility dvou lidí.',
+                url: shareUrl
+              });
+              return;
+            } catch (error) {}
+          }
+          window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank', 'noopener,noreferrer');
+        });
+      }
+
+      if (copyShareBtn) {
+        copyShareBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(shareMessage);
+            const original = copyShareBtn.textContent;
+            copyShareBtn.textContent = 'Zkopírováno';
+            setTimeout(() => { copyShareBtn.textContent = original; }, 1800);
+          } catch (error) {
+            window.prompt('Zkopíruj text ručně:', shareMessage);
+          }
+        });
+      }
+
 
       document.querySelectorAll('.nextBtn').forEach(btn => {
         btn.addEventListener('click', () => {
