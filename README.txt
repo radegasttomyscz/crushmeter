@@ -1,14 +1,5 @@
-CrushMeter.cz — aktualizace OG obrázku + kontaktu
+CrushMeter.cz — social OG update
 
-Nahraj obsah ZIPu do rootu GitHub repozitáře.
-
-Obsah:
-- index.html: aktualizovaný OG obrázek pro Facebook/Messenger.
-- og-image.png: nový sdílecí obrázek 1200×630 bez rozbitého mockupu.
-- kontakt.html: kontaktní stránka.
-- cookies.html: stránka cookies.
-- assets/site.js: footer doplněný o Kontakt, Cookies a kontaktní e-mail.
-- assets/site.css: společné styly.
-- sitemap.xml: doplněné URL kontakt/cookies.
-
-Po nahrání spusť Facebook Sharing Debugger a dej znovu načíst URL https://crushmeter.cz/.
+Nahraj obsah ZIPu do rootu repozitáře na GitHubu.
+Soubor og-image.png je nastavený jako sdílecí obrázek pro hlavní stránku i podpůrné stránky.
+Po nasazení použij Meta Sharing Debugger a klikni na Scrape Again pro https://crushmeter.cz/.
