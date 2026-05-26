@@ -372,6 +372,48 @@
       .aurora.three { left: -10rem; }
     }
 
+
+
+    /* Mobile performance hotfix: heavy fixed layers, blur and particle animations can cause scroll jank on weaker phones. */
+    @media (max-width: 768px) {
+      html { scroll-behavior: auto; }
+
+      body::before {
+        position: absolute;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 22% 8%, rgba(255, 47, 166, .18), transparent 34%),
+          radial-gradient(circle at 86% 18%, rgba(143, 61, 255, .16), transparent 36%),
+          linear-gradient(180deg, #05030a 0%, #09040f 54%, #07020a 100%);
+      }
+
+      .noise,
+      .particles,
+      .particle,
+      .aurora {
+        display: none !important;
+        animation: none !important;
+      }
+
+      .glass,
+      .glass-soft,
+      .site-nav,
+      .loading-overlay {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+      }
+
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .btn-glow::before {
+        display: none !important;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; }
       .reveal { opacity: 1; transform: none; }
@@ -1057,7 +1099,7 @@
 
     function createParticles() {
       const box = document.getElementById('particles');
-      const count = window.innerWidth < 768 ? 34 : 64;
+      const count = window.innerWidth < 768 ? 0 : 64;
       for (let i = 0; i < count; i++) {
         const p = document.createElement('span');
         p.className = 'particle';
