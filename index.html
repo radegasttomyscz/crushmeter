@@ -24,11 +24,6 @@
 <meta name="theme-color" content="#09040f" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
   <script>
     tailwind.config = {
       theme: {
@@ -296,6 +291,87 @@
       50% { transform: scale(1.08); filter: brightness(1.15); }
     }
 
+
+    /* Mobile overflow fixes for the first section */
+    main, header, section, article, form, .hero-grid, .hero-copy, .hero-preview, .glass, .glass-soft { min-width: 0; }
+    h1, h2, h3, p, a, button, label, summary, li { overflow-wrap: break-word; }
+
+    @media (max-width: 640px) {
+      .hero-section {
+        min-height: auto;
+        padding: 4.75rem 1rem 3.75rem;
+        overflow: hidden;
+        align-items: flex-start;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 2rem;
+        max-width: 100%;
+      }
+
+      .hero-copy,
+      .hero-preview,
+      .hero-preview-card,
+      .hero-info {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .hero-eyebrow {
+        max-width: 100%;
+        white-space: normal;
+        flex-wrap: wrap;
+        justify-content: center;
+        line-height: 1.45;
+        letter-spacing: .10em;
+        padding: .65rem .9rem;
+        text-wrap: balance;
+      }
+
+      .hero-title {
+        font-size: clamp(2.45rem, 12.5vw, 3.35rem) !important;
+        line-height: 1.03 !important;
+        letter-spacing: -.035em;
+        margin-bottom: 1.35rem;
+        text-wrap: balance;
+      }
+
+      .hero-lead {
+        font-size: 1rem !important;
+        line-height: 1.72 !important;
+        max-width: 100%;
+        margin-bottom: 1.75rem;
+      }
+
+      .hero-actions a,
+      .hero-actions button {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center;
+        white-space: normal;
+        line-height: 1.25;
+        letter-spacing: .075em;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .hero-preview-card {
+        transform: none !important;
+        border-radius: 2rem;
+      }
+
+      .aurora {
+        width: 26rem;
+        height: 26rem;
+        filter: blur(64px);
+      }
+
+      .aurora.two { right: -14rem; top: 18rem; }
+      .aurora.three { left: -10rem; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; }
       .reveal { opacity: 1; transform: none; }
@@ -331,20 +407,20 @@
 
 
   <main id="top">
-    <header class="relative min-h-screen flex items-center px-4 pt-32 pb-20">
-      <div class="max-w-7xl mx-auto grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center w-full">
-        <div class="text-center lg:text-left reveal">
-          <div class="inline-flex items-center gap-2 glass-soft rounded-full px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-white/58 mb-7">
+    <header class="hero-section relative min-h-screen flex items-center px-4 pt-32 pb-20">
+      <div class="hero-grid max-w-7xl mx-auto grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center w-full">
+        <div class="hero-copy text-center lg:text-left reveal">
+          <div class="hero-eyebrow inline-flex items-center gap-2 glass-soft rounded-full px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-white/58 mb-7">
             <span class="w-2 h-2 rounded-full bg-hot shadow-[0_0_16px_rgba(255,47,166,.8)]"></span>
             Kompatibilitní analýza · výsledek e-mailem
           </div>
-          <h1 class="font-serif text-5xl sm:text-6xl lg:text-8xl font-bold leading-[.92] tracking-tight mb-7">
+          <h1 class="hero-title font-serif text-5xl sm:text-6xl lg:text-8xl font-bold leading-[.92] tracking-tight mb-7">
             Jaká mezi vámi <span class="text-gradient italic">skutečně</span> je chemie?
           </h1>
-          <p class="text-lg sm:text-xl text-white/68 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-9">
+          <p class="hero-lead text-lg sm:text-xl text-white/68 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-9">
             Vyplníš konkrétní údaje o vás dvou. Systém porovná vaše odpovědi, komunikační signály, rozdíly v povaze a vztahovou dynamiku. Výsledkem je procento kompatibility a srozumitelný rozbor toho, co vás spojuje i kde může vznikat napětí.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div class="hero-actions flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a href="#formular" class="btn-glow rounded-full px-8 py-4 bg-gradient-to-r from-hot to-violet font-black uppercase tracking-[.12em] text-sm hover:scale-[1.03] transition">
               Zjistit náš match
             </a>
@@ -352,14 +428,14 @@
               Ukázka výsledku
             </a>
           </div>
-          <div class="mt-5 glass-soft rounded-2xl p-4 max-w-2xl mx-auto lg:mx-0 text-left">
+          <div class="hero-info mt-5 glass-soft rounded-2xl p-4 max-w-2xl mx-auto lg:mx-0 text-left">
             <p class="text-sm text-white/62 leading-relaxed"><strong class="text-white">Co znamená crush?</strong> Jednoduše člověk, který tě přitahuje nebo nad kterým přemýšlíš. <strong class="text-white">CrushMeter</strong> je porovnání dvou lidí: vyhodnotí zadané údaje, rozdíly, komunikaci a odhadne, na kolik procent k sobě podle dat sedíte. V pozadí pracuje pokročilý jazykový model, nejde ale o psychologa ani terapii.</p>
           </div>
         </div>
 
-        <div class="relative reveal" style="transition-delay:.12s">
+        <div class="hero-preview relative reveal" style="transition-delay:.12s">
           <div class="absolute -inset-6 bg-gradient-to-br from-hot/20 to-violet/20 blur-3xl rounded-[4rem]"></div>
-          <div class="relative glass rounded-[2.5rem] p-4 sm:p-6 rotate-0 lg:rotate-2 hover:rotate-0 transition duration-500">
+          <div class="hero-preview-card relative glass rounded-[2.5rem] p-4 sm:p-6 rotate-0 lg:rotate-2 hover:rotate-0 transition duration-500">
             <div class="rounded-[2rem] border border-white/10 bg-black/30 p-5 sm:p-7 overflow-hidden relative">
               <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(255,47,166,.20),transparent_42%),radial-gradient(circle_at_90%_20%,rgba(143,61,255,.18),transparent_36%)]"></div>
 
@@ -568,8 +644,8 @@
                   <input id="userName" name="userName" class="field" required maxlength="40" placeholder="Např. Tereza" />
                 </div>
                 <div class="input-wrap">
-                  <label for="userBirth">Datum narození <span class="text-white/35">(volitelné)</span></label>
-                  <input id="userBirth" name="userBirth" class="field" type="date" />
+                  <label for="userBirth">Věk nebo rok narození <span class="text-white/35">(volitelné)</span></label>
+                  <input id="userBirth" name="userBirth" class="field" type="text" maxlength="30" inputmode="numeric" placeholder="Např. 24 nebo 2001" />
                 </div>
                 <div class="input-wrap md:col-span-2">
                   <label for="userStatus">V jaké situaci teď jsi?</label>
@@ -606,6 +682,10 @@
                 </div>
               </div>
 
+              <div class="mt-5 rounded-2xl border border-white/10 bg-white/[.04] p-4 text-sm text-white/58 leading-relaxed">
+                Kvůli soukromí používej raději přezdívky a věk nebo rok narození místo celého data. Nevkládej rodná čísla, adresy, hesla, zdravotní informace ani jiné citlivé údaje.
+              </div>
+
               <div class="mt-8 flex justify-end">
                 <button type="button" class="nextBtn btn-glow rounded-full px-8 py-4 bg-gradient-to-r from-hot to-violet font-black uppercase tracking-[.12em] text-sm" data-next="2">Pokračovat</button>
               </div>
@@ -623,8 +703,8 @@
                   <input id="crushName" name="crushName" class="field" required maxlength="40" placeholder="Např. Adam" />
                 </div>
                 <div class="input-wrap">
-                  <label for="crushBirth">Datum narození druhé osoby <span class="text-white/35">(volitelné)</span></label>
-                  <input id="crushBirth" name="crushBirth" class="field" type="date" />
+                  <label for="crushBirth">Věk nebo rok narození druhé osoby <span class="text-white/35">(volitelné)</span></label>
+                  <input id="crushBirth" name="crushBirth" class="field" type="text" maxlength="30" inputmode="numeric" placeholder="Např. 26 nebo 1998" />
                 </div>
               </div>
 
@@ -771,8 +851,13 @@
               </div>
 
               <label class="flex items-start gap-3 glass-soft rounded-2xl p-4 mb-3 cursor-pointer">
-                <input id="consent" type="checkbox" required class="mt-1 accent-pink-500" />
-                <span class="text-sm text-white/62 leading-relaxed">Beru na vědomí, že jde o orientační analýzu podle zadaných dat. Výsledek nemusí být přesný a nenahrazuje odborné psychologické, terapeutické ani vztahové poradenství.</span>
+                <input id="serviceConsent" type="checkbox" class="mt-1 accent-pink-500" />
+                <span class="text-sm text-white/62 leading-relaxed">Beru na vědomí, že CrushMeter je orientační automatizovaná analýza podle zadaných dat. Výsledek nemusí být přesný, neurčuje skutečné city druhé osoby a nenahrazuje psychologa, terapii ani odborné vztahové poradenství.</span>
+              </label>
+
+              <label class="flex items-start gap-3 glass-soft rounded-2xl p-4 mb-5 cursor-pointer">
+                <input id="digitalContentConsent" type="checkbox" class="mt-1 accent-pink-500" />
+                <span class="text-sm text-white/62 leading-relaxed">Souhlasím se zahájením dodání digitálního obsahu ihned po uhrazení objednávky před uplynutím 14denní lhůty pro odstoupení a beru na vědomí, že po dodání analýzy ztrácím právo od smlouvy odstoupit. Současně souhlasím s <a href="/obchodni-podminky.html" class="text-soft underline underline-offset-4" target="_blank" rel="noopener">obchodními podmínkami</a> a beru na vědomí <a href="/ochrana-soukromi.html" class="text-soft underline underline-offset-4" target="_blank" rel="noopener">zpracování osobních údajů</a>.</span>
               </label>
 
               <div id="finalError" class="hidden rounded-2xl border border-red-400/30 bg-red-500/10 p-4 text-red-100 text-sm mb-5"></div>
@@ -1122,7 +1207,12 @@
           mainIssue: value('mainIssue'),
           biggestProblem: value('mainIssue')
         },
-        legalNote: 'User acknowledged this is an orientational compatibility analysis based only on submitted data and generated by an AI model; not therapy, diagnosis or professional relationship advice.'
+        consents: {
+          serviceLimitsAcknowledged: !!document.getElementById('serviceConsent')?.checked,
+          immediateDigitalContentDelivery: !!document.getElementById('digitalContentConsent')?.checked,
+          consentTextVersion: 'crushmeter-legal-2026-05-26'
+        },
+        legalNote: 'User acknowledged this is an orientational compatibility analysis based only on submitted data and generated by an AI model; not therapy, diagnosis, professional relationship advice or a certain reading of another person’s feelings. User also gave active consent to immediate delivery of digital content before the 14-day withdrawal period and acknowledged loss of withdrawal right after delivery.'
       };
     }
 
@@ -1176,7 +1266,7 @@
           hideFinalError();
           const panel = currentStepEl();
           if (!validateStep(panel)) {
-            showError('Doplň prosím označená pole. Datum narození je volitelné, ostatní položky v tomto kroku potřebujeme pro smysluplnou analýzu.');
+            showError('Doplň prosím označená pole. Věk/rok narození je volitelný, ostatní položky v tomto kroku potřebujeme pro smysluplnou analýzu.');
             return;
           }
           setStep(btn.dataset.next);
@@ -1196,7 +1286,8 @@
         field.addEventListener('change', () => { field.style.borderColor = ''; });
       });
 
-      document.getElementById('consent')?.addEventListener('change', hideFinalError);
+      document.getElementById('serviceConsent')?.addEventListener('change', hideFinalError);
+      document.getElementById('digitalContentConsent')?.addEventListener('change', hideFinalError);
 
       document.getElementById('crushForm').addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -1217,10 +1308,11 @@
           return;
         }
 
-        const consent = document.getElementById('consent');
-        if (!consent?.checked) {
-          showFinalError('Ještě potvrď poslední checkbox. Bez něj analýzu nespustíme.');
-          consent?.focus({ preventScroll: true });
+        const serviceConsent = document.getElementById('serviceConsent');
+        const digitalContentConsent = document.getElementById('digitalContentConsent');
+        if (!serviceConsent?.checked || !digitalContentConsent?.checked) {
+          showFinalError('Ještě potvrď obě závěrečná políčka. Bez nich nemůžeme analýzu spustit ani dodat hned po zaplacení.');
+          (!serviceConsent?.checked ? serviceConsent : digitalContentConsent)?.focus({ preventScroll: true });
           return;
         }
 
