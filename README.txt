@@ -1,5 +1,1 @@
-CrushMeter.cz — social OG update
-
-Nahraj obsah ZIPu do rootu repozitáře na GitHubu.
-Soubor og-image.png je nastavený jako sdílecí obrázek pro hlavní stránku i podpůrné stránky.
-Po nasazení použij Meta Sharing Debugger a klikni na Scrape Again pro https://crushmeter.cz/.
+Dalších 10 SEO článků pro CrushMeter.cz. Nahraj složku blog/ do /blog/ na GitHubu. Soubor sitemap.xml můžeš použít jako aktualizovanou sitemapu. Soubor blog-index-snippets.html obsahuje jednoduché HTML karty pro doplnění rozcestníku blog.html. CTA tlačítka mají inline style color:#fff.
