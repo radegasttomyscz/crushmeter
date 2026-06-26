@@ -1,1 +1,1 @@
-Dalších 10 SEO článků pro CrushMeter.cz. Nahraj složku blog/ do /blog/ na GitHubu. Soubor sitemap.xml můžeš použít jako aktualizovanou sitemapu. Soubor blog-index-snippets.html obsahuje jednoduché HTML karty pro doplnění rozcestníku blog.html. CTA tlačítka mají inline style color:#fff.
+Dalších 10 SEO článků pro CrushMeter.cz. Nahraj soubory ze složky blog/ do /blog/. Soubor sitemap-new-articles-only.xml obsahuje pouze nové URL pro snadné zkopírování do hlavní sitemap.xml. CTA tlačítka mají bílý text pomocí style="color:#fff".
