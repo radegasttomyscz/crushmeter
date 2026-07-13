@@ -2,51 +2,306 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <link rel="stylesheet" href="/assets/site.css" />
-  <title>Vztahy, crush a kompatibilita | Blog CrushMeter.cz</title>
-  <meta name="description" content="Magazín o vztahové chemii, crushích, flirtování, red flags, komunikaci a kompatibilitě. Články pro lepší pochopení vztahové dynamiky." />
-  <meta name="keywords" content="crush, vztahová chemie, kompatibilita, red flags, zamilovanost, flirtování" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Blog o vztazích, crushi a kompatibilitě | CrushMeter.cz</title>
+  <meta name="description" content="Praktické články o vztazích, crushi, komunikaci, smíšených signálech, chemii a vztahové kompatibilitě. Bez ezoteriky a bez falešných jistot." />
+  <meta name="keywords" content="crush, vztahy, vztahová kompatibilita, smíšené signály, red flags, komunikace ve vztahu" />
   <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://crushmeter.cz/blog.html" />
+
+  <meta property="og:title" content="Blog o vztazích, crushi a kompatibilitě | CrushMeter.cz" />
+  <meta property="og:description" content="Články o vztahové nejistotě, komunikaci, chemii, crushi a kompatibilitě. Prakticky, česky a bez falešných slibů." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crushmeter.cz/blog.html" />
+  <meta property="og:site_name" content="CrushMeter.cz" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Blog o vztazích, crushi a kompatibilitě | CrushMeter.cz" />
+  <meta name="twitter:description" content="Praktické články o vztazích, crushi, komunikaci a kompatibilitě." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css" />
+
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <style>
-    :root{--bg:#05030a;--hot:#ff2fa6;--rose:#ff5ab8;--violet:#8f3dff;--line:rgba(255,255,255,.1)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 18% 0%,rgba(255,47,166,.15),transparent 34%),radial-gradient(circle at 85% 8%,rgba(143,61,255,.16),transparent 36%),#05030a;color:#fff;font-family:Outfit,system-ui,sans-serif}.font-serif{font-family:'Playfair Display',serif}.container{max-width:1120px;margin:0 auto;padding:0 22px}.glass{background:rgba(255,255,255,.045);backdrop-filter:blur(22px);border:1px solid var(--line);box-shadow:0 24px 80px rgba(0,0,0,.25)}.text-gradient{background:linear-gradient(110deg,var(--rose),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}.hero-page{padding:92px 0 52px;text-align:center}.eyebrow{display:inline-flex;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:8px 13px;background:rgba(255,255,255,.04);font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.58);font-weight:800}.hero-page h1{font-size:clamp(42px,8vw,86px);line-height:.96;margin:22px 0 18px}.lead{max-width:760px;margin:0 auto;color:rgba(255,255,255,.62);font-size:18px;line-height:1.7}.grid{display:grid;gap:24px}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.card{border-radius:34px;overflow:hidden;text-decoration:none;color:#fff;transition:.25s;display:block}.card:hover{transform:translateY(-5px);border-color:rgba(255,47,166,.30)}.card-media{height:185px;background:radial-gradient(circle at 30% 25%,rgba(255,47,166,.28),transparent 40%),linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02));display:grid;place-items:center;font-size:46px}.card-body{padding:28px}.tag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:var(--rose)}.card h2{margin:10px 0 12px;font-size:22px;line-height:1.18;color:#fff}.muted{color:rgba(255,255,255,.58);line-height:1.65}.blog-cta{margin:42px auto 0;max-width:820px;text-align:center;border-radius:34px;padding:30px;background:linear-gradient(135deg,rgba(255,47,166,.13),rgba(143,61,255,.12));border:1px solid rgba(255,255,255,.1)}.blog-cta h2{margin:0 0 10px;font-size:30px}.blog-cta p{margin:0 0 22px;color:rgba(255,255,255,.62);line-height:1.7}.blog-cta a{display:inline-flex;padding:14px 22px;border-radius:999px;background:linear-gradient(110deg,var(--hot),var(--violet));color:#fff;text-decoration:none;font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:12px}@media(max-width:820px){.grid-3{grid-template-columns:1fr}.hero-page{padding-top:64px}.card-media{height:145px}}
-  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Blog o vztazích, crushi a kompatibilitě",
+    "description": "Praktické články o vztahové nejistotě, komunikaci, chemii, crushi a kompatibilitě.",
+    "url": "https://crushmeter.cz/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CrushMeter.cz",
+      "url": "https://crushmeter.cz/"
+    }
+  }
+  </script>
 </head>
 <body>
-<div data-site-header></div>
-<main class="container">
-  <section class="hero-page">
-    <span class="eyebrow">CrushMeter magazín</span>
-    <h1 class="font-serif">Vztahy, signály a <span class="text-gradient">chemie mezi lidmi</span></h1>
-    <p class="lead">Nenápadná část webu pro články o vztahové kompatibilitě, komunikaci, signálech zájmu a dynamice mezi dvěma lidmi.</p>
-  </section>
+  <div data-site-header></div>
 
-  <section class="grid grid-3" aria-label="Články magazínu">
-    <a class="card glass" href="blog/red-flags-na-zacatku.html">
-      <div class="card-media">💔</div>
-      <div class="card-body"><span class="tag">Red flags</span><h2>5 varovných signálů, které na začátku přehlížíme</h2><p class="muted">Když se nám někdo líbí, mozek umí krásně ignorovat fakta. Tohle jsou signály, které se vyplatí nepřehlížet.</p></div>
-    </a>
-    <a class="card glass" href="blog/jak-poznat-ze-ma-crush-zajem.html">
-      <div class="card-media">💬</div>
-      <div class="card-body"><span class="tag">Komunikace</span><h2>Jak poznat, že má crush opravdu zájem?</h2><p class="muted">Není to jen o rychlosti odpovědi. Zájem se často ukazuje v drobnostech, které působí nenápadně.</p></div>
-    </a>
-    <a class="card glass" href="blog/vztahova-kompatibilita-ai.html">
-      <div class="card-media">✨</div>
-      <div class="card-body"><span class="tag">Kompatibilita</span><h2>Co vlastně znamená vztahová kompatibilita?</h2><p class="muted">Kompatibilita není magické číslo. Je to mix komunikace, přitažlivosti, očekávání a načasování.</p></div>
-    </a>
-  </section>
+  <main class="container">
+    <section class="hero" style="padding-top:70px">
+      <span class="eyebrow">Blog</span>
+      <h1 class="font-serif">Články o vztazích, crushi a <span class="text-gradient">kompatibilitě</span></h1>
+      <p>Praktické texty o komunikaci, signálech zájmu, vztahové nejistotě, chemii a kompatibilitě. Bez ezoteriky, bez diagnóz a bez falešných jistot.</p>
+      <p><a class="btn btn-primary" href="/#formular" style="color:#fff">Vyzkoušet CrushMeter analýzu</a></p>
+    </section>
 
-  <section class="blog-cta">
-    <h2 class="font-serif">Chceš porovnat vás dva?</h2>
-    <p>Spusť kompatibilitní analýzu a zjisti, jak mezi vámi vychází komunikace, rozdíly, přitažlivost a vztahový potenciál.</p>
-    <a href="/index.html#formular">Spustit analýzu</a>
-  </section>
-</main>
-<div data-site-footer></div>
-<script src="/assets/site.js"></script>
+    <section class="article-list">
+      <h2 class="font-serif">Nejnovější a doporučené články</h2>
+      <p>Vyber si téma, které nejvíc odpovídá tomu, co právě řešíš. Články jsou obecné a nenahrazují terapii ani odborné poradenství, ale mohou pomoct podívat se na situaci s větším odstupem.</p>
+
+      <div class="blog-grid">
+        <a class="article-card glass" href="/blog/red-flags-na-zacatku.html">
+          <span class="eyebrow">Red flags</span>
+          <h2>Red flags ve vztahu: 7 varovných signálů, které na začátku často přehlížíme</h2>
+          <p>Varovné signály na začátku vztahu, které se snadno omlouvají kvůli chemii, nejistotě nebo silné přitažlivosti.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-poznat-ze-ma-crush-zajem.html">
+          <span class="eyebrow">Crush</span>
+          <h2>Jak poznat, že má crush opravdu zájem</h2>
+          <p>Praktický článek o signálech zájmu, komunikaci, iniciativě a rozdílu mezi opravdovým zájmem a pouhou pozorností.</p>
+        </a>
+        <a class="article-card glass" href="/blog/vztahova-kompatibilita-ai.html">
+          <span class="eyebrow">Kompatibilita</span>
+          <h2>Co znamená vztahová kompatibilita a proč to není jen procento</h2>
+          <p>Vysvětlení vztahové kompatibility, komunikace, přitažlivosti, očekávání a načasování bez zbytečných slibů.</p>
+        </a>
+        <a class="article-card glass" href="/blog/co-znamena-crush.html">
+          <span class="eyebrow">Crush</span>
+          <h2>Co znamená crush a proč nás někdo tak silně přitahuje</h2>
+          <p>Srozumitelné vysvětlení pojmu crush i pro lidi, kteří ho běžně nepoužívají.</p>
+        </a>
+        <a class="article-card glass" href="/blog/piseme-si-kazdy-den-ale-nic-se-neposouva.html">
+          <span class="eyebrow">Komunikace</span>
+          <h2>Co znamená, když si píšete každý den, ale nic se neposouvá</h2>
+          <p>Proč každodenní psaní nemusí znamenat posun ke vztahu a jak číst celkovou dynamiku.</p>
+        </a>
+        <a class="article-card glass" href="/blog/proc-vznika-chemie-mezi-lidmi.html">
+          <span class="eyebrow">Chemie</span>
+          <h2>Proč mezi dvěma lidmi vzniká chemie</h2>
+          <p>Co může stát za silnou přitažlivostí a proč chemie sama o sobě nestačí.</p>
+        </a>
+        <a class="article-card glass" href="/blog/smisene-signaly-ve-vztahu.html">
+          <span class="eyebrow">Signály</span>
+          <h2>Jak poznat smíšené signály ve vztahu nebo flirtu</h2>
+          <p>Jak přemýšlet o nejasném chování, střídavé pozornosti a nejisté komunikaci.</p>
+        </a>
+        <a class="article-card glass" href="/blog/proc-nas-pritahuji-necitelni-lide.html">
+          <span class="eyebrow">Nejistota</span>
+          <h2>Proč nás přitahují lidé, kteří jsou nečitelní</h2>
+          <p>Proč může nečitelnost působit přitažlivě a kdy už začíná brát energii.</p>
+        </a>
+        <a class="article-card glass" href="/blog/tapajici-vztah.html">
+          <span class="eyebrow">Vztah</span>
+          <h2>Kdy má tápající vztah šanci a kdy už jen bere energii</h2>
+          <p>Jak poznat, zda se vztah vyvíjí, nebo jen dlouhodobě udržuje nejistotu.</p>
+        </a>
+        <a class="article-card glass" href="/blog/komunikace-ve-vztahu.html">
+          <span class="eyebrow">Komunikace</span>
+          <h2>Co o vztahu prozradí způsob komunikace</h2>
+          <p>Proč styl komunikace často ukáže víc než velká slova nebo jednorázová gesta.</p>
+        </a>
+        <a class="article-card glass" href="/blog/zamilovanost-chemie-vztahovy-potencial.html">
+          <span class="eyebrow">Vztahový potenciál</span>
+          <h2>Jak se liší zamilovanost, chemie a skutečný vztahový potenciál</h2>
+          <p>Rozdíl mezi intenzivním pocitem, přitažlivostí a reálnou dlouhodobější kompatibilitou.</p>
+        </a>
+        <a class="article-card glass" href="/blog/taha-me-za-nos.html">
+          <span class="eyebrow">Nejistota</span>
+          <h2>Tahá mě za nos? Jak poznat, že vztahová nejistota už není normální</h2>
+          <p>Článek pro lidi, kteří řeší, zda je druhý člověk opravdu zajímá, nebo si jen drží pozornost.</p>
+        </a>
+        <a class="article-card glass" href="/blog/ozyva-se-jen-obcas.html">
+          <span class="eyebrow">Komunikace</span>
+          <h2>Ozývá se jen občas: co to může znamenat</h2>
+          <p>Jak číst nepravidelnou komunikaci a proč občasný kontakt nemusí stačit na vztahový směr.</p>
+        </a>
+        <a class="article-card glass" href="/blog/proc-si-vybirame-nedostupne-lidi.html">
+          <span class="eyebrow">Nedostupnost</span>
+          <h2>Proč si vybíráme nedostupné lidi</h2>
+          <p>Proč nás mohou přitahovat lidé, kteří nejsou dostupní, jasní nebo emočně přítomní.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-zacit-konverzaci-s-crushem.html">
+          <span class="eyebrow">Crush</span>
+          <h2>Jak začít konverzaci s crushem bez trapného tlaku</h2>
+          <p>Praktické tipy, jak navázat kontakt přirozeně a bez manipulace.</p>
+        </a>
+        <a class="article-card glass" href="/blog/co-delat-kdyz-crush-neodepisuje.html">
+          <span class="eyebrow">Crush</span>
+          <h2>Co dělat, když crush neodepisuje</h2>
+          <p>Jak přemýšlet o tichu v komunikaci, aniž by člověk ztratil sebeúctu.</p>
+        </a>
+        <a class="article-card glass" href="/blog/online-signaly-zajmu.html">
+          <span class="eyebrow">Online vztahy</span>
+          <h2>Online signály zájmu: co může a nemusí něco znamenat</h2>
+          <p>Jak číst lajky, reakce, zprávy a sledování bez falešných závěrů.</p>
+        </a>
+        <a class="article-card glass" href="/blog/prvni-rande-ceho-si-vsimat.html">
+          <span class="eyebrow">Rande</span>
+          <h2>První rande: čeho si všímat víc než dokonalé chemie</h2>
+          <p>Co na prvním rande napovídá o komunikaci, respektu a další perspektivě.</p>
+        </a>
+        <a class="article-card glass" href="/blog/kdy-napsat-prvni.html">
+          <span class="eyebrow">Komunikace</span>
+          <h2>Kdy napsat první a kdy raději počkat</h2>
+          <p>Jak se rozhodnout, jestli udělat první krok, nebo nechat prostor i druhé straně.</p>
+        </a>
+        <a class="article-card glass" href="/blog/chemie-nebo-kompatibilita.html">
+          <span class="eyebrow">Kompatibilita</span>
+          <h2>Chemie, nebo kompatibilita? Jak poznat rozdíl</h2>
+          <p>Proč silná jiskra nemusí znamenat dobrý vztahový základ.</p>
+        </a>
+        <a class="article-card glass" href="/blog/kdy-se-zeptat-na-vztah.html">
+          <span class="eyebrow">Vztah</span>
+          <h2>Kdy se zeptat, kam to mezi námi směřuje</h2>
+          <p>Jak otevřít otázku směřování vztahu bez nátlaku a zbytečného dramatu.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-poznat-ze-si-se-mnou-jen-hraje.html">
+          <span class="eyebrow">Nejistota</span>
+          <h2>Jak poznat, že si se mnou jen hraje</h2>
+          <p>Signály, že někdo spíš udržuje pozornost, než aby vztah skutečně rozvíjel.</p>
+        </a>
+        <a class="article-card glass" href="/blog/proc-me-pritahuje-nekdo-kdo-o-me-nestoji.html">
+          <span class="eyebrow">Přitažlivost</span>
+          <h2>Proč mě přitahuje někdo, kdo o mě nestojí</h2>
+          <p>Proč může být jednostranná přitažlivost tak silná a vyčerpávající.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-poznat-ze-vztah-nema-budoucnost.html">
+          <span class="eyebrow">Vztah</span>
+          <h2>Jak poznat, že vztah nemá budoucnost</h2>
+          <p>Kdy už dlouhodobá nejistota, rozdílná očekávání a slabá komunikace ukazují problém.</p>
+        </a>
+        <a class="article-card glass" href="/blog/kdy-dat-druhou-sanci.html">
+          <span class="eyebrow">Vztah</span>
+          <h2>Kdy dát druhou šanci a kdy už raději ne</h2>
+          <p>Jak uvažovat o druhé šanci podle chování, ne jen podle slibů.</p>
+        </a>
+        <a class="article-card glass" href="/blog/proc-se-bojim-udelat-prvni-krok.html">
+          <span class="eyebrow">Crush</span>
+          <h2>Proč se bojím udělat první krok</h2>
+          <p>Strach z odmítnutí, nejistota a otázka, kdy má první krok smysl.</p>
+        </a>
+        <a class="article-card glass" href="/blog/co-znamena-kdyz-mi-pise-jen-vecer.html">
+          <span class="eyebrow">Komunikace</span>
+          <h2>Co znamená, když mi píše jen večer</h2>
+          <p>Večerní zprávy, pohodlný kontakt a rozdíl mezi zájmem a nudou.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-poznat-ze-me-bere-jen-jako-kamarada.html">
+          <span class="eyebrow">Friendzone</span>
+          <h2>Jak poznat, že mě bere jen jako kamaráda</h2>
+          <p>Signály, že druhý člověk vnímá vztah spíš kamarádsky než romanticky.</p>
+        </a>
+        <a class="article-card glass" href="/blog/proc-se-vztah-na-zacatku-zmeni.html">
+          <span class="eyebrow">Vztah</span>
+          <h2>Proč se vztah na začátku změní</h2>
+          <p>Proč intenzivní začátek někdy vystřídá chlad, ticho nebo nejistota.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-poznat-zdravy-flirt.html">
+          <span class="eyebrow">Flirt</span>
+          <h2>Jak poznat zdravý flirt</h2>
+          <p>Rozdíl mezi příjemným flirtováním, respektem a chováním, které tlačí na hranice.</p>
+        </a>
+        <a class="article-card glass" href="/blog/proc-me-pritahuji-spatne-typy.html">
+          <span class="eyebrow">Přitažlivost</span>
+          <h2>Proč mě přitahují špatné typy</h2>
+          <p>Proč se opakovaně vracíme k lidem, kteří nám nedávají stabilitu.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-poznat-ze-komunikace-je-jednostranna.html">
+          <span class="eyebrow">Komunikace</span>
+          <h2>Jak poznat, že komunikace je jednostranná</h2>
+          <p>Kdy konverzaci táhne jen jedna strana a proč to dlouhodobě vyčerpává.</p>
+        </a>
+        <a class="article-card glass" href="/blog/kdy-je-cas-prestat-cekavat-na-zpravu.html">
+          <span class="eyebrow">Komunikace</span>
+          <h2>Kdy je čas přestat čekávat na zprávu</h2>
+          <p>Jak poznat, že čekání na zprávu už bere víc energie, než dává naděje.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-poznat-ze-je-mezi-nami-napeti.html">
+          <span class="eyebrow">Chemie</span>
+          <h2>Jak poznat, že je mezi námi napětí</h2>
+          <p>Napětí, přitažlivost, nejistota a rozdíl mezi skutečným zájmem a domýšlením.</p>
+        </a>
+        <a class="article-card glass" href="/blog/proc-me-jednou-chce-a-podruhe-ignoruje.html">
+          <span class="eyebrow">Smíšené signály</span>
+          <h2>Proč mě jednou chce a podruhé ignoruje</h2>
+          <p>Střídavý zájem, ticho a návraty, které člověka drží v nejistotě.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-poznat-ze-zajem-opada.html">
+          <span class="eyebrow">Zájem</span>
+          <h2>Jak poznat, že zájem opadá</h2>
+          <p>Co může naznačovat, že se zájem druhé osoby postupně ztrácí.</p>
+        </a>
+        <a class="article-card glass" href="/blog/vztah-bez-nazvu.html">
+          <span class="eyebrow">Vztah</span>
+          <h2>Vztah bez názvu: co znamená, když spolu něco máte, ale není jasno</h2>
+          <p>Situace, kdy mezi dvěma lidmi něco je, ale nikdo to nechce pojmenovat.</p>
+        </a>
+        <a class="article-card glass" href="/blog/kdy-je-chemie-nebezpecna.html">
+          <span class="eyebrow">Chemie</span>
+          <h2>Kdy je chemie nebezpečná</h2>
+          <p>Kdy silná přitažlivost zakrývá nevyrovnanou nebo nezdravou dynamiku.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-poznat-ze-mu-na-me-zalezi.html">
+          <span class="eyebrow">Zájem</span>
+          <h2>Jak poznat, že mu na mně záleží</h2>
+          <p>Praktické signály zájmu u muže bez zbytečných jistot a manipulativních závěrů.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-poznat-ze-ji-na-me-zalezi.html">
+          <span class="eyebrow">Zájem</span>
+          <h2>Jak poznat, že jí na mně záleží</h2>
+          <p>Praktické signály zájmu u ženy podle chování, komunikace a konzistence.</p>
+        </a>
+        <a class="article-card glass" href="/blog/proc-stale-myslim-na-jednoho-cloveka.html">
+          <span class="eyebrow">Crush</span>
+          <h2>Proč stále myslím na jednoho člověka</h2>
+          <p>Proč se nám někdo drží v hlavě i ve chvíli, kdy vztah není jasný.</p>
+        </a>
+        <a class="article-card glass" href="/blog/mam-mu-napsat-nebo-cekat.html">
+          <span class="eyebrow">Komunikace</span>
+          <h2>Mám mu napsat, nebo čekat?</h2>
+          <p>Jak přemýšlet o první zprávě, čekání a vlastní iniciativě.</p>
+        </a>
+        <a class="article-card glass" href="/blog/mam-ji-napsat-nebo-cekat.html">
+          <span class="eyebrow">Komunikace</span>
+          <h2>Mám jí napsat, nebo čekat?</h2>
+          <p>Jak přemýšlet o tom, zda napsat ženě první, nebo nechat prostor.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-poznat-ze-vztah-ma-smysl.html">
+          <span class="eyebrow">Vztah</span>
+          <h2>Jak poznat, že vztah má smysl</h2>
+          <p>Signály, že vztahová dynamika má zdravý základ a není jen o nejistotě.</p>
+        </a>
+        <a class="article-card glass" href="/blog/kdy-je-nejistota-normalni.html">
+          <span class="eyebrow">Nejistota</span>
+          <h2>Kdy je nejistota ve vztahu normální</h2>
+          <p>Kdy je nejistota běžná a kdy už může ukazovat na nevyrovnanou dynamiku.</p>
+        </a>
+        <a class="article-card glass" href="/blog/jak-poznat-ze-si-me-vazi.html">
+          <span class="eyebrow">Respekt</span>
+          <h2>Jak poznat, že si mě váží</h2>
+          <p>Proč respekt, konzistence a hranice často říkají víc než velká slova.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="article-box glass">
+      <strong>Chceš se podívat přímo na vaši situaci?</strong>
+      <p>Články pomáhají pochopit obecné vzorce. Pokud ale řešíš konkrétní osobu, vaše zprávy, signály nebo vztahovou dynamiku, můžeš zkusit orientační AI kompatibilitní analýzu na CrushMeter.cz.</p>
+      <p><a class="btn btn-primary" href="/#formular" style="color:#fff">Spustit CrushMeter analýzu</a></p>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+  <script src="/assets/site.js"></script>
 </body>
 </html>
