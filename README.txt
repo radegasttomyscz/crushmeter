@@ -1,27 +1,22 @@
-Balíček: 14 nových článků pro CrushMeter.cz
+Oprava interního prolinkování CrushMeter.cz
 
-Cíl:
-- Doplnit blog z 46 článků na 60 článků.
-- Rozšířit témata mimo opakované dotazy na crush/signály.
-- Pokrýt hledané vysvětlovací dotazy typu: co je red flag, co je ghosting, co je situationship, co je love bombing apod.
+Co tento balíček řeší:
+- Doplnění sekce "Související články" přímo do dostupných HTML článků.
+- Aktualizace /blog.html na všech 62 článků.
+- Aktualizace /sitemap.xml na všech 62 článků + 4 základní stránky.
+- Aktualizace /llms.txt.
+- Zachování robots.txt.
 
-Obsah:
-- /blog/ = 14 nových HTML článků
-- blog.html = kompletní výpis všech 60 článků
-- sitemap.xml = kompletní sitemap se 60 články + 4 základní stránky
-- robots.txt = jednoduché povolení pro roboty s odkazem na sitemapu
-- seo-metadata-nove-clanky.csv = SEO metadata nových článků
+Důležité:
+- Nemáš manuálně prolinkovávat podle žádného TXT souboru.
+- Nahraj obsah složky /blog/ do /blog/ na webu a přepiš existující soubory.
+- Nahraj blog.html, sitemap.xml a llms.txt do rootu.
+- robots.txt nahraj jen pokud chceš přepsat současný.
 
-Počet nových článků: 14
-Počet článků celkem ve výpisu a sitemapě: 60
-Počet URL celkem v sitemapě: 64
-
-Doporučený postup nahrání:
-1. Nahraj obsah složky /blog/ do /blog/ na webu.
-2. Nahraj blog.html do rootu jako /blog.html.
-3. Nahraj sitemap.xml do rootu jako /sitemap.xml.
-4. robots.txt nahraj jen pokud chceš přepsat současný soubor.
-5. V Google Search Console znovu odešli sitemapu: https://crushmeter.cz/sitemap.xml
+Počet očekávaných článků: 62
+Počet fyzicky opravených HTML souborů v tomto balíčku: 62
+Počet článků ve výpisu blog.html: 62
+Počet URL v sitemapě: 66
 
 Poznámka:
-CTA tlačítka mají bílé písmo přes inline style="color:#fff".
+Pokud některý starší článek není v tomto balíčku fyzicky obsažen, znamená to, že v aktuálním pracovním prostoru nebyl dostupný jeho HTML soubor ze starších ZIPů. Blog.html a sitemap.xml ho ale stále obsahují.
