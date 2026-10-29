@@ -1,6 +1,6 @@
 'use strict';
-const CACHE='crushmeter-free-v1-20261021';
-const CORE=['/','/index.html','/predved-a-hadej.html','/jak-dobre-se-znate.html','/jak-hrat.html','/hry-na-dovolenou.html','/assets/styles.css','/assets/common.js','/assets/data.js','/assets/guess.js','/assets/know.js','/favicon.svg','/icon-192.png','/icon-512.png','/apple-touch-icon.png','/site.webmanifest'];
+const CACHE='crushmeter-free-v2-20261029';
+const CORE=['/','/index.html','/predved-a-hadej.html','/jak-dobre-se-znate.html','/jak-hrat.html','/hry-na-dovolenou.html','/assets/styles.css','/assets/know.css','/assets/common.js','/assets/data.js','/assets/guess.js','/assets/know.js','/favicon.svg','/icon-192.png','/icon-512.png','/apple-touch-icon.png','/site.webmanifest'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE.map(url=>new Request(url,{cache:'reload'})))).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('crushmeter-free-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',event=>{const url=new URL(event.request.url);if(event.request.method!=='GET'||url.origin!==self.location.origin)return;const path=url.pathname;if(!CORE.includes(path))return;const canonical=new Request(url.origin+path);event.respondWith(fetch(event.request).then(response=>{if(response.ok){const copy=response.clone();event.waitUntil(caches.open(CACHE).then(cache=>cache.put(canonical,copy)))}return response}).catch(()=>caches.match(canonical).then(response=>response||Response.error())))});

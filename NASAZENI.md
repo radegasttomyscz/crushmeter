@@ -1,66 +1,76 @@
-# CrushMeter — bezplatné hry, první verze
+# CrushMeter — bezplatné hry, verze 2
 
-Hotový statický web pro doménu **crushmeter.cz**. Nepotřebuje sestavení, npm, databázi, Make ani placené API. Platby a přihlášení nejsou součástí této verze.
+Aktualizace z 29. října 2026. Kompletní statický web pro **crushmeter.cz** připravený pro GitHub Pages, bez sestavování a bez placených závislostí. Make, SimpleShop ani přístup do placených kategorií nejsou pro tuto verzi potřeba.
+
+## Co se změnilo
+
+- Nový vizuál poznávací hry: oddělené nastavení, barevné profily hráčů, průběžné skóre, kroky otázky a předávání telefonu.
+- Volba tématu pomocí karet, dvě délky hry, jména bez povinné registrace.
+- Odpověď se nejprve označí. Až potvrzovací tlačítko ji odešle. Před potvrzením lze volbu změnit.
+- Samostatná obrazovka předání neobsahuje otázku, možnosti ani vybranou odpověď. Při hádání se původní výběr neoznačuje.
+- Odhalení skutečné odpovědi a tipu, krátká pobídka k povídání, jasné přidělení bodu.
+- Výsledková karta s počtem správných odhadů, osobními výsledky a rozbalovacím přehledem odpovědí celé partie.
+- Mobilní styly s odpověďmi pod sebou, většími dotykovými plochami, formulářovými poli bez vynuceného přiblížení na iOS a prostorem pro okraje displeje.
+- Sjednocený úvod, herní karty a společné prvky druhé hry.
+- Zachované dosavadní URL, články, metadata a herní data. Uloženou partii první verze lze obnovit. Přehled všech odpovědí se shromažďuje až v této verzi.
+- Zvýšená verze offline cache, aby aktualizace zahrnula i nové styly.
 
 ## Nasazení na GitHub Pages
 
-1. Před přepsáním si stáhněte zálohu současného repozitáře. Tento balíček vychází z veřejně dostupného webu a přiložených her, nikoliv z vašeho přihlášeného GitHub repozitáře.
-2. Rozbalte ZIP. **Jeho obsah patří přímo do kořene publikované větve**, aby na nejvyšší úrovni byly `index.html`, `CNAME`, `assets/` a `blog/`. Nevkládejte tam složku, která je bude dále obalovat.
-3. Nahrajte všechny soubory z balíčku včetně `.nojekyll`. Původní soubory se stejnými názvy se přepíší. Před mazáním dalších starých souborů zkontrolujte, zda neslouží starším zákazníkům nebo výsledkům objednávek.
-4. V Settings → Pages ponechte publikování ze své používané větve a složky `/ (root)`. Pokud už publikujete pomocí Actions, zachovejte svůj funkční způsob publikování a publikujte tento obsah.
-5. Vlastní doména je `crushmeter.cz`, je také v souboru `CNAME`. DNS kvůli této změně obsahu nepřepínejte. Po publikaci zkontrolujte HTTPS.
-6. Otevřete obě hry, odehrajte alespoň jedno kolo a zkontrolujte kontakt. Potom předejte odkaz někomu, kdo hru nezná, a sledujte, zda začne bez vysvětlování.
+1. Stáhněte si zálohu současného repozitáře. Balíček navazuje na dodanou první verzi; nemá přístup k případným vlastním úpravám vašeho repozitáře.
+2. Rozbalte ZIP. **Do kořene publikované větve nahrajte jeho obsah**, aby na nejvyšší úrovni byly `index.html`, `CNAME`, `assets/` a `blog/`. Nenahrávejte samotný ZIP ani složku, která vše obaluje.
+3. Pokud už běží první herní verze, stačí přepsat soubory a přidat nový `assets/know.css`. Není nutné znovu mazat celý obsah repozitáře. Zachovejte svou `.github` složku s případným publikačním workflow.
+4. Nahrajte i `.nojekyll`. Balíček obsahuje `CNAME` s hodnotou `crushmeter.cz`.
+5. V Settings → Pages zachovejte funkční publikování z používané větve a `/ (root)`, případně vlastní Actions workflow. DNS při aktualizaci obsahu neměňte.
+6. Po publikaci zkontrolujte obě hry přes HTTPS, kontakt a dostupnost `sitemap.xml`.
 
-Web se má otevírat přes HTTPS na vlastní doméně. Samotné otevření souboru `index.html` z disku nenahrazuje nasazení: odkazy jsou navržené od kořene domény a offline režim vyžaduje podporovaný bezpečný kontext.
+Web používá odkazy od kořene domény. Samotné otevření `index.html` z disku proto nenahrazuje nasazení. Pokud už máte starší verzi otevřenou v telefonu, zavřete a znovu otevřete stránku, případně ji obnovte.
 
-## Co je v první verzi
+## Rozsah bezplatné verze
 
-- **Předveď a hádej:** 597 různých pojmů v 15 tématech, popis, pantomima a kreslení prstem na displej. Pojmy jsou převzaté ze dvou dodaných HTML sad, opakování stejného pojmu napříč tématy je hlídané globálně.
-- **Jak dobře se znáte?:** 48 otázek ve třech tématech, skrytá vlastní odpověď, předání telefonu a tip druhého hráče. Výsledkem jsou správné odhady, nikoliv hodnocení vztahu.
-- Rozehrané hry, přezdívky a historie zůstávají v prohlížeči. Každá hra má samostatné mazání svých dat.
-- Příprava základních herních stránek pro offline používání a manifest pro přidání na plochu.
-- Cestovatelská stránka s předvolenými tématy a odkazy na Putování světem označenými UTM parametry.
-- Zachovaných všech 64 článků ze současného veřejného magazínu na stejných URL. Původní prodejní bloky byly nahrazené odkazy na hry.
-- Kontakt a informace o lokálním ukládání. Původní podmínky a informace o soukromí pro placené analýzy jsou zachované v neindexovaném archivu.
+**Předveď a hádej:** 597 unikátních pojmů v 15 tématech, popis, pantomima a kreslení prstem. Při losování se hlídají také duplicity pojmu mezi tématy.
 
-## Po nasazení: SEO
+**Jak dobře se znáte?:** 48 otázek ze tří témat nebo jejich mixu. Každý odpovídá sám za sebe, druhý odhaduje. Za správný tip získá hádající bod. Přeskočené otázky se nezahrnou do počtu vyhodnocených odpovědí. Procento na konci popisuje správné odhady v této hře; není to hodnocení vztahu.
 
-1. Otevřete `https://crushmeter.cz/sitemap.xml` a `https://crushmeter.cz/robots.txt` a ověřte, že už obsahují novou verzi.
-2. V existující vlastnosti Search Console znovu odešlete `sitemap.xml`.
-3. Přes Kontrolu URL ověřte homepage, `/predved-a-hadej.html`, `/jak-dobre-se-znate.html` a `/hry-na-dovolenou.html`. U hlavních nových stránek můžete požádat o indexaci.
-4. Ověřte sdílecí obrázek při vložení odkazu do sociální sítě. Starší náhled může síť nějakou dobu držet v mezipaměti.
-5. Sledujte skutečné dotazy, zobrazení a prokliky v Search Console. Nastavené technické SEO samo o sobě nezaručuje indexaci ani návštěvnost.
+Přezdívky, historie a rozehrané hry se ukládají jen do prohlížeče. Přehled odpovědí poslední poznávací hry se při spuštění další partie přepíše. V nastavení každé hry lze její data smazat.
 
-Nová verze záměrně nepřebírá původní externí formulář, prodejní odkazy ani Make webhooky. Neobsahuje analytické a reklamní měřicí skripty. Pokud chcete později GA4, přidejte měření jako samostatnou úpravu spolu s odpovídajícím nastavením souhlasů a informací o soukromí.
+Součástí je všech 64 původních článků na zachovaných adresách, stránky s pravidly, cestovatelská stránka a kontextové odkazy na Putování světem. Původní dokumenty pro placené analýzy zůstávají v neindexovaném archivu.
 
-## Kontroly dokončené před předáním
+## Ověření této verze
 
-- Syntaxe JavaScriptu: bez chyb.
-- Statická kontrola 78 HTML dokumentů: jedna H1 na stránku, popis, titulek, canonical, validní JSON-LD, interní odkazy a zdroje bez chyb.
-- Sitemap: 74 indexovatelných stránek. Archiv, 404 a stránka pro staré objednávky jsou `noindex` a v sitemapě nejsou.
-- Zachováno všech 68 adres z původní sitemap.
-- V prohlížeči: deset kol hádací hry s výsledkem 2/10, body i přeskočení; kreslení tahem; pauza a obnova po obnovení stránky.
-- V prohlížeči: osm otázek poznávací hry, šest správných odhadů ze sedmi vyhodnocených odpovědí, jedna přeskočená otázka. Ověřené i rozdělení bodů mezi hráče, skrytí odpovědi při předání a obnova rozehrané hry.
-- Úzké zobrazení v Chrome při šířkách rámu 320 a 375 px: zkontrolovaný vzhled a ovládání, bez vodorovného přetékání. Samostatný fyzický iPhone ani Android nebyl v tomto prostředí dostupný.
-- Offline režim je implementovaný a jeho soubory jsou součástí balíčku. Interní HTTP náhled neumožnil plnohodnotně ověřit service worker; **po publikaci na HTTPS ověřte načtení her v režimu letadlo**. Nezapínejte ho dřív, než homepage oznámí dokončení offline přípravy.
+- JavaScript: kontroly syntaxe všech aplikačních souborů a service workeru prošly.
+- 13 funkčních kontrol logiky a generovaného HTML v izolovaném prostředí: změna a potvrzení volby, skrytí odpovědi, střídání hráčů, body, přeskočení, obnovení výběru po načtení, další partie bez opakování, předvolba tématu, bezpečné vykreslení přezdívek, nedostatek zbývajících otázek, kompatibilita staré partie a smazání údajů.
+- Celá kontrolní partie: 6 správných tipů ze 7 vyhodnocených odpovědí, 1 přeskočení; osobní výsledky 4/4 a 2/3. Přehled obsahuje 7 vyhodnocených otázek.
+- Statická kontrola 78 HTML stránek: jedna H1, titulky, popisy, canonical, JSON-LD a místní odkazy včetně kotev prošly.
+- Sitemap: 74 existujících URL. Offline jádro: 17 existujících souborů. Kontrola párování závorek CSS prošla.
 
-## Přechod od původního prodeje
+**Limit ověření:** nový vzhled nebyl po úpravách dokončeně zkontrolován v prohlížeči. Interní náhled nejprve přestal běžet a následné otevření zablokovala automatická bezpečnostní kontrola. Funkční testy výše nejsou vizuálním testem vykreslení ani testem fyzického telefonu. Service worker také vyžaduje samostatné ověření na výsledné HTTPS doméně.
 
-Před vypnutím staré automatizace zkontrolujte, že nemáte nevyřízenou zaplacenou objednávku analýzy. Archiv původních podmínek nenahrazuje zpracování starších objednávek.
+## Krátký kontrolní průchod na telefonu
 
-## Další fáze
+1. Otevřete poznávací hru, zadejte dvě jména, vyberte téma a spusťte osm otázek. Zkontrolujte čitelnost i po otočení telefonu.
+2. Vyberte odpověď, změňte ji a potvrďte. Předejte telefon. Druhý hráč nesmí vidět, která odpověď byla vybraná.
+3. Udělejte jeden chybný i správný tip a jednu otázku přeskočte. Vyzkoušejte Pauzu a pokračování, potom obnovení stránky.
+4. Dohrajte partii a otevřete přehled odpovědí. Zkontrolujte jména, skóre a další hru.
+5. U druhé hry vyzkoušejte časovač a kreslení. Pro offline zkoušku nejdřív počkejte na oznámení dokončení offline přípravy na úvodu, pak zapněte režim letadlo a otevřete obě hry znovu.
 
-Placenou kategorii 18+ doplnit zvlášť: SimpleShop → Make → soukromý repozitář s oprávněními a placeným obsahem. V souladu s dohodou může první verze přístupu kontrolovat jen zadaný e-mail a platnost jednoho roku. Do veřejného repozitáře nepatří seznam zákazníků, přístupové tokeny ani placená data.
+## SEO po aktualizaci
 
-Pokud chcete později balíčky zamykat, nepřidávejte je nyní do veřejného `assets/data.js`. Jeho obsah je určený výhradně pro bezplatné hry.
+Tituly, popisy, canonical, Open Graph, robots a sitemap jsou součástí balíčku. V existující Search Console zkontrolujte hlavní herní stránky a odešlete `sitemap.xml`. Technické nastavení samo o sobě nezaručuje návštěvnost ani indexaci. Při sdílení může sociální síť nějakou dobu používat starší náhled.
 
-## Úpravy obsahu a cache
+## Pozdější placená část
 
-- Hádací pojmy a poznávací otázky: `assets/data.js`.
-- Vzhled: `assets/styles.css`.
-- Hádací hra: `assets/guess.js`.
-- Poznávací hra: `assets/know.js`.
-- Lokální ukládání, sdílení a registrace offline režimu: `assets/common.js`.
-- Při další změně nasazených souborů zvýšit verzi cache v `sw.js`, aby se offline instalacím bezpečně aktualizovala data. Při přidání nové stránky se upraví i sitemap.
+Zůstává samostatnou etapou: SimpleShop → Make → soukromý repozitář s oprávněními a placeným obsahem. První ověření může podle dohody používat jen zadaný e-mail a roční platnost. Do veřejného repozitáře nepatří seznam zákazníků, tokeny ani placená data. Tato verze žádné placené otázky neobsahuje.
 
-Zdroje k technickému SEO: [Google Search Essentials](https://developers.google.com/search/docs/essentials), [titulky stránek](https://developers.google.com/search/docs/appearance/title-link), [sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap).
+Před vypnutím původní prodejní automatizace zkontrolujte nevyřízené zaplacené objednávky analýz.
+
+## Kde co upravit
+
+- Data her: `assets/data.js`.
+- Společný vzhled a úvod: `assets/styles.css`, `index.html`.
+- Poznávací hra: `jak-dobre-se-znate.html`, `assets/know.css`, `assets/know.js`.
+- Hádací hra: `assets/guess.js` a `predved-a-hadej.html`.
+- Úložiště, sdílení, offline registrace: `assets/common.js`.
+- Offline seznam a verze cache: `sw.js`. Při další změně souborů zvyšte název cache.
+
+Zdroje k SEO: [Google Search Essentials](https://developers.google.com/search/docs/essentials), [titulky](https://developers.google.com/search/docs/appearance/title-link), [sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap).
