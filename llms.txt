@@ -1,0 +1,10 @@
+# CrushMeter.cz
+
+Bezplatné hry pro dva lidi na jednom telefonu v češtině.
+
+- [Předveď a hádej](https://crushmeter.cz/predved-a-hadej.html): popis, pantomima a kreslení.
+- [Jak dobře se znáte?](https://crushmeter.cz/jak-dobre-se-znate.html): odhadování odpovědí protějšku.
+- [Pravidla](https://crushmeter.cz/jak-hrat.html)
+- [Hry na dovolenou](https://crushmeter.cz/hry-na-dovolenou.html)
+
+Výsledky jsou herní skóre, nikoliv psychologické hodnocení vztahu.
