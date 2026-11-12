@@ -1,8 +1,8 @@
 @charset "UTF-8";
 /* Mobilní hra, 2026-11-12. Barvy všech stavů vycházejí ze společného motivu. */
-.play-page{margin:0;background:var(--cm-bg);color:var(--cm-ink);font:400 16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-.012em;overflow-x:clip;-webkit-font-smoothing:antialiased}
+.play-page{margin:0;background:var(--cm-bg);color:var(--cm-ink);font:400 16px/1.55 var(--cm-font);letter-spacing:-.012em;overflow-x:clip;-webkit-font-smoothing:antialiased}
 .play-page *{box-sizing:border-box}.play-page h1,.play-page h2,.play-page h3{font-family:inherit;font-weight:750;letter-spacing:-.055em;line-height:1.08}.play-page button,.play-page a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}.play-page button{cursor:pointer}.play-page button:disabled{cursor:default;opacity:.45;transform:none}.play-page svg{display:block;flex-shrink:0}.play-page button:focus-visible,.play-page a:focus-visible,.play-page summary:focus-visible,.play-page input:focus-visible{outline:3px solid var(--cm-accent);outline-offset:4px}.play-page [tabindex="-1"]:focus{outline:0}.play-page [hidden]{display:none!important}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.play-wrap{width:min(1040px,calc(100% - 40px));margin-inline:auto}.play-header{height:76px;background:var(--cm-bg);border:0}.play-header>nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}.play-header .brand{font:800 24px/1 system-ui;letter-spacing:-.07em;gap:9px;color:var(--cm-ink)}.play-header .brand svg{width:27px;height:30px}.club-link{color:var(--cm-muted);text-decoration:none;font-size:12px;font-weight:550;display:flex;align-items:center;min-height:44px}.club-link>span{display:none}.play-footer{display:flex;justify-content:space-between;align-items:start;gap:24px;border-top:1px solid var(--cm-line);margin-top:50px;padding:25px 0 35px;color:var(--cm-muted);font-size:11px}.play-footer nav{display:flex;gap:17px;flex-wrap:wrap}.play-footer a{text-decoration:none}
+.play-wrap{width:min(1040px,calc(100% - 40px));margin-inline:auto}.play-header{height:76px;background:var(--cm-bg);border:0}.play-header>nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}.play-header .brand{font:800 24px/1 var(--cm-font);letter-spacing:-.07em;gap:9px;color:var(--cm-ink)}.play-header .brand svg{width:27px;height:30px}.club-link{color:var(--cm-muted);text-decoration:none;font-size:12px;font-weight:550;display:flex;align-items:center;min-height:44px}.club-link>span{display:none}.play-footer{display:flex;justify-content:space-between;align-items:start;gap:24px;border-top:1px solid var(--cm-line);margin-top:50px;padding:25px 0 35px;color:var(--cm-muted);font-size:11px}.play-footer nav{display:flex;gap:17px;flex-wrap:wrap}.play-footer a{text-decoration:none}
 .arcade-button,.know-stage .screen-cta{display:flex;align-items:center;justify-content:center;gap:14px;min-height:60px;width:100%;padding:17px 20px;border:0;border-radius:18px;background:var(--cm-accent);color:var(--cm-on-accent);font-size:16px;font-weight:700;line-height:1.3;text-decoration:none;box-shadow:0 7px 25px #79559b13;transition:background .16s,transform .16s}.arcade-button:hover:not(:disabled),.know-stage .screen-cta:hover:not(:disabled){filter:brightness(1.06);transform:translateY(-1px)}.arcade-button:active:not(:disabled),.know-stage .screen-cta:active:not(:disabled){transform:scale(.985)}.arcade-button>svg,.screen-cta>svg{width:22px;height:22px}.subtle-button{display:block;margin:10px auto 0;min-height:44px;background:none;border:0;color:var(--cm-muted);padding:10px 12px;font-size:12px}.game-kicker,.screen-kicker{display:block;color:var(--cm-muted);font-size:10px;letter-spacing:.09em;font-weight:650;line-height:1.6;text-transform:uppercase}.session-brand{text-decoration:none;color:var(--cm-ink);font-size:18px;letter-spacing:-.07em;font-weight:800;line-height:1}.session-brand>span{color:var(--cm-accent)}
 /* Výběr hry. */
 .game-hub{padding-top:38px}.hub-intro{position:relative;margin-bottom:30px;text-align:left}.hub-tag{display:inline-flex;align-items:center;gap:8px;color:var(--cm-muted);font-size:10px;font-weight:650;letter-spacing:.09em;margin-bottom:18px}.hub-tag:before{content:'';height:5px;width:5px;border-radius:50%;background:var(--cm-accent)}.hub-intro h1{font-size:64px;line-height:1.02;margin:0 0 20px;font-weight:760;letter-spacing:-.065em}.hub-intro h1>span{color:var(--cm-accent)}.hub-intro>p{font-size:15px;color:var(--cm-muted);margin:0}.portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.portal-card{position:relative;display:flex;flex-direction:column;min-height:315px;text-decoration:none;border:1px solid var(--cm-line);border-radius:28px;padding:24px;background:var(--cm-surface);overflow:hidden;isolation:isolate;transition:transform .2s,border-color .2s}.portal-card:hover{transform:translateY(-3px);border-color:var(--cm-accent)}.portal-guess{background:linear-gradient(120deg,var(--cm-surface),var(--cm-pink))}.portal-know{background:linear-gradient(120deg,var(--cm-surface),var(--cm-purple))}.portal-top{display:flex;align-items:center;justify-content:space-between;font-size:9px;font-weight:650;letter-spacing:.12em;color:var(--cm-muted);margin-bottom:27px}.free-label{display:inline-block;font-size:9px;font-weight:650;letter-spacing:.05em;line-height:1.3;padding:5px 8px;border:1px solid var(--cm-line);background:var(--cm-surface);border-radius:99px;color:var(--cm-muted);white-space:nowrap}.portal-content{position:relative;flex:1;min-height:155px}.portal-content>div{position:relative;max-width:70%}.portal-content h2{font-size:35px;line-height:1.07;font-weight:740;margin:0 0 15px}.portal-content p{font-size:12px;line-height:1.7;color:var(--cm-muted);margin:0}.portal-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}.portal-bottom>span:first-child{font-size:10px;color:var(--cm-muted);max-width:170px;line-height:1.6}.portal-play{font-size:12px;font-weight:650;display:flex;align-items:center;gap:10px;min-height:42px;color:var(--cm-ink)}.portal-play svg{height:18px;width:18px}.portal-signal{position:absolute;right:22px;top:98px;width:100px;height:100px;border:1px solid #ffffff59;border-radius:50%;display:grid;place-items:center;background:#ffffff27;transform:rotate(-13deg);color:var(--cm-ink);box-shadow:0 15px 50px #39244b08}.portal-signal:before,.portal-signal:after{content:'';position:absolute;inset:-15px;border:1px solid #ffffff40;border-radius:50%}.portal-signal:after{inset:-31px;border-color:#ffffff24}.portal-signal>svg{width:37px;height:37px;opacity:.65}.hub-assurance{display:flex;justify-content:center;gap:28px;font-size:11px;color:var(--cm-muted);margin:24px 0 0}.hub-how{max-width:610px;margin:65px auto 0;text-align:center}.hub-how h2{font-size:28px;margin-bottom:16px}.hub-how>p{font-size:14px;line-height:1.9;color:var(--cm-muted)}.hub-how>a{font-size:13px;color:var(--cm-accent)}.hub-how .offline-note{font-size:10px;margin-top:20px}.hub-trip{display:flex;align-items:center;gap:24px;padding:26px 30px;background:var(--cm-surface-alt);border-radius:22px;margin:45px auto 0;max-width:760px}.hub-trip>span{font-size:43px;font-weight:300;color:var(--cm-accent)}.hub-trip small{font-size:9px;letter-spacing:.09em;color:var(--cm-muted)}.hub-trip h2{font-size:21px;margin:10px 0 14px}.hub-trip a{font-size:12px;color:var(--cm-accent)}.hub-faq{max-width:760px;margin:45px auto 0}.hub-faq h2{font-size:24px;margin-bottom:20px}.hub-faq details{border-top:1px solid var(--cm-line);padding:18px 0}.hub-faq summary{font-size:13px;font-weight:600}.hub-faq p{font-size:13px;line-height:1.85;color:var(--cm-muted);margin:14px 0 0}
@@ -43,3 +43,86 @@
 }
 
 .pause-bars{display:inline-block;width:8px;height:10px;border-left:2px solid currentColor;border-right:2px solid currentColor}
+
+/* V5 — klidnější sazba a střídmější povrchy. */
+.play-page{letter-spacing:0}
+.play-page h1,.play-page h2,.play-page h3{font-weight:650;letter-spacing:-.03em}
+.play-header .brand{font-weight:700;letter-spacing:-.045em}
+.session-brand{font-weight:700;letter-spacing:-.045em}
+.hub-intro h1,.box-cover h1{font-weight:650;letter-spacing:-.045em;line-height:1.04}
+.portal-content h2{font-weight:650;letter-spacing:-.035em;line-height:1.1}
+.box-cover>p{font-size:14px;line-height:1.7}
+.control-heading h2{font-weight:600;letter-spacing:-.02em}
+.portal-card{border-radius:24px;transition:border-color .16s,transform .16s}
+.portal-card:hover{transform:translateY(-1px)}
+.portal-guess{background:linear-gradient(115deg,var(--cm-surface) 10%,var(--cm-pink))}
+.portal-know{background:linear-gradient(115deg,var(--cm-surface) 10%,var(--cm-purple))}
+.portal-signal{width:86px;height:86px;border-radius:25px;border-color:var(--cm-line);background:var(--cm-surface);box-shadow:none;transform:rotate(-7deg)}
+.portal-signal:before,.portal-signal:after{display:none}
+.portal-signal>svg{opacity:.85;width:34px;height:34px}
+.lobby-symbol{width:94px;height:94px;border-radius:25px;background:var(--cm-surface-alt);transform:rotate(-6deg)}
+.lobby-symbol:before{border-radius:25px}
+.lobby-symbol>svg{opacity:.9;width:36px;height:36px}
+.arcade-button,.know-stage .screen-cta{box-shadow:none;border-radius:15px;font-weight:600}
+.arcade-button:hover:not(:disabled),.know-stage .screen-cta:hover:not(:disabled){transform:none}
+.mode-card-face{border-radius:15px}
+.mode-card-face strong{font-size:12px;font-weight:600}
+.mode-card-face>svg{stroke-width:1.8}
+.mode-selected{position:absolute;right:7px;top:6px;font-size:10px;color:var(--cm-accent)}
+.mode-card>input:checked+.mode-card-face .mode-selected{display:block}
+.config-chip{font-size:12px;border-radius:12px}
+.lobby-available{font-size:11px}
+.lobby-launch>small{font-size:11px;opacity:.8}
+.resume-main strong{font-size:13px;font-weight:600}
+.resume-main small{font-size:11px}
+.play-page.game-active .play-main{background:var(--cm-bg)}
+.mystery-glyph{background:var(--cm-accent-soft);box-shadow:none;border-radius:34px;letter-spacing:-.04em;padding-right:2px}
+.turn-screen .game-heading,.word-card .game-heading,.screen-heading{font-weight:650;letter-spacing:-.035em}
+.know-option{font-weight:400;border-radius:14px}
+.answer-letter{font-weight:500}
+.score-player{border-radius:13px}
+.score-player.is-turn{border-color:var(--cm-line)}
+.game-timer>span,.team-score strong,.score-player>strong,.result-meter strong,.result-ticket>strong{font-variant-numeric:tabular-nums}
+.question-submit>p{font-size:11px}
+.pause-button{font-size:12px}
+@media(max-width:640px){
+ .club-link{font-size:13px}.play-header .brand{font-size:23px}
+ .box-cover h1{font-size:44px;max-width:255px}.box-cover>p{font-size:13px;line-height:1.75}
+ .game-edition{font-size:9px;letter-spacing:.07em}
+ .lobby-symbol{width:84px;height:84px;top:40px;border-radius:23px;opacity:1}
+ .lobby-symbol:before{border-radius:23px}.lobby-symbol>svg{height:31px;width:31px}
+ .box-meta{font-size:10px}.control-heading h2{font-size:18px}
+ .mode-card-face strong{font-size:12px}.mode-card-face{min-height:88px;border-radius:14px}
+ .config-chip{font-size:12px}.lobby-available{font-size:11px;margin-bottom:20px}
+ .lobby-launch>small{font-size:10px}.players-edit{font-size:12px}
+ .lobby-instructions>summary{font-size:12px}.lobby-instructions>summary>span{font-size:11px}
+ .resume-main strong{font-size:12px}.resume-main small{font-size:10px}
+ .portal-signal{width:72px;height:72px;border-radius:22px;right:22px;top:87px}
+ .portal-signal>svg{width:29px;height:29px}.portal-content p{font-size:12px}
+ .portal-play{font-size:13px}.portal-bottom>span:first-child{font-size:10px}
+ .hub-tag{font-size:10px}.hub-intro>p{font-size:14px}
+ .know-option{font-size:15px}.question-screen .screen-heading{font-size:28px;line-height:1.18}
+ .question-person strong,.score-name{font-size:12px}.question-person small{font-size:10px}
+ .know-stage .screen-cta{font-size:14px}.question-submit>p{font-size:11px}
+ .session-bottom>span,.skip-question{font-size:11px}.mystery-glyph{box-shadow:none}
+ .play-footer{font-size:11px}.box-meta .free-label{font-size:9px}
+}
+@media(max-width:359px){
+ .play-header .brand{font-size:21px}.club-link{font-size:12px}
+ .box-cover h1{font-size:40px;max-width:220px}.box-cover>p{font-size:12px;max-width:215px}
+ .lobby-symbol{width:70px;height:70px;top:45px;border-radius:21px}
+ .lobby-symbol:before{border-radius:21px}.lobby-symbol>svg{width:28px;height:28px}
+ .mode-card-face strong{font-size:11px}.config-chip{font-size:11px;padding-inline:9px}
+ .lobby-launch>small{font-size:10px}.lobby-instructions>summary>span{font-size:10px}
+ .portal-signal{width:62px;height:62px;border-radius:19px;right:15px}
+ .portal-content p{font-size:11px}.portal-bottom>span:first-child{font-size:9px}
+ .question-screen .screen-heading{font-size:25px}.know-option{font-size:14px}
+ .know-stage .screen-cta{font-size:13px}.question-submit>p{font-size:10px}
+}
+
+@media(max-width:640px){
+ .sheet-names label>span,.sheet-section>p,.setting-choice small,.sheet-data summary,.sheet-data p,.sheet-data .text-button{font-size:11px}
+ .setting-choice>span{font-size:13px}.category-grid strong{font-size:12px;line-height:1.4}
+}
+
+.resume-symbol>svg{width:14px;height:14px}
