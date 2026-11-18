@@ -15,7 +15,7 @@
  }
  function apply(){
   const theme=resolved();root.dataset.theme=theme;root.dataset.themePreference=preference;root.style.colorScheme=theme;
-  const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',theme==='dark'?'#0e0d12':'#f6f2ec');
+  const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',theme==='dark'?'#121118':'#ffffff');
   if(document.readyState!=='loading'){syncControls();document.dispatchEvent(new CustomEvent('cm:themechange',{detail:{preference,theme}}));}
  }
  function setPreference(value){if(!allowed.includes(value))return;preference=value;try{if(value==='system')localStorage.removeItem(KEY);else localStorage.setItem(KEY,value)}catch{}apply()}
@@ -25,11 +25,10 @@
  if(media?.addEventListener)media.addEventListener('change',follow);else if(media?.addListener)media.addListener(follow);
  window.addEventListener('storage',event=>{if(event.key===KEY||event.key===null){preference=read();apply()}});
  function mount(){
-  const header=document.querySelector('.play-header nav');
-  if(header){const actions=document.createElement('div');actions.className='header-actions';const help=header.querySelector('.club-link');if(help)actions.append(help);actions.insertAdjacentHTML('beforeend',button());header.append(actions)}
-  else{const nav=document.querySelector('.site-header .nav-links');if(nav)nav.insertAdjacentHTML('beforeend',button())}
+  const slot=document.querySelector('.site-top .top-actions');
+  if(slot)slot.insertAdjacentHTML('afterbegin',button());
   dialog=document.createElement('dialog');dialog.id='appearance-dialog';dialog.className='appearance-dialog';dialog.setAttribute('aria-labelledby','appearance-title');
-  dialog.innerHTML='<div class="appearance-heading"><div><span>CRUSHMETER</span><h2 id="appearance-title">Vzhled hry</h2></div><button class="appearance-close" type="button" data-theme-close aria-label="Zavřít vzhled">×</button></div><fieldset><legend>Vzhled</legend>'+[['system','Podle telefonu','Automaticky podle zařízení'],['light','Světlý','Světlé pozadí a pastelové akcenty'],['dark','Tmavý','Tlumený vzhled na večer']].map(([value,label,help])=>'<label class="appearance-option"><input type="radio" name="appearance" value="'+value+'"><span class="appearance-icon">'+icon(value)+'</span><span><strong>'+label+'</strong><small>'+help+'</small></span><span class="appearance-check" aria-hidden="true"></span></label>').join('')+'</fieldset><p id="appearance-status" role="status"></p><button type="button" class="appearance-done" data-theme-close>Hotovo</button>';
+  dialog.innerHTML='<div class="appearance-heading"><div><span>Nastavení</span><h2 id="appearance-title">Vzhled hry</h2></div><button class="appearance-close" type="button" data-theme-close aria-label="Zavřít vzhled">×</button></div><fieldset><legend>Vzhled</legend>'+[['system','Podle telefonu','Automaticky podle zařízení'],['light','Světlý','Světlé pozadí a pastelové akcenty'],['dark','Tmavý','Tlumený vzhled na večer']].map(([value,label,help])=>'<label class="appearance-option"><input type="radio" name="appearance" value="'+value+'"><span class="appearance-icon">'+icon(value)+'</span><span><strong>'+label+'</strong><small>'+help+'</small></span><span class="appearance-check" aria-hidden="true"></span></label>').join('')+'</fieldset><p id="appearance-status" role="status"></p><button type="button" class="appearance-done" data-theme-close>Hotovo</button>';
   document.body.append(dialog);dialog.addEventListener('change',event=>{if(event.target.name==='appearance')setPreference(event.target.value)});
   dialog.addEventListener('close',()=>{document.body.classList.remove('appearance-open');(opener?.isConnected?opener:document.querySelector('.game-active [data-theme-open]')||document.querySelector('[data-theme-open]'))?.focus({preventScroll:true})});
   dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const b=dialog.getBoundingClientRect();if(event.clientX<b.left||event.clientX>b.right||event.clientY<b.top||event.clientY>b.bottom)dialog.close()});
