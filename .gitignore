@@ -1,0 +1,4 @@
+private/
+*.pack.json
+pack-*.json
+.DS_Store

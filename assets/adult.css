@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/* Odvážně 18+ — hra, ukázka a prodejní stránka. Navazuje na pop.css (tokeny a tlačítka). */
+
+/* ---------- Aplikace (ukázka a plná hra) ---------- */
+.adult-page{min-height:100vh;min-height:100dvh}
+#adult-app{width:min(560px,100% - 32px);margin-inline:auto;padding:max(14px,env(safe-area-inset-top)) 0 max(22px,env(safe-area-inset-bottom));min-height:100dvh;display:flex;flex-direction:column;gap:14px}
+.a-loading{margin:auto;font-weight:700}
+.a-top{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px}
+.a-top-right{display:flex;align-items:center;gap:8px}
+.a-brand{font-weight:850;font-size:22px;letter-spacing:-.07em;color:var(--cm-ink);text-decoration:none}
+.a-brand span{color:var(--cm-accent)}
+.a-badge{font-size:12px;font-weight:750;padding:6px 10px;border:2px solid var(--cm-outline);border-radius:999px;background:var(--cm-surface)}
+.a-panel{display:flex;flex-direction:column;gap:14px;padding:22px 20px;border:var(--stroke) solid var(--cm-outline);border-radius:28px;background:var(--cm-surface);box-shadow:0 8px 0 var(--cm-outline)}
+.a-panel h1{margin:0;font-size:clamp(2.2rem,10vw,3rem);line-height:.95;font-weight:850;letter-spacing:-.06em}
+.a-panel h1:focus{outline:0}
+.a-panel p{margin:0}
+.a-lead{font-size:1.05rem;font-weight:500}
+.a-small,.a-hint{font-size:.85rem;color:var(--cm-muted)}
+.a-small a{color:var(--cm-ink);font-weight:700}
+.a-sticker{align-self:flex-start;background:var(--pop-coral);color:#fff;border:2px solid var(--cm-outline);border-radius:999px;padding:5px 12px;font-weight:850;letter-spacing:.1em;font-size:12px;transform:rotate(-3deg)}
+.a-form{display:flex;flex-direction:column;gap:16px}
+.a-form fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.a-form legend,.a-form label[for]{font-weight:800;font-size:.9rem;padding:0;margin-bottom:6px}
+.a-form input[type=email],.a-names input{width:100%;min-height:52px;padding:0 14px;border:2px solid var(--cm-outline);border-radius:16px;background:var(--cm-bg);color:var(--cm-ink);font:inherit;font-size:16px}
+.a-names{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.a-choice{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.a-choice-3{grid-template-columns:repeat(3,1fr)}
+.a-choice label{position:relative;display:block}
+.a-choice input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.a-choice span{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:56px;padding:8px 6px;text-align:center;font-weight:800;font-size:.9rem;line-height:1.15;border:2px solid var(--cm-outline);border-radius:16px;background:var(--cm-bg);box-shadow:0 3px 0 var(--cm-outline)}
+.a-choice span small{font-weight:500;font-size:.72rem;opacity:.75}
+.a-choice input:checked+span{background:var(--pop-yellow);color:var(--pop-ink)}
+.a-choice input:focus-visible+span{outline:3px solid var(--pop-violet);outline-offset:3px}
+.a-msg{min-height:1.4em;font-size:.92rem;font-weight:600}
+.a-msg.bad{color:var(--cm-danger)}
+.a-notice{padding:12px 14px;border:2px dashed var(--cm-outline);border-radius:16px;font-size:.9rem;display:flex;flex-direction:column;gap:10px}
+.a-resume{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:2px solid var(--cm-outline);border-radius:18px;background:var(--pop-mint);color:var(--pop-ink)}
+.a-resume div{display:flex;flex-direction:column;font-size:.85rem}
+.a-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+.a-actions .arcade-button,.a-actions .a-buy,.a-form .arcade-button{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 20px;font-size:1.02rem;text-decoration:none;cursor:pointer}
+.a-actions .arcade-button.small,.a-resume .arcade-button.small{min-height:44px;font-size:.9rem;padding:0 16px}
+.a-actions .text-button{text-align:center;color:var(--cm-ink);font-weight:700;text-decoration:underline;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;background:none;border:0}
+.a-soon{padding:12px 14px;border:2px dashed var(--cm-outline);border-radius:16px;font-weight:700;text-align:center}
+
+/* karta */
+.a-progress{height:10px;border:2px solid var(--cm-outline);border-radius:999px;overflow:hidden;background:var(--cm-surface)}
+.a-progress span{display:block;height:100%;background:var(--cm-accent);transition:width .25s}
+.a-count{margin:0;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--cm-muted)}
+.a-card{flex:1;display:flex;flex-direction:column;gap:14px;padding:22px 20px;border:var(--stroke) solid var(--cm-outline);border-radius:30px;box-shadow:0 9px 0 var(--cm-outline);color:var(--pop-ink);min-height:340px}
+.t-priznani{background:var(--pop-yellow)}
+.t-radsi{background:var(--pop-lilac)}
+.t-nikdy{background:var(--pop-mint)}
+.t-kdo{background:var(--pop-pink)}
+.t-vyzva{background:var(--pop-coral);color:#fff}
+.a-card-top{display:flex;align-items:center;justify-content:space-between}
+.a-type{font-weight:850;letter-spacing:.12em;font-size:.8rem;padding:6px 12px;border-radius:999px;background:var(--pop-ink);color:#fff4e1}
+.a-lvl{display:flex;gap:5px}
+.a-lvl i{width:12px;height:12px;border-radius:50%;background:currentColor;border:2px solid currentColor}
+.a-lvl i.off{background:transparent;opacity:.45}
+.a-who{margin:0;font-size:.95rem;font-weight:600;opacity:.9}
+.a-prefix{margin:0;font-size:1.2rem;font-weight:800;opacity:.85}
+.a-text{margin:0;font-size:clamp(1.7rem,7.6vw,2.3rem);line-height:1.08;font-weight:850;letter-spacing:-.045em}
+.a-text:focus{outline:0}
+.a-how{margin:auto 0 0;font-size:.88rem;font-weight:600;opacity:.85}
+.a-ab{display:flex;flex-direction:column;gap:10px}
+.a-ab>div:not(.a-or){display:flex;gap:12px;align-items:flex-start;padding:14px;border:2px solid var(--pop-ink);border-radius:18px;background:#ffffffd9;font-size:1.15rem;font-weight:750;line-height:1.2}
+.a-ab b{flex:0 0 auto;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--pop-ink);color:#fff4e1;font-size:.9rem}
+.a-or{text-align:center;font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.a-count3{display:grid;place-items:center;font-size:5.5rem;line-height:1;font-weight:850;letter-spacing:-.06em;min-height:96px}
+.a-count3.go{font-size:3.6rem;color:var(--pop-ink)}
+.t-vyzva .a-count3.go{color:#fff}
+.a-count3[hidden]{display:none}
+.t-vyzva .a-type{background:#fff4e1;color:var(--pop-ink)}
+.a-end .a-offer{display:flex;flex-direction:column;gap:12px;padding:18px;border:2px solid var(--cm-outline);border-radius:22px;background:var(--pop-yellow);color:var(--pop-ink)}
+.a-end .a-offer h2{margin:0;font-size:1.7rem;font-weight:850;letter-spacing:-.05em}
+.a-end .promo{margin:6px 0}
+
+/* ---------- Prodejní stránka ---------- */
+.sale-wrap{width:min(1040px,calc(100% - 36px));margin-inline:auto}
+.sale-hero{display:grid;gap:22px;padding:40px 0 26px}
+.sale-hero h1{margin:0;font-size:clamp(3.2rem,15vw,7.2rem);line-height:.88;font-weight:850;letter-spacing:-.07em}
+.sale-hero h1 em{font-style:normal;color:var(--cm-accent)}
+.sale-hero p{margin:0;max-width:560px;font-size:1.15rem;font-weight:500}
+.sale-cta{display:flex;flex-wrap:wrap;gap:12px}
+.sale-cta .arcade-button,.sale-cta .button{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 24px;text-decoration:none;font-size:1.02rem;cursor:pointer}
+.sale-cta .button.light{color:var(--cm-ink)}
+.sale-sec{padding:34px 0}
+.sale-sec h2{margin:0 0 16px;font-size:clamp(1.9rem,7vw,2.8rem);line-height:1;font-weight:850;letter-spacing:-.055em}
+.sale-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.sale-card{padding:20px;border:var(--stroke) solid var(--cm-outline);border-radius:24px;background:var(--cm-surface);box-shadow:0 6px 0 var(--cm-outline)}
+.sale-card h3{margin:0 0 8px;font-size:1.3rem;font-weight:850;letter-spacing:-.04em}
+.sale-card p{margin:0;color:var(--cm-ink)}
+.sale-card .n{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--pop-yellow);color:var(--pop-ink);border:2px solid var(--cm-outline);font-weight:850;margin-bottom:10px}
+.sale-rounds{display:grid;gap:14px}
+.sale-round{display:flex;gap:14px;align-items:flex-start;padding:16px;border:var(--stroke) solid var(--cm-outline);border-radius:22px;color:var(--pop-ink);box-shadow:0 5px 0 var(--cm-outline)}
+.sale-round b{flex:0 0 auto;font-size:.75rem;letter-spacing:.12em;font-weight:850;padding:6px 10px;border-radius:999px;background:var(--pop-ink);color:#fff4e1}
+.sale-round p{margin:0;font-weight:700;line-height:1.25}
+.sale-round.t-vyzva b{background:#fff4e1;color:var(--pop-ink)}
+.sale-price{display:grid;gap:14px;padding:26px 22px;border:var(--stroke) solid var(--cm-outline);border-radius:30px;background:var(--pop-ink);color:#fff4e1;box-shadow:0 9px 0 var(--cm-outline)}
+:root[data-theme="dark"] .sale-price{background:#0b0810;box-shadow:0 9px 0 #fff4e1}
+.sale-price .price{font-size:clamp(3.6rem,16vw,6rem);font-weight:850;letter-spacing:-.07em;line-height:.9}
+.sale-price .price small{font-size:1.1rem;letter-spacing:0;font-weight:700;opacity:.8}
+.sale-price ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-weight:600}
+.sale-price li::before{content:"✓";color:var(--pop-yellow);font-weight:850;margin-right:10px}
+.sale-price .arcade-button{display:inline-flex;align-items:center;justify-content:center;min-height:58px;font-size:1.05rem;text-decoration:none;background:var(--pop-coral);color:#fff;border-color:#fff4e1;box-shadow:0 4px 0 #fff4e1}
+.sale-price .a-soon{border-color:#fff4e1;color:#fff4e1}
+.sale-faq details{border:2px solid var(--cm-outline);border-radius:18px;background:var(--cm-surface);box-shadow:0 3px 0 var(--cm-outline);margin-bottom:12px;padding:0 16px}
+.sale-faq summary{font-weight:750;padding:16px 0;cursor:pointer;list-style-position:inside}
+.sale-faq details p{margin:0 0 16px}
+.sale-note{font-size:.85rem;color:var(--cm-muted)}
+@media(min-width:880px){.sale-hero{grid-template-columns:1.2fr .8fr;align-items:end}.sale-rounds{grid-template-columns:1fr 1fr}}
+
+/* ---------- Lišta souhlasu ---------- */
+.consent-bar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60;max-width:520px;margin-inline:auto;display:grid;gap:12px;padding:16px;border:var(--stroke) solid var(--cm-outline);border-radius:22px;background:var(--cm-surface);color:var(--cm-ink);box-shadow:0 6px 0 var(--cm-outline)}
+.consent-bar p{margin:0;font-size:.9rem;line-height:1.4}
+.consent-bar a{color:var(--cm-ink);font-weight:700}
+.consent-bar div{display:flex;gap:10px;flex-wrap:wrap}
+.consent-bar .button{min-height:44px;padding:0 18px;cursor:pointer}
