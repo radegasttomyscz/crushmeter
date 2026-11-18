@@ -1,5 +1,5 @@
 'use strict';
-const CACHE='crushmeter-free-v6-20261118';
+const CACHE='crushmeter-free-v7-20261118';
 const CORE=['/','/index.html','/predved-a-hadej.html','/jak-dobre-se-znate.html','/jak-hrat.html','/hry-na-dovolenou.html','/assets/theme.js','/assets/fonts/outfit-variable.woff2','/assets/styles.css','/assets/play.css','/assets/pop.css','/assets/play.js','/assets/common.js','/assets/config.js','/assets/analytics.js','/assets/promo.js','/assets/access.js','/assets/adult.js','/assets/adult.css','/assets/adult-preview.js','/odvazne-18.html','/odvazne-18-ukazka.html','/odvazne-18-hrat.html','/assets/data.js','/assets/guess.js','/assets/know.js','/favicon.svg','/icon-192.png','/icon-512.png','/apple-touch-icon.png','/site.webmanifest'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE.map(url=>new Request(url,{cache:'reload'})))).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('crushmeter-free-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
