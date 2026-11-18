@@ -1,0 +1,168 @@
+@charset "UTF-8";
+/* CrushMeter — vizuální vrstva „plakátový pop“.
+   Načítá se jako poslední za styles.css a play.css. Mění barvy přes tokeny a
+   přidává tučné obrysy, plné barevné bloky a hmatatelná tlačítka.
+   Herní logika a struktura stránek zůstávají beze změny. */
+
+/* ---------- Tokeny ---------- */
+:root{
+  --pop-ink:#17121f;
+  --pop-cream:#fff4e1;
+  --pop-coral:#e8264c;
+  --pop-yellow:#ffcf3f;
+  --pop-violet:#7a5cff;
+  --pop-lilac:#cfc2ff;
+  --pop-mint:#a8efcf;
+  --pop-pink:#ffb1c4;
+
+  --cm-bg:var(--pop-cream);
+  --cm-surface:#fff;
+  --cm-surface-alt:#ffe8b0;
+  --cm-ink:var(--pop-ink);
+  --cm-muted:#5c5368;
+  --cm-line:#17121f2b;
+  --cm-outline:var(--pop-ink);
+  --cm-accent:var(--pop-coral);
+  --cm-accent-soft:#ffd8e0;
+  --cm-on-accent:#fff;
+  --cm-pink:var(--pop-pink);
+  --cm-purple:var(--pop-lilac);
+  --cm-mint:var(--pop-mint);
+  --cm-success:#0c7a50;
+  --cm-danger:#c0143c;
+  --cm-shadow:0 6px 0 var(--pop-ink);
+  --drawing-ink:#17121f;
+
+  /* starší proměnné používané články a pomocnými stránkami */
+  --paper:var(--cm-bg);--ink:var(--cm-ink);--muted:var(--cm-muted);
+  --pink:var(--cm-accent);--pink-soft:var(--cm-accent-soft);--lilac:var(--cm-purple);
+  --mint:var(--cm-mint);--line:var(--cm-line);--white:var(--cm-surface);
+  --radius:22px;--shadow:var(--cm-shadow);
+  --stroke:2.5px;
+}
+:root[data-theme="dark"]{
+  --cm-bg:#14101c;
+  --cm-surface:#211a2e;
+  --cm-surface-alt:#2f2340;
+  --cm-ink:#fff3df;
+  --cm-muted:#c7bcd6;
+  --cm-line:#fff3df2e;
+  --cm-outline:#fff3df;
+  --cm-accent:#ff6b88;
+  --cm-accent-soft:#4d2035;
+  --cm-on-accent:#1b0f1d;
+  --cm-pink:#6b2f47;
+  --cm-purple:#46357d;
+  --cm-mint:#1f5b48;
+  --cm-success:#8fe0b8;
+  --cm-danger:#ff9db8;
+  --cm-shadow:0 6px 0 #000;
+  --drawing-ink:#fff3df;
+}
+html[data-theme="dark"]{--paper:var(--cm-bg);--ink:var(--cm-ink);--muted:var(--cm-muted);--white:var(--cm-surface);--line:var(--cm-line);--lilac:var(--cm-purple);--mint:var(--cm-mint);--pink-soft:var(--cm-accent-soft)}
+
+/* ---------- Základ ---------- */
+html,body{background:var(--cm-bg);color:var(--cm-ink)}
+h1,h2,h3,.play-page h1,.play-page h2,.play-page h3{font-weight:800;letter-spacing:-.05em}
+::selection{background:var(--pop-yellow);color:var(--pop-ink)}
+.play-page button:focus-visible,.play-page a:focus-visible,.play-page summary:focus-visible,.play-page input:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--pop-violet);outline-offset:3px}
+:root[data-theme="dark"] :focus-visible{outline-color:var(--pop-yellow)}
+
+/* ---------- Hlavička a patička ---------- */
+.site-header,.play-header{background:var(--cm-bg);border-bottom:2px solid var(--cm-outline)}
+.play-header{height:68px}
+.brand{font-weight:850}
+.brand svg,.play-header .brand svg{width:40px;height:28px}
+.brand-dot{color:var(--cm-accent)}
+.nav-play{background:var(--pop-yellow);color:var(--pop-ink);border:2px solid var(--cm-outline);border-radius:999px;box-shadow:0 3px 0 var(--cm-outline);font-weight:800}
+.nav-play:active{transform:translateY(2px);box-shadow:0 1px 0 var(--cm-outline)}
+.theme-trigger{border:2px solid var(--cm-outline);background:var(--cm-surface);color:var(--cm-ink)}
+.club-link{font-weight:700;color:var(--cm-ink)}
+.site-footer,.play-footer{border-top:2px solid var(--cm-outline)}
+
+/* ---------- Tlačítka ---------- */
+.button,.arcade-button,.screen-cta{border:var(--stroke) solid var(--cm-outline);border-radius:18px;box-shadow:0 4px 0 var(--cm-outline);font-weight:800;transition:transform .08s,box-shadow .08s}
+.button:not(.light),.arcade-button,.screen-cta{background:var(--cm-accent);color:var(--cm-on-accent)}
+.button.light{background:var(--cm-surface);color:var(--cm-ink)}
+.button:active,.arcade-button:active,.screen-cta:active{transform:translateY(3px);box-shadow:0 1px 0 var(--cm-outline)}
+.button:disabled,.arcade-button:disabled,.screen-cta:disabled{box-shadow:0 2px 0 var(--cm-outline)}
+:root[data-theme="dark"] .button:not(.light),:root[data-theme="dark"] .arcade-button,:root[data-theme="dark"] .screen-cta{background:var(--cm-accent);color:var(--cm-on-accent)}
+.pause-button,.text-button{font-weight:700}
+.pause-button{border:2px solid var(--cm-outline);background:var(--cm-surface);color:var(--cm-ink)}
+
+/* ---------- Úvod ---------- */
+.hub-intro h1{font-size:clamp(2.6rem,12.1vw,7.4rem);line-height:.88;font-weight:850;letter-spacing:-.065em}
+.hub-intro h1 span{color:var(--cm-accent)}
+.hub-tag{display:inline-block;background:var(--pop-yellow);color:var(--pop-ink);border:2px solid var(--cm-outline);border-radius:999px;padding:6px 14px;font-weight:800;letter-spacing:.08em;transform:rotate(-2deg)}
+.hub-intro>p{font-size:1.15rem;color:var(--cm-ink);font-weight:500}
+
+.portal-card{border:var(--stroke) solid var(--cm-outline);border-radius:28px;box-shadow:0 8px 0 var(--cm-outline);color:var(--pop-ink);transition:transform .12s,box-shadow .12s}
+.portal-card:hover{transform:translateY(-3px);border-color:var(--cm-outline);box-shadow:0 11px 0 var(--cm-outline)}
+.portal-card:active{transform:translateY(5px);box-shadow:0 3px 0 var(--cm-outline)}
+.portal-guess{background:var(--pop-yellow)}
+.portal-know{background:var(--pop-lilac)}
+.portal-adult{background:var(--pop-ink);color:#fff4e1}
+:root[data-theme="dark"] .portal-adult{background:#0b0810}
+.portal-top,.portal-content p,.portal-bottom>span:first-child{color:inherit;opacity:.78}
+.portal-content h2{font-size:clamp(2.1rem,9vw,2.6rem);font-weight:850;letter-spacing:-.055em}
+.free-label{background:var(--pop-ink);color:#fff4e1;border:0;font-weight:800;letter-spacing:.1em}
+.age-label{background:var(--pop-coral);color:#fff;border-radius:999px;padding:5px 11px;font-size:11px;font-weight:850;letter-spacing:.1em;border:2px solid #fff4e1}
+.portal-signal{background:#fff;border:2px solid var(--pop-ink);box-shadow:0 4px 0 var(--pop-ink);color:var(--pop-ink)}
+.portal-adult .portal-signal{background:var(--pop-coral);color:#fff;border-color:#fff4e1;box-shadow:0 4px 0 #fff4e1}
+.portal-play{font-weight:850}
+
+.hub-assurance span{font-weight:700;color:var(--cm-ink)}
+.hub-how h2,.hub-faq h2{font-weight:850}
+.hub-faq details{border:2px solid var(--cm-outline);border-radius:18px;background:var(--cm-surface);box-shadow:0 3px 0 var(--cm-outline)}
+.hub-faq summary{font-weight:750}
+.hub-trip{border:var(--stroke) solid var(--cm-outline);border-radius:24px;background:var(--pop-mint);color:var(--pop-ink);box-shadow:0 5px 0 var(--cm-outline)}
+.hub-trip small,.hub-trip h2,.hub-trip a{color:var(--pop-ink)}
+
+/* ---------- Hry (sdílené prvky obrazovek) ---------- */
+.score-player{border:2px solid var(--cm-outline);border-radius:18px;background:var(--cm-surface);color:var(--cm-ink)}
+.score-player.is-turn{background:var(--pop-yellow);color:var(--pop-ink);box-shadow:0 3px 0 var(--cm-outline)}
+.score-player.is-turn small,.score-player.is-turn .score-name{color:var(--pop-ink)}
+.round-segments span.current{background:var(--cm-accent)}
+.know-option{border:2px solid var(--cm-outline);border-radius:18px;background:var(--cm-surface);color:var(--cm-ink);box-shadow:0 3px 0 var(--cm-outline);font-weight:700}
+.know-option[aria-pressed="true"],.know-option.selected,.know-option:has(input:checked){background:var(--pop-lilac);color:var(--pop-ink)}
+.word-card,.mystery-card{border:var(--stroke) solid var(--cm-outline);border-radius:28px;box-shadow:0 8px 0 var(--cm-outline)}
+.word-card{background:var(--pop-yellow);color:var(--pop-ink)}
+.word-card *{color:inherit}
+.mystery-card{background:var(--pop-lilac);color:var(--pop-ink)}
+.mystery-card *{color:inherit}
+.config-chip{border:2px solid var(--cm-outline);background:var(--cm-surface);color:var(--cm-ink)}
+.confirm-dialog,.appearance-dialog{border:var(--stroke) solid var(--cm-outline);border-radius:24px;box-shadow:0 8px 0 var(--cm-outline);background:var(--cm-surface);color:var(--cm-ink)}
+
+/* ---------- Články a pomocné stránky ---------- */
+.article h1{font-weight:850}
+.eyebrow{display:inline-block;background:var(--pop-yellow);color:var(--pop-ink);border-radius:999px;border:2px solid var(--cm-outline);padding:4px 12px;font-weight:800}
+.archive-note,.article-box,.panel{border:2px solid var(--cm-outline);border-radius:20px;background:var(--cm-surface);color:var(--cm-ink);box-shadow:0 4px 0 var(--cm-outline)}
+.article a{color:var(--cm-accent);text-decoration-thickness:2px;text-underline-offset:3px;font-weight:600}
+.article-link{border:2px solid var(--cm-outline);border-radius:20px;box-shadow:0 4px 0 var(--cm-outline);background:var(--cm-surface)}
+.breadcrumbs a{color:var(--cm-ink);font-weight:700}
+
+/* ---------- Odkaz ke hře pod článkem ---------- */
+.cta-game{display:grid;gap:10px;margin:36px 0;padding:22px;border:var(--stroke) solid var(--cm-outline);border-radius:26px;background:var(--pop-yellow);color:var(--pop-ink);box-shadow:0 7px 0 var(--cm-outline)}
+.cta-game.is-know{background:var(--pop-lilac)}
+.cta-game.is-adult{background:var(--pop-ink);color:#fff4e1}
+.cta-game small{font-weight:850;letter-spacing:.1em;text-transform:uppercase;font-size:11px;opacity:.75}
+.cta-game strong{font-size:1.5rem;line-height:1.05;letter-spacing:-.045em;font-weight:850}
+.cta-game p{margin:0;color:inherit}
+.cta-game a.cta-link{justify-self:start;background:var(--pop-ink);color:#fff4e1;border-radius:999px;padding:11px 18px;font-weight:800;text-decoration:none;border:2px solid var(--pop-ink)}
+.cta-game.is-adult a.cta-link{background:var(--pop-coral);border-color:#fff4e1;color:#fff}
+
+/* ---------- Partnerský box ---------- */
+.promo{display:flex;gap:16px;align-items:center;margin:28px 0;padding:18px 20px;border:2px solid var(--cm-outline);border-radius:22px;background:var(--cm-surface);box-shadow:0 4px 0 var(--cm-outline);color:var(--cm-ink)}
+.promo small{display:block;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--cm-muted)}
+.promo strong{display:block;font-size:1.15rem;line-height:1.15;letter-spacing:-.03em;font-weight:800;margin:3px 0 4px}
+.promo p{margin:0 0 8px;font-size:.95rem;color:var(--cm-muted)}
+.promo a{font-weight:800;color:var(--cm-ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.promo .promo-mark{flex:0 0 auto;width:48px;height:48px;border-radius:14px;border:2px solid var(--cm-outline);display:grid;place-items:center;font-size:22px;background:var(--pop-mint);color:var(--pop-ink)}
+.promo.is-tarot .promo-mark{background:var(--pop-lilac)}
+.promo.is-food .promo-mark{background:var(--pop-yellow)}
+
+@media (prefers-reduced-motion:reduce){.button,.arcade-button,.screen-cta,.portal-card,.nav-play{transition:none}}
+
+/* ---------- Rozložení karet her ---------- */
+.portal-grid{grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:22px}
+.portal-card{min-height:300px}
