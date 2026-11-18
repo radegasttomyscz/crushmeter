@@ -166,3 +166,12 @@ h1,h2,h3,.play-page h1,.play-page h2,.play-page h3{font-weight:800;letter-spacin
 /* ---------- Rozložení karet her ---------- */
 .portal-grid{grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:22px}
 .portal-card{min-height:300px}
+
+/* ---------- Tipy na úvodní stránce a v magazínu ---------- */
+.hub-tips{margin:34px 0}
+.hub-tips h2{font-weight:850;margin:0 0 12px}
+.hub-tips ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.hub-tips a{display:inline-block;padding:10px 16px;border:2px solid var(--cm-outline);border-radius:999px;background:var(--cm-surface);color:var(--cm-ink);font-weight:700;text-decoration:none;box-shadow:0 3px 0 var(--cm-outline)}
+.hub-tips a:hover{background:var(--pop-yellow);color:var(--pop-ink)}
+.guide-list{margin:10px 0 26px}
+.article-box.internal-links{margin-top:28px}

@@ -12,5 +12,10 @@ window.CM_CONFIG = {
   shopUrl: "",
 
   /* Identifikátor produktu pro ověření. Musí odpovídat ID produktu v Make. */
-  productId: "odvazne-18"
+  productId: "odvazne-18",
+
+  /* Jak často se přístup při připojení znovu ověří a jak dlouho smí hra běžet bez ověření.
+     Delší doba šetří operace v Make (bezplatný tarif), kratší rychleji vypne vrácenou objednávku. */
+  recheckDays: 14,
+  offlineGraceDays: 30
 };

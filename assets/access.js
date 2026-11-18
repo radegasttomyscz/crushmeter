@@ -8,8 +8,8 @@
   const KEY = 'crushmeter.adult.access';
   const ATTEMPTS = 'crushmeter.adult.attempts';
   const DAY = 864e5;
-  const RECHECK_AFTER = 7 * DAY;   // po této době se při připojení ověří znovu
-  const OFFLINE_GRACE = 14 * DAY;  // tak dlouho smí hra běžet bez ověření
+  const RECHECK_AFTER = (cfg.recheckDays || 14) * DAY;       // po této době se při připojení ověří znovu
+  const OFFLINE_GRACE = (cfg.offlineGraceDays || 30) * DAY;  // tak dlouho smí hra běžet bez ověření
   const TYPES = ['priznani', 'radsi', 'nikdy', 'kdo', 'vyzva'];
   const AUDS = ['par', 'kamaradi', 'oba'];
 

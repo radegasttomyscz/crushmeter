@@ -1,10 +1,19 @@
 # CrushMeter.cz
 
-Bezplatné hry pro dva lidi na jednom telefonu v češtině.
+Hry pro dva lidi na jednom telefonu v češtině. Bez stahování a bez registrace. Pro páry, kamarády i sourozence.
 
-- [Předveď a hádej](https://crushmeter.cz/predved-a-hadej.html): popis, pantomima a kreslení.
-- [Jak dobře se znáte?](https://crushmeter.cz/jak-dobre-se-znate.html): odhadování odpovědí protějšku.
-- [Pravidla](https://crushmeter.cz/jak-hrat.html)
-- [Hry na dovolenou](https://crushmeter.cz/hry-na-dovolenou.html)
+## Hry
+- [Předveď a hádej](https://crushmeter.cz/predved-a-hadej.html): popis, pantomima a kreslení, zdarma.
+- [Jak dobře se znáte?](https://crushmeter.cz/jak-dobre-se-znate.html): odhadování odpovědí druhého, zdarma.
+- [Odvážně 18+](https://crushmeter.cz/odvazne-18.html): hra pro dospělé s 150 kartami, ukázka zdarma, plná hra 99 Kč na 12 měsíců.
+- [Ukázka Odvážně 18+](https://crushmeter.cz/odvazne-18-ukazka.html): deset karet zdarma.
 
-Výsledky jsou herní skóre, nikoliv psychologické hodnocení vztahu.
+## Tipy
+- [Hry pro dva na jednom mobilu](https://crushmeter.cz/hry-pro-dva-na-mobilu.html)
+- [Otázky pro páry](https://crushmeter.cz/otazky-pro-pary.html)
+- [Otázky pro kamarády](https://crushmeter.cz/otazky-pro-kamarady.html)
+- [Pantomima pro dva](https://crushmeter.cz/pantomima-pro-dva.html)
+- [Co dělat večer ve dvou](https://crushmeter.cz/co-delat-vecer-ve-dvou.html)
+- [Pravidla her](https://crushmeter.cz/jak-hrat.html)
+
+Výsledky her jsou herní skóre, nikoliv psychologické hodnocení vztahu.
