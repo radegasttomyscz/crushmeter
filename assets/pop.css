@@ -11,14 +11,14 @@
 :root{
   --cm-font:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
   --wide:118%;
-  --bg:#ffffff;
-  --bg-soft:#f6f5f9;
+  --bg:#f3f2f7;
+  --bg-soft:#ebe9f1;
   --surface:#ffffff;
-  --ink:#1d1b26;
-  --ink-2:#3c3949;
-  --muted:#5f5b6c;
-  --line:#e7e5ee;
-  --line-strong:#d6d3df;
+  --ink:#191722;
+  --ink-2:#36333f;
+  --muted:#5b5768;
+  --line:#e1dfe8;
+  --line-strong:#cfccd9;
   --btn:#1d1b26;
   --on-btn:#ffffff;
 
@@ -584,3 +584,21 @@ html:not([data-theme="dark"]) .session-brand::before,html:not([data-theme="dark"
 .play-page .a-ero-set legend small{margin-left:6px;font-weight:500;color:var(--muted);font-size:.85em}
 .play-page .a-ero-set[hidden]{display:none}
 .play-page .sale-ero-lead{max-width:60ch;color:var(--muted);font-size:1.05rem;margin:0 0 18px}
+
+/* ---------- Světlý vzhled: doladění ---------- */
+html:not([data-theme="dark"]) .site-top{background:color-mix(in srgb,var(--bg) 90%,transparent)}
+html:not([data-theme="dark"]) .site-bottom{background:var(--surface);border-top-color:var(--line)}
+html:not([data-theme="dark"]) .phone{box-shadow:0 28px 50px -22px rgba(25,23,34,.45),0 0 0 1px rgba(255,255,255,.06) inset}
+html:not([data-theme="dark"]) .reads a,html:not([data-theme="dark"]) .occasions li,html:not([data-theme="dark"]) .rules-notes div{border-color:var(--line-strong)}
+html:not([data-theme="dark"]) .demo-tab{background:var(--surface)}
+html:not([data-theme="dark"]) .demo-tab[aria-selected="true"]{background:var(--g)}
+html:not([data-theme="dark"]) .rule{box-shadow:0 1px 2px rgba(25,23,34,.05),0 12px 32px -18px rgba(25,23,34,.25);border-color:transparent}
+html:not([data-theme="dark"]) .rule-tiles li{background:var(--bg)}
+html:not([data-theme="dark"]) .rule-jump a,html:not([data-theme="dark"]) .faq-list details{background:transparent}
+html:not([data-theme="dark"]) .rule-jump a{background:var(--surface)}
+html:not([data-theme="dark"]) .theme-trigger,html:not([data-theme="dark"]) .top-menu summary{background:var(--surface)}
+html:not([data-theme="dark"]) .box-cover .lobby-symbol{background:rgba(255,255,255,.18)!important}
+html:not([data-theme="dark"]) .a-panel,html:not([data-theme="dark"]) .a-card{box-shadow:0 1px 2px rgba(25,23,34,.05),0 16px 40px -20px rgba(25,23,34,.3)}
+html:not([data-theme="dark"]) .demo-zoom::after{background-color:rgba(25,23,34,.82)}
+html:not([data-theme="dark"]) .feature{box-shadow:0 30px 60px -30px rgba(140,29,64,.5)}
+html:not([data-theme="dark"]) .box{box-shadow:0 26px 50px -30px var(--box)}
