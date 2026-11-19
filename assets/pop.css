@@ -573,3 +573,8 @@ html:not([data-theme="dark"]) .session-brand::before,html:not([data-theme="dark"
 
 .rule-steps .demo-zoom{width:110px;border-radius:20px}.rule-steps .demo-zoom::after{width:30px;height:30px;right:6px;bottom:6px;background-size:15px}
 @media (max-width:900px){.rule-steps .demo-zoom{width:84px;border-radius:16px}}
+
+/* patička: nenápadný partner */
+.bottom-partner{font-size:.8rem;color:var(--muted);opacity:.8}
+.bottom-partner a{color:var(--muted);text-decoration:none;margin-left:4px}
+.bottom-partner a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
