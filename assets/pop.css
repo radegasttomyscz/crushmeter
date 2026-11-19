@@ -578,3 +578,9 @@ html:not([data-theme="dark"]) .session-brand::before,html:not([data-theme="dark"
 .bottom-partner{font-size:.8rem;color:var(--muted);opacity:.8}
 .bottom-partner a{color:var(--muted);text-decoration:none;margin-left:4px}
 .bottom-partner a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+
+/* Odvážně 18+: erotické karty */
+.play-page .a-ero{margin-left:auto;margin-right:8px;padding:3px 10px;border-radius:999px;background:#c2255c;color:#fff;font-size:.78rem;font-weight:700}
+.play-page .a-ero-set legend small{margin-left:6px;font-weight:500;color:var(--muted);font-size:.85em}
+.play-page .a-ero-set[hidden]{display:none}
+.play-page .sale-ero-lead{max-width:60ch;color:var(--muted);font-size:1.05rem;margin:0 0 18px}

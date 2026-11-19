@@ -9,7 +9,7 @@ Frontend je hotový a otestovaný proti simulovanému webhooku. Tady je přesný
 3. Make při stavu „uhrazeno“ uloží nebo prodlouží přístup v Data Storu.
 4. Zákazník dostane e-mail s odkazem na `/odvazne-18-hrat.html`.
 5. Na webu zadá e-mail z objednávky. Stránka zavolá **jednou** ověřovací webhook v Make.
-6. Make vrátí stav a při aktivním přístupu celou herní sadu (150 karet). Telefon si ji uloží.
+6. Make vrátí stav a při aktivním přístupu celou herní sadu (200 karet). Telefon si ji uloží.
 7. Hra běží dál bez dalších volání. Znovu se ověřuje po 14 dnech (při připojení), bez ověření smí běžet 30 dní.
 
 Přístup nezávisí na doručení e-mailu: kdo má e-mail z objednávky, vstoupí i bez něj.
@@ -18,7 +18,7 @@ Přístup nezávisí na doručení e-mailu: kdo má e-mail z objednávky, vstoup
 
 | Co | Kde |
 |---|---|
-| 150 karet (soukromě) | soubor `pack-v1.json`, který ti předávám zvlášť. **Nikdy ho nenahrávej do repozitáře.** Je v `.gitignore`. |
+| 200 karet (soukromě), z toho 50 erotických s příznakem `ero` | soubor `pack-v1.json`, který ti předávám zvlášť. **Nikdy ho nenahrávej do repozitáře.** Je v `.gitignore`. |
 | 10 karet ukázky | `assets/adult-preview.js` (veřejné) |
 | Seznam zákazníků | Make Data Store `pristupy` |
 | Adresa ověřovacího webhooku, URL obchodu | `assets/config.js` |
