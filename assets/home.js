@@ -42,16 +42,18 @@
     var b = list[idx], src = b.querySelector('img');
     img.src = src.src;
     img.alt = src.alt;
-    var fig = b.closest('figure');
-    cap.textContent = fig ? fig.querySelector('figcaption').textContent : '';
-    var tab = document.getElementById(b.closest('.demo-panel').getAttribute('aria-labelledby'));
+    var fig = b.closest('figure'), li = b.closest('li');
+    var c = fig ? fig.querySelector('figcaption') : li && li.querySelector('p');
+    cap.textContent = c ? c.textContent : '';
+    var panel = b.closest('.demo-panel'), rule = b.closest('.rule');
+    var tab = panel ? document.getElementById(panel.getAttribute('aria-labelledby')) : rule && rule.querySelector('h2');
     game.textContent = tab ? tab.textContent : '';
     count.textContent = 'Krok ' + (idx + 1) + ' ze ' + list.length;
     box.querySelector('.lb-prev').disabled = idx === 0;
     box.querySelector('.lb-next').disabled = idx === list.length - 1;
   }
   function open(b) {
-    list = [].slice.call(b.closest('.demo-panel').querySelectorAll('.demo-zoom'));
+    list = [].slice.call(b.closest('.demo-panel, .rule-steps').querySelectorAll('.demo-zoom'));
     idx = list.indexOf(b);
     render();
     if (box.showModal) box.showModal(); else box.setAttribute('open', '');
