@@ -16,7 +16,7 @@ Skript se načte až po souhlasu. Posílají se jen tyto události, vždy bez od
 
 | Událost | Kdy |
 |---|---|
-| `game_start`, `game_complete` | spuštění a dokončení bezplatné hry (`game`: predved-a-hadej, jak-dobre-se-znate, kdo-driv, kdo-vi-vic; `mode=free`) |
+| `game_start`, `game_complete` | spuštění a dokončení bezplatné hry (`game`: predved-a-hadej, jak-dobre-se-znate, kdo-vi-vic; `mode=free`) |
 | `adult_preview_open`, `adult_preview_start`, `adult_preview_complete` | ukázka 18+ |
 | `adult_offer_view` | zobrazení nabídky plné hry (`placement`) |
 | `shop_click` | klik do SimpleShopu (`placement`) |
