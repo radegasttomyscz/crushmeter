@@ -111,7 +111,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .top-menu-panel a{padding:12px 14px;border-radius:var(--r-sm);color:var(--ink);text-decoration:none;font-weight:500}
 .top-menu-panel a:hover{background:var(--bg-soft)}
 @media (max-width:820px){.top-nav{display:none}.top-actions{margin-left:auto}.top-menu{display:block}}
-.play-page.game-active>.site-top,.play-page.game-active>.site-bottom{display:none}
 
 /* ---------- Patička ---------- */
 .site-bottom{margin-top:80px;border-top:1px solid var(--line);background:var(--bg-soft)}
@@ -568,10 +567,10 @@ html:not([data-theme="dark"]) .box{box-shadow:0 26px 50px -30px var(--box)}
 .quiz-resume .btn{background:#2b8a3e;color:#fff;min-height:44px}
 .quiz-resume-drop{grid-column:1/-1;justify-self:start;border:0;background:none;padding:0;color:var(--muted);text-decoration:underline;cursor:pointer;font:inherit;font-size:.9rem}
 
-.quiz{position:fixed;inset:0;z-index:80;overflow-y:auto;background:var(--bg);color:var(--ink);-webkit-overflow-scrolling:touch}
+.quiz{position:relative;background:var(--bg);color:var(--ink);padding-bottom:20px}
 .quiz[hidden]{display:none}
-body.quiz-active{overflow:hidden}
-.qz-top{display:flex;justify-content:space-between;align-items:center;gap:12px;width:min(680px,calc(100% - 32px));margin:0 auto;padding:max(14px,env(safe-area-inset-top)) 0 10px}
+.qz-top{display:flex;justify-content:space-between;align-items:center;gap:12px;width:min(680px,calc(100% - 32px));margin:0 auto;padding:22px 0 12px}
+.qz-title{font-weight:850;font-stretch:118%;font-size:1.15rem}
 .qz-top-right{display:flex;align-items:center;gap:12px}
 .qz-count{color:var(--muted);font-size:.9rem;font-weight:600}
 .qz-menu-btn{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
@@ -728,3 +727,37 @@ html:not([data-theme="dark"]) .qz-kicker{color:#2b8a3e}
 .adult-page .a-top .a-brand,.adult-page .a-top .theme-trigger{display:none!important}
 .adult-page .a-top{justify-content:flex-end}
 .adult-page #adult-app{padding-top:20px;min-height:60vh}
+
+/* hry uvnitř běžné stránky: hlavička a patička zůstávají */
+.play-page.game-active>.site-top{display:block!important}
+.play-page.game-active>.site-bottom{display:block!important}
+.play-page.game-active .play-main{min-height:0!important;padding-top:8px!important}
+.session-nav .session-brand,.game-toolbar .session-brand,.session-nav .theme-trigger,.game-toolbar .theme-trigger{display:none!important}
+.session-nav,.game-toolbar{justify-content:flex-end!important}
+.know-stage,.guess-stage{width:min(680px,100%)!important;margin-inline:auto!important}
+.guess-stage,.know-stage{min-height:0!important}
+.session-nav,.game-toolbar{padding-top:14px!important;min-height:0!important}
+.session-nav::before,.game-toolbar::before{margin-right:auto;font-weight:850;font-stretch:118%;font-size:1.15rem;color:var(--ink)}
+.know-stage .session-nav::before{content:"Jak dobře se znáte?"}
+.guess-stage .game-toolbar::before{content:"Předveď a hádej"}
+.session-nav .pause-button,.game-toolbar .pause-button{min-height:40px;border-radius:999px!important}
+
+/* Jak dobře se znáte a Předveď a hádej: stejné měřítko jako Kdo ví víc */
+.session-progress span,.round-meter>span{font-size:.9rem!important;color:var(--muted)!important}
+.phase-steps{font-size:.9rem!important;gap:18px!important}
+.phase-steps li span{width:24px!important;height:24px!important;font-size:.8rem!important}
+.question-person strong{font-size:1rem!important}
+.question-person small{font-size:.85rem!important}
+.question-instruction,#choice-hint,.turn-help,.handoff-hint{font-size:.95rem!important}
+.know-option{min-height:60px!important;font-size:1.05rem!important;padding:12px 16px!important}
+.screen-cta{min-height:56px!important;font-size:1.05rem!important;border-radius:var(--r-md)!important}
+.skip-question,.private-note{font-size:.9rem!important}
+.score-player .score-name{font-size:1rem!important;font-weight:600}
+.score-player strong{font-size:1.5rem!important;font-weight:850;font-stretch:118%}
+.game-match{background:var(--surface)!important;border:1px solid var(--line)!important;border-radius:var(--r-md)!important;padding:12px 16px!important;box-shadow:none!important}
+.team-score{border:0!important;background:none!important;padding:0!important}
+.team-score strong{font-size:1.5rem!important;font-weight:850;font-stretch:118%}
+.team-score small{font-size:.85rem!important;color:var(--muted)}
+.round-meter{margin-top:12px!important}
+.mystery-tap{font-size:.9rem!important}
+.word-card .word-category,.word-card small{font-size:.9rem!important}
