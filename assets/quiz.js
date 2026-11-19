@@ -69,7 +69,8 @@
   app.className = 'quiz';
   app.id = 'quiz';
   app.hidden = true;
-  document.body.appendChild(app);
+  (document.getElementById('obsah') || document.body).appendChild(app);
+  const lobby = document.getElementById('game-setup');
 
   function start(o) {
     g = { names: o.names, time: o.time, total: o.len * 2, cats: o.cats, score: [0, 0], right: [0, 0], asked: 0,
@@ -80,13 +81,15 @@
   }
   function open() {
     app.hidden = false;
-    document.body.classList.add('game-active', 'quiz-active');
+    if (lobby) lobby.hidden = true;
+    document.body.classList.add('quiz-active');
     window.scrollTo(0, 0);
   }
   function close() {
     stopTimer();
     app.hidden = true;
-    document.body.classList.remove('game-active', 'quiz-active');
+    if (lobby) lobby.hidden = false;
+    document.body.classList.remove('quiz-active');
     window.scrollTo(0, 0);
   }
   const save = () => { if (g) set(KEY_SESSION, Object.assign({}, g, { running: false })); };
@@ -115,7 +118,7 @@
 
   function bar() {
     const p = i => `<div class="qz-player${g.turn === i && g.phase !== 'end' ? ' is-on' : ''}"><span>${E(g.names[i])}</span><b>${g.score[i]}</b></div>`;
-    return `<header class="qz-top"><a class="session-brand" href="/" aria-label="CrushMeter, hlavní stránka"><span>crushmeter</span></a>
+    return `<header class="qz-top"><strong class="qz-title">Kdo ví víc</strong>
 <div class="qz-top-right"><span class="qz-count">Otázka ${Math.min(g.asked + 1, g.total)} z ${g.total}</span><button type="button" class="qz-menu-btn" data-act="menu" aria-label="Pauza a nabídka">Pauza</button></div></header>
 <div class="qz-score">${p(0)}${p(1)}</div><div class="qz-progress" aria-hidden="true"><i style="width:${(g.asked / g.total) * 100}%"></i></div>`;
   }
