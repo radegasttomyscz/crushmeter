@@ -145,23 +145,24 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .home-hero .lead{font-size:1.15rem;color:var(--muted);max-width:40ch;margin:0 0 30px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
 .hero-note{margin:22px 0 0;color:var(--muted);font-size:.95rem}
-.hero-stage{position:relative;min-height:540px;display:flex;justify-content:center;align-items:center}
-.hero-stage .phone{position:relative;width:250px}
-.hero-stage .phone.back{position:absolute;width:212px;transform:translate(-58%,30px) rotate(-8deg)}
-.hero-stage .phone.front{transform:translateX(24%) rotate(4deg)}
+.hero-stage{position:relative;min-height:560px}
+.hero-stage .phone{position:absolute;width:258px}
+.hero-stage .phone.front{right:4%;top:20px;z-index:2}
+.hero-stage .phone.back{right:calc(4% + 226px);top:84px;width:232px;opacity:.92}
 
 /* telefon s ukázkou */
 .phone{aspect-ratio:390/800;border-radius:38px;padding:9px;background:#0a0a0e;box-shadow:var(--phone-shadow),0 0 0 1px rgba(255,255,255,.08) inset}
-.phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:30px;background:#fff}
+.phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:30px;background:#1a1822}
 
 /* hry jako krabice */
 .home-section{padding:56px 0}
 .home-section>h2,.section-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin:0 0 28px}
 .boxes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.box{--box:#3b5bdb;position:relative;display:flex;flex-direction:column;min-height:560px;padding:28px 26px 0;border-radius:22px;background:var(--box);color:#fff;text-decoration:none;overflow:hidden;isolation:isolate}
+.box{--box:#3b5bdb;position:relative;display:flex;flex-direction:column;min-height:540px;padding:28px 26px 0;border-radius:22px;background:var(--box);color:#fff;text-decoration:none;overflow:hidden;isolation:isolate}
 .box.is-guess{--box:#d9480f}
 .box.is-know{--box:#3b5bdb}
 .box.is-adult{--box:#8c1d40}
+.box.is-duel{--box:#2b8a3e}
 .box h3{color:#fff;font-size:clamp(1.7rem,2.6vw,2.15rem);font-weight:850;font-stretch:125%;line-height:1;margin:0 0 14px;max-width:9ch}
 .box p{margin:0;color:rgba(255,255,255,.86);max-width:30ch}
 .box .box-meta{margin-top:10px;font-size:.9rem;color:rgba(255,255,255,.7)}
@@ -196,12 +197,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 @media (max-width:980px){.boxes{grid-template-columns:1fr}.box{min-height:0}.box-phone .phone{width:190px;aspect-ratio:390/290}}
 @media (max-width:900px){
   .home-hero{grid-template-columns:1fr;gap:20px;padding:40px 0 16px}
-  .hero-stage{min-height:420px}
-  .hero-stage .phone{width:200px}
-  .hero-stage .phone.back{width:170px}
+  .hero-stage{min-height:430px}
+  .hero-stage .phone{width:196px}
+  .hero-stage .phone.front{right:calc(50% - 170px);top:0}
+  .hero-stage .phone.back{width:176px;right:calc(50% - 30px);top:40px}
   .reads{grid-template-columns:1fr}
 }
-@media (max-width:400px){.hero-stage{min-height:360px}.hero-stage .phone{width:170px}.hero-stage .phone.back{width:146px}}
+@media (max-width:400px){.hero-stage{min-height:370px}.hero-stage .phone{width:170px}.hero-stage .phone.front{right:calc(50% - 150px)}.hero-stage .phone.back{width:150px;right:calc(50% - 20px)}}
 
 /* ---------- Herní stránky (lobby) ---------- */
 .know-page{--cm-accent:var(--know);--cm-on-accent:var(--on-game);--cm-accent-soft:var(--know-tint)}
@@ -356,3 +358,113 @@ summary::after,summary:after{top:50%!important;transform:translateY(-50%);line-h
 .play-page .sale-card{border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;padding:20px 0 0}
 .play-page .sale-card .n{width:auto;height:auto;border:0;background:transparent;color:var(--adult);padding:0;font-stretch:118%;font-size:1.4rem}
 .play-page .sale-shot{background:#8c1d40}
+
+/* ---------- Kdo dřív ---------- */
+.duel-page{--cm-accent:#2b8a3e;--cm-on-accent:#fff;--cm-accent-soft:#17271c}
+.duel-page .box-cover{background:#2b8a3e!important;border:0!important}
+.duel-page .box-cover,.duel-page .box-cover *{color:#fff!important}
+.duel-page .box-cover h1{font-size:clamp(2.6rem,6vw,4rem)}
+.duel-page .lobby-symbol svg{width:44px;height:44px}
+.duel-page .arcade-button{background:#2b8a3e;color:#fff}
+.duel-setup h2{font-size:1.15rem;margin:0 0 12px}
+.duel-names{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:26px}
+.duel-names label{min-width:0;display:grid;gap:6px;font-size:.88rem;color:var(--muted);font-weight:500}
+.duel-names input{width:100%;min-width:0;box-sizing:border-box;min-height:50px;padding:0 14px;border:1px solid var(--line-strong);border-radius:var(--r-md);background:var(--surface);color:var(--ink);font:inherit;font-size:1rem}
+.duel-rounds{display:flex;gap:10px;border:0;padding:0;margin:0 0 26px}
+.duel-rounds label{flex:1}
+.duel-rounds input{position:absolute;opacity:0;pointer-events:none}
+.duel-rounds span{display:grid;place-items:center;min-height:50px;border:1px solid var(--line-strong);border-radius:var(--r-md);font-weight:600;cursor:pointer;background:var(--surface)}
+.duel-rounds input:checked+span{border-color:#40c057;background:#17271c;color:#fff}
+html:not([data-theme="dark"]) .duel-rounds input:checked+span{background:#e9f6ec;color:var(--ink)}
+.duel-rounds input:focus-visible+span{outline:2px solid #40c057;outline-offset:2px}
+.duel-setup .lobby-launch{width:100%;justify-content:space-between}
+.duel-page .lobby-instructions li strong{color:var(--ink)}
+
+.duel{position:fixed;inset:0;z-index:80;display:grid;grid-template-rows:minmax(0,1fr) auto minmax(0,1fr);height:100dvh;background:#0d0c12;color:#fff;font-family:var(--cm-font);user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;touch-action:none}
+.duel[hidden]{display:none}
+.duel-half{position:relative;display:grid;place-items:center;width:100%;min-height:0;overflow:hidden;border:0;margin:0;padding:24px 22px;background:#1a1822;color:#fff;font:inherit;cursor:pointer;touch-action:none;-webkit-tap-highlight-color:transparent;transition:background-color .12s}
+.duel-half.is-top{padding-top:max(24px,env(safe-area-inset-top))}
+.duel-half.is-bottom{padding-bottom:max(24px,env(safe-area-inset-bottom))}
+.duel-half.is-top .duel-face{transform:rotate(180deg)}
+.duel-half:focus-visible{outline:3px solid #fff;outline-offset:-6px}
+.duel-face{display:grid;justify-items:center;gap:8px;text-align:center;max-width:30ch;pointer-events:none}
+.duel-face small{font-size:.9rem;color:rgba(255,255,255,.65);font-weight:600}
+.duel-face strong{font-size:clamp(1.6rem,7vw,2.4rem);font-weight:850;font-stretch:118%;line-height:1}
+.duel-face p{margin:0;color:rgba(255,255,255,.78);font-size:.98rem;line-height:1.45}
+.duel-ready{margin-top:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.1);font-size:.9rem;font-weight:600}
+.duel-half.is-ready{background:#17271c}
+.duel-half.is-ready .duel-ready{background:#2b8a3e}
+.duel-big{font-size:clamp(3.4rem,18vw,6rem);font-weight:900;font-stretch:125%;line-height:1}
+.duel-half.is-wait{background:#24131a}
+.duel-half.is-go{background:#2f9e44}
+.duel-half.is-stream{background:#15141b}
+.duel-word{font-size:clamp(2.2rem,11vw,3.6rem);font-weight:900;font-stretch:118%;line-height:1;letter-spacing:.01em}
+.duel-sum{font-size:1.3rem;font-weight:700;color:rgba(255,255,255,.75)}
+.duel-half.is-tap{background:#1b2140}
+.duel-half.is-tap:active{background:#24306a}
+.duel-half.is-win{background:#2b8a3e}
+.duel-half.is-lose{background:#1a1822}
+.duel-half.is-fault{background:#5c1a26}
+.duel-half.is-draw{background:#2c2a38}
+.duel-score-big{font-size:1.6rem;font-weight:850;font-stretch:118%}
+.duel-mid{position:relative;display:grid;grid-template-columns:1fr auto auto 1fr;align-items:center;gap:12px;padding:10px 16px;background:#0d0c12;border-block:1px solid rgba(255,255,255,.08);font-size:.88rem}
+.duel-score{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.duel-score.is-top{transform:rotate(180deg);text-align:right}
+.duel-score.is-bottom{text-align:right;grid-column:4}
+.duel-round{color:rgba(255,255,255,.7);font-weight:600}
+.duel-exit{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;font-size:15px;cursor:pointer}
+.duel-timer{position:absolute;left:0;right:0;bottom:-1px;height:3px}
+.duel-timer i{display:block;height:100%;width:0;background:#4dabf7}
+.duel-overlay{position:absolute;inset:0;z-index:2;display:grid;place-items:center;padding:24px;background:rgba(13,12,18,.96)}
+.duel-overlay[hidden]{display:none}
+.duel-final,.duel-confirm{display:grid;justify-items:center;gap:14px;text-align:center;max-width:420px}
+.duel-final small{color:rgba(255,255,255,.65);font-weight:600}
+.duel-final h2,.duel-confirm h2{color:#fff;font-size:clamp(2rem,8vw,2.8rem);margin:0}
+.duel-confirm p{margin:0;color:rgba(255,255,255,.75)}
+.duel-final-score{display:flex;align-items:center;gap:16px;margin:0;color:rgba(255,255,255,.8);font-weight:600}
+.duel-final-score b{font-size:2.4rem;font-weight:900;font-stretch:125%;color:#fff}
+.duel-final-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:6px}
+.duel .arcade-button{background:#2b8a3e;color:#fff}
+.duel .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.25)}
+.duel-final-tip{margin:6px 0 0;color:rgba(255,255,255,.65);font-size:.93rem}
+.duel-final-tip a{color:#fff}
+body.duel-active{overflow:hidden}
+@media (min-width:900px){.duel-half{padding:40px}}
+@media (prefers-reduced-motion:reduce){.duel-half{transition:none}}
+
+/* ---------- Úvod: Odvážně 18+ zvlášť ---------- */
+.feature{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:44px 48px 0;border-radius:26px;background:#8c1d40;color:#fff;overflow:hidden}
+.feature-text{padding-bottom:44px}
+.feature .box-rating{position:static;margin-bottom:22px}
+.feature h2{color:#fff;font-size:clamp(2rem,4.4vw,3.2rem);font-stretch:125%;font-weight:850;line-height:1;margin:0 0 16px}
+.feature p{margin:0 0 18px;color:rgba(255,255,255,.86);max-width:46ch;font-size:1.06rem}
+.feature-list{margin:0 0 26px;padding:0;list-style:none;display:grid;gap:8px}
+.feature-list li{padding-left:22px;position:relative;color:#fff;font-weight:500}
+.feature-list li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:#ffb1c4}
+.feature-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-light{background:#fff;color:#8c1d40}
+.btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.feature-phones{position:relative;align-self:end;height:440px}
+.feature-phones .phone{position:absolute;bottom:-90px;width:230px}
+.feature-phones .phone.front{right:0;z-index:2}
+.feature-phones .phone.back{right:170px;bottom:-130px;width:210px;opacity:.85}
+@media (max-width:900px){.feature{grid-template-columns:1fr;padding:32px 24px 0}.feature-text{padding-bottom:0}.feature-phones{height:auto;display:flex;justify-content:center}.feature-phones .phone.back{display:none}.feature-phones .phone.front{position:static;width:230px;aspect-ratio:390/470;border-radius:32px 32px 0 0;padding:8px 8px 0}.feature-phones .phone.front img{object-position:0 22%;border-radius:25px 25px 0 0}}
+
+/* ---------- Úvod: ukázky her ---------- */
+.demo-tabs{display:flex;gap:8px;margin:0 0 28px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.demo-tabs::-webkit-scrollbar{display:none}
+.demo-tab{--g:#3b5bdb;flex:0 0 auto;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line-strong);background:transparent;color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
+.demo-tab.is-guess{--g:#d9480f}.demo-tab.is-duel{--g:#2b8a3e}.demo-tab.is-adult{--g:#8c1d40}
+.demo-tab[aria-selected="true"]{background:var(--g);border-color:var(--g);color:#fff}
+.demo-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:0 0 28px;padding:0;list-style:none;counter-reset:d}
+.demo-steps li{counter-increment:d}
+.demo-steps figure{margin:0;display:grid;justify-items:center;gap:18px}
+.demo-steps .phone{width:min(240px,100%)}
+.demo-steps figcaption{display:flex;gap:12px;align-items:baseline;max-width:30ch;color:var(--muted);font-size:.98rem}
+.demo-steps figcaption::before{content:counter(d);flex:0 0 auto;font-weight:900;font-stretch:125%;font-size:1.3rem;color:var(--ink)}
+.demo-go.is-guess{background:#d9480f;color:#fff}.demo-go.is-know{background:#3b5bdb;color:#fff}.demo-go.is-duel{background:#2b8a3e;color:#fff}.demo-go.is-adult{background:#8c1d40;color:#fff}
+@media (max-width:760px){
+  .demo-steps{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-20px;padding:0 20px 8px;scrollbar-width:none}
+  .demo-steps::-webkit-scrollbar{display:none}
+  .demo-steps li{flex:0 0 62%;scroll-snap-align:center}
+}
