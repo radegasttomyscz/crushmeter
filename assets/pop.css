@@ -726,3 +726,57 @@ html:not([data-theme="dark"]) .qz-kicker{color:#6741d9}
 .box{min-height:480px}
 @media (min-width:1180px){.boxes{grid-template-columns:repeat(4,1fr);gap:16px}.box{padding:24px 20px 0;min-height:520px}.box h3{font-size:1.65rem}.box-phone .phone{width:186px}}
 @media (max-width:980px){.boxes{grid-template-columns:1fr}}
+
+/* ---------- Původní hry: sjednocení s novým vzhledem ---------- */
+.game-lobby .lobby-symbol{display:none!important}
+.game-lobby .box-cover{min-height:0!important}
+.game-lobby .box-cover p{max-width:34ch}
+.game-lobby .box-cover h1 span{color:inherit!important;font-style:normal}
+.game-edition{text-transform:none!important;letter-spacing:0!important;font-size:.95rem!important;opacity:.9}
+.lobby-launch svg{display:none}
+.lobby-launch{justify-content:space-between!important;min-height:58px!important;padding:0 22px!important;border-radius:var(--r-md)!important;box-shadow:none!important}
+.lobby-launch small{opacity:.85;font-weight:500}
+.mode-card-face{border:1px solid var(--line-strong)!important;background:var(--surface)!important;box-shadow:none!important;border-radius:var(--r-md)!important;transform:none!important}
+.mode-card input:checked+.mode-card-face{border-color:var(--cm-accent)!important;background:var(--cm-accent-soft)!important;box-shadow:0 0 0 1px var(--cm-accent) inset!important}
+.mode-card input:focus-visible+.mode-card-face{outline:2px solid var(--cm-accent);outline-offset:2px}
+.mode-selected{display:none!important}
+.mode-card-face svg{color:var(--cm-accent)}
+.config-chip{border-radius:999px!important;background:var(--surface)!important;border:1px solid var(--line-strong)!important;box-shadow:none!important}
+.lobby-available{color:var(--muted)}
+.players-edit{border:1px solid var(--line-strong)!important;border-radius:999px!important;background:var(--surface)!important;padding:8px 16px!important;color:var(--ink)!important;box-shadow:none!important}
+.players-edit .pair-avatars{display:none!important}
+.resume-box{border:1px solid var(--cm-accent)!important;background:var(--cm-accent-soft)!important;border-radius:var(--r-md)!important;box-shadow:none!important}
+.resume-symbol{display:none!important}
+
+.know-stage :is(span,small,b,li,strong),.guess-stage :is(span,small,b,li,strong){text-transform:none!important;letter-spacing:0!important}
+.know-stage .player-avatar,.guess-stage .avatar,.guess-stage .player-avatar{display:none!important}
+.handoff-art .orbit{display:none!important}
+.handoff-art{display:grid!important;place-items:center;width:84px!important;height:84px!important;margin:0 auto 6px!important;border-radius:50%;background:var(--cm-accent-soft);box-shadow:none!important}
+.handoff-art .handoff-mini{position:static!important;display:grid!important;place-items:center;width:auto!important;height:auto!important;background:none!important;border:0!important;box-shadow:none!important;color:var(--cm-accent)}
+.handoff-art .handoff-mini svg{width:38px;height:38px}
+.screen-kicker,.turn-label{color:var(--cm-accent)!important;font-weight:700!important;font-size:.95rem!important;background:none!important;border:0!important;padding:0!important}
+.screen-heading span,.game-heading span{color:inherit!important}
+.turn-underline{display:none!important}
+.mystery-corner,.mystery-star{display:none!important}
+.mystery-card{background:var(--surface)!important;border:1px dashed var(--line-strong)!important;box-shadow:none!important}
+.mystery-glyph{background:var(--cm-accent-soft)!important;color:var(--cm-accent)!important;box-shadow:none!important;border:0!important}
+.mystery-tap{color:var(--muted)!important;font-weight:600!important}
+.team-players{gap:0!important}
+.team-players>span:last-child{font-size:.85rem;color:var(--muted)}
+.team-players>span:last-child strong{display:block;font-size:1rem;color:var(--ink)}
+.team-score{background:var(--surface)!important;border:1px solid var(--line)!important;border-radius:var(--r-md)!important;box-shadow:none!important}
+.score-player{padding:10px 14px!important}
+.score-player strong small{font-size:.75em;color:var(--muted);font-weight:500}
+.question-person{background:transparent!important;border:0!important;padding:0!important}
+.question-topic{background:var(--cm-accent-soft)!important;color:var(--cm-accent)!important;border:0!important}
+.phase-steps li{color:var(--muted)}
+.phase-steps li.active{color:var(--ink)}
+.phase-steps li span{border:1px solid var(--line-strong);background:var(--surface)}
+.phase-steps li.active span{background:var(--cm-accent);border-color:var(--cm-accent);color:var(--cm-on-accent)}
+.know-option .answer-letter{background:var(--bg-soft)!important;color:var(--muted)!important;border:0!important}
+.know-option[aria-pressed="true"] .answer-letter{background:var(--cm-accent)!important;color:var(--cm-on-accent)!important}
+.screen-cta svg{display:none}
+.play-page.game-active .play-main{background:var(--bg)!important}
+.know-page .arcade-button,.know-page .screen-cta,.know-page .lobby-launch{background:#3b5bdb!important;color:#fff!important}
+.guess-page .arcade-button,.guess-page .screen-cta,.guess-page .lobby-launch{background:#d9480f!important;color:#fff!important}
+.know-page .screen-cta:disabled,.guess-page .screen-cta:disabled{opacity:.45}
