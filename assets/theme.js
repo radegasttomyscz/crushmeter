@@ -3,7 +3,7 @@
  'use strict';
  const root=document.documentElement, KEY='crushmeter.appearance', allowed=['system','light','dark'];
  const media=typeof window.matchMedia==='function'?window.matchMedia('(prefers-color-scheme: dark)'):null;
- function read(){try{const value=localStorage.getItem(KEY);return allowed.includes(value)?value:'system'}catch{return 'system'}}
+ function read(){try{const value=localStorage.getItem(KEY);return allowed.includes(value)?value:'dark'}catch{return 'dark'}}
  let preference=read(),dialog=null,opener=null;
  const icons={system:'<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/>',light:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1 1m12 12 1 1M5 19l1-1M18 6l1-1"/>',dark:'<path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.7 8.7 0 1 0 20.5 14Z"/>'};
  function icon(name){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+icons[name]+'</svg>'}
@@ -18,7 +18,7 @@
   const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',theme==='dark'?'#121118':'#ffffff');
   if(document.readyState!=='loading'){syncControls();document.dispatchEvent(new CustomEvent('cm:themechange',{detail:{preference,theme}}));}
  }
- function setPreference(value){if(!allowed.includes(value))return;preference=value;try{if(value==='system')localStorage.removeItem(KEY);else localStorage.setItem(KEY,value)}catch{}apply()}
+ function setPreference(value){if(!allowed.includes(value))return;preference=value;try{localStorage.setItem(KEY,value)}catch{}apply()}
  function button(){return '<button type="button" class="theme-trigger" data-theme-open aria-label="Změnit vzhled">'+icon(resolved())+'</button>'}
  apply();
  function follow(){if(preference==='system')apply()}
