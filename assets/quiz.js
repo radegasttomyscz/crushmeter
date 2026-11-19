@@ -169,7 +169,7 @@ ${q[0] > 1 ? `<label class="qz-hint"><input type="checkbox" data-act="hint"${g.h
       body = `<section class="qz-panel final-screen qz-final"><p class="qz-kicker">Kdo ví víc</p><h1 data-focus tabindex="-1">${w < 0 ? 'Remíza' : 'Vyhrává ' + E(g.names[w])}</h1>
 <div class="qz-final-score"><div><span>${E(g.names[0])}</span><b>${a}</b><small>${g.right[0]} z ${g.total / 2} správně</small></div><div><span>${E(g.names[1])}</span><b>${b}</b><small>${g.right[1]} z ${g.total / 2} správně</small></div></div>
 <div class="qz-final-actions"><button type="button" class="btn qz-go" data-act="again">Odveta</button><button type="button" class="btn btn-ghost" data-act="lobby">Změnit nastavení</button></div>
-<p class="qz-final-tip">Chcete něco rychlejšího? Zkuste <a href="/kdo-driv.html">Kdo dřív</a>.</p></section>`;
+<p class="qz-final-tip">Na pauzu od otázek zkuste <a href="/predved-a-hadej.html">Předveď a hádej</a>.</p></section>`;
     }
     app.innerHTML = bar() + `<main class="qz-main">${body}</main><div class="qz-sheet" hidden></div>`;
     const f = app.querySelector('[data-focus]');
