@@ -774,3 +774,9 @@ html:not([data-theme="dark"]) .qz-kicker{color:#2b8a3e}
 :is(.play-page.game-active,.play-page.quiz-active,.play-page.adult-page:has(.a-card,.a-end)) .site-bottom{margin-top:32px;background:transparent;border-top:1px solid var(--line)}
 :is(.play-page.game-active,.play-page.quiz-active,.play-page.adult-page:has(.a-card,.a-end)) .bottom-in{display:none}
 :is(.play-page.game-active,.play-page.quiz-active,.play-page.adult-page:has(.a-card,.a-end)) .bottom-legal{border-top:0;padding:14px 0 max(18px,env(safe-area-inset-bottom));font-size:.8rem;opacity:.75}
+
+/* Odvážně 18+: cena uprostřed */
+.play-page #cena{text-align:center}
+.play-page #cena .sale-price{margin-inline:auto;text-align:left}
+.play-page #cena .sale-price .price{justify-content:center}
+.play-page #cena .sale-price>p{text-align:center}
