@@ -14,7 +14,7 @@ from zoneinfo import ZoneInfo
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GAMES = {
  'know': ('is-know', 'Hra zdarma', 'Jak dobře se znáte?', 'Ty odpovíš, druhý si tipne. Osm otázek, jeden telefon, bez registrace.', '/jak-dobre-se-znate.html', 'jak-dobre-se-znate', 'Zahrát si'),
- 'quiz': ('is-quiz', 'Hra zdarma', 'Kdo ví víc', 'Kvízový souboj pro dva. Jeden čte otázku a hlídá čas, druhý odpovídá. Patnáct kategorií, tři obtížnosti.', '/kdo-vi-vic.html', 'kdo-vi-vic', 'Zahrát si'),
+ 'quiz': ('is-quiz', 'Hra zdarma', 'Kdo ví víc', 'Kvízový souboj pro dva. Jeden čte otázku a hlídá čas, druhý odpovídá. Dvacet kategorií, tři obtížnosti.', '/kdo-vi-vic.html', 'kdo-vi-vic', 'Zahrát si'),
  'guess': ('is-guess', 'Hra zdarma', 'Předveď a hádej', 'Popis, pantomima nebo kresba. Časovač hlídá telefon, vy se soustředíte na toho druhého.', '/predved-a-hadej.html', 'predved-a-hadej', 'Zahrát si'),
  'adult': ('is-adult', 'Hra 18+', 'Odvážně 18+', 'Otázky, přiznání a výzvy pro dva. Deset karet si zahrajete hned a zdarma, v plné verzi jsou i erotické karty pro páry.', '/odvazne-18-ukazka.html', 'odvazne-18', 'Vyzkoušet ukázku'),
 }
