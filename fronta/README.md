@@ -4,6 +4,7 @@ Každé pondělí v 6:00 (v létě v 7:00) GitHub Action `Publikace článků z 
 články z této složky, jejichž datum v názvu už nastalo. Vydané se přesunou do `vydane/`.
 
 - Volitelně `K: Krátký nadpis karty v magazínu` (jinak se vezme nadpis H1 po dvojtečku)
+- Volitelně `F: otazky | hry | kvizy | rande | oslavy` = typ pro filtr v magazínu (jinak podle štítku L)
 - Název souboru: `RRRR-MM-DD-slug.txt` (slug = adresa článku, např. `pravda-nebo-ukol-pro-pary` → crushmeter.cz/pravda-nebo-ukol-pro-pary.html)
 - Přesunout termín: přejmenuj soubor.
 - Vyřadit článek: smaž soubor nebo ho přejmenuj na `.txt.off`.
