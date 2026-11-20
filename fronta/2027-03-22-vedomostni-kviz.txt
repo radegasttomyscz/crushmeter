@@ -1,0 +1,155 @@
+T: Vědomostní kvíz s odpověďmi: 60 otázek
+D: Vědomostní kvíz s odpověďmi: 60 otázek o sportu, vesmíru, lidském těle, jazycích, světě a Česku. Pro dva, rodinu i hospodský kvíz s přáteli.
+H: Vědomostní kvíz s odpověďmi: 60 otázek pro chytré hlavy
+L: Kvízy a hádanky
+G: quiz
+C: Sport, vesmír, tělo, jazyky, svět a Česko.
+R: /kvizove-otazky-pro-dva.html | Kvízové otázky pro dva: dalších 50 otázek
+R: /hadanky-s-odpovedi.html | Hádanky s odpovědí
+R: /hry-na-party.html | Hry na párty pro dospělé
+R: /kviz-pro-pary.html | Kvíz pro páry: jak dobře se znáte
+
+Vědomostní kvíz je nejjednodušší hra, kterou můžete zahrát kdekoli: v hospodě, v autě, u rodinného oběda i ve dvou na gauči. Tady je šedesát otázek v šesti kategoriích. Odpovědi jsou pod každou kategorií schované, takže je vidí jen ten, kdo čte. Pokud hledáte další otázky, padesát jiných najdete v článku [kvízové otázky pro dva](/kvizove-otazky-pro-dva.html).
+## Jak hrát vědomostní kvíz
+- **Ve dvou:** jeden čte a hlídá čas, druhý odpovídá. Po každé otázce se vyměníte.
+- **V týmech:** každý tým píše odpovědi na papír, vyhodnocuje se po kategorii.
+- **Bodování:** lehká otázka 1 bod, střední 2, těžká 3. Za nápovědu jen 1 bod.
+- **Čas:** 30 sekund na odpověď. Delší limit z kvízu udělá přemýšlení nahlas.
+## Sport
+1. Kolik hráčů má fotbalový tým současně na hřišti?
+2. Ve kterém městě se konaly letní olympijské hry 2024?
+3. Jak dlouhý je maraton?
+4. Kolik hráčů má na ledě jeden hokejový tým při plném počtu?
+5. Kolik jamek má standardní golfové hřiště?
+6. Který tenisový grandslam se hraje na trávě?
+7. V jaké výšce visí basketbalový koš?
+8. Kolik bodů je za touchdown v americkém fotbale?
+9. Ve kterém městě vyhráli čeští hokejisté olympijské zlato v roce 1998?
+10. Kolik kruhů má olympijská vlajka?
+= 11
+= V Paříži
+= 42,195 km
+= Šest (pět hráčů a brankář)
+= 18
+= Wimbledon
+= 3,05 m
+= 6
+= V Naganu
+= 5
+## Vesmír
+11. Kolik planet má Sluneční soustava?
+12. Které planetě se přezdívá rudá planeta?
+13. Jak dlouho letí světlo ze Slunce na Zemi?
+14. Jak se jmenuje naše galaxie?
+15. Která planeta má nejvýraznější prstence?
+16. Kdo byl prvním člověkem ve vesmíru?
+17. Jak se jmenoval první Čechoslovák ve vesmíru?
+18. Která planeta je nejteplejší?
+19. Za kolik dní oběhne Země Slunce?
+20. Jak se jmenuje přirozená družice Země?
+= 8
+= Mars
+= Přibližně 8 minut
+= Mléčná dráha
+= Saturn
+= Jurij Gagarin (1961)
+= Vladimír Remek (1978)
+= Venuše
+= Přibližně 365 a čtvrt dne
+= Měsíc
+## Lidské tělo
+21. Který orgán je největší v lidském těle?
+22. Kolik zubů má dospělý člověk včetně zubů moudrosti?
+23. Kde v těle je nejmenší kost?
+24. Na kolik oddílů se dělí lidské srdce?
+25. Která krevní skupina je univerzální dárce?
+26. Který orgán čistí krev a tvoří moč?
+27. Kolik litrů krve má dospělý člověk přibližně?
+28. Který vitamin vzniká v kůži díky slunci?
+29. Který orgán spotřebuje zhruba pětinu energie celého těla?
+30. Jak se jmenuje barvivo, které dává kůži barvu?
+= Kůže
+= 32
+= Ve středním uchu (třmínek)
+= Na čtyři: dvě síně a dvě komory
+= 0 negativní
+= Ledviny
+= Přibližně 5 litrů
+= Vitamin D
+= Mozek
+= Melanin
+## Jazyky a slova
+31. Kterým jazykem mluví nejvíc rodilých mluvčích na světě?
+32. Které české slovo se rozšířilo do jazyků po celém světě díky divadelní hře?
+33. Kdo slovo robot vymyslel?
+34. Jak se japonsky řekne „dobrý den“?
+35. Který jazyk je úřední v Brazílii?
+36. Kolik úředních jazyků má Švýcarsko?
+37. Co znamená latinské „carpe diem“?
+38. Jakým písmem se píše ruština?
+39. Ve které zemi se mluví perštinou (farsí)?
+40. Jak se nazývá slovo nebo věta, která se čte stejně zepředu i zezadu?
+= Čínštinou (mandarínskou)
+= Robot, ze hry R.U.R. Karla Čapka
+= Josef Čapek, bratr Karla
+= Konničiwa
+= Portugalština
+= Čtyři
+= Užívej dne
+= Cyrilicí (azbukou)
+= V Íránu
+= Palindrom
+## Svět kolem nás
+41. Jak se jmenuje nejvyšší hora světa?
+42. Který oceán je největší?
+43. Který stát je nejmenší na světě?
+44. Které zvíře je nejrychlejší na souši?
+45. Kolik nohou má hmyz?
+46. Která řeka se nejčastěji uvádí jako nejdelší na světě?
+47. Ve kterém městě stojí Socha svobody?
+48. Kolik minut má jeden den?
+49. Jaké je hlavní město Islandu?
+50. Který kov je při pokojové teplotě tekutý?
+= Mount Everest
+= Tichý
+= Vatikán
+= Gepard
+= Šest
+= Nil (někdy se uvádí Amazonka, záleží na měření)
+= V New Yorku
+= 1 440
+= Reykjavík
+= Rtuť
+## Česko
+51. Kdo byl prvním československým prezidentem?
+52. Ve kterém roce byla založena Univerzita Karlova?
+53. Ve kterém roce proběhla sametová revoluce?
+54. Ve kterém pohoří leží Sněžka?
+55. Jak se jmenuje největší přírodní jezero v Česku?
+56. Kolik obyvatel má Česko přibližně?
+57. Kdo napsal divadelní hru R.U.R.?
+58. Jak se jmenuje nejvyšší hora Moravy?
+59. Ve kterém městě se vaří pivo Budvar?
+60. Jak se jmenuje česká státní hymna?
+= Tomáš Garrigue Masaryk
+= 1348
+= 1989
+= V Krkonoších
+= Černé jezero na Šumavě
+= Přibližně 11 milionů
+= Karel Čapek
+= Praděd
+= V Českých Budějovicích
+= Kde domov můj
+## Jak udělat vlastní hospodský kvíz
+1. **Pět kol po deseti otázkách.** Každé kolo jedna kategorie.
+2. **Jedno kolo o lidech v místnosti.** „Kolik let chodí Pepa s Janou?“ Nejzábavnější kolo večera.
+3. **Obrázkové kolo.** Vlajky, loga, slavné budovy. Stačí ukázat na telefonu.
+4. **Žolík.** Každý tým si zvolí jedno kolo, ve kterém má body dvojnásobné.
+5. **Vyhlašujte průběžně.** Udržíte napětí do konce.
+## Kvíz bez přípravy
+Pokud nechcete otázky číst z článku, zahrajte si [Kdo ví víc](/kdo-vi-vic.html). Má 300 otázek v deseti kategoriích a třech obtížnostech, časovač, nápovědu a počítá body. Jeden čte, druhý odpovídá, telefon se předává. Zdarma a bez registrace.
+? Kde najít kvízové otázky s odpověďmi? | V tomto článku je 60 otázek v šesti kategoriích, dalších 50 v článku kvízové otázky pro dva a 300 ve hře Kdo ví víc na CrushMeter.cz.
+? Jak udělat hospodský kvíz? | Pět kol po deseti otázkách, každé kolo jiná kategorie, jedno kolo o lidech v místnosti a žolík s dvojnásobnými body.
+? Jak hrát vědomostní kvíz ve dvou? | Jeden čte otázku a hlídá čas, druhý odpovídá. Po každé otázce se vyměníte a počítáte body.
+? Kolik otázek dát do kvízu? | Na jeden večer stačí 30 až 50 otázek. Ve dvou 10 až 15 pro každého.

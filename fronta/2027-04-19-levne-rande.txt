@@ -1,0 +1,58 @@
+T: Levné rande: 30 nápadů na rande do 200 Kč
+D: 30 nápadů na levné rande: zdarma, do 200 Kč, venku i doma, na první rande i pro dlouhodobé páry. Rande se nepozná podle útraty, ale podle nápadu.
+H: Levné rande: 30 nápadů na rande zdarma nebo do 200 Kč
+L: Večer ve dvou
+G: know
+C: 30 nápadů na rande zdarma nebo do 200 Kč.
+R: /rande-doma.html | Rande doma: 15 nápadů
+R: /otazky-na-prvni-rande.html | Otázky na první rande
+R: /vyzvy-pro-pary.html | 30denní výzva pro páry
+R: /hry-pro-pary-na-doma.html | Hry pro páry na doma
+
+Večeře v restauraci, kino a drink po cestě snadno stojí přes tisícovku. Přitom nejlepší rande si lidé pamatují podle zážitku, ne podle účtu. Tady je třicet nápadů na rande zdarma nebo do dvou set korun. Hodí se na první rande, kdy nechcete přehánět, i pro páry, které spolu jsou roky a hledají něco nového.
+## Rande zdarma venku
+1. **Západ slunce z vyhlídky.** Najděte nejbližší rozhlednu nebo kopec, vezměte deku a termosku.
+2. **Turisté ve vlastním městě.** Projděte místa, kde jste nikdy nebyli, jako byste byli na dovolené. Hrajte si na průvodce.
+3. **Procházka s otázkami.** Každý si připraví pět otázek. Inspirace v článku [otázky na první rande](/otazky-na-prvni-rande.html).
+4. **Fotografická výzva.** Deset témat (něco červeného, něco starého, něco vtipného), hodinu času. Pak porovnejte fotky.
+5. **Galerie a muzea zdarma.** Mnoho galerií má dny nebo večery se vstupem zdarma. Podívejte se na web galerií ve vašem městě.
+6. **Pozorování hvězd.** Za město, kde nesvítí lampy, s aplikací na souhvězdí.
+7. **Farmářské trhy.** Ochutnávky zdarma a nápad na společné vaření.
+8. **Geocaching.** Hledání skrytých schránek podle GPS. Spojí procházku s hrou.
+## Rande do 200 Kč venku
+9. **Piknik.** Bageta, sýr, ovoce a láhev vína z obchodu. Krásné místo dodáte vy.
+10. **Zmrzlina a lavička.** Každý vybere příchuť pro druhého.
+11. **Výlet vlakem.** Lístek do nejbližšího městečka, kde jste nikdy nebyli.
+12. **Minigolf nebo bowling na jednu hru.** Soutěž rozjede rozhovor.
+13. **Kafe ve třech kavárnách.** Jedno malé espresso v každé, hodnoťte jako porota.
+14. **Půjčení lodičky nebo šlapadla.** Na půl hodiny.
+15. **Bleší trh.** Každý má stovku a musí najít nejvtipnější dárek pro druhého.
+## Rande doma zdarma
+16. **Večer her.** Kvíz, pantomima nebo [Jak dobře se znáte?](/jak-dobre-se-znate.html) na telefonu. Zdarma a smějete se víc než v kině.
+17. **Kino doma s pravidly.** Žádné telefony, film vybírá ten, kdo prohrál v kartách.
+18. **Vaření z toho, co je v lednici.** Výzva: třicet minut, žádný nákup.
+19. **Album vzpomínek.** Fotky od začátku vztahu a historky k nim.
+20. **Tanec v obýváku.** Playlist, kde každý vybere pět písniček.
+21. **Pevnost z dek.** Pro dospělé překvapivě romantické.
+22. **Otázky k zamyšlení.** Jedna otázka, celý večer. Inspirace v článku [otázky k zamyšlení](/otazky-k-zamysleni.html).
+## Rande doma do 200 Kč
+23. **Ochutnávka.** Tři druhy čokolády, sýrů nebo piva. Hodnoťte naslepo.
+24. **Domácí pizza.** Těsto, rajčata, mozzarella a co dům dá.
+25. **Lekce z YouTube.** Salsa, origami nebo malování podle Boba Rosse.
+26. **Lázně doma.** Pleťová maska, svíčky, masáž.
+27. **Kvízový souboj.** Kdo ví víc? Otázky najdete v článku [vědomostní kvíz](/vedomostni-kviz.html), hru s časovačem v [Kdo ví víc](/kdo-vi-vic.html).
+## Levné rande s odvahou
+28. **Výzva jednoho dne.** Celý den říkáte ano na návrhy toho druhého (v rozumných mezích).
+29. **Pravda, nebo úkol.** Lehká kola k večeři, pikantní na později. Osmdesát otázek a úkolů v článku [pravda, nebo úkol pro páry](/pravda-nebo-ukol-pro-pary.html).
+30. **Karty Odvážně 18+.** Otázky, přiznání a výzvy pro dva. [Ukázka](/odvazne-18-ukazka.html) s deseti kartami je zdarma.
+## Jak vybrat levné rande na první schůzku
+- **Krátké a s možností prodloužit.** Kafe, zmrzlina, procházka.
+- **Veřejné místo.** Ať se oba cítíte bezpečně.
+- **Něco dělejte.** Minigolf nebo bleší trh uvolní napětí víc než sezení naproti sobě.
+- **Kdo platí?** Na levném rande je jednoduché zaplatit každý za sebe, nebo se střídat.
+## Rande se nepozná podle útraty
+Výzkumy štěstí opakovaně ukazují, že peníze utracené za zážitky dělají lidi šťastnějšími než za věci. A zážitek nemusí být drahý. Pomáhá novost: dělat spolu něco, co jste ještě nedělali. Proto fungují i obyčejné nápady, pokud jsou pro vás nové. Pro dlouhodobé páry je dobrým tipem i [30denní výzva pro páry](/vyzvy-pro-pary.html).
+? Jak udělat levné rande? | Piknik, západ slunce z vyhlídky, výlet vlakem, muzea se vstupem zdarma, večer her nebo vaření doma. Rozhoduje nápad, ne útrata.
+? Jaké rande zdarma? | Procházka s otázkami, fotografická výzva, pozorování hvězd, geocaching, večer her nebo tanec v obýváku.
+? Jaké levné rande na první schůzku? | Kafe, zmrzlina a procházka, minigolf nebo bleší trh. Krátké, na veřejném místě a s možností prodloužit.
+? Kdo platí na levném rande? | Každý za sebe, nebo se střídejte. Na levném rande to není velké téma.

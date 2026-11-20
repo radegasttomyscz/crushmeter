@@ -1,0 +1,54 @@
+T: Hry na chatu a chalupu: 18 her pro partu i rodinu
+D: Hry na chatu a chalupu pro partu i rodinu: hry k ohni, do deště, na zahradu i na dlouhé večery bez signálu. Většina nepotřebuje nic, jen lidi.
+H: Hry na chatu a chalupu: 18 her pro partu i rodinu
+L: Hry na výlety
+G: guess
+C: Hry do deště, na zahradu i na večery bez signálu.
+R: /hry-na-party.html | Hry na párty pro dospělé
+R: /nikdy-jsem-nikdy.html | Nikdy jsem nikdy
+R: /vedomostni-kviz.html | Vědomostní kvíz s odpověďmi
+R: /hry-pro-dva-bez-niceho.html | Hry bez pomůcek
+
+Víkend na chatě má svůj rytmus: dopoledne výlet, odpoledne gril, večer všichni u stolu a někdo se zeptá „tak co budeme dělat?“. A pak začne pršet. Tady je osmnáct her, které na chatě fungují. Většina potřebuje jen papír, tužku nebo jeden telefon.
+## Co si na chatu přibalit
+- Balíček karet a kostky.
+- Papíry a tužky.
+- Jeden telefon s hrami. Hry na CrushMeter se po prvním otevření uloží do prohlížeče, takže si je zahrajete i tam, kde je slabý signál. Otevřete je ještě doma.
+- Deku na venkovní hry.
+## Hry na zahradu a ven
+1. **Petang (boules).** Koule a malá kulička. Kdo se dohodí nejblíž, boduje. Hraje se i na nerovném terénu.
+2. **Kubb (vikingské šachy).** Dřevěné špalíky a házecí kolíky. Stojí za to vyrobit si sadu.
+3. **Frisbee golf.** Určete „jamky“ (strom, kůl, branka) a počítejte hody.
+4. **Schovávaná pro dospělé.** Za tmy, s baterkami. Hledající má čelovku.
+5. **Hledání pokladu.** Jeden schová věc a napíše nápovědy. Funguje pro děti i pro dospělé po dvou pivech.
+## Hry k ohni a na večer
+6. **Strašidelné příběhy.** Každý přidá jednu větu, poslední musí příběh ukončit.
+7. **Hádej, kdo jsem.** Jméno slavné osobnosti na papírku na čele, ptáte se na ano a ne.
+8. **Mafie (městečko Palermo).** Vypravěč rozdá tajné role: mafiány, občany, policistu. V noci mafie „vraždí“, ve dne město hlasuje, koho vyloučit. Ideální pro 8 a víc lidí.
+9. **Nikdy jsem nikdy.** Sto otázek včetně odvážných v článku [Nikdy jsem nikdy](/nikdy-jsem-nikdy.html).
+10. **Kdo z nás.** „Kdo z nás by se ztratil v lese jako první?“ Na tři všichni ukážou.
+## Hry do deště
+11. **Pantomima v týmech.** Minuta na co nejvíc pojmů. Na chatě se hodí témata jako příroda, kempování a jídlo. Pojmy a časovač obstará [Předveď a hádej](/predved-a-hadej.html).
+12. **Hospodský kvíz.** Pět kol, každé jiná kategorie. Šedesát otázek s odpověďmi najdete v článku [vědomostní kvíz](/vedomostni-kviz.html).
+13. **Města, jména, zvířata.** Klasika na papír, s kategoriemi navíc: značka piva, nadávka, důvod rozchodu.
+14. **Žolíky, kanasta, prší.** Kdo umí, naučí ostatní.
+15. **Kreslený telefon.** První napíše větu, další ji nakreslí, další popíše kresbu. Na konci se smějí všichni.
+## Hry pro rodinu s dětmi
+16. **Bingo přírody.** Seznam věcí, které děti najdou na procházce: šiška, pírko, kámen ve tvaru srdce, mravenec.
+17. **Stopovaná.** Jedna skupina dělá šipky z klacků, druhá je sleduje.
+18. **Hádanky u snídaně.** Šedesát hádanek pro děti i dospělé v článku [hádanky s odpovědí](/hadanky-s-odpovedi.html).
+## Jak naplánovat herní víkend na chatě
+- **Pátek večer:** rychlé hry, lidé jsou unavení z cesty. Kdo z nás, karty.
+- **Sobota odpoledne:** venkovní hry a turnaj.
+- **Sobota večer:** velká hra: Mafie nebo týmový kvíz s cenou.
+- **Neděle ráno:** hádanky a klidné hry u kávy.
+## Mafie: pravidla v kostce
+Na chatě je to nejoblíbenější hra pro větší partu, tak tady jsou pravidla:
+1. Vypravěč rozdá tajně role: zhruba čtvrtina hráčů jsou mafiáni, jeden je policista, zbytek občané.
+2. **Noc:** všichni zavřou oči. Mafiáni otevřou a ukážou, koho „zabijí“. Policista otevře a ukáže na podezřelého, vypravěč mu kývnutím řekne, jestli je to mafián.
+3. **Den:** všichni otevřou oči, vypravěč oznámí oběť. Město diskutuje a hlasuje, koho vyloučí.
+4. Občané vyhrávají, když vyloučí všechny mafiány. Mafie, když je jich stejně jako občanů.
+? Jaké hry hrát na chatě? | Venku petang, kubb a frisbee golf, k ohni Mafie a strašidelné příběhy, do deště pantomima, kvíz a karty.
+? Jaké hry na chatu, když prší? | Pantomima v týmech, hospodský kvíz, města, jména, zvířata, kreslený telefon a karetní hry.
+? Jak se hraje Mafie? | Vypravěč rozdá tajné role. V noci mafie vybere oběť, ve dne město hlasuje, koho vyloučí. Vyhrávají občané, nebo mafie.
+? Jaké hry na chatu pro děti? | Bingo přírody, stopovaná, hledání pokladu a hádanky.

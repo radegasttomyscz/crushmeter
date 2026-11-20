@@ -1,0 +1,49 @@
+T: Hry pro páry na doma: 18 her na večer ve dvou
+D: 18 her pro páry na doma: hry na poznávání, soutěžení, kreativní i odvážnější. Bez nákupů a přípravy, většina stačí s telefonem nebo papírem.
+H: Hry pro páry na doma: 18 her na večer ve dvou
+L: Hry pro páry
+G: know
+C: Poznávání, soutěžení i odvážnější hry ve dvou.
+R: /kviz-pro-pary.html | Kvíz pro páry: 60 otázek
+R: /rande-doma.html | Rande doma: 15 nápadů
+R: /pravda-nebo-ukol-pro-pary.html | Pravda, nebo úkol pro páry
+R: /hry-pro-dva-na-mobilu.html | Hry pro dva na jednom mobilu
+
+Večer na gauči nemusí končit u seriálu, který ani jeden z vás nesleduje doopravdy. Hra pro dva vás dostane k sobě, rozesměje a často prozradí něco, co byste se jinak nedozvěděli. Tady je osmnáct her pro páry na doma. Žádná nevyžaduje nákup a většinu vysvětlíte za minutu.
+## Jak vybrat hru podle nálady
+- **Chcete si povídat:** hry na poznávání.
+- **Chcete se smát:** pantomima, kreslení, hádání.
+- **Chcete soutěžit:** kvízy a karty.
+- **Chcete přitlačit:** odvážnější hry na konci článku.
+## Hry na poznávání
+1. **Jak dobře se znáte.** Jeden odpoví na otázku o sobě, druhý tipuje. Za shodu bod. Šedesát otázek najdete v článku [kvíz pro páry](/kviz-pro-pary.html), hotovou hru s počítáním bodů v [Jak dobře se znáte?](/jak-dobre-se-znate.html)
+2. **Dvě pravdy a lež.** Tři tvrzení o sobě, jedno vymyšlené. U páru s dlouhým stažem je to těžší, než by se zdálo.
+3. **Raději bys.** Dvě možnosti, vybrat musíš jednu. Sedmdesát dilemat v článku [Raději bys](/otazky-radeji-bys.html).
+4. **Otázkový jenga.** Pokud máte doma jengu, napište na kostky otázky. Kdo kostku vytáhne, odpovídá.
+5. **Časová kapsle.** Každý napíše odpovědi na pět otázek o vztahu a uložíte je do obálky na rok.
+## Hry na smích
+6. **Pantomima pro dva.** Spolu proti času: jeden předvádí, druhý hádá, deset pojmů na minutu. Pravidla v článku [pantomima pro dva](/pantomima-pro-dva.html).
+7. **Kreslení naslepo.** Kreslíš se zavřenýma očima a druhý hádá. Pojmy vymyslete předem na papírky.
+8. **Popis slov.** Vysvětluješ pojem, aniž bys řekl samotné slovo. Pojmy i časovač vylosuje [Předveď a hádej](/predved-a-hadej.html).
+9. **Napodob mě.** Střídavě napodobujete toho druhého v běžných situacích: ráno, když spěchá, když si vybírá jídlo.
+10. **Hádej písničku.** Brukání bez textu. Kdo uhodne první, vybírá další.
+## Soutěžení
+11. **Kvízový souboj.** Kdo ví víc o zeměpisu, filmu nebo jídle? Jeden čte otázku a hlídá čas, druhý odpovídá. Hra [Kdo ví víc](/kdo-vi-vic.html) má 300 otázek v deseti kategoriích a počítá body sama.
+12. **Prší a žolíky.** Klasika s balíčkem karet. Poražený myje nádobí.
+13. **Lodě a piškvorky na papíře.** Turnaj na tři vítězné.
+14. **Kuchařská výzva.** Deset ingrediencí z lednice, třicet minut, každý připraví jeden pokrm. Druhý hodnotí.
+## Odvážnější hry pro páry
+15. **Pravda, nebo úkol.** Lehké otázky k večeři, pikantní na později. Osmdesát otázek a úkolů v článku [pravda, nebo úkol pro páry](/pravda-nebo-ukol-pro-pary.html).
+16. **Pikantní otázky.** Třicet otázek ve třech stupních v článku [pikantní otázky pro páry](/pikantni-otazky-pro-pary.html).
+17. **Kostka přání.** Napište šest přání (polibek, masáž, tanec…) a hoďte kostkou.
+18. **Odvážně 18+.** Karty s otázkami, přiznáními, volbami a výzvami pro dva. Telefon je losuje, vy jen odpovídáte. Ukázku s deseti kartami zahrajete [zdarma](/odvazne-18-ukazka.html).
+## Jak z herního večera udělat tradici
+- **Pevný den.** Třeba každý druhý čtvrtek.
+- **Střídejte se ve výběru hry.** Kdo vybírá, připravuje i občerstvení.
+- **Tabulka výsledků.** Na lednici, na celý rok. Vítěz roku dostane výlet podle svého výběru.
+- **Kombinujte.** Jedna klidná hra a jedna akční. Večer tak nevyšumí.
+Další nápady na večery doma najdete v článku [rande doma](/rande-doma.html).
+? Jaké hry hrát s partnerem doma? | Jak dobře se znáte, dvě pravdy a lež, Raději bys, pantomima, kreslení naslepo, kvízový souboj nebo karty. Odvážnější páry pravdu, nebo úkol.
+? Jaké hry pro páry bez pomůcek? | Raději bys, dvě pravdy a lež, napodob mě, hádej písničku nebo hry v telefonu, které vylosují otázky a pojmy samy.
+? Jaké hry pro páry na zlepšení vztahu? | Hry na poznávání: Jak dobře se znáte, otázky pro páry a časová kapsle. Pomáhají mluvit o věcech, na které v běžném dni nezbude čas.
+? Jaké odvážné hry pro páry? | Pravda, nebo úkol, pikantní otázky, kostka přání nebo karty Odvážně 18+.

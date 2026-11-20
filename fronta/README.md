@@ -30,17 +30,35 @@ Odstavec. **tučně**, [odkaz](/adresa.html)
 // komentář, nezveřejní se
 ```
 
-## Plán témat
+## Plán vydávání
 
-| Datum | Článek | Stav |
+| Pondělí | Článek | Adresa |
 |---|---|---|
-| 23. 11. 2026 | Pravda, nebo úkol pro páry | napsáno |
-| 30. 11. 2026 | Hry na Silvestra | napsáno |
-| 7. 12. 2026 | Otázky na první rande | napsáno |
-| 14. 12. 2026 | Raději bys…? | napsáno |
-| 21. 12. 2026 | Hry na Vánoce s rodinou | téma |
-| 28. 12. 2026 | Novoroční předsevzetí pro páry | téma |
-| 4. 1. 2027 | Hry do auta | téma |
-| 11. 1. 2027 | Valentýn doma: nápady | téma |
-| 18. 1. 2027 | Kvíz pro páry: jak dobře se znáte | téma |
-| 25. 1. 2027 | Hry pro páry na doma | téma |
+| 23. 11. 2026 | Pravda, nebo úkol pro páry | pravda-nebo-ukol-pro-pary |
+| 30. 11. 2026 | Hry na Silvestra | hry-na-silvestra |
+| 7. 12. 2026 | Otázky na první rande | otazky-na-prvni-rande |
+| 14. 12. 2026 | Otázky Raději bys | otazky-radeji-bys |
+| 21. 12. 2026 | Hry na Vánoce | hry-na-vanoce |
+| 28. 12. 2026 | Otázky na konec roku | otazky-na-konec-roku |
+| 4. 1. 2027 | Hry do auta | hry-do-auta |
+| 11. 1. 2027 | Valentýn doma | valentyn-doma |
+| 18. 1. 2027 | Kvíz pro páry | kviz-pro-pary |
+| 25. 1. 2027 | Hry pro páry na doma | hry-pro-pary-na-doma |
+| 1. 2. 2027 | Romantické otázky pro páry | romanticke-otazky-pro-pary |
+| 8. 2. 2027 | 30denní výzva pro páry | vyzvy-pro-pary |
+| 15. 2. 2027 | Nikdy jsem nikdy | nikdy-jsem-nikdy |
+| 22. 2. 2027 | Hádanky s odpovědí | hadanky-s-odpovedi |
+| 1. 3. 2027 | Hry na párty pro dospělé | hry-na-party |
+| 8. 3. 2027 | Otázky na seznamce | otazky-na-seznamce |
+| 15. 3. 2027 | Hry na Velikonoce | hry-na-velikonoce |
+| 22. 3. 2027 | Vědomostní kvíz s odpověďmi | vedomostni-kviz |
+| 29. 3. 2027 | Hry na chatu a chalupu | hry-na-chatu |
+| 5. 4. 2027 | Otázky k zamyšlení | otazky-k-zamysleni |
+| 12. 4. 2027 | Otázky pro nejlepší kamarádku | otazky-pro-nejlepsi-kamaradku |
+| 19. 4. 2027 | Levné rande | levne-rande |
+| 26. 4. 2027 | Hry venku pro dospělé | hry-venku-pro-dospele |
+| 3. 5. 2027 | Hry na svatbu | hry-na-svatbu |
+| 10. 5. 2027 | Otázky pro dlouholeté páry | otazky-pro-dlouhodobe-pary |
+| 17. 5. 2027 | Hry na rozlučku se svobodou | hry-na-rozlucku-se-svobodou |
+| 24. 5. 2027 | Hry k táboráku | hry-k-taboraku |
+| 31. 5. 2027 | Hry na Den dětí | hry-na-den-deti |

@@ -1,0 +1,53 @@
+T: Hry do auta: 20 her pro děti i dospělé na cesty
+D: 20 her do auta pro děti i dospělé: slovní, hádací a poznávací hry bez pomůcek. Tipy, jak přežít dlouhou cestu bez „kdy už tam budeme?“
+H: Hry do auta: 20 her pro děti i dospělé na dlouhou cestu
+L: Hry na cesty
+G: guess
+C: 20 her bez pomůcek pro děti i dospělé.
+R: /hry-pro-dva-bez-niceho.html | Hry pro dva bez ničeho
+R: /hry-na-dovolenou.html | Hry na dovolenou
+R: /otazky-radeji-bys.html | Otázky Raději bys
+R: /hry-pro-dva-na-mobilu.html | Hry pro dva na jednom mobilu
+
+Dlouhá cesta autem má dvě fáze: první hodinu, kdy všichni koukají z okna, a zbytek, kdy se ozve „kdy už tam budeme?“. Hry tu druhou fázi zkrátí. Tady je dvacet her, které nepotřebují nic než hlas a okno. Většina funguje pro děti od pěti let i pro dva dospělé, kteří jedou na víkend.
+## Pravidla pro hry v autě
+- **Řidič hraje jen slovní hry.** Nic, co odvádí pohled od silnice.
+- **Krátká kola.** Po deseti minutách vyměňte hru, než začne nudit.
+- **Žádné papíry vzadu,** pokud se dětem dělá v autě špatně. Hry s rozhlížením jsou lepší než ty s koukáním dolů.
+## Hry s pozorováním
+1. **Vidím, co ty nevidíš.** „Vidím něco červeného.“ Ostatní hádají. Pozor na věci, které za vteřinu zmizí.
+2. **Bingo z okna.** Předem si napište seznam: kráva, traktor, most, kostel, auto s přívěsem, čerpací stanice. Kdo má první vše, vyhrává.
+3. **Barvy aut.** Každý si vybere barvu a počítá auta. Kdo má po deseti minutách nejvíc, vyhrává. Stříbrná je podvod.
+4. **Poznávací značky.** Hledáte značky z co nejvíc krajů nebo států. Na dálnici v létě nečekaná zábava.
+5. **Abeceda z cedulí.** Hledáte písmena A, B, C… postupně na cedulích, billboardech a značkách. Q a X jsou zkouška trpělivosti.
+6. **Příběh z okna.** Každý vybere jedno auto a vymyslí, kdo v něm jede a kam.
+## Slovní hry
+7. **Slovní fotbal.** Další slovo začíná posledním písmenem předchozího. Pro děti stačí zvířata nebo jména.
+8. **Města, jména, zvířata.** Bez papíru: vyberete písmeno a každý postupně jmenuje jedno z kategorie.
+9. **Já jedu na výlet a beru si…** Každý zopakuje celý seznam a přidá jednu věc. Paměťový test pro celou rodinu.
+10. **Asociace.** Řeknete slovo, další okamžitě odpoví tím, co ho napadne. Kdo zaváhá déle než tři vteřiny, vypadává z kola.
+11. **Rýmovačky.** Jeden řekne slovo, ostatní hledají rýmy. Kdo najde poslední, vyhrává.
+12. **Zakázané slovo.** Domluvte se na slově, které nikdo nesmí říct (třeba „ano“). Pak se ptejte tak, aby ho někdo řekl.
+## Hádací hry
+13. **Dvacet otázek.** Jeden si myslí zvíře, věc nebo osobu, ostatní se ptají na ano a ne.
+14. **Hádej písničku.** Někdo brouká, ostatní hádají. Řidič může taky.
+15. **Kdo jsem?** Myslíš si postavu z pohádky nebo filmu a ostatní hádají podle nápověd, které dáváš postupně.
+16. **Hádej, kolik.** Kolik minut do další benzínky? Kolik aut nás předjede do konce písničky? Nejbližší tip vyhrává.
+## Hry pro dospělé na dlouhou cestu
+17. **Raději bys.** Dvě možnosti, vybrat musíš jednu a vysvětlit proč. Sedmdesát otázek najdete v článku [Raději bys](/otazky-radeji-bys.html).
+18. **Kdo z nás.** „Kdo z nás by dřív zabloudil bez navigace?“ Na tři oba ukážete.
+19. **Playlist o vás.** Střídejte se v pouštění písniček a ke každé řekněte, proč ji pouštíte.
+20. **Jak dobře se znáte.** Spolujezdec čte otázky z telefonu, řidič odpovídá, kdo si tipne odpověď druhého, má bod. Otázky i počítání bodů obstará hra [Jak dobře se znáte?](/jak-dobre-se-znate.html)
+## Jak přežít dlouhou cestu s dětmi
+- **Rozdělte cestu na úseky.** Každé dvě hodiny zastávka a malá odměna: sušenka, nová hra, nová písnička.
+- **Mapa cesty.** Děti mají papír s obrázky měst, kterými projedete. Odškrtávají si je.
+- **Taška překvapení.** Malé věci zabalené v papíru, otevírají se po určitém čase.
+- **Audioknihy a pohádky.** Na noc nebo na poslední úsek.
+- **Hra na nejtišší.** Kdo vydrží nejdéle mlčet, vyhrává. Rodiče ji milují, děti se k ní vrací, když jsou unavené.
+## Hry do auta na mobilu
+Spolujezdec může dělat moderátora. V [Předveď a hádej](/predved-a-hadej.html) zvolte režim popisu: telefon ukáže pojem, spolujezdec ho popíše a ostatní hádají. Pantomima a kreslení v autě nefungují, popis ano. Hra je zdarma, bez stahování a běží v prohlížeči.
+Další nápady na čekání a cesty najdete v článku [hry pro dva bez ničeho](/hry-pro-dva-bez-niceho.html).
+? Jaké hry hrát v autě s dětmi? | Vidím, co ty nevidíš, bingo z okna, barvy aut, slovní fotbal, já jedu na výlet a beru si, dvacet otázek a hádej písničku.
+? Jaké hry do auta pro dospělé? | Raději bys, kdo z nás, playlist o vás, asociace a jak dobře se znáte, kde spolujezdec čte otázky a řidič odpovídá.
+? Jak zabavit děti na dlouhé cestě autem? | Rozdělte cestu na úseky s odměnami, střídejte hry po deseti minutách, připravte tašku překvapení a pusťte audioknihu.
+? Může hrát i řidič? | Ano, ale jen slovní a hádací hry, které nevyžadují koukat jinam než na silnici.

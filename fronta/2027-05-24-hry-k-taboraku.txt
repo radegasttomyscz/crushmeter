@@ -1,0 +1,51 @@
+T: Hry k táboráku: 16 her a příběhů k ohni
+D: Hry k táboráku pro děti i dospělé: hádací a slovní hry, strašidelné příběhy, písničky a hry do tmy. Na tábor, chatu, kemp i zahradu.
+H: Hry k táboráku: 16 her a příběhů k ohni pro děti i dospělé
+L: Hry na výlety
+G: guess
+C: Hry, příběhy a písničky k ohni.
+R: /hry-na-chatu.html | Hry na chatu a chalupu
+R: /hry-venku-pro-dospele.html | Hry venku pro dospělé
+R: /otazky-k-zamysleni.html | Otázky k zamyšlení
+R: /hadanky-s-odpovedi.html | Hádanky s odpovědí
+
+Oheň má zvláštní kouzlo: lidé u něj mluví jinak než u stolu. Klidněji, upřímněji a ochotněji poslouchají. Proto se k táboráku hodí jiné hry než na párty. Tady je šestnáct her a nápadů pro děti i dospělé: slovní, hádací, příběhové a hry do tmy. Žádná nepotřebuje nic víc než lidi kolem ohně.
+## Bezpečnost u ohně na začátek
+- Hry s pohybem hrajte dál od ohniště.
+- Děti nehrají honičky kolem ohně.
+- Vždy mějte po ruce kbelík vody nebo písek.
+- Oheň nenechávejte bez dozoru a před odchodem ho úplně uhaste.
+- Respektujte zákazy rozdělávání ohně v období sucha a v lesích.
+## Slovní hry
+1. **Příběh po větách.** Každý přidá jednu větu. U ohně fungují strašidelné nebo dobrodružné příběhy.
+2. **Slovní fotbal.** Další slovo začíná posledním písmenem předchozího. U ohně se dá hrát s tématem: zvířata, města, jídla.
+3. **Já jedu na výlet a beru si…** Každý zopakuje seznam a přidá jednu věc. Kdo se splete, vypadává.
+4. **Asociace.** Okamžitá odpověď na slovo. Kdo zaváhá, přikládá do ohně.
+## Hádací hry
+5. **Dvacet otázek.** Jeden si myslí osobu, zvíře nebo věc, ostatní se ptají na ano a ne.
+6. **Hádej písničku.** Někdo brouká nebo hraje na kytaru první takty, ostatní hádají.
+7. **Hádanky.** Šedesát hádanek s odpověďmi pro děti i dospělé najdete v článku [hádanky s odpovědí](/hadanky-s-odpovedi.html).
+8. **Kdo jsem?** Myslíš si slavnou osobnost a ostatní hádají podle nápověd, které dáváš postupně, od nejtěžší.
+## Příběhy k ohni
+9. **Strašidelný příběh se zvukovými efekty.** Vypravěč vypráví, ostatní dělají zvuky: vítr, kroky, skřípání dveří.
+10. **Legenda o místě.** Vymyslete spolu legendu o lese nebo kopci, kde táboříte. Každý přidá jednu podrobnost.
+11. **Tři slova.** Každý řekne jedno slovo a vypravěč musí okamžitě vymyslet příběh, ve kterém všechna tři slova budou.
+12. **Pravda, nebo výmysl.** Každý vypráví krátký zážitek, ostatní hádají, jestli je skutečný.
+## Hry pro dospělé u ohně
+13. **Otázky k zamyšlení.** U ohně se dobře mluví o věcech, na které jinde nezbývá čas. Padesát otázek najdete v článku [otázky k zamyšlení](/otazky-k-zamysleni.html).
+14. **Nikdy jsem nikdy.** U ohně v klidnější verzi, s historkami.
+15. **Kdo z nás.** „Kdo z nás by v divočině přežil nejdéle?“
+## Hra do tmy
+16. **Svatojánské světlo.** Po setmění jeden odejde s baterkou do lesa nebo na zahradu a občas krátce blikne. Ostatní ho hledají potmě. Kdo ho najde, je další. Hrajte jen na místě, které znáte a kde je bezpečno.
+## Písničky k táboráku
+Táborák bez kytary je jako guláš bez chleba. Pokud nikdo nehraje, pusťte playlist z telefonu a zpívejte. Osvědčené jsou písně, které zná každý: trampské klasiky, hity z devadesátek a pohádkové písničky pro děti. Nechte každého vybrat jednu a říct, proč ji má rád.
+## Kdy hrát co
+- **Při rozdělávání ohně:** slovní fotbal, já jedu na výlet.
+- **U opékání buřtů:** hádanky, dvacet otázek.
+- **Když se setmí:** strašidelné příběhy, legenda o místě.
+- **Když oheň dohořívá:** otázky k zamyšlení, písničky.
+Pokud máte s sebou telefon, pantomima a popis pojmů jdou hrát i u ohně, jen dál od plamenů. Pojmy a časovač vylosuje [Předveď a hádej](/predved-a-hadej.html). Další tipy na víkend venku najdete v článku [hry na chatu](/hry-na-chatu.html).
+? Jaké hry hrát u táboráku? | Příběh po větách, slovní fotbal, já jedu na výlet, dvacet otázek, hádej písničku, hádanky a strašidelné příběhy.
+? Jaké hry u ohně pro dospělé? | Otázky k zamyšlení, nikdy jsem nikdy, kdo z nás, pravda, nebo výmysl a vymýšlení legend o místě.
+? Jaké hry u táboráku pro děti? | Hádanky, slovní fotbal, já jedu na výlet, strašidelný příběh se zvukovými efekty a svatojánské světlo po setmění.
+? Jak hrát bezpečně u ohně? | Pohybové hry dál od ohniště, žádné honičky kolem ohně, kbelík vody po ruce a oheň nikdy bez dozoru.

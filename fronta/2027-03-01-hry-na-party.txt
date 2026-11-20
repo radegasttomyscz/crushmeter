@@ -1,0 +1,54 @@
+T: Hry na párty pro dospělé: 20 her, které rozjedou večer
+D: 20 her na párty pro dospělé: na seznámení, týmové, hádací i odvážnější. Jak vybrat hru podle velikosti party a jak rozjet večer, kde se lidé neznají.
+H: Hry na párty pro dospělé: 20 her, které rozjedou každý večer
+L: Hry na oslavy
+G: guess
+C: Seznamovací, týmové i odvážnější hry pro partu.
+R: /nikdy-jsem-nikdy.html | Nikdy jsem nikdy: 100 otázek
+R: /hry-na-silvestra.html | Hry na Silvestra
+R: /otazky-pro-kamarady.html | Otázky pro kamarády
+R: /hadanky-s-odpovedi.html | Hádanky s odpovědí
+
+Každá párty má kritický moment: hodinu po začátku, kdy se lidé rozdělili do hloučků a hostitel přemýšlí, jestli už to „jede“. Dobrá hra ten moment překlene. Tady je dvacet her pro dospělé seřazených podle toho, kdy na párty je zařadit a pro kolik lidí jsou.
+## Jak vybrat hru na párty
+- **Lidé se neznají:** seznamovací hry, kde se nemusí nikdo předvádět.
+- **Malá skupina (4–8):** hádací hry a otázky.
+- **Velká skupina (8+):** týmové hry.
+- **Pozdě večer:** odvážnější hry, ale jen když se všichni znají.
+## Seznamovací hry
+1. **Dvě pravdy a lež.** Každý řekne tři věci o sobě, jedna je lež. Ostatní hádají. Nejrychlejší způsob, jak se o cizích lidech dozvědět zajímavé věci.
+2. **Hledání podpisů.** Každý dostane papír s políčky („byl/a v Asii“, „hraje na nástroj“, „má dvojče“). Hledá lidi, kteří splňují, a sbírá podpisy.
+3. **Kdo jsem?** Na záda nebo čelo dostanete papírek se jménem slavné osobnosti. Chodíte po místnosti a ptáte se ostatních na ano a ne.
+4. **Společná věc.** Ve dvojicích máte dvě minuty na nalezení tří věcí, které máte společné a nejsou na první pohled vidět.
+## Týmové hry
+5. **Pantomima v týmech.** Minuta na co nejvíc uhodnutých pojmů. Pojmy a časovač vylosuje [Předveď a hádej](/predved-a-hadej.html) a telefon se jen předává.
+6. **Popis slov.** Stejný princip, jen se vysvětluje slovy. Zakázané je říct hledané slovo nebo jeho část.
+7. **Kreslený telefon.** První napíše větu, druhý ji nakreslí, třetí podle kresby napíše větu a tak dál. Na konci porovnáte začátek a konec.
+8. **Hospodský kvíz.** Pět kol po pěti otázkách: zeměpis, film, hudba, jídlo, osobní otázky o hostiteli. Inspiraci najdete v článku [kvízové otázky pro dva](/kvizove-otazky-pro-dva.html).
+9. **Hádej písničku.** Pět vteřin skladby, kdo první pozná interpreta, má bod pro tým.
+10. **Lidské bingo.** Bingo, kde místo čísel jsou vlastnosti hostů.
+## Hry na otázky
+11. **Kdo z nás.** „Kdo z nás by přežil nejdéle na pustém ostrově?“ Na tři všichni ukážou.
+12. **Raději bys.** Sedmdesát dilemat v článku [Raději bys](/otazky-radeji-bys.html). Kdo je v menšině, plní úkol.
+13. **Nikdy jsem nikdy.** Klasika všech párty. Sto otázek včetně odvážných najdete v článku [Nikdy jsem nikdy](/nikdy-jsem-nikdy.html).
+14. **Horké křeslo.** Jeden sedí uprostřed a ostatní mají dvě minuty na otázky. Může jednou odmítnout odpovědět.
+15. **Hádej, kdo to napsal.** Každý napíše anonymně jednu věc o sobě. Papírky se losují a hádá se autor.
+## Hry s pohybem
+16. **Mrazík.** Hraje hudba, všichni tančí. Když hudba přestane, každý zamrzne. Kdo se pohne, vypadává.
+17. **Limbo.** Tyč nebo provaz a hudba. Funguje jen v prostorném bytě nebo na zahradě.
+18. **Balancování.** Kdo udrží nejdéle lžíci s vajíčkem nebo knihu na hlavě.
+## Odvážnější hry pro partu, která se zná
+19. **Pravda, nebo úkol.** Kruh, láhev a otázky. Jen pro partu, kde jsou si všichni blízcí a všichni souhlasí. Inspirace v článku [pravda, nebo úkol pro páry](/pravda-nebo-ukol-pro-pary.html).
+20. **Odvážně 18+.** Karty s otázkami, přiznáními, volbami a výzvami. Režim pro kamarády nemá erotické karty, režim pro páry je umí zapnout. Ukázku s deseti kartami zahrajete [zdarma](/odvazne-18-ukazka.html).
+## Jak rozjet párty, kde se lidé neznají
+1. **Začněte hrou s jednoduchými pravidly.** Dvě pravdy a lež nebo kdo jsem.
+2. **Nechte lidi ve dvojicích,** ne před celou skupinou. Trapnost klesá.
+3. **Míchejte týmy.** Ne páry a nejlepší kamarády dohromady.
+4. **Hostitel jde první.** Ukáže, že se nikdo nemusí bát udělat ze sebe blázna.
+5. **Nenuťte.** Kdo nechce hrát, může počítat body nebo moderovat.
+## Hry na párty v telefonu
+Ušetříte si papírky, tužky a vymýšlení pojmů. Všechny hry na CrushMeter běží v prohlížeči jednoho telefonu, bez stahování a zdarma. Telefon se prostě podává dál. Pro týmovou pantomimu je ideální [Předveď a hádej](/predved-a-hadej.html), pro kvízové kolo [Kdo ví víc](/kdo-vi-vic.html).
+? Jaké hry hrát na párty pro dospělé? | Dvě pravdy a lež, pantomima v týmech, popis slov, kreslený telefon, hospodský kvíz, kdo z nás, nikdy jsem nikdy a pravda, nebo úkol.
+? Jak rozjet párty, kde se lidé neznají? | Začněte jednoduchou seznamovací hrou, nechte lidi hrát ve dvojicích, míchejte týmy a ať hostitel jde příkladem.
+? Jaké hry na párty bez alkoholu? | Pantomima, kreslený telefon, hádej písničku, kvíz, kdo jsem a mrazík. Nikdy jsem nikdy jde hrát i s prsty nebo body.
+? Jaké hry na párty pro velkou skupinu? | Týmové hry: pantomima, popis slov, hospodský kvíz, lidské bingo a kreslený telefon.

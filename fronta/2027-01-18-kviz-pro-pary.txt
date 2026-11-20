@@ -1,0 +1,95 @@
+T: Kvíz pro páry: 60 otázek, jak dobře se znáte
+D: Kvíz pro páry s 60 otázkami: lehké, o vašem vztahu, záludné i pro dlouholeté páry. Pravidla, bodování a jak kvíz zahrát na jednom telefonu.
+H: Kvíz pro páry: 60 otázek, jak dobře se znáte
+L: Kvíz pro dva
+G: know
+C: 60 otázek, které prověří, co o sobě víte.
+R: /otazky-pro-pary.html | Otázky pro páry
+R: /otazky-radeji-bys.html | Otázky Raději bys
+R: /otazky-na-konec-roku.html | Otázky na konec roku
+R: /kvizove-otazky-pro-dva.html | Vědomostní kvízové otázky pro dva
+
+Myslíte si, že se znáte? Kvíz pro páry to ověří za dvacet minut. Princip je jednoduchý: jeden odpovídá na otázky o sobě, druhý tipuje jeho odpověď. Za každou shodu je bod. Nejzábavnější nejsou body, ale chvíle, kdy se netrefíte a zjistíte, že partner po pěti letech pořád neví, jakou máte rádi pizzu.
+## Pravidla kvízu pro páry
+1. Jeden je **odpovídající**, druhý **tipující**. Po každém kole se vyměníte.
+2. Odpovídající napíše odpověď na papírek nebo do telefonu, aby ji druhý neviděl.
+3. Tipující řekne svůj tip nahlas.
+4. Shoda je bod. U otázek s čísly (třeba „kolik hrnků kávy denně“) se počítá tip s odchylkou jedna.
+5. Hrajte na deset otázek každý. Kdo má víc bodů, vybírá program na příští večer.
+**Varianta bez papírů:** hra [Jak dobře se znáte?](/jak-dobre-se-znate.html) dělá všechno za vás. Ukáže otázku, jeden odpoví, předá telefon, druhý tipuje a hra spočítá body. Zdarma, bez registrace.
+## 15 lehkých otázek na rozehřátí
+1. Jaké je moje oblíbené jídlo?
+2. Jakou barvu mám nejradši?
+3. Káva, nebo čaj?
+4. Na kolik hodin bych si nařídil/a budík, kdybych nemusel/a vstávat?
+5. Jaký je můj oblíbený film?
+6. Sladké, nebo slané?
+7. Kterou sezónu mám nejradši?
+8. Jaké zvíře bych si pořídil/a?
+9. Hory, nebo moře?
+10. Jakou pizzu si objednám?
+11. Spím u zdi, nebo u kraje?
+12. Jaká je moje oblíbená písnička teď?
+13. Čeho se bojím?
+14. Kolik mám v telefonu otevřených aplikací na zprávy?
+15. Jaké je moje oblíbené slovo nebo hláška?
+## 15 otázek o vašem vztahu
+1. Kde jsme se poprvé viděli?
+2. Co jsem měl/a na sobě na prvním rande?
+3. Kdo z nás se první ozval?
+4. Jaký byl můj první dojem z tebe?
+5. Které naše společné místo mám nejradši?
+6. Kdy jsem ti poprvé řekl/a, že tě mám rád/a?
+7. Jakou naši společnou dovolenou považuji za nejlepší?
+8. Jaký je náš nejčastější spor?
+9. Co mi na tobě vadilo na začátku a teď už ne?
+10. Která písnička je podle mě „naše“?
+11. Co bych řekl/a, že je tvoje nejlepší vlastnost?
+12. Jaký byl náš nejtrapnější společný zážitek?
+13. Jak bych popsal/a náš vztah třemi slovy?
+14. Co je podle mě náš nejlepší společný zvyk?
+15. Na co se teď nejvíc těším, co spolu podnikneme?
+## 15 záludných otázek
+1. Jakou svou vlastnost bych nejradši změnil/a?
+2. Na co jsem tajně pyšný/á?
+3. Co mě spolehlivě rozčílí do pěti minut?
+4. Jaký byl můj sen z dětství?
+5. Co bych dělal/a, kdybych vyhrál/a milion?
+6. Kterého kamaráda bych zavolal/a jako prvního v nouzi?
+7. Jakou věc bych zachránil/a z hořícího domu (kromě lidí a zvířat)?
+8. Co dělám, když jsem smutný/á?
+9. Jaký je můj největší trapas, o kterém víš?
+10. Komu z rodiny jsem nejvíc podobný/á?
+11. Co bych si nejradši naplánoval/a na volný den?
+12. Jakou dovednost bych se chtěl/a naučit?
+13. Čeho jsem se v dětství bál/a?
+14. Co dělám, když se nemůžu rozhodnout?
+15. Jakou knihu, film nebo seriál bych doporučil/a každému?
+## 15 otázek pro páry, které spolu žijí roky
+1. Kolik lžiček cukru si dávám do kávy?
+2. Co z lednice sním jako první, když přijdu hladový/á?
+3. Jaký mám zvyk, o kterém si myslím, že o něm nevíš?
+4. Která věc v domácnosti mě nejvíc štve?
+5. Co bych si objednal/a k pití v baru?
+6. Čím si nejradši zlepším náladu?
+7. Kdo z nás dvou je podle mě větší chaotik?
+8. Kdo první usne u filmu?
+9. Na co bych utratil/a peníze, kdybych nemusel/a nikomu nic vysvětlovat?
+10. Co bych chtěl/a změnit na našem bytě?
+11. Jak vypadá můj ideální nedělní večer?
+12. Jakou větu říkám nejčastěji?
+13. Jaký dárek od tebe mě potěšil nejvíc?
+14. Co mi nejvíc chybí z doby, kdy jsme spolu začínali?
+15. Kde bych chtěl/a za deset let bydlet?
+## Jak vyhodnotit výsledky
+- **0–8 bodů ze 30:** máte co objevovat. Berte to jako pozvánku, ne verdikt.
+- **9–18 bodů:** znáte se dobře, ale pár překvapení ještě zbývá.
+- **19–25 bodů:** sehraná dvojka.
+- **26–30 bodů:** buď se znáte dokonale, nebo podvádíte.
+Výsledek ale není podstatný. Nejcennější je rozhovor, který vznikne po každé nesprávné odpovědi: „Fakt? Odkdy nemáš rád/a olivy?“
+## Kvíz pro páry jako tradice
+Zahrajte si kvíz každý rok na výročí se stejnými otázkami. Odpovědi si zapisujte. Za pár let uvidíte, co se změnilo, a to je hezčí suvenýr než fotka. Pokud chcete jít víc do hloubky, pokračujte s článkem [otázky pro páry](/otazky-pro-pary.html).
+? Jak se hraje kvíz pro páry? | Jeden odpovídá na otázky o sobě, druhý tipuje jeho odpověď. Za každou shodu je bod a po kole se vyměníte.
+? Jaké otázky dát do kvízu pro páry? | Lehké o oblíbeném jídle a filmech, otázky o vašem vztahu, záludné o snech a obavách a otázky o každodenních zvycích.
+? Kde zahrát kvíz pro páry online? | Hra Jak dobře se znáte? na CrushMeter.cz běží na jednom telefonu, ukazuje otázky a počítá body. Je zdarma a bez registrace.
+? Kolik otázek mít v kvízu pro páry? | Na jeden večer stačí deset až patnáct otázek pro každého. Celý kvíz zabere asi dvacet minut.

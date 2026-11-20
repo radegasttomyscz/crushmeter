@@ -1,0 +1,83 @@
+T: Otázky k zamyšlení: 50 hlubokých otázek o životě
+D: 50 otázek k zamyšlení o životě, štěstí, vztazích a o sobě. Na hluboký rozhovor ve dvou, s přáteli i do deníku.
+H: Otázky k zamyšlení: 50 hlubokých otázek o životě a o sobě
+L: Otázky pro dva
+G: know
+C: Hluboké otázky o životě, štěstí a vztazích.
+R: /romanticke-otazky-pro-pary.html | Romantické otázky pro páry
+R: /otazky-na-konec-roku.html | Otázky na konec roku
+R: /otazky-pro-pary.html | Otázky pro páry
+R: /otazky-pro-kamarady.html | Otázky pro kamarády
+
+Některé rozhovory si pamatujeme roky. Obvykle nezačaly otázkou „co nového“, ale něčím, nad čím se oba museli zamyslet. Tady je padesát otázek k zamyšlení v pěti tématech. Hodí se na dlouhý večer ve dvou, k ohni s přáteli, na procházku i do deníku.
+## Jak vést hluboký rozhovor
+- **Vyber jednu otázku a zůstaň u ní.** Hloubka nevzniká z počtu otázek, ale z času u jedné.
+- **Odpovídej i ty.** Rozhovor, kde odpovídá jen jeden, je výslech.
+- **Neopravuj a nehodnoť.** Nejde o správnou odpověď.
+- **Doptávej se.** „Jak to myslíš?“ a „Proč?“ posunou rozhovor víc než nová otázka.
+- **Ticho je v pořádku.** U dobré otázky se přemýšlí.
+## O životě
+1. Co bys dělal/a, kdybys věděl/a, že nemůžeš selhat?
+2. Co ve tvém životě funguje tak dobře, že to bereš jako samozřejmost?
+3. Na co bys chtěl/a mít víc času, a proč ho nemáš?
+4. Kdybys mohl/a poslat jednu větu sám/sama sobě před deseti lety, jaká by byla?
+5. Co bys chtěl/a, aby o tobě říkali lidé, až budeš starý/á?
+6. Které rozhodnutí ti nejvíc změnilo život?
+7. Kdy ses naposledy cítil/a úplně živý/á?
+8. Žiješ život, který jsi chtěl/a, nebo ten, který se od tebe čekal?
+9. Co je pro tebe důležité, ale trávíš tím nejmíň času?
+10. Čeho se bojíš víc: že se něco stane, nebo že se nestane nic?
+## O štěstí
+11. Kdy jsi byl/a naposledy opravdu šťastný/á a co se dělo?
+12. Je štěstí cíl, nebo vedlejší efekt?
+13. Co ti dělá radost a stojí míň než stovku?
+14. Byl/a bys šťastnější s dvojnásobným platem, nebo s dvojnásobným volným časem?
+15. Kdo ve tvém okolí je podle tebe šťastný a čím to je?
+16. Co tě dokáže spolehlivě vytáhnout ze špatné nálady?
+17. Jaký obyčejný den bys chtěl/a zažívat pořád dokola?
+18. Čeho máš v životě dost a nepotřebuješ víc?
+19. Za co jsi vděčný/á, i když to nikdo nevidí?
+20. Je víc věcí, které tě dělají šťastným/šťastnou, nebo věcí, které ti chybí?
+## O vztazích
+21. Kdo tě nejvíc naučil o lásce, i když to možná sám nevěděl?
+22. Co ve vztazích dáváš ostatním, co bys sám/sama potřeboval/a dostat?
+23. Kterého přítele bys chtěl/a znovu vidět a proč se neozveš?
+24. Co ti ve vztazích nejvíc chybí?
+25. Komu bys měl/a odpustit, i když se ti nechce?
+26. Kdy ses naposledy cítil/a pochopený/á?
+27. Jakou vlastnost by měl mít člověk, se kterým strávíš život?
+28. Co ses naučil/a z vztahu, který skončil?
+29. Je láska rozhodnutí, nebo pocit?
+30. Kdo by byl tvým prvním telefonátem, kdyby se stalo něco velkého?
+## O sobě
+31. Co o sobě víš, co ostatní nevidí?
+32. Kterou svou vlastnost by sis nejradši ponechal/a, kdyby ses měl/a všech ostatních vzdát?
+33. Na co jsi pyšný/á, i když se tím nechlubíš?
+34. Kdy jsi naposledy změnil/a názor na něco důležitého?
+35. Co tě vyčerpává víc, než by mělo?
+36. Jakou lež si říkáš nejčastěji?
+37. Kým bys byl/a, kdyby tě nikdo neznal?
+38. Kdy jsi nejvíc sám/sama sebou?
+39. Co tě na sobě překvapilo v posledním roce?
+40. Jakou radu dáváš ostatním a sám/sama se jí neřídíš?
+## Filozofické otázky
+41. Kdybys mohl/a vědět pravdu o jedné věci, na co by ses zeptal/a?
+42. Je lepší být milovaný, nebo respektovaný?
+43. Existuje skutečně svobodná vůle?
+44. Co dělá z člověka dobrého člověka?
+45. Kdybys mohl/a žít věčně, chtěl/a bys?
+46. Je možné být šťastný/á bez ostatních lidí?
+47. Co si zaslouží, aby se na to pamatovalo i za sto let?
+48. Je důležitější úmysl, nebo výsledek?
+49. Kdyby tvůj život byla kniha, jak by se jmenovala aktuální kapitola?
+50. Co bys chtěl/a pochopit dřív, než bude pozdě?
+## Kde otázky použít
+- **Ve dvou:** večer bez telefonů, na procházce, na dlouhé cestě autem.
+- **S přáteli:** u ohně, po večeři, kdy už nikdo nespěchá.
+- **Sám/sama:** jedna otázka denně do deníku. Za měsíc si přečti, co jsi psal/a.
+## Když chcete něco lehčího
+Hluboký rozhovor potřebuje náladu. Pokud chcete začít zlehka, zahrajte si nejdřív [Jak dobře se znáte?](/jak-dobre-se-znate.html), kde jeden odpovídá a druhý tipuje. Smích rozhovor otevře a k hlubším otázkám se dostanete přirozeně. Pro páry jsou tu [romantické otázky](/romanticke-otazky-pro-pary.html), pro přátele [otázky pro kamarády](/otazky-pro-kamarady.html).
+? Jaké jsou dobré otázky k zamyšlení? | Co bys dělal/a, kdybys nemohl/a selhat, žiješ život, který jsi chtěl/a, kdy jsi byl/a naposledy šťastný/á a co bys chtěl/a pochopit dřív, než bude pozdě.
+? Jak vést hluboký rozhovor? | Vyber jednu otázku a zůstaň u ní, odpovídej i ty, nehodnoť a doptávej se „proč“ a „jak to myslíš“.
+? Jaké filozofické otázky položit přátelům? | Je lepší být milovaný, nebo respektovaný, existuje svobodná vůle, co dělá z člověka dobrého člověka a chtěl/a bys žít věčně.
+? Kde použít otázky k zamyšlení? | Na večer ve dvou, na procházku, k ohni s přáteli nebo do deníku, jednu otázku denně.

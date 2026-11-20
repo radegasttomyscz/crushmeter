@@ -1,0 +1,151 @@
+T: Hádanky s odpovědí: 60 hádanek pro děti i dospělé
+D: 60 hádanek s odpovědí: lehké pro děti, chytáky, logické hádanky a těžké pro dospělé. Odpovědi jsou skryté, takže můžete hádat v rodině i ve dvou.
+H: Hádanky s odpovědí: 60 hádanek pro děti i dospělé
+L: Kvízy a hádanky
+G: quiz
+C: Lehké, záludné i logické hádanky s odpověďmi.
+R: /kvizove-otazky-pro-dva.html | Kvízové otázky pro dva
+R: /hry-do-auta.html | Hry do auta
+R: /hry-pro-dva-bez-niceho.html | Hry pro dva bez ničeho
+R: /hry-na-vanoce.html | Hry pro celou rodinu
+
+Hádanky jsou nejstarší hra na světě a pořád fungují: v autě, u stolu, ve frontě i v posteli před spaním. Tady je šedesát hádanek rozdělených podle obtížnosti. Odpovědi jsou pod každou částí schované, takže je čtenář vidí a hádající ne.
+## Jak hrát s hádankami
+- **Jeden čte, ostatní hádají.** Kdo uhodne, čte další.
+- **Na čas.** Třicet vteřin na hádanku. Kdo neuhodne, předá dál.
+- **Nápověda za bod.** Kdo chce nápovědu, může uhodnout jen za polovinu bodů.
+- **Ve dvou:** střídejte se ve čtení. Kdo uhodne víc z deseti, vyhrává.
+## 15 lehkých hádanek pro děti
+1. Má zuby, ale nekouše. Co je to?
+2. Čím víc z ní bereš, tím je větší. Co je to?
+3. Kdo nosí svůj dům na zádech?
+4. Má krk, ale nemá hlavu. Co je to?
+5. Visí na stěně, tiká a nikdy nejde spát. Co je to?
+6. V zimě bílá, v létě zelená, na podzim spadne. Co je to?
+7. Má oči, ale nevidí. Co je to?
+8. Čím je mokřejší, tím víc suší. Co je to?
+9. Má klíče, ale neodemkne žádné dveře. Co je to?
+10. Zvoní, ale není to zvon. Nosíš ho v kapse. Co je to?
+11. Má nohy, ale nechodí. Stojí v kuchyni. Co je to?
+12. Létá bez křídel a pláče bez očí. Co je to?
+13. Chodí všude s tebou, ale ve tmě zmizí. Co je to?
+14. Kdo má čtyři nohy ráno, dvě v poledne a tři večer? (Pozor, tahle je pro šikovné.)
+15. Žlutá je, nahoře svítí, v noci spí. Co je to?
+= Hřeben
+= Jáma
+= Hlemýžď (šnek)
+= Láhev
+= Hodiny
+= Listí
+= Brambora (nebo jehla)
+= Ručník
+= Klavír (nebo klávesnice)
+= Telefon
+= Stůl (nebo židle)
+= Mrak
+= Stín
+= Člověk: jako dítě leze po čtyřech, dospělý chodí po dvou, ve stáří s holí
+= Slunce
+## 15 chytáků
+16. Kolik měsíců má 28 dní?
+17. Co je těžší: kilo peří, nebo kilo železa?
+18. Elektrický vlak jede na sever, vítr fouká na jih. Kam jde kouř?
+19. Kohout snese vejce na vrcholu střechy. Na kterou stranu spadne?
+20. Jakou otázku nemůžeš nikdy zodpovědět „ano“?
+21. Co můžeš držet v pravé ruce, ale nikdy v levé?
+22. Lékař má bratra, ale bratr nemá bratra. Jak je to možné?
+23. Kolik zvířat od každého druhu vzal Mojžíš na archu?
+24. Co se dá rozbít, aniž by se toho někdo dotkl?
+25. Jsem pořád před tebou, ale nevidíš mě. Co jsem?
+26. Která česká věta se čte stejně odpředu i odzadu a je o kobyle?
+27. Kolikrát můžeš odečíst 5 od 25?
+28. Má to město, ale ne domy, lesy, ale ne stromy, vodu, ale ne ryby. Co je to?
+29. Čím víc toho je, tím méně vidíš. Co je to?
+30. Co patří tobě, ale ostatní to používají víc než ty?
+= Všech dvanáct
+= Váží stejně
+= Nikam, elektrický vlak nemá kouř
+= Kohouti vejce nesnášejí
+= „Spíš?“
+= Levou ruku (nebo levý loket)
+= Lékař je žena, je to jeho sestra
+= Žádné, na arše byl Noe, ne Mojžíš
+= Slib (nebo ticho)
+= Budoucnost
+= Kobyla má malý bok
+= Jednou, potom už odčítáš od 20
+= Mapa
+= Tma
+= Tvoje jméno
+## 15 logických hádanek
+31. Otec a syn mají dohromady 36 let. Otec je o 30 let starší než syn. Kolik je synovi?
+32. V místnosti jsou tři vypínače, ve vedlejší místnosti tři žárovky. Do místnosti se žárovkami smíš jít jen jednou. Jak zjistíš, který vypínač patří ke které žárovce?
+33. Hokejka a puk stojí dohromady 110 korun. Hokejka je o 100 korun dražší než puk. Kolik stojí puk?
+34. Když 5 strojů vyrobí 5 výrobků za 5 minut, za jak dlouho vyrobí 100 strojů 100 výrobků?
+35. Na jezeře je plocha leknínů, která se každý den zdvojnásobí. Za 48 dní pokryje celé jezero. Za kolik dní pokryje polovinu?
+36. Sestra má tolik bratrů jako sester. Každý bratr má dvakrát víc sester než bratrů. Kolik je dětí?
+37. Jak rozdělíš dort na osm stejných dílů třemi řezy?
+38. Muž bydlí v desátém patře. Ráno jede výtahem dolů. Večer jede výtahem jen do sedmého a dál jde pěšky, kromě dnů, kdy prší. Proč?
+39. Kterým číslem pokračuje řada 1, 1, 2, 3, 5, 8, 13…?
+40. Dva otcové a dva synové jdou na ryby. Každý chytí jednu rybu, ale chytí jen tři ryby. Jak je to možné?
+41. V šuplíku je deset černých a deset bílých ponožek. Je tma. Kolik musíš vytáhnout, abys měl jistě pár stejné barvy?
+42. Kolik je polovina ze dvou plus dva?
+43. Které číslo následuje: 2, 4, 8, 16…?
+44. Kolik trojúhelníků má hvězda nakreslená pěti čarami jedním tahem (pentagram)?
+45. Dva dny před pozítřkem je pondělí. Jaký je dnes den?
+= 3 roky (otci 33)
+= Zapneš první vypínač na pár minut a vypneš ho, zapneš druhý a jdeš do místnosti. Svítící patří k druhému, teplá zhasnutá k prvnímu, studená ke třetímu
+= 5 korun (hokejka 105)
+= Za 5 minut
+= Za 47 dní
+= Sedm: čtyři dívky a tři chlapci
+= Dva svislé řezy do kříže a jeden vodorovný přes celou výšku dortu
+= Je malý a dosáhne jen na tlačítko sedmého patra. Když prší, má deštník a dosáhne výš
+= 21, každé číslo je součtem dvou předchozích
+= Byli tři: dědeček, otec a syn
+= Tři
+= Tři (polovina ze dvou je jedna, plus dva)
+= 32
+= Deset (pět malých hrotů, pět složených z hrotu a části pětiúhelníku)
+= Pondělí
+## 15 těžkých hádanek pro dospělé
+46. Co můžeš chytit, ale nemůžeš to hodit?
+47. Co ti patří, a přesto to rozdáváš každému, koho potkáš?
+48. Kdo to dělá, nepotřebuje to. Kdo to kupuje, nepoužije to. Kdo to používá, neví o tom. Co je to?
+49. Co se dá vidět jednou za minutu, dvakrát za moment a nikdy za tisíc let?
+50. Mám jazyk, ale nemluvím, a celý den chodím. Co jsem?
+51. Jsem lehčí než peří, ale ani nejsilnější člověk mě neudrží déle než pár minut. Co jsem?
+52. Žena zastřelí manžela, pak ho pět minut drží pod vodou a nakonec ho pověsí. O hodinu později spolu jdou na večeři. Jak je to možné?
+53. Co je na konci duhy?
+54. Co se zvětšuje, když z toho ubíráš?
+55. Mám krk bez hlavy a rukávy bez rukou. Co jsem?
+56. Muž tlačí auto k hotelu a řekne, že je na mizině. Proč?
+57. Co jde nahoru a dolů, ale nehne se z místa?
+58. Mám tě, když mě sdílíš. Když mě sdílíš, už mě nemáš. Co jsem?
+59. Kdo mluví všemi jazyky světa, a přitom žádný neumí?
+60. Co má hlavu a ocas, ale nemá tělo?
+= Rýmu
+= Úsměv
+= Rakev
+= Písmeno M
+= Bota
+= Dech
+= Je fotografka: vyfotí ho, vyvolá snímek ve vodě a pověsí ho sušit
+= Písmeno Y
+= Díra
+= Košile
+= Hraje Monopoly
+= Schody
+= Tajemství
+= Ozvěna
+= Mince
+## Jak vymýšlet vlastní hádanky
+1. Vyber obyčejnou věc.
+2. Najdi na ní dvě vlastnosti, které si odporují („má oči, ale nevidí“).
+3. Popiš ji, jako by byla živá.
+Děti vymýšlejí hádanky překvapivě dobře. Zkuste u stolu kolo, kde každý jednu vymyslí.
+Pokud vás hádání baví, zkuste vědomostní kvíz ve hře [Kdo ví víc](/kdo-vi-vic.html). Jeden čte otázky a hlídá čas, druhý odpovídá a hra počítá body.
+? Jaké jsou lehké hádanky pro děti? | Má zuby, ale nekouše (hřeben), čím víc z ní bereš, tím je větší (jáma), má krk, ale nemá hlavu (láhev).
+? Jaké jsou nejtěžší hádanky? | Logické hádanky s vypínači a žárovkami, hokejkou a pukem nebo s lekníny na jezeře, kde intuice vede ke špatné odpovědi.
+? Jak hrát hádanky ve dvou? | Střídejte se ve čtení a hádání, dejte si na každou hádanku třicet vteřin a počítejte body z deseti.
+? Jak vymyslet vlastní hádanku? | Vyber obyčejnou věc, najdi na ní dvě vlastnosti, které si odporují, a popiš ji, jako by byla živá.
