@@ -4,7 +4,7 @@ Základ: `main` @ b3a4f05 (12. 11. 2026). Ověřeno čtením zdrojů, kontrolou 
 
 ## Co je a funguje
 - Statický web bez build kroku (HTML/CSS/vanilla JS), GitHub Pages, `CNAME`, `.nojekyll` v repu **chybí** (viz rizika).
-- Dvě bezplatné hry: Předveď a hádej (597 pojmů, 15 témat, popis/pantomima/kresba), Jak dobře se znáte? (48 otázek, 8/12 otázek na partii).
+- Dvě bezplatné hry: Předveď a hádej (797 pojmů, 20 témat, popis/pantomima/kresba), Jak dobře se znáte? (96 otázek, 8/12 otázek na partii).
 - Světlý/tmavý/systémový motiv (`assets/theme.js`), uložení do localStorage, bez odesílání dat.
 - Service worker (`sw.js`): síť napřed, cache jako záloha, verze cache ručně (`crushmeter-free-v5-20261112`).
 - SEO základ: title, description, canonical, OG, Twitter karty, robots.txt, sitemap (74 URL, odpovídá souborům), `llms.txt`, 64 článků s Article schématem, jedna H1 a správný canonical u všech článků.
