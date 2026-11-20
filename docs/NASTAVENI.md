@@ -46,3 +46,10 @@ V GA4 si označ jako klíčové události minimálně `shop_click`, `paid_game_s
 
 - Dotazy, zobrazení, CTR a pozice po stránkách. Podle nich rozhodnout o sloučení překrývajících se článků (seznam v `docs/AUDIT.md`).
 - Které z 64 starších článků skutečně přivádějí návštěvníky.
+
+## Stav napojení (20. 11. 2026)
+
+- **SimpleShop:** produkt „CrushMeter – Odvážně 18+“ (99 Kč, QR platba / převod), formulář `https://form.simpleshop.cz/eoAxy/buy/`. Povinné checkboxy: obchodní podmínky, věk 18+, okamžité zpřístupnění se ztrátou práva na odstoupení. „Webhook po zaplacení“ je nastavený jen u tohoto produktu.
+- **Make (tým My Team):** scénář „CrushMeter – nový nákup“ zapíše e-mail do úložiště „CrushMeter – přístupy“ na 12 měsíců (opakovaný nákup přičte rok ke stávajícímu konci, stejná objednávka se nezapočítá dvakrát). Scénář „CrushMeter – ověření přístupu“ odpovídá webu podle smlouvy výše a vrací herní sadu.
+- **Vrácení peněz:** v úložišti u daného e-mailu změňte `status` na `inactive`. Hra se zamkne při dalším ověření (nejpozději za 14 dní).
+- Tajný parametr webhooku po zaplacení a herní sada jsou jen v SimpleShopu a v Make, nikdy v tomto repozitáři.
