@@ -118,8 +118,14 @@
 .consent-bar .button{min-height:44px;padding:0 18px;cursor:pointer}
 
 /* Odemčení koupené hry */
-.sale-unlock{margin:14px 0 0;font-weight:700}
-.sale-unlock a{color:inherit;text-underline-offset:3px}
+.play-page .sale-hero p.sale-unlock,.sale-hero p.sale-unlock{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin:28px 0 0;max-width:460px;padding-top:20px;border-top:1px solid rgba(255,244,225,.14);font-size:1rem;color:var(--cm-muted)}
+.sale-wrap .sale-unlock a{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px 0 13px;border-radius:999px;background:rgba(255,244,225,.08);border:1px solid rgba(255,244,225,.22);color:inherit;color:#fff4e1;font-weight:750;text-decoration:none;transition:background .15s,border-color .15s}
+.sale-wrap .sale-unlock a:hover{background:rgba(255,244,225,.16);border-color:rgba(255,244,225,.4)}
+.sale-wrap .sale-unlock a:focus-visible{outline:3px solid #fff4e1;outline-offset:3px}
+.sale-unlock svg{flex:none;color:#f06595}
+@media (prefers-color-scheme:light){html:not([data-theme=dark]) .sale-unlock{border-top-color:var(--cm-line)}html:not([data-theme=dark]) .sale-wrap .sale-unlock a{background:var(--surface);border-color:var(--line-strong);color:var(--ink)}html:not([data-theme=dark]) .sale-unlock svg{color:var(--adult)}}
+[data-theme=light] .sale-unlock{border-top-color:var(--cm-line)}[data-theme=light] .sale-wrap .sale-unlock a{background:var(--surface);border-color:var(--line-strong);color:var(--ink)}[data-theme=light] .sale-unlock svg{color:var(--adult)}
+@media (prefers-reduced-motion:reduce){.sale-wrap .sale-unlock a{transition:none}}
 .sale-how{margin:4px 0 0;padding:0 0 0 1.3em;display:grid;gap:8px;font-size:.95rem;line-height:1.45}
 .sale-how li::before{content:none}
 .sale-wrap .sale-price a.sale-unlock-btn{display:flex;align-items:center;justify-content:center;text-align:center;min-height:50px;text-decoration:none;color:#fff4e1;font-weight:750;border:1.5px solid #fff4e1;border-radius:999px;background:transparent}
