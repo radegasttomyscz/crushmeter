@@ -148,7 +148,7 @@ Vědomostní kvíz je nejjednodušší hra, kterou můžete zahrát kdekoli: v h
 4. **Žolík.** Každý tým si zvolí jedno kolo, ve kterém má body dvojnásobné.
 5. **Vyhlašujte průběžně.** Udržíte napětí do konce.
 ## Kvíz bez přípravy
-Pokud nechcete otázky číst z článku, zahrajte si [Kdo ví víc](/kdo-vi-vic.html). Má 450 otázek v patnácti kategoriích a třech obtížnostech, časovač, nápovědu a počítá body. Jeden čte, druhý odpovídá, telefon se předává. Zdarma a bez registrace.
+Pokud nechcete otázky číst z článku, zahrajte si [Kdo ví víc](/kdo-vi-vic.html). Má 825 otázek ve dvaceti kategoriích a třech obtížnostech, časovač, nápovědu a počítá body. Jeden čte, druhý odpovídá, telefon se předává. Zdarma a bez registrace.
 ? Kde najít kvízové otázky s odpověďmi? | V tomto článku je 60 otázek v šesti kategoriích, dalších 50 v článku kvízové otázky pro dva a 300 ve hře Kdo ví víc na CrushMeter.cz.
 ? Jak udělat hospodský kvíz? | Pět kol po deseti otázkách, každé kolo jiná kategorie, jedno kolo o lidech v místnosti a žolík s dvojnásobnými body.
 ? Jak hrát vědomostní kvíz ve dvou? | Jeden čte otázku a hlídá čas, druhý odpovídá. Po každé otázce se vyměníte a počítáte body.
