@@ -46,3 +46,6 @@ c.querySelector('.install-go').onclick=async()=>{if(deferred){deferred.prompt();
 return c}
 function offer(root){if(standalone()||snoozed()||!(deferred||iosSafari))return;const t=root.querySelector&&root.querySelector('.final-screen,.game-result,.a-end');if(!t||t.querySelector('.install-card'))return;t.appendChild(card())}
 new MutationObserver(m=>{for(const r of m)for(const n of r.addedNodes)if(n.nodeType===1)offer(n.matches&&n.matches('.final-screen,.game-result,.a-end')?n.parentNode:n)}).observe(document.body,{childList:true,subtree:true})})();
+
+/* Kdo už má plnou hru Odvážně 18+ odemčenou, jde z menu rovnou hrát. */
+(()=>{try{const r=JSON.parse(localStorage.getItem('crushmeter.adult.access')||'null');if(!r||!r.email||!(Date.parse(r.expires)>Date.now()))return;const go=()=>document.querySelectorAll('.top-nav a[href="/odvazne-18.html"],.top-menu-panel a[href="/odvazne-18.html"]').forEach(a=>{a.href='/odvazne-18-hrat.html'});if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go()}catch{}})();
