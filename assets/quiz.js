@@ -179,7 +179,7 @@ ${q[0] > 1 ? `<label class="qz-hint"><input type="checkbox" data-act="hint"${g.h
       const w = a === b ? -1 : a > b ? 0 : 1;
       body = `<section class="qz-panel final-screen qz-final"><p class="qz-kicker">Kdo ví víc</p><h1 data-focus tabindex="-1">${w < 0 ? 'Remíza' : 'Vyhrává ' + E(g.names[w])}</h1>
 <div class="qz-final-score"><div><span>${E(g.names[0])}</span><b>${a}</b><small>${g.right[0]} z ${g.total / 2} správně</small></div><div><span>${E(g.names[1])}</span><b>${b}</b><small>${g.right[1]} z ${g.total / 2} správně</small></div></div>
-<div class="qz-final-actions"><button type="button" class="btn qz-go" data-act="again">Odveta</button><button type="button" class="btn btn-ghost" data-act="lobby">Změnit nastavení</button></div>
+<div class="qz-final-actions"><button type="button" class="btn qz-go" data-act="again">Odveta</button><button type="button" class="share-result qz-share" data-act="share"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg> Poslat výsledek kamarádům</button><button type="button" class="btn btn-ghost" data-act="lobby">Změnit nastavení</button></div>
 <p class="qz-final-tip">Na pauzu od otázek zkuste <a href="/predved-a-hadej.html">Předveď a hádej</a>.</p></section>`;
     }
     app.innerHTML = bar() + `<main class="qz-main">${body}</main><div class="qz-sheet" hidden></div>`;
@@ -239,6 +239,7 @@ ${q[0] > 1 ? `<label class="qz-hint"><input type="checkbox" data-act="hint"${g.h
     if (t.dataset.lvl) { g.pick.lvl = Number(t.dataset.lvl); g.phase = 'hand'; render(); return; }
     const a = t.dataset.act;
     if (a === 'hint') { g.hint = t.checked; const ok = app.querySelector('.qz-ok'); if (ok) ok.textContent = 'Správně, +' + bodu(worth()); save(); return; }
+    if (a === 'share') { const [x, y] = g.score; window.CM.share('Kdo ví víc: ' + g.names[0] + ' ' + x + ', ' + g.names[1] + ' ' + y + ' bodů. Kdo z vás ví víc?', 'https://crushmeter.cz/kdo-vi-vic.html'); return; }
     if (a === 'other') { const prev = g.offer || []; let next = offerCats(), tries = 0; while (tries++ < 5 && next.every(id => prev.includes(id))) next = offerCats(); g.offer = next; g.pick = null; render(); return; }
     if (a === 'read') { g.q = draw(g.pick.cat, g.pick.lvl); g.phase = 'read'; g.left = g.time; render(); }
     else if (a === 'go') startTimer();
