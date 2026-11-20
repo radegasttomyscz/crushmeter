@@ -1,0 +1,102 @@
+T: Raději bys…? 70 otázek pro páry, kamarády i děti
+D: Otázky „Raději bys…?“: 70 dilemat pro páry, kamarády, rodinu i odvážnější verze. Pravidla, jak z nich udělat hru, a tipy na vlastní otázky.
+H: Raději bys…? 70 otázek pro páry, kamarády i rodinu
+L: Otázky pro dva
+G: know
+K: Otázky Raději bys
+C: 70 dilemat pro páry, partu i rodinu.
+R: /otazky-pro-kamarady.html | Otázky pro kamarády
+R: /otazky-pro-pary.html | Otázky pro páry
+R: /hry-pro-dva-bez-niceho.html | Hry pro dva bez ničeho
+R: /pravda-nebo-ukol-pro-pary.html | Pravda, nebo úkol pro páry
+
+**Raději bys…?** je hra, kterou vysvětlíte jednou větou: dostaneš dvě možnosti a musíš si vybrat jednu. Žádné „obojí“ ani „ani jedno“. Zábava nepřichází ve chvíli, kdy odpovíš, ale když vysvětluješ proč. Tady je sedmdesát otázek pro různé příležitosti a pravidla, jak z nich udělat hru.
+## Jak hrát Raději bys
+1. Jeden přečte otázku, ostatní na tři ukážou jedním nebo dvěma prsty.
+2. Každý musí svou volbu zdůvodnit jednou větou.
+3. **Varianta pro dva:** nejdřív si tipni, co vybere druhý. Za správný tip je bod.
+4. **Varianta pro partu:** kdo je v menšině, plní úkol nebo vybírá další otázku.
+## 15 otázek Raději bys pro páry
+1. Raději bys měl/a rande každý týden doma, nebo jednou za měsíc někde venku?
+2. Raději bys věděl/a, co si myslím, nebo co cítím?
+3. Raději bys se mnou bydlel/a u moře, nebo na horách?
+4. Raději bys dostal/a dopis, nebo dárek?
+5. Raději bys jel/a na dovolenou bez plánu, nebo s plánem na každý den?
+6. Raději bys se mnou vařil/a, nebo bych vařil/a já pro tebe?
+7. Raději bys znovu prožil/a naše první rande, nebo viděl/a nás za deset let?
+8. Raději bys mě viděl/a jen v teplákách, nebo jen v obleku?
+9. Raději bys se se mnou celý víkend neviděl/a, nebo byl/a se mnou nonstop týden?
+10. Raději bys společný večer s filmem, nebo s hrou?
+11. Raději bys, abych ti psal/a zprávy celý den, nebo abych zavolal/a jednou večer?
+12. Raději bys oslavil/a výročí na výletě, nebo v restauraci?
+13. Raději bys zapomněl/a moje narozeniny, nebo naše výročí?
+14. Raději bys spolu spal/a pod širákem, nebo v luxusním hotelu?
+15. Raději bys znal/a všechna moje tajemství, nebo si nechal/a pár překvapení?
+## 15 otázek pro kamarády
+1. Raději bys měl/a schopnost létat, nebo být neviditelný/á?
+2. Raději bys žil/a bez internetu, nebo bez kávy?
+3. Raději bys byl/a slavný/á, nebo bohatý/á?
+4. Raději bys uměl/a všechny jazyky, nebo hrát na všechny nástroje?
+5. Raději bys jedl/a celý život jen pizzu, nebo jen sushi?
+6. Raději bys celý rok nemohl/a mluvit, nebo nemohl/a používat telefon?
+7. Raději bys cestoval/a do minulosti, nebo do budoucnosti?
+8. Raději bys bydlel/a ve velkém městě, nebo na samotě?
+9. Raději bys pracoval/a čtyři dny po deseti hodinách, nebo pět dní po osmi?
+10. Raději bys měl/a pauzu na přetočení času, nebo na zastavení času?
+11. Raději bys byl/a o deset let mladší, nebo o deset let chytřejší?
+12. Raději bys musel/a zpívat všechno, co řekneš, nebo tančit, kamkoli jdeš?
+13. Raději bys poznal/a, kdy ti někdo lže, nebo uměl/a lhát dokonale?
+14. Raději bys žil/a v seriálu Přátelé, nebo ve světě Harryho Pottera?
+15. Raději bys měl/a vždycky pravdu, nebo vždycky štěstí?
+## 15 otázek pro rodinu a děti
+1. Raději bys byl/a velký/á jako slon, nebo malý/á jako myš?
+2. Raději bys měl/a za mazlíčka draka, nebo jednorožce?
+3. Raději bys žil/a pod vodou, nebo na Měsíci?
+4. Raději bys uměl/a mluvit se zvířaty, nebo s rostlinami?
+5. Raději bys celý den skákal/a, nebo celý den plaval/a?
+6. Raději bys jedl/a zmrzlinu, která chutná jako brokolice, nebo brokolici, která chutná jako zmrzlina?
+7. Raději bys měl/a prázdniny celý rok, nebo Vánoce každý měsíc?
+8. Raději bys měl/a ocas, nebo křídla?
+9. Raději bys bydlel/a v domku na stromě, nebo v hradu?
+10. Raději bys byl/a pirát, nebo astronaut?
+11. Raději bys uměl/a kouzlit, nebo se teleportovat?
+12. Raději bys byl/a nejrychlejší, nebo nejsilnější na světě?
+13. Raději bys měl/a dům z čokolády, nebo z lega?
+14. Raději bys spal/a v iglú, nebo ve stanu v džungli?
+15. Raději bys uměl/a dýchat pod vodou, nebo vidět ve tmě?
+## 15 záludných otázek
+1. Raději bys věděl/a, jak umřeš, nebo kdy?
+2. Raději bys ztratil/a všechny fotky, nebo všechny zprávy?
+3. Raději bys byl/a o dvě hodiny dřív všude, nebo o dvacet minut pozdě?
+4. Raději bys mohl/a vrátit jedno rozhodnutí, nebo vědět, jak dopadne jedno budoucí?
+5. Raději bys měl/a málo dobrých přátel, nebo spoustu známých?
+6. Raději bys žil/a sto let průměrně, nebo padesát let skvěle?
+7. Raději bys, aby všichni slyšeli tvoje myšlenky, nebo viděli tvoje vyhledávání?
+8. Raději bys začal/a znovu od nuly, nebo pokračoval/a tam, kde jsi?
+9. Raději bys znal/a pravdu, která bolí, nebo žil/a v příjemné nevědomosti?
+10. Raději bys byl/a nejchytřejší v místnosti, nebo nejoblíbenější?
+11. Raději bys pracoval/a v práci, která tě baví a je špatně placená, nebo nebaví a je skvěle placená?
+12. Raději bys zapomněl/a všechno z dětství, nebo z posledních pěti let?
+13. Raději bys mohl/a číst myšlenky, nebo předvídat budoucnost?
+14. Raději bys žil/a bez hudby, nebo bez filmů?
+15. Raději bys dostal/a jednu velkou šanci, nebo spoustu malých?
+## 10 odvážnějších otázek pro páry
+1. Raději bys rande se svíčkami, nebo divoký večer ve městě?
+2. Raději bys polibek na krk, nebo na rty?
+3. Raději bys, abych tě překvapil/a, nebo abych se zeptal/a, co chceš?
+4. Raději bys romantiku, nebo vášeň?
+5. Raději bys ráno, nebo večer?
+6. Raději bys masáž, nebo koupel ve dvou?
+7. Raději bys zprávu, ze které se začervenáš, nebo šepot do ucha?
+8. Raději bys hotel na jednu noc, nebo celý víkend doma bez telefonů?
+9. Raději bys pomalu, nebo s chutí?
+10. Raději bys splnil/a jedno moje přání, nebo abych já splnil/a jedno tvoje?
+Další odvážnější otázky najdete v článku [pikantní otázky pro páry](/pikantni-otazky-pro-pary.html) nebo ve hře [Odvážně 18+](/odvazne-18-ukazka.html), kde jsou volby tohoto typu jako samostatný druh karet.
+## Jak vymyslet vlastní otázky
+- **Obě možnosti musí být stejně lákavé, nebo stejně hrozné.** Jinak není co řešit.
+- **Konkrétní je lepší než obecné.** „Raději bys celý rok jedl/a jen knedlíky“ je lepší než „raději bys jedl/a nezdravě“.
+- **Použijte vlastní život.** Otázky o společných kamarádech, místech a zážitcích jsou nejvtipnější.
+? Jak se hraje Raději bys? | Jeden položí otázku se dvěma možnostmi, ostatní si musí vybrat jednu a zdůvodnit proč. Ve dvou si můžete navíc tipovat odpověď druhého.
+? Jaké jsou dobré otázky Raději bys pro páry? | Otázky o společném čase, dovolené, rande a vzpomínkách: třeba jestli raději rande doma každý týden, nebo jednou za měsíc venku.
+? Jsou otázky Raději bys vhodné pro děti? | Ano, s hravými tématy jako zvířata, superschopnosti nebo jídlo. Děti baví hlavně vymýšlet vlastní.
+? Můžu odpovědět obojí? | Ne. Celá zábava je v tom, že si musíš vybrat a vysvětlit proč.

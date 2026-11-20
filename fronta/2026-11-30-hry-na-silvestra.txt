@@ -1,0 +1,54 @@
+T: Hry na Silvestra: 15 her pro dva i pro partu
+D: Hry na Silvestra pro dva i pro partu: hádací, kvízové a párty hry, tipy na půlnoc a program na celý večer. Většinu zahrajete jen s mobilem.
+H: Hry na Silvestra: 15 her pro dva i pro partu
+L: Hry na oslavy
+G: guess
+C: Hádací, kvízové a párty hry na poslední večer roku.
+R: /hry-pro-dva-na-mobilu.html | Hry pro dva na jednom mobilu
+R: /pantomima-pro-dva.html | Pantomima pro dva: pravidla a pojmy
+R: /kvizove-otazky-pro-dva.html | Kvízové otázky pro dva
+R: /otazky-pro-kamarady.html | Otázky pro kamarády
+
+Silvestr má jeden problém: do půlnoci je daleko a jídlo dojde v deset. Hry ten čas vyplní líp než televize a nemusíte kvůli nim nic kupovat. Tady je patnáct her rozdělených podle toho, jestli slavíte **ve dvou**, nebo **s partou**, a k tomu program, jak večer rozvrhnout.
+## Program na silvestrovský večer
+1. **19:00–20:30, rozjezd.** Jídlo a lehké hry, u kterých se dá jíst: kvíz, „kdo z nás“.
+2. **20:30–22:00, akce.** Pantomima, popis slov, týmové soutěže. Lidé už jsou rozehřátí.
+3. **22:00–23:30, klidnější část.** Otázky o uplynulém roce, sázky na příští rok.
+4. **23:30–0:15, půlnoc.** Přání, předsevzetí, přípitek.
+5. **Po půlnoci.** Hry, které vydrží unavenou hlavu: hádej písničku, karty.
+## Hry na Silvestra pro partu
+1. **Pantomima v týmech.** Rozdělte se na dva týmy. Každý tým má minutu na co nejvíc uhodnutých pojmů. Pojmy a časovač vám vylosuje [Předveď a hádej](/predved-a-hadej.html).
+2. **Popis slov (Activity bez krabice).** Vysvětluješ pojem, aniž bys řekl samotné slovo. Hraje se na čas a body.
+3. **Kdo z nás.** Moderátor přečte „kdo z nás nejdřív usne“ a všichni na tři ukážou na jednoho člověka. Nejvíc hlasů pije nebo plní úkol.
+4. **Silvestrovský kvíz.** Otázky o událostech roku, které připraví jeden z hostů. Kdo vyhraje, dostane první přípitek o půlnoci.
+5. **Hádej, kdo to napsal.** Každý napíše na papírek jednu věc, kterou o něm nikdo neví. Papírky se losují a hádá se autor.
+6. **Hádej písničku.** Pustíte pět vteřin skladby, kdo první uhodne, má bod. Funguje i po půlnoci.
+7. **Telefonní řetěz.** Zašeptáte větu sousedovi, ten dalšímu. Poslední ji řekne nahlas. Čím delší věta, tím větší zábava.
+8. **Nikdy jsem nikdy.** „Nikdy jsem nespal ve stanu.“ Kdo to dělal, ubere si prst. Kdo dřív nemá prsty, prohrál.
+## Hry na Silvestra pro dva
+1. **Rok v kostce.** Každý napíše pět nejlepších momentů roku. Pak porovnejte, kolik se shoduje.
+2. **Jak dobře se znáte.** Jeden odpoví na otázku, druhý hádá. Hotové otázky má hra [Jak dobře se znáte?](/jak-dobre-se-znate.html)
+3. **Kvízový souboj.** Kdo ví víc? Jeden čte otázku a hlídá čas, druhý odpovídá. Otázky najdete v článku [kvízové otázky pro dva](/kvizove-otazky-pro-dva.html) nebo ve hře [Kdo ví víc](/kdo-vi-vic.html).
+4. **Pantomima pro dva.** Spolu proti času, ne proti sobě. Pravidla v článku [pantomima pro dva](/pantomima-pro-dva.html).
+5. **Sázky na příští rok.** Každý napíše pět předpovědí („do léta pojedeme k moři“, „naučíš se péct chleba“). Zalepte do obálky a otevřete za rok.
+6. **Otázky na konec roku.** Co tě letos nejvíc překvapilo? Za co jsi vděčný/á? Co chceš příští rok dělat jinak?
+7. **Odvážnější varianta.** Po půlnoci, když je nálada: [pravda, nebo úkol pro páry](/pravda-nebo-ukol-pro-pary.html) nebo karty z [Odvážně 18+](/odvazne-18-ukazka.html).
+## Otázky na konec roku
+Hodí se k jídlu i těsně před půlnocí. Fungují pro dva i pro partu:
+- Na co si z letoška vzpomeneš i za deset let?
+- Co byla tvoje nejlepší koupě roku?
+- Kdo tě letos nejvíc podržel?
+- Co ses letos naučil/a?
+- Jakou zprávu bys poslal/a sám/sama sobě na začátek roku?
+- Na co se nejvíc těšíš příští rok?
+- Které předsevzetí ti vydrželo nejdéle?
+## Tipy, aby hry na Silvestra fungovaly
+- **Začněte jednoduše.** Hra, kterou vysvětlíte za třicet vteřin, rozjede večer rychleji než složitá deskovka.
+- **Střídejte aktivní a klidné hry.** Po pantomimě něco u stolu.
+- **Ceny nemusí stát nic.** Vítěz vybírá hudbu, poražený rozlévá.
+- **Nenuťte nikoho.** Kdo nechce hrát, může moderovat nebo počítat body.
+- **Mějte hry v telefonu.** Ušetříte papírky a vymýšlení pojmů. Všechny hry na CrushMeter fungují na jednom telefonu bez stahování a zdarma.
+? Jaké hry hrát na Silvestra? | S partou fungují pantomima v týmech, popis slov, kdo z nás, silvestrovský kvíz a hádej písničku. Ve dvou kvízový souboj, jak dobře se znáte, sázky na příští rok a otázky na konec roku.
+? Jaké hry na Silvestra pro dva? | Kvízový souboj, hra jak dobře se znáte, pantomima pro dva, sázky na příští rok nebo odvážnější pravda, nebo úkol.
+? Jak vyplnit čas do půlnoci? | Rozdělte večer na části: lehké hry k jídlu, akční hry kolem deváté, klidnější otázky o uplynulém roce před půlnocí.
+? Potřebuju na hry nějaké pomůcky? | Ne. Většina her stačí s papírem a tužkou nebo s jedním telefonem.
