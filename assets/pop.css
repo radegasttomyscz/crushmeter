@@ -872,3 +872,7 @@ details.answers ol{margin:4px 0 12px}
 .box-cover .game-edition,.box-cover p,.box-cover .box-meta span{color:#fff!important;opacity:1}
 .lobby-controls .arcade-button small{color:#fff!important;opacity:.95}
 @media (max-width:640px){.legal td[data-label]:not(:first-child)::before{content:attr(data-label) ": ";font-weight:700;color:var(--muted)}}
+
+/* Odvážně 18+: doplňkové odkazy na úvodní stránce */
+.feature .feature-text p.feature-more{margin:18px 0 0;font-size:.95rem;color:rgba(255,255,255,.82)}
+.feature-more a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
