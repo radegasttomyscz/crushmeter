@@ -824,3 +824,6 @@ details.answers ol{margin:4px 0 12px}
 @media (max-width:720px){.mag-tools{grid-template-columns:1fr}.mag-rows{grid-template-columns:1fr}}
 @media (max-width:520px){.mag-grid{grid-template-columns:1fr 1fr;gap:10px}.mag-grid .mag-card:nth-child(-n+2){grid-column:span 2;min-height:0}.mag-card{min-height:0;padding:16px 14px 14px;border-radius:16px}.mag-card h3{font-size:1.08rem}.mag-card p{font-size:.86rem}.mag-game{font-size:.78rem;padding-top:12px}}
 @media (prefers-reduced-motion:reduce){.mag-card{transition:none}}
+.article-faq{margin:8px 0 8px}
+.article-faq details p{color:var(--ink-2)}
+.article-updated{margin:28px 0 0;font-size:.88rem;color:var(--muted)}
