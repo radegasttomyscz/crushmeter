@@ -6,10 +6,10 @@ window.CM_CONFIG = {
   ga4Id: "",
 
   /* URL webhooku v Make, který ověřuje přístup (scénář „Ověření přístupu“). */
-  accessEndpoint: "",
+  accessEndpoint: "https://hook.eu1.make.com/nzh7bbdjiwc1nedawxdavsohqmvtvhax",
 
   /* Adresa produktu „Odvážně 18+“ v SimpleShopu (objednávkový formulář). */
-  shopUrl: "",
+  shopUrl: "https://form.simpleshop.cz/eoAxy/buy/",
 
   /* Identifikátor produktu pro ověření. Musí odpovídat ID produktu v Make. */
   productId: "odvazne-18",

@@ -267,7 +267,7 @@ ${body}
       const texts = {
         invalid: 'Zkontroluj e-mail. Vypadá neúplně.',
         throttled: 'Příliš mnoho pokusů. Zkus to za deset minut.',
-        unknown: 'Tenhle e-mail v objednávkách nevidíme. Použij e-mail, který jsi zadal/a při nákupu.',
+        unknown: 'Tenhle e-mail mezi zaplacenými objednávkami nevidíme. Použij e-mail z objednávky. Pokud jsi platil/a převodem, hra se odemkne po připsání platby, obvykle do 1–2 pracovních dnů.',
         network: 'Nepodařilo se spojit. Zkontroluj připojení a zkus to znovu.',
         error: 'Ověření se nepovedlo. Zkus to za chvíli, případně napiš na info@tomys.cz.',
         unconfigured: 'Plná hra se právě připravuje. Zkus to prosím později.'
