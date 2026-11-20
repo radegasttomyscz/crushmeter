@@ -1,0 +1,56 @@
+name: Publikace článků z fronty
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'   # každé pondělí 6:00 (zimní čas) / 7:00 (letní čas)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency: publikace
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Web (main)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Fronta článků (větev fronta)
+        uses: actions/checkout@v4
+        with:
+          ref: fronta
+          path: _queue
+
+      - name: Zveřejnit články, jejichž datum nastalo
+        id: pub
+        run: python3 scripts/publish_queue.py _queue/fronta
+
+      - name: Uložit web
+        if: steps.pub.outputs.published != ''
+        run: |
+          git config user.name "CrushMeter publikace"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- . ':!_queue'
+          git commit -m "Publikace: ${{ steps.pub.outputs.published }}"
+          git push
+
+      - name: Uložit frontu
+        if: steps.pub.outputs.published != ''
+        working-directory: _queue
+        run: |
+          git config user.name "CrushMeter publikace"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Vydáno: ${{ steps.pub.outputs.published }}"
+          git push
+
+      - name: Spustit nasazení GitHub Pages
+        if: steps.pub.outputs.published != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Nasazení se spustí samo."
