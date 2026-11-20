@@ -123,6 +123,7 @@
 <div class="qz-score">${p(0)}${p(1)}</div><div class="qz-progress" aria-hidden="true"><i style="width:${(g.asked / g.total) * 100}%"></i></div>`;
   }
 
+  const REPORT=(game,lines)=>{const body='Hra: '+game+'\n'+lines.filter(Boolean).join('\n')+'\n\nCo je špatně:\n';return `<a class="report-link" href="mailto:info@tomys.cz?subject=${encodeURIComponent('CrushMeter: chyba ve hře '+game)}&body=${encodeURIComponent(body)}">Nahlásit chybu</a>`};
   function render() {
     if (!g) return;
     save();
@@ -165,7 +166,8 @@ ${q[0] > 1 ? `<label class="qz-hint"><input type="checkbox" data-act="hint"${g.h
 <h1 data-focus tabindex="-1">${win ? `Správně! +${bodu(g.got)}` : 'Tentokrát ne'}</h1>
 <div class="qz-solution"><small>Správná odpověď</small><strong>${E(q[2])}</strong></div>
 <p class="qz-next-info">${g.asked + 1 >= g.total ? 'To byla poslední otázka.' : `Teď odpovídá ${E(reader())} a otázku vybírá sám.`}</p>
-<button type="button" class="btn qz-go" data-act="next">${g.asked + 1 >= g.total ? 'Ukázat výsledek' : 'Další otázka'}</button></section>`;
+<button type="button" class="btn qz-go" data-act="next">${g.asked + 1 >= g.total ? 'Ukázat výsledek' : 'Další otázka'}</button>
+<p class="report-row">${REPORT('Kdo ví víc',['Kategorie: '+CATS[g.q.cat].name,'Otázka: '+q[1],'Odpověď ve hře: '+q[2]])}</p></section>`;
     } else if (ph === 'end') {
       const [a, b] = g.score;
       const w = a === b ? -1 : a > b ? 0 : 1;

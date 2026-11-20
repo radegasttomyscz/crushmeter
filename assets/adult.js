@@ -42,6 +42,7 @@
     ? `<a class="arcade-button a-buy" href="${E(cfg.shopUrl)}" target="_blank" rel="noopener" data-track="shop_click" data-track-placement="${E(placement)}">${label}</a>`
     : `<span class="a-soon" role="note">Objednávka se právě připravuje.</span>`;
 
+  const REPORT=(game,lines)=>{const body='Hra: '+game+'\n'+lines.filter(Boolean).join('\n')+'\n\nCo je špatně:\n';return `<a class="report-link" href="mailto:info@tomys.cz?subject=${encodeURIComponent('CrushMeter: chyba ve hře '+game)}&body=${encodeURIComponent(body)}">Nahlásit chybu</a>`};
   function screen(html, focusSel) {
     clearInterval(timer);
     app.innerHTML = html;
@@ -151,7 +152,8 @@ ${body}
 <p class="a-how">${meta.how}</p>
 <div class="a-count3" id="a-count3" aria-live="assertive" hidden></div>
 </article>
-<div class="a-actions"><button type="button" class="arcade-button a-main" data-act="${meta.sync ? 'countdown' : 'next'}" id="a-main">${meta.sync ? 'Na tři!' : meta.main}</button><button type="button" class="text-button" data-act="skip">Přeskočit kartu</button></div>`, card.type === 'radsi' ? '#a-main' : '[data-focus]');
+<div class="a-actions"><button type="button" class="arcade-button a-main" data-act="${meta.sync ? 'countdown' : 'next'}" id="a-main">${meta.sync ? 'Na tři!' : meta.main}</button><button type="button" class="text-button" data-act="skip">Přeskočit kartu</button></div>
+<p class="report-row">${REPORT('Odvážně 18+',['Karta: '+card.id,card.type==='radsi'?'Radši: '+card.a+' / '+card.b:'Text: '+card.text])}</p>`, card.type === 'radsi' ? '#a-main' : '[data-focus]');
   }
 
   function endScreen() {

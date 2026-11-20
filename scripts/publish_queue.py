@@ -14,10 +14,11 @@ from zoneinfo import ZoneInfo
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GAMES = {
  'know': ('is-know', 'Hra zdarma', 'Jak dobře se znáte?', 'Ty odpovíš, druhý si tipne. Osm otázek, jeden telefon, bez registrace.', '/jak-dobre-se-znate.html', 'jak-dobre-se-znate', 'Zahrát si'),
- 'quiz': ('is-quiz', 'Hra zdarma', 'Kdo ví víc', 'Kvízový souboj pro dva. Jeden čte otázku a hlídá čas, druhý odpovídá. Deset kategorií, tři obtížnosti.', '/kdo-vi-vic.html', 'kdo-vi-vic', 'Zahrát si'),
+ 'quiz': ('is-quiz', 'Hra zdarma', 'Kdo ví víc', 'Kvízový souboj pro dva. Jeden čte otázku a hlídá čas, druhý odpovídá. Patnáct kategorií, tři obtížnosti.', '/kdo-vi-vic.html', 'kdo-vi-vic', 'Zahrát si'),
  'guess': ('is-guess', 'Hra zdarma', 'Předveď a hádej', 'Popis, pantomima nebo kresba. Časovač hlídá telefon, vy se soustředíte na toho druhého.', '/predved-a-hadej.html', 'predved-a-hadej', 'Zahrát si'),
  'adult': ('is-adult', 'Hra 18+', 'Odvážně 18+', 'Otázky, přiznání a výzvy pro dva. Deset karet si zahrajete hned a zdarma, v plné verzi jsou i erotické karty pro páry.', '/odvazne-18-ukazka.html', 'odvazne-18', 'Vyzkoušet ukázku'),
 }
+TYPE_BY_LABEL = {'Otázky pro dva': 'otazky', 'Otázky pro kamarády': 'otazky', 'Hry pro páry': 'hry', 'Hry pro dva': 'hry', 'Hry na cesty': 'hry', 'Hry na výlety': 'hry', 'Hry na oslavy': 'oslavy', 'Kvíz pro dva': 'kvizy', 'Kvízy a hádanky': 'kvizy', 'Večer ve dvou': 'rande'}
 GAME_NAME = {'know': 'Jak dobře se znáte?', 'quiz': 'Kdo ví víc', 'guess': 'Předveď a hádej', 'adult': 'Odvážně 18+'}
 MONTHS = ['ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince']
 
@@ -41,7 +42,7 @@ def parse(src, slug):
     for ln in src.split('\n'):
         s = ln.strip()
         if not s or s.startswith('//'): flush(); continue
-        m = re.match(r'([TDHLGCK]): (.*)', s)
+        m = re.match(r'([TDHLGCKF]): (.*)', s)
         if m and m.group(1) not in a:
             a[m.group(1)] = m.group(2); continue
         if s.startswith('R: '):
@@ -117,7 +118,8 @@ def register(a, day):
     p = os.path.join(ROOT, 'blog.html'); s = open(p, encoding='utf8').read()
     href = f'/{a["slug"]}.html'
     if href not in s:
-        card = (f'<a class="mag-card is-{a["G"]}" href="{href}"><h3>{html.escape(a.get("K") or a["H"].split(":")[0])}</h3><p>{html.escape(a["C"])}</p>'
+        typ = a.get('F') or TYPE_BY_LABEL.get(a['L'], 'hry')
+        card = (f'<a class="mag-card is-{a["G"]}" data-type="{typ}" href="{href}"><h3>{html.escape(a.get("K") or a["H"].split(":")[0])}</h3><p>{html.escape(a["C"])}</p>'
                 f'<span class="mag-game">Ke hře {GAME_NAME[a["G"]]}</span></a>')
         s = s.replace('<div class="mag-grid">', '<div class="mag-grid">' + card, 1)
         open(p, 'w', encoding='utf8').write(s)
