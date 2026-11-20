@@ -103,8 +103,9 @@
   }
 
   function accessGate(message = '', tone = '') {
-    const lead = mode === 'full' ? 'Zadej e-mail, který jsi použil/a při objednávce. Žádné heslo není potřeba.' : '';
-    screen(`${topbar()}<section class="a-panel"><span class="a-sticker">18+</span><h1 data-focus tabindex="-1">Plná hra</h1><p>${lead}</p><form id="access-form" class="a-form" novalidate><label for="access-email">E-mail z objednávky</label><input id="access-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" required placeholder="jmeno@email.cz"><button class="arcade-button" type="submit">Odemknout hru</button></form><p id="access-msg" class="a-msg ${tone}" role="status">${message}</p><p class="a-small">Ještě nemáš přístup? <a href="/odvazne-18.html">Co hra obsahuje a kolik stojí</a>. <a href="/odvazne-18-ukazka.html">Vyzkoušej ukázku zdarma</a>.</p></section>`, '#access-email');
+    const paid = /[?&]zaplaceno=1/.test(location.search);
+    const lead = mode === 'full' ? (paid ? 'Platba dorazila, děkujeme! Zadej e-mail, který jsi použil/a při objednávce, a hra se odemkne. Žádné heslo není potřeba.' : 'Zadej e-mail, který jsi použil/a při objednávce. Žádné heslo není potřeba.') : '';
+    screen(`${topbar()}<section class="a-panel"><span class="a-sticker">18+</span><h1 data-focus tabindex="-1">${mode === 'full' ? 'Odemknout plnou hru' : 'Plná hra'}</h1><p>${lead}</p><form id="access-form" class="a-form" novalidate><label for="access-email">E-mail z objednávky</label><input id="access-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" required placeholder="jmeno@email.cz"><button class="arcade-button" type="submit">Odemknout hru</button></form><p id="access-msg" class="a-msg ${tone}" role="status">${message}</p><p class="a-small">Ještě nemáš přístup? <a href="/odvazne-18.html">Co hra obsahuje a kolik stojí</a>. <a href="/odvazne-18-ukazka.html">Vyzkoušej ukázku zdarma</a>.</p></section>`, '#access-email');
   }
 
   function expiredScreen(expires, inactive) {
