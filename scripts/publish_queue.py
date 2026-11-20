@@ -145,14 +145,17 @@ def main():
     day = datetime.datetime.now(ZoneInfo('Europe/Prague')).date()
     if '--date' in sys.argv: day = datetime.date.fromisoformat(sys.argv[sys.argv.index('--date') + 1])
     dry = '--dry' in sys.argv
-    done = []
+    done = []; errors = []
     for f in sorted(os.listdir(qdir)):
         m = re.match(r'(\d{4}-\d{2}-\d{2})-([a-z0-9-]+)\.txt$', f)
         if not m: continue
         when = datetime.date.fromisoformat(m.group(1)); slug = m.group(2)
         if when > day: print('čeká', f); continue
-        a = parse(open(os.path.join(qdir, f), encoding='utf8').read(), slug)
-        out = build(a, when)
+        try:
+            a = parse(open(os.path.join(qdir, f), encoding='utf8').read(), slug)
+            out = build(a, when)
+        except (SystemExit, Exception) as e:
+            errors.append(f'{f}: {e}'); print('CHYBA', f, e); continue
         if dry:
             print('náhled', slug); open(f'/tmp/{slug}.html', 'w', encoding='utf8').write(out); continue
         if os.path.exists(os.path.join(ROOT, slug + '.html')): raise SystemExit(f'{slug}.html už existuje')
@@ -163,6 +166,8 @@ def main():
         done.append(slug); print('vydáno', slug)
     if 'GITHUB_OUTPUT' in os.environ:
         open(os.environ['GITHUB_OUTPUT'], 'a').write(f"published={' '.join(done)}\n")
+    if errors:
+        raise SystemExit('Nevydáno kvůli chybě: ' + '; '.join(errors))
 
 if __name__ == '__main__':
     main()
