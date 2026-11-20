@@ -17,9 +17,9 @@ function wireLobby(form,key){
  const categoryNames=Object.fromEntries(window.CM_DATA.categories.map(c=>[c.id,c.name]));categoryNames.mix='Všechna témata';
  function summary(){
   const fd=new FormData(form),guess=key==='guess';
-  const players=[String(fd.get('player1')||'').trim()||'Hráč 1',String(fd.get('player2')||'').trim()||'Hráč 2'];
-  document.getElementById('players-summary').textContent=players.join(' + ');
-  document.querySelector('[data-open-sheet="player-settings"]').setAttribute('aria-label','Změnit jména hráčů: '+players.join(' a '));
+  const players=[String(fd.get('player1')||'').trim(),String(fd.get('player2')||'').trim()];
+  document.getElementById('players-summary').textContent=players[0]&&players[1]?players.join(' + '):'Doplnit jména hráčů';
+  document.querySelector('[data-open-sheet="player-settings"]').setAttribute('aria-label',players[0]&&players[1]?'Změnit jména hráčů: '+players.join(' a '):'Doplnit jména hráčů');
   document.getElementById('length-summary').textContent=guess?fd.get('duration')+' s · '+fd.get('rounds')+' kol':fd.get('rounds')+' otázek · asi '+(fd.get('rounds')==='8'?'5':'10')+' minut';
   if(guess)document.getElementById('category-summary').textContent=categoryNames[fd.get('category')]||categoryNames.mix;
   const settings={};for(const field of guess?['category','mode','duration','rounds']:['topic','rounds'])settings[field]=fd.get(field);storage.set(key+'.settings',settings);

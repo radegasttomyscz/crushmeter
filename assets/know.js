@@ -5,8 +5,8 @@
   const questions=window.CM_DATA.questions;
   const form=document.getElementById('know-setup'), setup=document.getElementById('game-setup'), stage=document.getElementById('game-stage');
   window.CM_PLAY.restore(form,'know');
-  const topicNames={mix:'Od všeho trochu',den:'Obyčejné dny',spolu:'Čas spolu',cesty:'Na cestách',jidlo:'Jídlo a chutě',volno:'Volný čas',sny:'Sny a plány'};
-  const topicSymbols={mix:'✳',den:'☀',spolu:'♡',cesty:'↗',jidlo:'✿',volno:'♫',sny:'★'};
+  const topicNames={mix:'Od všeho trochu',den:'Obyčejné dny',spolu:'Čas spolu',cesty:'Na cestách',jidlo:'Jídlo a chutě',volno:'Volný čas',sny:'Sny a plány',domov:'Domov',laska:'Láska a vztahy',detstvi:'Dětství',prace:'Práce a peníze'};
+  const topicSymbols={mix:'✳',den:'☀',spolu:'♡',cesty:'↗',jidlo:'✿',volno:'♫',sny:'★',domov:'⌂',laska:'♥',detstvi:'☺',prace:'◆'};
   let used=new Set(storage.get('know.used',[])), s=null, launching=false;
   function validSession(value){return value&&Array.isArray(value.players)&&value.players.length===2&&value.players.every(p=>typeof p==='string')&&Array.isArray(value.ids)&&value.ids.length>0&&value.ids.every(id=>questions.some(q=>q.id===id))&&Number.isInteger(value.index)&&value.index>=0&&Array.isArray(value.score)&&Array.isArray(value.attempts)&&['self-intro','self','pass','guess','reveal'].includes(value.phase)}
   let saved=storage.get('know.session',null); if(!validSession(saved))saved=null;

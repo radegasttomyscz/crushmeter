@@ -124,20 +124,26 @@
   }
 
   const REPORT=(game,lines)=>{const body='Hra: '+game+'\n'+lines.filter(Boolean).join('\n')+'\n\nCo je špatně:\n';return `<a class="report-link" href="mailto:info@tomys.cz?subject=${encodeURIComponent('CrushMeter: chyba ve hře '+game)}&body=${encodeURIComponent(body)}">Nahlásit chybu</a>`};
+  function offerCats() {
+    const pool = g.cats.slice(), fresh = pool.filter(id => left(id) > 0), base = fresh.length >= 6 ? fresh : pool;
+    for (let i = base.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [base[i], base[j]] = [base[j], base[i]]; }
+    return base.slice(0, 6);
+  }
   function render() {
     if (!g) return;
     save();
     const ph = g.phase;
     let body = '';
     if (ph === 'pick') {
-      const cats = g.cats.map(id => {
+      if (!g.offer || g.offer.some(id => !g.cats.includes(id))) g.offer = offerCats();
+      const cats = g.offer.map(id => {
         const n = left(id);
         return `<button type="button" class="qz-cat${g.pick && g.pick.cat === id ? ' is-on' : ''}" data-cat="${id}"><strong>${E(CATS[id].name)}</strong><small>${n ? n + ' nových otázek' : 'vše odehráno, zamícháme znovu'}</small></button>`;
       }).join('');
       const lv = g.pick ? [1, 2, 3].map(l => `<button type="button" class="qz-lvl l${l}" data-lvl="${l}"><strong>${LVL[l]}</strong><small>${bodu(PTS[l])}</small></button>`).join('') : '';
       body = `<section class="qz-panel"><h1 data-focus tabindex="-1">${E(answerer())}, vyber si otázku</h1>
 <p class="qz-lead">Kategorii i obtížnost volíš sám. Těžší otázka, víc bodů.</p>
-<div class="qz-cats">${cats}</div>
+<div class="qz-cats">${cats}</div>${g.cats.length > g.offer.length ? '<button type="button" class="text-button qz-other" data-act="other">Jiné kategorie</button>' : ''}
 ${g.pick ? `<h2 class="qz-sub">Jak těžkou?</h2><div class="qz-lvls">${lv}</div>` : ''}</section>`;
     } else if (ph === 'hand') {
       body = `<section class="qz-panel qz-hand"><div class="qz-hand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
@@ -211,7 +217,7 @@ ${q[0] > 1 ? `<label class="qz-hint"><input type="checkbox" data-act="hint"${g.h
       return;
     }
     g.turn = 1 - g.turn;
-    g.phase = 'pick'; g.pick = null; g.q = null; g.hint = false; g.left = g.time; g.ok = null;
+    g.phase = 'pick'; g.pick = null; g.offer = null; g.q = null; g.hint = false; g.left = g.time; g.ok = null;
     render();
   }
 
@@ -233,6 +239,7 @@ ${q[0] > 1 ? `<label class="qz-hint"><input type="checkbox" data-act="hint"${g.h
     if (t.dataset.lvl) { g.pick.lvl = Number(t.dataset.lvl); g.phase = 'hand'; render(); return; }
     const a = t.dataset.act;
     if (a === 'hint') { g.hint = t.checked; const ok = app.querySelector('.qz-ok'); if (ok) ok.textContent = 'Správně, +' + bodu(worth()); save(); return; }
+    if (a === 'other') { const prev = g.offer || []; let next = offerCats(), tries = 0; while (tries++ < 5 && next.every(id => prev.includes(id))) next = offerCats(); g.offer = next; g.pick = null; render(); return; }
     if (a === 'read') { g.q = draw(g.pick.cat, g.pick.lvl); g.phase = 'read'; g.left = g.time; render(); }
     else if (a === 'go') startTimer();
     else if (a === 'stop') { stopTimer(); render(); }
