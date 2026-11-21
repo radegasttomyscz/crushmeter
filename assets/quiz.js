@@ -173,7 +173,7 @@ ${q[0] > 1 ? `<label class="qz-hint"><input type="checkbox" data-act="hint"${g.h
 <div class="qz-solution"><small>Správná odpověď</small><strong>${E(q[2])}</strong></div>
 <p class="qz-next-info">${g.asked + 1 >= g.total ? 'To byla poslední otázka.' : `Teď odpovídá ${E(reader())} a otázku vybírá sám.`}</p>
 <button type="button" class="btn qz-go" data-act="next">${g.asked + 1 >= g.total ? 'Ukázat výsledek' : 'Další otázka'}</button>
-<p class="report-row">${REPORT('Kdo ví víc',['Kategorie: '+CATS[g.q.cat].name,'Otázka: '+q[1],'Odpověď ve hře: '+q[2]])}</p></section>`;
+${window.CM.tip(window.CM.tipFor(q[1]+' '+q[2],g.q.cat),g.q.cat+':'+g.q.i,'hra_kdo_vi_vic')}<p class="report-row">${REPORT('Kdo ví víc',['Kategorie: '+CATS[g.q.cat].name,'Otázka: '+q[1],'Odpověď ve hře: '+q[2]])}</p></section>`;
     } else if (ph === 'end') {
       const [a, b] = g.score;
       const w = a === b ? -1 : a > b ? 0 : 1;

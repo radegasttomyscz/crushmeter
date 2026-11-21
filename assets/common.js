@@ -49,3 +49,22 @@ new MutationObserver(m=>{for(const r of m)for(const n of r.addedNodes)if(n.nodeT
 
 /* Kdo už má plnou hru Odvážně 18+ odemčenou, jde z menu rovnou hrát. */
 (()=>{try{const r=JSON.parse(localStorage.getItem('crushmeter.adult.access')||'null');if(!r||!r.email||!(Date.parse(r.expires)>Date.now()))return;const go=()=>document.querySelectorAll('.top-nav a[href="/odvazne-18.html"],.top-menu-panel a[href="/odvazne-18.html"]').forEach(a=>{a.href='/odvazne-18-hrat.html'});if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go()}catch{}})();
+
+/* Nenápadné tipy na další weby provozovatele. Každý web se ve hře ukáže nejvýš u jedné otázky (seed). */
+(()=>{const U='?utm_source=crushmeter&utm_medium=referral&utm_campaign=';
+const P={putovani:['Láká vás cestování?','Tipy na výlety a dovolené najdete na Putování světem','https://putovanisvetem.cz/kam-vyrazit/','click_putovani_svetem'],
+syte:['Dostali jste hlad?','Recepty, které zasytí a nezatíží, má Sytě a lehce','https://www.sytealehce.cz/','click_syte_a_lehce'],
+flambro:['Chuť na grilování?','Mrkněte na Flambro','https://www.flambro.cz/','click_flambro'],
+kartarka:['Baví vás věštby?','Vytáhněte si karty u Virtuální kartářky','https://virtualnikartarka.cz/','click_virtualni_kartarka'],
+tomys:['Chystáte vlastní web?','Weby, marketing a online identitu dělá tomys.cz','https://www.tomys.cz/','click_tomys']};
+const seen={};
+window.CM.tipFor=(text,cat)=>{const t=String(text||'');
+if(/gril|flamb|steak|barbecue|BBQ/i.test(t))return 'flambro';
+if(/tarot|věšt|arkán|horoskop/i.test(t))return 'kartarka';
+if(cat==='tech'&&/web|internet|Google|sociální|Facebook|YouTube|Wikipedi|vyhledáva|Instagram|TikTok|reklam|marketing/i.test(t))return 'tomys';
+if(['geo','mesta','cesty','cestovani-a-dovolena','mista-a-staty'].includes(cat))return 'putovani';
+if(['jidlo','jidlo-a-piti','vareni-a-kuchyne'].includes(cat))return 'syte';
+if(cat==='technika-a-internet')return 'tomys';
+return ''};
+window.CM.tip=(key,seed,placement)=>{const p=P[key];if(!p)return '';if(seen[key]!==undefined&&seen[key]!==String(seed))return '';seen[key]=String(seed);
+return `<p class="cm-tip">${p[0]} <a href="${p[2]+U+encodeURIComponent(placement)}" target="_blank" rel="noopener" data-track="${p[3]}" data-track-placement="${placement}">${p[1]}</a>.</p>`}})();
