@@ -22,6 +22,8 @@ TYPE_BY_LABEL = {'Otázky pro dva': 'otazky', 'Otázky pro kamarády': 'otazky',
 GAME_NAME = {'know': 'Jak dobře se znáte?', 'quiz': 'Kdo ví víc', 'guess': 'Předveď a hádej', 'adult': 'Odvážně 18+'}
 MONTHS = ['ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince']
 
+from promos import PROMOS, promo_html
+
 def inline(t):
     t = html.escape(t, quote=False)
     t = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
@@ -42,7 +44,7 @@ def parse(src, slug):
     for ln in src.split('\n'):
         s = ln.strip()
         if not s or s.startswith('//'): flush(); continue
-        m = re.match(r'([TDHLGCKF]): (.*)', s)
+        m = re.match(r'([TDHLGCKFP]): (.*)', s)
         if m and m.group(1) not in a:
             a[m.group(1)] = m.group(2); continue
         if s.startswith('R: '):
@@ -67,6 +69,7 @@ def parse(src, slug):
         if k not in a: raise SystemExit(f'{slug}: chybí řádek {k}:')
     if a['G'] not in GAMES: raise SystemExit(f'{slug}: neznámá hra {a["G"]}')
     if len(a['D']) > 160: raise SystemExit(f'{slug}: popis je delší než 160 znaků')
+    if 'P' in a and a['P'] not in PROMOS: raise SystemExit(f'{slug}: neznámý tip {a["P"]}')
     return a
 
 def game_box(k):
@@ -110,7 +113,7 @@ def build(a, day):
     if a['rel']:
         rel = '<section class="article-box glass internal-links"><strong>Související</strong><ul>' + ''.join(f'<li><a href="{u}">{html.escape(x)}</a></li>' for u, x in a['rel']) + '</ul></section>'
     art = (f'<article class="article">{crumbs}<span class="eyebrow">{lab}</span><h1 class="font-serif">{html.escape(a["H"], quote=False)}</h1>'
-           + body + game_box(a['G']) + rel + '</article>')
+           + body + game_box(a['G']) + (promo_html(a['P'], 'clanek_' + a['slug']) if 'P' in a else '') + rel + '</article>')
     i = s.index('<article class="article">'); j = s.index('</article>') + len('</article>')
     return s[:i] + art + s[j:]
 
