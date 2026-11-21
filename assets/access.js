@@ -10,7 +10,7 @@
   const DAY = 864e5;
   const RECHECK_AFTER = (cfg.recheckDays || 14) * DAY;       // po této době se při připojení ověří znovu
   const OFFLINE_GRACE = (cfg.offlineGraceDays || 30) * DAY;  // tak dlouho smí hra běžet bez ověření
-  const TYPES = ['priznani', 'radsi', 'nikdy', 'kdo', 'vyzva'];
+  const TYPES = ['priznani', 'radsi', 'nikdy', 'kdo', 'vyzva', 'casovac', 'sazka', 'tajny', 'ruleta'];
   const AUDS = ['par', 'kamaradi', 'oba'];
 
   const normalize = v => String(v || '').normalize('NFKC').trim().toLowerCase();

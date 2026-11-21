@@ -153,3 +153,23 @@
 .a-resume-actions{display:grid !important;grid-template-columns:1fr 1fr;gap:8px;flex:1 1 100%}
 .a-resume .a-reset{min-height:44px;padding:0 12px;border-radius:999px;border:2px solid currentColor;background:transparent;color:inherit;font:inherit;font-size:.9rem;font-weight:750;cursor:pointer}
 .a-actions .a-quit{font-weight:600;opacity:.8;min-height:40px}
+/* Ložnice: odpočet, ruleta, tajný úkol, trest */
+.a-timer{display:flex;flex-direction:column;align-items:center;justify-content:center;width:132px;height:132px;margin:16px auto 4px;border-radius:50%;border:4px solid var(--cm-outline);text-align:center}
+.a-timer b{font-size:2.8rem;line-height:1;font-weight:850;font-variant-numeric:tabular-nums}
+.a-timer span{font-size:.8rem;font-weight:700;color:var(--cm-muted)}
+.a-timer.is-run{border-color:var(--pop-coral);animation:a-pulse 1s ease-in-out infinite}
+.a-timer.is-done{border-color:var(--pop-coral);background:var(--pop-coral);color:#fff}
+.a-timer.is-done span{color:#fff}
+@keyframes a-pulse{50%{transform:scale(1.04)}}
+@media (prefers-reduced-motion:reduce){.a-timer.is-run{animation:none}}
+.a-roll{display:grid;gap:8px;margin:14px 0 0}
+.a-roll div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--cm-outline);background:var(--cm-bg)}
+.a-roll dt{font-size:.8rem;font-weight:700;color:var(--cm-muted)}
+.a-roll dd{margin:0;font-size:1.15rem;font-weight:850;text-align:right}
+.a-secret{margin:14px 0 0;padding:16px;border-radius:16px;border:2px dashed var(--pop-coral);background:var(--cm-bg)}
+.a-secret small{display:block;font-size:.75rem;font-weight:800;letter-spacing:.04em;color:var(--pop-coral)}
+.a-secret p{margin:6px 0 0;font-size:1.15rem;font-weight:800;line-height:1.35}
+.a-secret span{display:block;margin-top:10px;font-size:.85rem;color:var(--cm-muted)}
+.a-penalty h1{margin-bottom:4px}
+.a-pen-text{margin:14px 0 18px;padding:18px;border-radius:18px;background:var(--pop-coral);color:#fff;font-size:1.25rem;font-weight:850;line-height:1.3}
+.a-choice-2x2{grid-template-columns:1fr 1fr}
