@@ -17,8 +17,15 @@
     radsi: { kicker: 'RADŠI', prefix: '', how: (p, o) => `${p} si potichu vybere. ${o} hádá, co to bude. Pak ${p} prozradí volbu a proč.`, personal: true, guess: true },
     nikdy: { kicker: 'NIKDY JSEM…', prefix: 'Nikdy jsem ', how: (p, o) => `${o} tipne, jestli to ${p} někdy udělal/a. Pak ${p} řekne pravdu, a když ano, i příběh.`, personal: true, guess: true },
     kdo: { kicker: 'KDO Z NÁS…', prefix: 'Kdo z nás ', how: (p, o) => `${p} si v duchu odpoví. ${o} hádá, koho z vás ${p} označí. Pak se to vysvětlí.`, personal: true, guess: true },
-    vyzva: { kicker: 'VÝZVA', prefix: '', how: 'Splň ji, nebo ji přeskoč. Nikdo tě nenutí.', personal: true, main: 'Splněno, další' }
+    vyzva: { kicker: 'VÝZVA', prefix: '', how: 'Splň ji, nebo ji přeskoč. Nikdo tě nenutí.', personal: true, main: 'Splněno, další' },
+    casovac: { kicker: 'NA ČAS', prefix: '', how: (p, o) => `Spusť odpočet. ${o} hlídá, jestli to ${p} dodrží.`, personal: true, timer: true, main: 'Splněno, další' },
+    sazka: { kicker: 'SÁZKA', prefix: '', how: (p, o) => `${o} nahlas tipne, co odpoví ${p}. Pak ${p} řekne pravdu. Netrefa znamená trest pro ${o}.`, personal: true, guess: true, bet: true },
+    tajny: { kicker: 'TAJNÝ ÚKOL', prefix: '', personal: true, secret: true },
+    reveal: { kicker: 'ODHALENÍ', prefix: '' },
+    ruleta: { kicker: 'RULETA', prefix: '', how: (p, o) => `${o} se nehýbe a nereaguje. Když se pohne, bere trest.`, personal: true, timer: true, ruleta: true, main: 'Splněno, další' }
   };
+  const PENALTY = { obleceni: 'Odlož jeden kus oblečení. Který, vybírá druhý.', panak: 'Napij se. Pořádně, ne jen smočit rty.', pusa: 'Dej druhému pusu tam, kam si řekne.', prani: 'Splň druhému jedno přání do konce večera.' };
+  const PATTERN_LOZ = ['priznani', 'casovac', 'sazka', 'vyzva', 'ruleta', 'priznani', 'tajny', 'casovac', 'vyzva', 'sazka', 'ruleta', 'vyzva'];
   const LEVELS = { 1: 'Lehce osobní', 2: 'Odvážné', 3: 'Velmi žhavé' };
   const PATTERN = ['priznani', 'radsi', 'nikdy', 'kdo', 'priznani', 'vyzva'];
 
@@ -36,7 +43,10 @@
   let timer = null;
 
   /* ---------- Pomocné ---------- */
-  const byId = id => pool.find(c => c.id === id);
+  const byId = id => {
+    if (typeof id === 'string' && id.startsWith('reveal:')) { const sec = s && s.secrets && s.secrets[+id.slice(7)]; return sec ? { id, type: 'reveal', lvl: sec.lvl, text: sec.text, sec } : null; }
+    return pool.find(c => c.id === id);
+  };
   const fmtDate = iso => new Date(iso).toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric', year: 'numeric' });
   const shopLink = (placement, label) => cfg.shopUrl
     ? `<a class="arcade-button a-buy" href="${E(cfg.shopUrl)}" target="_blank" rel="noopener" data-track="shop_click" data-track-placement="${E(placement)}">${label}</a>`
@@ -64,11 +74,44 @@
 
   /* Erotické karty jsou jen pro páry a jen na vyžádání: ero = 'bez' | 'mix' | 'jen'. */
   function fits(c, o) {
+    if ((c.mode || 'klasika') !== (o.mode || 'klasika')) return false;
+    if (c.mode) return true;
     const ero = o.aud === 'par' ? (o.ero || 'bez') : 'bez';
     if (c.ero) return ero !== 'bez' && c.aud === 'par' && c.lvl <= Math.max(o.max, 2);
     return ero !== 'jen' && (c.aud === 'oba' || c.aud === o.aud) && c.lvl <= o.max;
   }
   const hasEro = () => pool.some(c => c.ero);
+
+  function buildLoz(rounds) {
+    const used = new Set(lsGet(USED_KEY, []));
+    let eligible = pool.filter(c => c.mode === 'loznice');
+    let fresh = eligible.filter(c => !used.has(c.id));
+    if (fresh.length < rounds) fresh = eligible;
+    const bag = {};
+    PATTERN_LOZ.forEach(t => { bag[t] = shuffle(fresh.filter(c => c.type === t)); });
+    const deck = []; let secrets = 0;
+    for (let i = 0; i < rounds; i++) {
+      const target = Math.min(3, Math.floor((i / Math.max(rounds, 1)) * 3) + 1);
+      let type = PATTERN_LOZ[i % PATTERN_LOZ.length];
+      if (type === 'tajny' && (secrets >= 2 || i > rounds - 4)) type = 'vyzva';
+      let pick = nearest(bag[type] || [], target);
+      if (!pick) { const t = Object.keys(bag).filter(k => k !== 'tajny' && bag[k].length).sort((a, b) => bag[b].length - bag[a].length)[0]; if (t) pick = nearest(bag[t], target); }
+      if (!pick) break;
+      bag[pick.type].splice(bag[pick.type].indexOf(pick), 1);
+      if (pick.type === 'tajny') secrets++;
+      deck.push(pick.id);
+    }
+    return deck;
+  }
+  const hasLoz = () => pool.some(c => c.mode === 'loznice');
+  const RUL = () => (access && access.pack && access.pack.ruleta) || null;
+  const pickOne = list => list[Math.floor(Math.random() * list.length)];
+  function rollRuleta(lvl) {
+    const r = RUL(); if (!r) return { part: 'krk', way: 'jen rty', sec: 45 };
+    const parts = [].concat(...[1, 2, 3].filter(n => n <= lvl).map(n => (r.parts[n] || []))).filter(Boolean);
+    const top = r.parts[lvl] || parts;
+    return { part: pickOne(Math.random() < 0.7 ? top : parts), way: pickOne(r.ways), sec: pickOne(r.secs) };
+  }
 
   function buildDeck({ aud, max, rounds, ero }) {
     const used = new Set(lsGet(USED_KEY, []));
@@ -124,13 +167,15 @@
     const soon = full && access && Date.parse(access.expires) - Date.now() < 30 * 864e5;
     screen(`${topbar(full && access ? `<span class="a-badge">do ${E(fmtDate(access.expires))}</span>` : '')}
 <section class="a-panel a-setup"><span class="a-sticker">18+</span><h1 data-focus tabindex="-1">${full ? 'Odvážně 18+' : 'Ukázka: 10 karet'}</h1>
-<p class="a-lead">${full ? 'Nastavte si večer a hrajte. Každou kartu můžete přeskočit.' : 'Deset karet ze všech pěti typů kol. Plná hra jich má 234, z toho 84 erotických pro páry.'}</p>
+<p class="a-lead">${full ? 'Nastavte si večer a hrajte.' : 'Deset karet ze všech pěti typů kol. Plná hra jich má 234, z toho 84 erotických pro páry.'}</p>
 ${resume ? `<div class="a-resume"><div><strong>Rozehraná hra</strong><span>Kolo ${saved.i + 1} z ${saved.cards.length}</span></div><div class="a-resume-actions"><button type="button" class="arcade-button small" data-act="resume">Pokračovat</button><button type="button" class="a-reset" data-act="reset">Začít znovu</button></div></div>` : ''}
 <form id="setup-form" class="a-form" novalidate>
 <fieldset><legend>Kdo hraje</legend><div class="a-names"><input name="p1" maxlength="20" autocomplete="off" placeholder="Křestní jméno" aria-label="Jméno prvního hráče" value="${E(names[0] || '')}"><input name="p2" maxlength="20" autocomplete="off" placeholder="Křestní jméno" aria-label="Jméno druhého hráče" value="${E(names[1] || '')}"></div></fieldset>
-${full ? `<fieldset><legend>Jste</legend><div class="a-choice"><label><input type="radio" name="aud" value="par" checked><span>Pár</span></label><label><input type="radio" name="aud" value="kamaradi"><span>Kamarádi</span></label></div></fieldset>
-${hasEro() ? `<fieldset class="a-ero-set" id="ero-set"><legend>Erotické karty <small>jen pro páry</small></legend><div class="a-choice a-choice-3"><label><input type="radio" name="ero" value="bez" checked><span>Bez nich</span></label><label><input type="radio" name="ero" value="mix"><span>Přimíchat</span></label><label><input type="radio" name="ero" value="jen"><span>Jen erotika</span></label></div><p class="a-hint">Zapněte je, jen když jste pro oba. Nejpřímější karty přijdou jen při intenzitě Velmi žhavé.</p></fieldset>` : ''}
-<fieldset><legend>Nejvyšší intenzita</legend><div class="a-choice a-choice-3"><label><input type="radio" name="max" value="1"><span>Lehce osobní</span></label><label><input type="radio" name="max" value="2" checked><span>Odvážné</span></label><label><input type="radio" name="max" value="3"><span>Velmi žhavé</span></label></div><p class="a-hint">Hra začíná jemně a postupně stoupá až k vybrané hranici.</p></fieldset>
+${full && hasLoz() ? `<fieldset><legend>Režim</legend><div class="a-choice"><label><input type="radio" name="mode" value="loznice" checked><span>Ložnice<small>novinka, pro páry</small></span></label><label><input type="radio" name="mode" value="klasika"><span>Klasika<small>páry i kamarádi</small></span></label></div></fieldset>
+<fieldset data-loz><legend>Trest za odmítnutí</legend><div class="a-choice a-choice-2x2"><label><input type="radio" name="pen" value="obleceni" checked><span>Kus oblečení</span></label><label><input type="radio" name="pen" value="panak"><span>Napít se</span></label><label><input type="radio" name="pen" value="pusa"><span>Pusa, kam si druhý řekne</span></label><label><input type="radio" name="pen" value="prani"><span>Splnit přání</span></label></div><p class="a-hint">Kartu jde odmítnout, ale stojí to trest. Hra začíná smyslně a každých pár kol přitvrdí.</p></fieldset>` : ''}
+${full ? `<fieldset data-classic${hasLoz() ? ' hidden' : ''}><legend>Jste</legend><div class="a-choice"><label><input type="radio" name="aud" value="par" checked><span>Pár</span></label><label><input type="radio" name="aud" value="kamaradi"><span>Kamarádi</span></label></div></fieldset>
+${hasEro() ? `<fieldset class="a-ero-set" id="ero-set" data-classic${hasLoz() ? ' hidden' : ''}><legend>Erotické karty <small>jen pro páry</small></legend><div class="a-choice a-choice-3"><label><input type="radio" name="ero" value="bez" checked><span>Bez nich</span></label><label><input type="radio" name="ero" value="mix"><span>Přimíchat</span></label><label><input type="radio" name="ero" value="jen"><span>Jen erotika</span></label></div><p class="a-hint">Zapněte je, jen když jste pro oba. Nejpřímější karty přijdou jen při intenzitě Velmi žhavé.</p></fieldset>` : ''}
+<fieldset data-classic${hasLoz() ? ' hidden' : ''}><legend>Nejvyšší intenzita</legend><div class="a-choice a-choice-3"><label><input type="radio" name="max" value="1"><span>Lehce osobní</span></label><label><input type="radio" name="max" value="2" checked><span>Odvážné</span></label><label><input type="radio" name="max" value="3"><span>Velmi žhavé</span></label></div><p class="a-hint">Hra začíná jemně a postupně stoupá až k vybrané hranici.</p></fieldset>
 <fieldset><legend>Délka</legend><div class="a-choice a-choice-3"><label><input type="radio" name="rounds" value="10"><span>10 kol<small>asi 15 min</small></span></label><label><input type="radio" name="rounds" value="20" checked><span>20 kol<small>asi 30 min</small></span></label><label><input type="radio" name="rounds" value="30"><span>30 kol<small>asi 45 min</small></span></label></div></fieldset>` : ''}
 <button class="arcade-button" type="submit">${full ? 'Jdeme na to' : 'Spustit ukázku'}</button></form>
 ${soon ? `<p class="a-notice">Přístup brzy vyprší. Nákup před vypršením prodlouží platnost od původního data. ${shopLink('expiring', 'Prodloužit o rok')}</p>` : ''}
@@ -146,7 +191,17 @@ ${full && access ? `<p class="a-small"><button type="button" class="text-button"
     const player = meta.personal ? s.players[s.t % 2] : null;
     const other = meta.personal ? s.players[(s.t + 1) % 2] : null;
     const how = typeof meta.how === 'function' ? meta.how(E(player), E(other)) : meta.how;
-    const body = card.type === 'radsi'
+    const loz = s.mode === 'loznice';
+    if (meta.ruleta && !(s.roll && s.roll[s.i])) { s.roll = s.roll || {}; s.roll[s.i] = rollRuleta(card.lvl); lsSet(SESSION_KEY, s); }
+    const roll = meta.ruleta ? s.roll[s.i] : null;
+    const secs = roll ? roll.sec : card.sec;
+    const body = card.type === 'reveal'
+      ? `<p class="a-prefix">Odhalení</p><h2 class="a-text" data-focus tabindex="-1">${E(s.players[card.sec.p])} měl/a tajný úkol. ${E(s.players[1 - card.sec.p])}, víš jaký?</h2><div class="a-secret" id="a-secret" hidden><small>Úkol byl</small><p>${E(card.text)}</p></div>`
+      : meta.secret
+      ? `<h2 class="a-text" data-focus tabindex="-1">Tajný úkol</h2><p class="a-how">${E(other)}, teď se nedívej. ${E(player)} si úkol přečte a schová.</p><div class="a-secret" id="a-secret" hidden><small>Jen pro tebe</small><p>${E(card.text)}</p><span>Za pár kol přijde odhalení. Když ${E(other)} uhádne, co to bylo, bereš trest.</span></div>`
+      : meta.ruleta
+      ? `<h2 class="a-text" data-focus tabindex="-1">${E(player)} → ${E(other)}</h2><dl class="a-roll"><div><dt>Kde</dt><dd>${E(roll.part)}</dd></div><div><dt>Čím</dt><dd>${E(roll.way)}</dd></div><div><dt>Jak dlouho</dt><dd>${roll.sec} s</dd></div></dl>`
+      : card.type === 'radsi'
       ? `<p class="a-prefix">Radši…</p><div class="a-ab"><div><b>A</b><span>${E(card.a)}</span></div><div class="a-or" aria-hidden="true">nebo</div><div><b>B</b><span>${E(card.b)}</span></div></div>`
       : `${meta.prefix ? `<p class="a-prefix">${E(meta.prefix.trim())}</p>` : ''}<h2 class="a-text" data-focus tabindex="-1">${E(card.text)}</h2>`;
     const lvl = [1, 2, 3].map(n => `<i class="${n <= card.lvl ? '' : 'off'}"></i>`).join('');
@@ -157,9 +212,14 @@ ${full && access ? `<p class="a-small"><button type="button" class="text-button"
 <div class="a-card-top"><span class="a-type">${meta.kicker}</span>${card.ero ? '<span class="a-ero">Erotika</span>' : ''}<span class="a-lvl" role="img" aria-label="Intenzita: ${LEVELS[card.lvl]}">${lvl}</span></div>
 <p class="a-who">${meta.guess ? `Odpovídá <b>${E(player)}</b>, hádá <b>${E(other)}</b>` : player ? `Na řadě: <b>${E(player)}</b>` : 'Hrajete oba'}</p>
 ${body}
-<p class="a-how">${how}</p>
+${how && !meta.secret && card.type !== 'reveal' ? `<p class="a-how">${how}</p>` : ''}
+${meta.timer ? `<div class="a-timer" id="a-timer" data-sec="${secs}" aria-live="polite"><b>${secs}</b><span>sekund</span></div>` : ''}
 </article>
-<div class="a-actions">${meta.guess ? `<div class="a-guess"><button type="button" class="arcade-button a-main" data-act="hit" id="a-main">${E(other)} uhádl/a</button><button type="button" class="arcade-button is-ghost" data-act="miss">Neuhádl/a</button></div>` : `<button type="button" class="arcade-button a-main" data-act="next" id="a-main">${meta.main}</button>`}<button type="button" class="text-button" data-act="skip">Přeskočit kartu</button><button type="button" class="text-button a-quit" data-act="quit">Ukončit hru</button></div>
+<div class="a-actions">${card.type === 'reveal'
+  ? `<div class="a-guess"><button type="button" class="arcade-button a-main" data-act="rev-hit" id="a-main">${E(s.players[1 - card.sec.p])} uhádl/a</button><button type="button" class="arcade-button is-ghost" data-act="rev-miss">Neuhádl/a</button></div>`
+  : meta.secret ? `<button type="button" class="arcade-button a-main" data-act="secret-show" id="a-main">Ukázat úkol</button>`
+  : meta.timer ? `<button type="button" class="arcade-button a-main" data-act="timer" id="a-main">Spustit ${secs} s</button>`
+  : meta.guess ? `<div class="a-guess"><button type="button" class="arcade-button a-main" data-act="hit" id="a-main">${E(other)} uhádl/a</button><button type="button" class="arcade-button is-ghost" data-act="miss">Neuhádl/a</button></div>` : `<button type="button" class="arcade-button a-main" data-act="next" id="a-main">${meta.main}</button>`}${card.type === 'reveal' ? '' : `<button type="button" class="text-button" data-act="${loz ? 'penalty' : 'skip'}">${loz ? `Nechci, beru trest` : 'Přeskočit kartu'}</button>`}<button type="button" class="text-button a-quit" data-act="quit">Ukončit hru</button></div>
 <p class="report-row">${REPORT('Odvážně 18+',['Karta: '+card.id,card.type==='radsi'?'Radši: '+card.a+' / '+card.b:'Text: '+card.text])}</p>`, card.type === 'radsi' ? '#a-main' : '[data-focus]');
   }
 
@@ -174,7 +234,7 @@ ${body}
     const offer = mode === 'preview'
       ? `<section class="a-offer" id="a-offer"><span class="a-sticker">18+</span><h2>Chcete dál?</h2><p>Plná hra má 234 karet v pěti typech kol, z toho 84 erotických pro páry. Pár nebo kamarádi, intenzitu si nastavíte. Přístup na 12 měsíců za 99 Kč, jednorázově, bez předplatného.</p><div class="a-actions">${shopLink('preview-end', 'Koupit za 99 Kč')}<a class="text-button" href="/odvazne-18.html" data-track="adult_offer_click" data-track-placement="preview-end">Co hra obsahuje</a><a class="text-button" href="/odvazne-18-hrat.html">Už mám přístup</a></div></section>`
       : '';
-    screen(`${topbar()}<section class="a-panel a-end"><span class="a-sticker">18+</span><h1 data-focus tabindex="-1">${mode === 'full' ? 'To byl večer.' : 'To byla ochutnávka.'}</h1><p class="a-lead">Odehráno ${played} ${played === 1 ? 'kolo' : played >= 2 && played <= 4 ? 'kola' : 'kol'}${s.skipped ? `, přeskočeno ${s.skipped}` : ''}.</p>${scoreHtml}${offer}<aside class="promo is-tarot" data-partner-slot><span class="promo-mark" aria-hidden="true">✦</span><div><small>Něco jiného</small><strong>Co vám karty řeknou o vás dvou?</strong><p>Virtuální kartářka vám vytáhne karty a odpoví česky.</p><a href="https://virtualnikartarka.cz/?utm_source=crushmeter&amp;utm_medium=referral&amp;utm_campaign=konec_hry_18" target="_blank" rel="noopener" data-track="click_virtualni_kartarka" data-track-placement="adult-end">Vytáhnout karty →</a></div></aside><div class="a-actions"><button type="button" class="arcade-button" data-act="again">Zahrát znovu</button><a class="text-button" href="/">Zpět na hry</a></div></section>`);
+    screen(`${topbar()}<section class="a-panel a-end"><span class="a-sticker">18+</span><h1 data-focus tabindex="-1">${mode === 'full' ? 'To byl večer.' : 'To byla ochutnávka.'}</h1><p class="a-lead">Odehráno ${played} ${played === 1 ? 'kolo' : played >= 2 && played <= 4 ? 'kola' : 'kol'}${s.skipped ? `, přeskočeno ${s.skipped}` : ''}${s.penalties ? `, trestů ${s.penalties}` : ''}.</p>${scoreHtml}${offer}<aside class="promo is-tarot" data-partner-slot><span class="promo-mark" aria-hidden="true">✦</span><div><small>Něco jiného</small><strong>Co vám karty řeknou o vás dvou?</strong><p>Virtuální kartářka vám vytáhne karty a odpoví česky.</p><a href="https://virtualnikartarka.cz/?utm_source=crushmeter&amp;utm_medium=referral&amp;utm_campaign=konec_hry_18" target="_blank" rel="noopener" data-track="click_virtualni_kartarka" data-track-placement="adult-end">Vytáhnout karty →</a></div></aside><div class="a-actions"><button type="button" class="arcade-button" data-act="again">Zahrát znovu</button><a class="text-button" href="/">Zpět na hry</a></div></section>`);
     if (mode === 'preview') track('adult_offer_view', { game: 'odvazne-18', placement: 'preview-end' });
     s = null;
   }
@@ -183,20 +243,47 @@ ${body}
   function startGame(opts) {
     const names = [opts.p1 || 'Hráč 1', opts.p2 || 'Hráč 2'];
     lsSet(NAMES_KEY, [opts.p1 || '', opts.p2 || '']);
-    const cards = mode === 'preview' ? pool.map(c => c.id) : buildDeck({ aud: opts.aud, max: opts.max, rounds: opts.rounds, ero: opts.ero });
+    const loz = mode === 'full' && opts.gmode === 'loznice' && hasLoz();
+    const cards = mode === 'preview' ? pool.map(c => c.id) : loz ? buildLoz(opts.rounds) : buildDeck({ aud: opts.aud, max: opts.max, rounds: opts.rounds, ero: opts.ero });
     if (!cards.length) { accessGate('Pro toto nastavení se nenašly karty. Zkus vyšší intenzitu.', 'bad'); return; }
-    s = { players: names, cards, i: 0, t: Math.random() < 0.5 ? 0 : 1, skipped: 0, score: [0, 0], guesses: 0, aud: opts.aud || 'oba', max: opts.max || 3, ero: opts.ero || 'bez' };
+    s = { players: names, cards, i: 0, t: Math.random() < 0.5 ? 0 : 1, skipped: 0, score: [0, 0], guesses: 0, aud: opts.aud || 'oba', max: opts.max || 3, ero: opts.ero || 'bez', mode: loz ? 'loznice' : 'klasika', pen: opts.pen || 'obleceni', secrets: [], roll: {}, penalties: 0 };
     lsSet(SESSION_KEY, s);
     track(mode === 'full' ? 'paid_game_start' : 'adult_preview_start', { game: 'odvazne-18', mode, rounds: cards.length, level: s.max, audience: s.aud });
     cardScreen();
   }
 
-  function markUsed(id) { if (mode !== 'full') return; const u = lsGet(USED_KEY, []); u.push(id); lsSet(USED_KEY, u.slice(-400)); }
+  function penaltyScreen(who, why) {
+    const name = s.players[who];
+    const txt = PENALTY[s.pen] || PENALTY.obleceni;
+    screen(`${topbar()}<section class="a-panel a-penalty"><span class="a-sticker">Trest</span><h1 data-focus tabindex="-1">${E(name)}</h1><p class="a-lead">${E(why)}</p><p class="a-pen-text">${E(txt)}</p><div class="a-actions"><button type="button" class="arcade-button" data-act="pen-done">Hotovo, hrajeme dál</button></div></section>`);
+  }
+  function runTimer() {
+    const box = document.getElementById('a-timer'); const btn = document.getElementById('a-main');
+    if (!box || !btn) return;
+    let n = +box.dataset.sec; btn.disabled = true; btn.textContent = 'Běží…'; box.classList.add('is-run');
+    clearInterval(timer);
+    timer = setInterval(() => {
+      n -= 1; box.querySelector('b').textContent = Math.max(n, 0);
+      if (n <= 0) {
+        clearInterval(timer); box.classList.remove('is-run'); box.classList.add('is-done'); box.querySelector('span').textContent = 'Čas!';
+        try { navigator.vibrate && navigator.vibrate([200, 100, 200]); } catch {}
+        btn.disabled = false; btn.textContent = 'Splněno, další'; btn.dataset.act = 'next'; btn.focus({ preventScroll: true });
+      }
+    }, 1000);
+  }
+  function scheduleSecret(card) {
+    s.secrets = s.secrets || [];
+    s.secrets.push({ p: s.t % 2, text: card.text, lvl: card.lvl });
+    const at = Math.min(s.i + 4, s.cards.length);
+    s.cards.splice(at, 0, 'reveal:' + (s.secrets.length - 1));
+  }
+
+  function markUsed(id) { if (mode !== 'full' || String(id).startsWith('reveal:')) return; const u = lsGet(USED_KEY, []); u.push(id); lsSet(USED_KEY, u.slice(-400)); }
 
   function advance() {
     const card = byId(s.cards[s.i]);
     markUsed(card.id);
-    if (TYPES[card.type].personal) s.t += 1;
+    if (TYPES[card.type] && TYPES[card.type].personal) s.t += 1;
     s.i += 1;
     if (s.i >= s.cards.length) return endScreen();
     lsSet(SESSION_KEY, s);
@@ -227,7 +314,7 @@ ${body}
 
   function formValues(form) {
     const f = new FormData(form);
-    return { p1: String(f.get('p1') || '').trim(), p2: String(f.get('p2') || '').trim(), aud: f.get('aud') || 'oba', max: Number(f.get('max') || 3), rounds: Number(f.get('rounds') || 10), ero: f.get('aud') === 'par' ? String(f.get('ero') || 'bez') : 'bez' };
+    return { p1: String(f.get('p1') || '').trim(), p2: String(f.get('p2') || '').trim(), aud: f.get('aud') || 'oba', max: Number(f.get('max') || 3), rounds: Number(f.get('rounds') || 10), ero: f.get('aud') === 'par' ? String(f.get('ero') || 'bez') : 'bez', gmode: String(f.get('mode') || 'klasika'), pen: String(f.get('pen') || 'obleceni') };
   }
 
   app.addEventListener('click', async e => {
@@ -236,8 +323,20 @@ ${body}
     const act = el.dataset.act;
     if (act === 'age-yes') { lsSet(AGE_KEY, new Date().toISOString().slice(0, 10)); return boot(); }
     if (act === 'resume') { s = lsGet(SESSION_KEY, null); if (s) return cardScreen(); }
-    if (act === 'hit' || act === 'miss') { if (!s.score) s.score = [0, 0]; s.guesses = (s.guesses || 0) + 1; if (act === 'hit') s.score[(s.t + 1) % 2] += 1; return advance(); }
+    if (act === 'hit' || act === 'miss') {
+      if (!s.score) s.score = [0, 0]; s.guesses = (s.guesses || 0) + 1;
+      const guesser = (s.t + 1) % 2; if (act === 'hit') s.score[guesser] += 1;
+      const card = byId(s.cards[s.i]);
+      if (act === 'miss' && card && TYPES[card.type].bet) { markUsed(card.id); s.t += 1; s.i += 1; lsSet(SESSION_KEY, s); return penaltyScreen(guesser, 'Netrefa v sázce.'); }
+      return advance();
+    }
     if (act === 'next') return advance();
+    if (act === 'timer') return runTimer();
+    if (act === 'secret-show') { const box = document.getElementById('a-secret'); box.hidden = false; el.textContent = 'Mám to, schovat a hrát dál'; el.dataset.act = 'secret-done'; return; }
+    if (act === 'secret-done') { scheduleSecret(byId(s.cards[s.i])); return advance(); }
+    if (act === 'rev-hit' || act === 'rev-miss') { const c = byId(s.cards[s.i]); const loser = act === 'rev-hit' ? c.sec.p : 1 - c.sec.p; s.i += 1; lsSet(SESSION_KEY, s); s.after = true; return penaltyScreen(loser, act === 'rev-hit' ? `Úkol byl: ${c.text}` : `Neuhádl/a. Úkol byl: ${c.text}`); }
+    if (act === 'penalty') { const who = s.t % 2; s.penalties = (s.penalties || 0) + 1; markUsed(s.cards[s.i]); s.t += 1; s.i += 1; lsSet(SESSION_KEY, s); s.after = true; return penaltyScreen(who, 'Karta odmítnuta.'); }
+    if (act === 'pen-done') { s.after = false; if (s.i >= s.cards.length) return endScreen(); lsSet(SESSION_KEY, s); return cardScreen(); }
     if (act === 'reset') { window.CM.confirmAction('Začít novou hru?', 'Rozehraná hra se zahodí a nastavíte si novou.').then(ok => { if (ok) { lsDel(SESSION_KEY); s = null; setup(); } }); return; }
     if (act === 'quit') { window.CM.confirmAction('Ukončit hru?', 'Ukážeme výsledek a můžete začít znovu.').then(ok => { if (ok && s) endScreen(); }); return; }
     if (act === 'reset-used') { window.CM.confirmAction('Zamíchat všechny karty?', 'Hra zapomene, které karty už padly, a můžou přijít znovu.').then(ok => { if (ok) { lsDel(USED_KEY); setup(); window.CM.toast && window.CM.toast('Karty jsou zamíchané.'); } }); return; }
@@ -248,7 +347,10 @@ ${body}
     if (act === 'other-email') return accessGate();
   });
 
-  document.addEventListener('change', e => { if (e.target.name === 'aud') { const f = document.getElementById('ero-set'); if (f) f.hidden = e.target.value !== 'par'; } });
+  document.addEventListener('change', e => {
+    if (e.target.name === 'aud') { const f = document.getElementById('ero-set'); if (f) f.hidden = e.target.value !== 'par'; }
+    if (e.target.name === 'mode') { const loz = e.target.value === 'loznice'; app.querySelectorAll('[data-loz]').forEach(x => { x.hidden = !loz; }); app.querySelectorAll('[data-classic]').forEach(x => { x.hidden = loz; }); const f = document.getElementById('ero-set'); if (f && !loz) { const a = app.querySelector('[name=aud]:checked'); f.hidden = a && a.value !== 'par'; } }
+  });
   app.addEventListener('submit', async e => {
     e.preventDefault();
     if (e.target.id === 'setup-form') { lsDel(SESSION_KEY); return startGame(formValues(e.target)); }
