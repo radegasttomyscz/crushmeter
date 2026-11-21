@@ -116,7 +116,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .site-bottom{margin-top:80px;border-top:1px solid var(--line);background:var(--bg-soft)}
 .bottom-in{width:var(--container);margin-inline:auto;padding:48px 0 32px;display:grid;grid-template-columns:1.2fr 2fr;gap:40px}
 .bottom-brand p{margin:12px 0 0;color:var(--muted);max-width:28ch}
-.bottom-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.bottom-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .bottom-nav h2{font-size:.85rem;font-weight:600;color:var(--ink);margin:0 0 12px;letter-spacing:0}
 .bottom-nav a{display:block;color:var(--muted);text-decoration:none;font-size:.93rem;padding:5px 0}
 .bottom-nav a:hover{color:var(--ink);text-decoration:underline}
