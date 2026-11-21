@@ -138,3 +138,13 @@
 .a-buyhint-links a{display:inline-flex;align-items:center;min-height:40px;padding:0 15px;border-radius:999px;border:1px solid var(--cm-outline);background:var(--cm-surface);color:var(--cm-ink);font-weight:750;text-decoration:none}
 .a-buyhint-links a.is-buy{background:var(--pop-coral);border-color:transparent;color:#fff}
 .a-buyhint-links a:focus-visible{outline:3px solid var(--cm-ink);outline-offset:2px}
+/* Hádání: druhý tipuje odpověď toho, kdo je na řadě */
+.a-guess{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.a-actions .a-guess .arcade-button{min-height:56px;padding:0 12px;font-size:.98rem;text-align:center;line-height:1.2}
+.a-actions .arcade-button.is-ghost{background:transparent;color:var(--cm-ink);box-shadow:inset 0 0 0 2px var(--cm-outline)}
+.a-actions .arcade-button.is-ghost:hover{box-shadow:inset 0 0 0 2px var(--cm-ink)}
+.a-score{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 4px}
+.a-score div{display:flex;flex-direction:column;align-items:center;gap:2px;padding:14px 10px;border-radius:18px;background:var(--cm-surface-alt);border:1px solid var(--cm-outline)}
+.a-score span{font-size:.9rem;font-weight:700;color:var(--cm-muted);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.a-score b{font-size:2.2rem;line-height:1;font-weight:850}
+.a-verdict{margin:6px 0 0;font-weight:700}

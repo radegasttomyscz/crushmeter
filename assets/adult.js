@@ -14,9 +14,9 @@
 
   const TYPES = {
     priznani: { kicker: 'PŘIZNÁNÍ', prefix: '', how: 'Odpověz nahlas a upřímně. Druhý poslouchá.', personal: true, main: 'Řečeno, další' },
-    radsi: { kicker: 'RADŠI', prefix: '', how: 'Rozmyslete se. Na tři oba řeknete svou volbu.', sync: true },
-    nikdy: { kicker: 'NIKDY JSEM…', prefix: 'Nikdy jsem ', how: 'Na tři oba řeknete: „dělal/a“, nebo „nedělal/a“.', sync: true },
-    kdo: { kicker: 'KDO Z NÁS…', prefix: 'Kdo z nás ', how: 'Na tři oba ukážete prstem.', sync: true },
+    radsi: { kicker: 'RADŠI', prefix: '', how: (p, o) => `${p} si potichu vybere. ${o} hádá, co to bude. Pak ${p} prozradí volbu a proč.`, personal: true, guess: true },
+    nikdy: { kicker: 'NIKDY JSEM…', prefix: 'Nikdy jsem ', how: (p, o) => `${o} tipne, jestli to ${p} někdy udělal/a. Pak ${p} řekne pravdu, a když ano, i příběh.`, personal: true, guess: true },
+    kdo: { kicker: 'KDO Z NÁS…', prefix: 'Kdo z nás ', how: (p, o) => `${p} si v duchu odpoví. ${o} hádá, koho z vás ${p} označí. Pak se to vysvětlí.`, personal: true, guess: true },
     vyzva: { kicker: 'VÝZVA', prefix: '', how: 'Splň ji, nebo ji přeskoč. Nikdo tě nenutí.', personal: true, main: 'Splněno, další' }
   };
   const LEVELS = { 1: 'Lehce osobní', 2: 'Odvážné', 3: 'Velmi žhavé' };
@@ -143,6 +143,8 @@ ${full && access ? `<p class="a-small"><button type="button" class="text-button"
     const meta = TYPES[card.type];
     const total = s.cards.length;
     const player = meta.personal ? s.players[s.t % 2] : null;
+    const other = meta.personal ? s.players[(s.t + 1) % 2] : null;
+    const how = typeof meta.how === 'function' ? meta.how(E(player), E(other)) : meta.how;
     const body = card.type === 'radsi'
       ? `<p class="a-prefix">Radši…</p><div class="a-ab"><div><b>A</b><span>${E(card.a)}</span></div><div class="a-or" aria-hidden="true">nebo</div><div><b>B</b><span>${E(card.b)}</span></div></div>`
       : `${meta.prefix ? `<p class="a-prefix">${E(meta.prefix.trim())}</p>` : ''}<h2 class="a-text" data-focus tabindex="-1">${E(card.text)}</h2>`;
@@ -152,23 +154,26 @@ ${full && access ? `<p class="a-small"><button type="button" class="text-button"
 <p class="a-count">Kolo ${s.i + 1} z ${total}</p>
 <article class="a-card t-${card.type}" id="a-card">
 <div class="a-card-top"><span class="a-type">${meta.kicker}</span>${card.ero ? '<span class="a-ero">Erotika</span>' : ''}<span class="a-lvl" role="img" aria-label="Intenzita: ${LEVELS[card.lvl]}">${lvl}</span></div>
-<p class="a-who">${player ? `Na řadě: <b>${E(player)}</b>` : 'Hrajete oba'}</p>
+<p class="a-who">${meta.guess ? `Odpovídá <b>${E(player)}</b>, hádá <b>${E(other)}</b>` : player ? `Na řadě: <b>${E(player)}</b>` : 'Hrajete oba'}</p>
 ${body}
-<p class="a-how">${meta.how}</p>
-<div class="a-count3" id="a-count3" aria-live="assertive" hidden></div>
+<p class="a-how">${how}</p>
 </article>
-<div class="a-actions"><button type="button" class="arcade-button a-main" data-act="${meta.sync ? 'countdown' : 'next'}" id="a-main">${meta.sync ? 'Na tři!' : meta.main}</button><button type="button" class="text-button" data-act="skip">Přeskočit kartu</button></div>
+<div class="a-actions">${meta.guess ? `<div class="a-guess"><button type="button" class="arcade-button a-main" data-act="hit" id="a-main">${E(other)} uhádl/a</button><button type="button" class="arcade-button is-ghost" data-act="miss">Neuhádl/a</button></div>` : `<button type="button" class="arcade-button a-main" data-act="next" id="a-main">${meta.main}</button>`}<button type="button" class="text-button" data-act="skip">Přeskočit kartu</button></div>
 <p class="report-row">${REPORT('Odvážně 18+',['Karta: '+card.id,card.type==='radsi'?'Radši: '+card.a+' / '+card.b:'Text: '+card.text])}</p>`, card.type === 'radsi' ? '#a-main' : '[data-focus]');
   }
 
   function endScreen() {
     lsDel(SESSION_KEY);
     const played = s.cards.length - (s.dropped || 0);
+    const sc = s.score || [0, 0];
+    const guessed = sc[0] + sc[1] > 0 || s.guesses;
+    const verdict = sc[0] === sc[1] ? 'Znáte se navzájem stejně dobře.' : `Líp odhaduje ${E(s.players[sc[0] > sc[1] ? 0 : 1])}.`;
+    const scoreHtml = guessed ? `<div class="a-score" aria-label="Uhádnuté odpovědi"><div><span>${E(s.players[0])}</span><b>${sc[0]}</b></div><div><span>${E(s.players[1])}</span><b>${sc[1]}</b></div></div><p class="a-verdict">${verdict}</p>` : '';
     track(mode === 'full' ? 'paid_game_complete' : 'adult_preview_complete', { game: 'odvazne-18', mode, rounds: s.cards.length, skipped: s.skipped });
     const offer = mode === 'preview'
       ? `<section class="a-offer" id="a-offer"><span class="a-sticker">18+</span><h2>Chcete dál?</h2><p>Plná hra má 234 karet v pěti typech kol, z toho 84 erotických pro páry. Pár nebo kamarádi, intenzitu si nastavíte. Přístup na 12 měsíců za 99 Kč, jednorázově, bez předplatného.</p><div class="a-actions">${shopLink('preview-end', 'Koupit za 99 Kč')}<a class="text-button" href="/odvazne-18.html" data-track="adult_offer_click" data-track-placement="preview-end">Co hra obsahuje</a><a class="text-button" href="/odvazne-18-hrat.html">Už mám přístup</a></div></section>`
       : '';
-    screen(`${topbar()}<section class="a-panel a-end"><span class="a-sticker">18+</span><h1 data-focus tabindex="-1">${mode === 'full' ? 'To byl večer.' : 'To byla ochutnávka.'}</h1><p class="a-lead">Odehráno ${played} ${played === 1 ? 'kolo' : played >= 2 && played <= 4 ? 'kola' : 'kol'}${s.skipped ? `, přeskočeno ${s.skipped}` : ''}.</p>${offer}<aside class="promo is-tarot" data-partner-slot><span class="promo-mark" aria-hidden="true">✦</span><div><small>Něco jiného</small><strong>Co vám karty řeknou o vás dvou?</strong><p>Virtuální kartářka vám vytáhne karty a odpoví česky.</p><a href="https://virtualnikartarka.cz/?utm_source=crushmeter&amp;utm_medium=referral&amp;utm_campaign=konec_hry_18" target="_blank" rel="noopener" data-track="click_virtualni_kartarka" data-track-placement="adult-end">Vytáhnout karty →</a></div></aside><div class="a-actions"><button type="button" class="arcade-button" data-act="again">Zahrát znovu</button><a class="text-button" href="/">Zpět na hry</a></div></section>`);
+    screen(`${topbar()}<section class="a-panel a-end"><span class="a-sticker">18+</span><h1 data-focus tabindex="-1">${mode === 'full' ? 'To byl večer.' : 'To byla ochutnávka.'}</h1><p class="a-lead">Odehráno ${played} ${played === 1 ? 'kolo' : played >= 2 && played <= 4 ? 'kola' : 'kol'}${s.skipped ? `, přeskočeno ${s.skipped}` : ''}.</p>${scoreHtml}${offer}<aside class="promo is-tarot" data-partner-slot><span class="promo-mark" aria-hidden="true">✦</span><div><small>Něco jiného</small><strong>Co vám karty řeknou o vás dvou?</strong><p>Virtuální kartářka vám vytáhne karty a odpoví česky.</p><a href="https://virtualnikartarka.cz/?utm_source=crushmeter&amp;utm_medium=referral&amp;utm_campaign=konec_hry_18" target="_blank" rel="noopener" data-track="click_virtualni_kartarka" data-track-placement="adult-end">Vytáhnout karty →</a></div></aside><div class="a-actions"><button type="button" class="arcade-button" data-act="again">Zahrát znovu</button><a class="text-button" href="/">Zpět na hry</a></div></section>`);
     if (mode === 'preview') track('adult_offer_view', { game: 'odvazne-18', placement: 'preview-end' });
     s = null;
   }
@@ -179,7 +184,7 @@ ${body}
     lsSet(NAMES_KEY, [opts.p1 || '', opts.p2 || '']);
     const cards = mode === 'preview' ? pool.map(c => c.id) : buildDeck({ aud: opts.aud, max: opts.max, rounds: opts.rounds, ero: opts.ero });
     if (!cards.length) { accessGate('Pro toto nastavení se nenašly karty. Zkus vyšší intenzitu.', 'bad'); return; }
-    s = { players: names, cards, i: 0, t: Math.random() < 0.5 ? 0 : 1, skipped: 0, aud: opts.aud || 'oba', max: opts.max || 3, ero: opts.ero || 'bez' };
+    s = { players: names, cards, i: 0, t: Math.random() < 0.5 ? 0 : 1, skipped: 0, score: [0, 0], guesses: 0, aud: opts.aud || 'oba', max: opts.max || 3, ero: opts.ero || 'bez' };
     lsSet(SESSION_KEY, s);
     track(mode === 'full' ? 'paid_game_start' : 'adult_preview_start', { game: 'odvazne-18', mode, rounds: cards.length, level: s.max, audience: s.aud });
     cardScreen();
@@ -217,24 +222,7 @@ ${body}
     cardScreen();
   }
 
-  function countdown() {
-    const box = document.getElementById('a-count3');
-    const btn = document.getElementById('a-main');
-    btn.disabled = true;
-    box.hidden = false;
-    let n = 3;
-    const tick = () => {
-      if (n > 0) { box.textContent = n; box.className = 'a-count3 n' + n; n -= 1; }
-      else {
-        clearInterval(timer);
-        box.textContent = 'Teď!'; box.className = 'a-count3 go';
-        btn.disabled = false; btn.textContent = 'Další kolo'; btn.dataset.act = 'next';
-        btn.focus({ preventScroll: true });
-      }
-    };
-    tick();
-    timer = setInterval(tick, REDUCED ? 700 : 850);
-  }
+
 
   function formValues(form) {
     const f = new FormData(form);
@@ -247,7 +235,7 @@ ${body}
     const act = el.dataset.act;
     if (act === 'age-yes') { lsSet(AGE_KEY, new Date().toISOString().slice(0, 10)); return boot(); }
     if (act === 'resume') { s = lsGet(SESSION_KEY, null); if (s) return cardScreen(); }
-    if (act === 'countdown') return countdown();
+    if (act === 'hit' || act === 'miss') { if (!s.score) s.score = [0, 0]; s.guesses = (s.guesses || 0) + 1; if (act === 'hit') s.score[(s.t + 1) % 2] += 1; return advance(); }
     if (act === 'next') return advance();
     if (act === 'skip') return skip();
     if (act === 'menu') { clearInterval(timer); lsSet(SESSION_KEY, s); return setup(); }
