@@ -4,6 +4,7 @@ H: Hry k táboráku: 16 her a příběhů k ohni pro děti i dospělé
 L: Hry na výlety
 G: guess
 C: Hry, příběhy a písničky k ohni.
+P: flambro
 R: /hry-na-chatu.html | Hry na chatu a chalupu
 R: /hry-venku-pro-dospele.html | Hry venku pro dospělé
 R: /otazky-k-zamysleni.html | Otázky k zamyšlení

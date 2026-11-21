@@ -4,6 +4,7 @@ H: Otázky k zamyšlení: 50 hlubokých otázek o životě a o sobě
 L: Otázky pro dva
 G: know
 C: Hluboké otázky o životě, štěstí a vztazích.
+P: kartarka
 R: /romanticke-otazky-pro-pary.html | Romantické otázky pro páry
 R: /otazky-na-konec-roku.html | Otázky na konec roku
 R: /otazky-pro-pary.html | Otázky pro páry

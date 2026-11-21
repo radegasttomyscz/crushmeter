@@ -4,6 +4,7 @@ H: Valentýn doma: 20 nápadů na romantický večer ve dvou
 L: Večer ve dvou
 G: adult
 C: Večeře, hry i odvážnější večer pro dva.
+P: syte
 R: /rande-doma.html | Rande doma: 15 nápadů
 R: /pikantni-otazky-pro-pary.html | Pikantní otázky pro páry
 R: /pravda-nebo-ukol-pro-pary.html | Pravda, nebo úkol pro páry

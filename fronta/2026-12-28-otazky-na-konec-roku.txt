@@ -4,6 +4,7 @@ H: Otázky na konec roku: 40 otázek pro ohlédnutí a nové plány
 L: Otázky pro dva
 G: know
 C: Ohlédnutí za rokem a plány na ten další.
+P: kartarka
 R: /hry-na-silvestra.html | Hry na Silvestra pro dva i pro partu
 R: /otazky-pro-pary.html | Otázky pro páry
 R: /blog/komunikace-ve-vztahu.html | Komunikace ve vztahu

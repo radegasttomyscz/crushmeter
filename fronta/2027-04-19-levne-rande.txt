@@ -4,6 +4,7 @@ H: Levné rande: 30 nápadů na rande zdarma nebo do 200 Kč
 L: Večer ve dvou
 G: know
 C: 30 nápadů na rande zdarma nebo do 200 Kč.
+P: syte
 R: /rande-doma.html | Rande doma: 15 nápadů
 R: /otazky-na-prvni-rande.html | Otázky na první rande
 R: /vyzvy-pro-pary.html | 30denní výzva pro páry

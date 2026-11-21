@@ -4,6 +4,7 @@ H: Hry do auta: 20 her pro děti i dospělé na dlouhou cestu
 L: Hry na cesty
 G: guess
 C: 20 her bez pomůcek pro děti i dospělé.
+P: putovani
 R: /hry-pro-dva-bez-niceho.html | Hry pro dva bez ničeho
 R: /hry-na-dovolenou.html | Hry na dovolenou
 R: /otazky-radeji-bys.html | Otázky Raději bys

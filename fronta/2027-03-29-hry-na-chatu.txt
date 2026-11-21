@@ -4,6 +4,7 @@ H: Hry na chatu a chalupu: 18 her pro partu i rodinu
 L: Hry na výlety
 G: guess
 C: Hry do deště, na zahradu i na večery bez signálu.
+P: putovani
 R: /hry-na-party.html | Hry na párty pro dospělé
 R: /nikdy-jsem-nikdy.html | Nikdy jsem nikdy
 R: /vedomostni-kviz.html | Vědomostní kvíz s odpověďmi

@@ -4,6 +4,7 @@ H: Otázky na seznamce: 50 otázek, na které lidé rádi odpovídají
 L: Otázky pro dva
 G: know
 C: První zprávy, otázky na seznamce a kdy navrhnout schůzku.
+P: tomys
 R: /otazky-na-prvni-rande.html | Otázky na první rande
 R: /blog/co-je-talking-stage.html | Co je talking stage
 R: /blog/piseme-si-kazdy-den-ale-nic-se-neposouva.html | Píšeme si, ale nic se neposouvá
