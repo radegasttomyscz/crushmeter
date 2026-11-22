@@ -159,29 +159,61 @@
     screen(`${topbar()}<section class="a-panel"><span class="a-sticker">18+</span><h1 data-focus tabindex="-1">${inactive ? 'Přístup už není aktivní' : 'Přístup vypršel'}</h1><p>${inactive ? 'Tahle objednávka už přístup neotevírá. Pokud si myslíš, že je to omyl, napiš na info@tomys.cz.' : `Přístup platil do ${E(fmtDate(expires))}. Nový rok si můžeš koupit jednorázově, bez předplatného.`}</p><div class="a-actions">${shopLink('expired', 'Koupit další rok za 99 Kč')}<button type="button" class="text-button" data-act="other-email">Zkusit jiný e-mail</button></div></section>`);
   }
 
+  const ICON = {
+    loznice: '<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 54c-9-7-22-15-22-28a12 12 0 0 1 22-7 12 12 0 0 1 22 7c0 13-13 21-22 28z" fill="currentColor" opacity=".18"/><path d="M8 33c6-6 14-9 24-4 10-5 18-2 24 4-7 9-15 13-24 13S15 42 8 33z" fill="currentColor"/><path d="M8 33c9 3 16 3 24 0 8 3 15 3 24 0" fill="none" stroke="rgba(0,0,0,.35)" stroke-width="2.4" stroke-linecap="round"/></svg>',
+    klasika: '<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 14h30a6 6 0 0 1 6 6v14a6 6 0 0 1-6 6H22l-9 8v-8H8a6 6 0 0 1-6-6V20a6 6 0 0 1 6-6z" fill="currentColor" opacity=".9"/><path d="M28 26h28a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6h-3v8l-9-8H28a6 6 0 0 1-6-6V32a6 6 0 0 1 6-6z" fill="currentColor" opacity=".45"/><circle cx="15" cy="27" r="2.6" fill="rgba(0,0,0,.4)"/><circle cx="23" cy="27" r="2.6" fill="rgba(0,0,0,.4)"/><circle cx="31" cy="27" r="2.6" fill="rgba(0,0,0,.4)"/></svg>',
+    obleceni: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M11 4l5 3 5-3 7 5-3 5-3-2v16H10V12l-3 2-3-5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>',
+    panak: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 5h16l-2 21a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M9.5 13h13l-1 12H10.5z" fill="currentColor" opacity=".45"/></svg>',
+    pusa: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16c3-4 8-6 13-3 5-3 10-1 13 3-4 6-8 8-13 8s-9-2-13-8z" fill="currentColor"/><path d="M3 16c5 2 9 2 13 0 4 2 8 2 13 0" fill="none" stroke="rgba(0,0,0,.35)" stroke-width="1.8" stroke-linecap="round"/></svg>',
+    prani: '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l3.6 8 8.4.8-6.4 5.6 2 8.6L16 21.6 8.4 26l2-8.6L4 11.8l8.4-.8z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>'
+  };
+  let pick = null;
+  function modeScreen() {
+    const saved = lsGet(SESSION_KEY, null);
+    const resume = saved && saved.cards && saved.cards.every(id => byId(id)) && saved.i < saved.cards.length;
+    const soon = access && Date.parse(access.expires) - Date.now() < 30 * 864e5;
+    const loz = pool.filter(c => c.mode === 'loznice').length;
+    const cls = pool.filter(c => !c.mode).length;
+    screen(`${topbar(access ? `<span class="a-badge">do ${E(fmtDate(access.expires))}</span>` : '')}
+<section class="a-modes"><h1 data-focus tabindex="-1">Jak dnes hrajete?</h1>
+${resume ? `<div class="a-resume"><div><strong>Rozehraná hra</strong><span>Kolo ${saved.i + 1} z ${saved.cards.length}</span></div><div class="a-resume-actions"><button type="button" class="arcade-button small" data-act="resume">Pokračovat</button><button type="button" class="a-reset" data-act="reset">Začít znovu</button></div></div>` : ''}
+<button type="button" class="a-mode is-loznice" data-act="pick" data-mode="loznice"><span class="a-mode-art">${ICON.loznice}</span><span class="a-mode-new">Novinka</span><span class="a-mode-body"><strong>Ložnice</strong><span class="a-mode-desc">Jen pro vás dva. Tresty za odmítnutí, ruleta doteků, tajné úkoly a odpočet. Každých pár kol to přitvrdí.</span><span class="a-mode-tags"><span>Pro páry</span><span>${loz} karet</span><span>Bez cenzury, bez vulgarit</span></span></span><span class="a-mode-go" aria-hidden="true">Hrát</span></button>
+<button type="button" class="a-mode is-klasika" data-act="pick" data-mode="klasika"><span class="a-mode-art">${ICON.klasika}</span><span class="a-mode-body"><strong>Klasika</strong><span class="a-mode-desc">Přiznání, volby, hádání a výzvy. Hodí se na rande i mezi kamarády. Intenzitu si nastavíte sami.</span><span class="a-mode-tags"><span>Páry i kamarádi</span><span>${cls} karet</span><span>Od jemných po žhavé</span></span></span><span class="a-mode-go" aria-hidden="true">Hrát</span></button>
+${soon ? `<p class="a-notice">Přístup brzy vyprší. Nákup před vypršením prodlouží platnost od původního data. ${shopLink('expiring', 'Prodloužit o rok')}</p>` : ''}
+${lsGet(USED_KEY, []).length ? `<p class="a-small">Odehrané karty se hned neopakují. <button type="button" class="text-button" data-act="reset-used">Zamíchat znovu všechny karty</button></p>` : ''}
+${access ? `<p class="a-small"><button type="button" class="text-button" data-act="logout">Odhlásit tento telefon</button></p>` : ''}</section>`);
+  }
+
   function setup() {
     const names = lsGet(NAMES_KEY, ['', '']);
     const full = mode === 'full';
+    if (full && hasLoz() && !pick) return modeScreen();
+    const gm = full && hasLoz() ? pick : 'klasika';
+    const isLoz = gm === 'loznice';
     const saved = lsGet(SESSION_KEY, null);
-    const resume = saved && saved.cards && saved.cards.every(id => byId(id)) && saved.i < saved.cards.length;
-    const soon = full && access && Date.parse(access.expires) - Date.now() < 30 * 864e5;
+    const resume = !(full && hasLoz()) && saved && saved.cards && saved.cards.every(id => byId(id)) && saved.i < saved.cards.length;
+    const soon = !(full && hasLoz()) && full && access && Date.parse(access.expires) - Date.now() < 30 * 864e5;
+    const head = full && hasLoz()
+      ? `<div class="a-mode-head is-${gm}"><span class="a-mode-art">${ICON[gm]}</span><div><small>Režim</small><strong>${isLoz ? 'Ložnice' : 'Klasika'}</strong></div><button type="button" class="a-mode-change" data-act="pick-back">Změnit</button></div>`
+      : `<span class="a-sticker">18+</span><h1 data-focus tabindex="-1">${full ? 'Odvážně 18+' : 'Ukázka: 10 karet'}</h1><p class="a-lead">${full ? 'Nastavte si večer a hrajte.' : 'Deset karet ze všech pěti typů kol. Plná hra jich má 234, z toho 84 erotických pro páry.'}</p>`;
+    const pen = (v, label, on) => `<label><input type="radio" name="pen" value="${v}"${on ? ' checked' : ''}><span class="a-pen-opt">${ICON[v]}<b>${label}</b></span></label>`;
     screen(`${topbar(full && access ? `<span class="a-badge">do ${E(fmtDate(access.expires))}</span>` : '')}
-<section class="a-panel a-setup"><span class="a-sticker">18+</span><h1 data-focus tabindex="-1">${full ? 'Odvážně 18+' : 'Ukázka: 10 karet'}</h1>
-<p class="a-lead">${full ? 'Nastavte si večer a hrajte.' : 'Deset karet ze všech pěti typů kol. Plná hra jich má 234, z toho 84 erotických pro páry.'}</p>
+<section class="a-panel a-setup">${head}
 ${resume ? `<div class="a-resume"><div><strong>Rozehraná hra</strong><span>Kolo ${saved.i + 1} z ${saved.cards.length}</span></div><div class="a-resume-actions"><button type="button" class="arcade-button small" data-act="resume">Pokračovat</button><button type="button" class="a-reset" data-act="reset">Začít znovu</button></div></div>` : ''}
 <form id="setup-form" class="a-form" novalidate>
+${full && hasLoz() ? `<input type="hidden" name="mode" value="${gm}">` : ''}
 <fieldset><legend>Kdo hraje</legend><div class="a-names"><input name="p1" maxlength="20" autocomplete="off" placeholder="Křestní jméno" aria-label="Jméno prvního hráče" value="${E(names[0] || '')}"><input name="p2" maxlength="20" autocomplete="off" placeholder="Křestní jméno" aria-label="Jméno druhého hráče" value="${E(names[1] || '')}"></div></fieldset>
-${full && hasLoz() ? `<fieldset><legend>Režim</legend><div class="a-choice"><label><input type="radio" name="mode" value="loznice" checked><span>Ložnice<small>novinka, pro páry</small></span></label><label><input type="radio" name="mode" value="klasika"><span>Klasika<small>páry i kamarádi</small></span></label></div></fieldset>
-<fieldset data-loz><legend>Trest za odmítnutí</legend><div class="a-choice a-choice-2x2"><label><input type="radio" name="pen" value="obleceni" checked><span>Kus oblečení</span></label><label><input type="radio" name="pen" value="panak"><span>Napít se</span></label><label><input type="radio" name="pen" value="pusa"><span>Pusa, kam si druhý řekne</span></label><label><input type="radio" name="pen" value="prani"><span>Splnit přání</span></label></div><p class="a-hint">Kartu jde odmítnout, ale stojí to trest. Hra začíná smyslně a každých pár kol přitvrdí.</p></fieldset>` : ''}
-${full ? `<fieldset data-classic${hasLoz() ? ' hidden' : ''}><legend>Jste</legend><div class="a-choice"><label><input type="radio" name="aud" value="par" checked><span>Pár</span></label><label><input type="radio" name="aud" value="kamaradi"><span>Kamarádi</span></label></div></fieldset>
-${hasEro() ? `<fieldset class="a-ero-set" id="ero-set" data-classic${hasLoz() ? ' hidden' : ''}><legend>Erotické karty <small>jen pro páry</small></legend><div class="a-choice a-choice-3"><label><input type="radio" name="ero" value="bez" checked><span>Bez nich</span></label><label><input type="radio" name="ero" value="mix"><span>Přimíchat</span></label><label><input type="radio" name="ero" value="jen"><span>Jen erotika</span></label></div><p class="a-hint">Zapněte je, jen když jste pro oba. Nejpřímější karty přijdou jen při intenzitě Velmi žhavé.</p></fieldset>` : ''}
-<fieldset data-classic${hasLoz() ? ' hidden' : ''}><legend>Nejvyšší intenzita</legend><div class="a-choice a-choice-3"><label><input type="radio" name="max" value="1"><span>Lehce osobní</span></label><label><input type="radio" name="max" value="2" checked><span>Odvážné</span></label><label><input type="radio" name="max" value="3"><span>Velmi žhavé</span></label></div><p class="a-hint">Hra začíná jemně a postupně stoupá až k vybrané hranici.</p></fieldset>
-<fieldset><legend>Délka</legend><div class="a-choice a-choice-3"><label><input type="radio" name="rounds" value="10"><span>10 kol<small>asi 15 min</small></span></label><label><input type="radio" name="rounds" value="20" checked><span>20 kol<small>asi 30 min</small></span></label><label><input type="radio" name="rounds" value="30"><span>30 kol<small>asi 45 min</small></span></label></div></fieldset>` : ''}
+${isLoz ? `<fieldset><legend>Trest za odmítnutí</legend><div class="a-choice a-choice-2x2 a-pens">${pen('obleceni', 'Kus oblečení', true)}${pen('panak', 'Napít se')}${pen('pusa', 'Pusa, kam si druhý řekne')}${pen('prani', 'Splnit přání')}</div><p class="a-hint">Kartu jde odmítnout, ale stojí to trest.</p></fieldset>` : ''}
+${full && !isLoz ? `<fieldset><legend>Jste</legend><div class="a-choice"><label><input type="radio" name="aud" value="par" checked><span>Pár</span></label><label><input type="radio" name="aud" value="kamaradi"><span>Kamarádi</span></label></div></fieldset>
+${hasEro() ? `<fieldset class="a-ero-set" id="ero-set"><legend>Erotické karty <small>jen pro páry</small></legend><div class="a-choice a-choice-3"><label><input type="radio" name="ero" value="bez" checked><span>Bez nich</span></label><label><input type="radio" name="ero" value="mix"><span>Přimíchat</span></label><label><input type="radio" name="ero" value="jen"><span>Jen erotika</span></label></div><p class="a-hint">Zapněte je, jen když jste pro oba. Nejpřímější karty přijdou jen při intenzitě Velmi žhavé.</p></fieldset>` : ''}
+<fieldset><legend>Nejvyšší intenzita</legend><div class="a-choice a-choice-3"><label><input type="radio" name="max" value="1"><span>Lehce osobní</span></label><label><input type="radio" name="max" value="2" checked><span>Odvážné</span></label><label><input type="radio" name="max" value="3"><span>Velmi žhavé</span></label></div><p class="a-hint">Hra začíná jemně a postupně stoupá až k vybrané hranici.</p></fieldset>` : ''}
+${full ? `<fieldset><legend>Délka</legend><div class="a-choice a-choice-3"><label><input type="radio" name="rounds" value="10"><span>10 kol<small>asi 15 min</small></span></label><label><input type="radio" name="rounds" value="20" checked><span>20 kol<small>asi 30 min</small></span></label><label><input type="radio" name="rounds" value="30"><span>30 kol<small>asi 45 min</small></span></label></div></fieldset>` : ''}
 <button class="arcade-button" type="submit">${full ? 'Jdeme na to' : 'Spustit ukázku'}</button></form>
 ${soon ? `<p class="a-notice">Přístup brzy vyprší. Nákup před vypršením prodlouží platnost od původního data. ${shopLink('expiring', 'Prodloužit o rok')}</p>` : ''}
-${full && lsGet(USED_KEY, []).length ? `<p class="a-small">Odehrané karty se hned neopakují. <button type="button" class="text-button" data-act="reset-used">Zamíchat znovu všechny karty</button></p>` : ''}
-${full && access ? `<p class="a-small"><button type="button" class="text-button" data-act="logout">Odhlásit tento telefon</button></p>` : ''}</section>`);
+${full && !hasLoz() && lsGet(USED_KEY, []).length ? `<p class="a-small">Odehrané karty se hned neopakují. <button type="button" class="text-button" data-act="reset-used">Zamíchat znovu všechny karty</button></p>` : ''}
+${full && !hasLoz() && access ? `<p class="a-small"><button type="button" class="text-button" data-act="logout">Odhlásit tento telefon</button></p>` : ''}</section>`);
   }
+
 
   function cardScreen() {
     const id = s.cards[s.i];
@@ -330,6 +362,8 @@ ${meta.timer ? `<div class="a-timer" id="a-timer" data-sec="${secs}" aria-live="
       if (act === 'miss' && card && TYPES[card.type].bet) { markUsed(card.id); s.t += 1; s.i += 1; lsSet(SESSION_KEY, s); return penaltyScreen(guesser, 'Netrefa v sázce.'); }
       return advance();
     }
+    if (act === 'pick') { pick = el.dataset.mode; return setup(); }
+    if (act === 'pick-back') { pick = null; return setup(); }
     if (act === 'next') return advance();
     if (act === 'timer') return runTimer();
     if (act === 'secret-show') { const box = document.getElementById('a-secret'); box.hidden = false; el.textContent = 'Mám to, schovat a hrát dál'; el.dataset.act = 'secret-done'; return; }
@@ -341,7 +375,7 @@ ${meta.timer ? `<div class="a-timer" id="a-timer" data-sec="${secs}" aria-live="
     if (act === 'quit') { window.CM.confirmAction('Ukončit hru?', 'Ukážeme výsledek a můžete začít znovu.').then(ok => { if (ok && s) endScreen(); }); return; }
     if (act === 'reset-used') { window.CM.confirmAction('Zamíchat všechny karty?', 'Hra zapomene, které karty už padly, a můžou přijít znovu.').then(ok => { if (ok) { lsDel(USED_KEY); setup(); window.CM.toast && window.CM.toast('Karty jsou zamíchané.'); } }); return; }
     if (act === 'skip') return skip();
-    if (act === 'menu') { clearInterval(timer); lsSet(SESSION_KEY, s); return setup(); }
+    if (act === 'menu') { clearInterval(timer); lsSet(SESSION_KEY, s); pick = null; return setup(); }
     if (act === 'again') return setup();
     if (act === 'logout') { window.CM.access.clear(); lsDel(SESSION_KEY); access = null; return boot(); }
     if (act === 'other-email') return accessGate();
